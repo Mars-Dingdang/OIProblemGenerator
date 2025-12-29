@@ -1,0 +1,96 @@
+This editorial outlines the solution for finding the shortest simple path between a starting essential node $S$ and a target essential node $T$, visiting all other essential nodes exactly once, such that the total path length has odd parity.
+
+Let $V_{ess}$ be the set of $K$ essential nodes, where $S, T \in V_{ess}$. $N$ is the number of vertices and $M$ is the number of edges in the graph.
+
+\section{Core Observation}
+
+The requirement that the path must visit all $K$ essential nodes exactly once strongly suggests a Traveling Salesperson Problem (TSP) formulation. Since $K$ is typically small in such problems, we can solve the TSP using dynamic programming over subsets (masks) of visited essential nodes.
+
+The core challenge lies in the path segments between consecutive essential nodes $u \to v$. These segments must be the shortest possible while satisfying two intertwined constraints:
+\begin{enumerate}
+    \item They must not use any other essential node $w \in V_{ess} \setminus \{u, v\}$.
+    \item We must track both the minimum weight ($W$) and the parity of the length ($p \in \{0, 1\}$).
+\end{enumerate}
+
+\section{Step-by-Step Solution}
+
+The solution proceeds in three stages: Precomputation of constrained segments, ensuring segment simplicity, and the final TSP DP.
+
+\subsection{1. Precomputation: Shortest Parity-Constrained Segments}
+
+We use a modified Dijkstra's algorithm run $K$ times, starting from each essential node $u \in V_{ess}$. The state must capture both weight and length parity.
+
+The distance array is defined as $D[v][p] = (W, L_{min})$, storing the minimum weight $W$ achieved to reach vertex $v$ with path length parity $p$, and $L_{min}$ being the minimum edge length achieving that weight $W$.
+
+\subsubsection*{Modified Dijkstra Constraints}
+\begin{enumerate}
+    \item \textbf{State Augmentation:} When relaxing edges, we use $(W, L)$ as the primary key for comparison: $(W_1, L_1)$ is better than $(W_2, L_2)$ if $W_1 < W_2$, or if $W_1 = W_2$ and $L_1 < L_2$. This ensures that when weights are tied, we select the physically shortest path.
+    \item \textbf{Simplicity Constraint:} Paths $u \to v$ must only use intermediate nodes $x \in V \setminus V_{ess}$. During the Dijkstra run starting at $u$, we forbid relaxation into any vertex $w \in V_{ess} \setminus \{u\}$.
+\end{enumerate}
+
+After $K$ runs of Dijkstra, we extract the shortest segment weight $W_{uv, p}$ for the transition $u \to v$ with parity $p$, for all pairs $u, v \in V_{ess}$.
+
+\subsection{2. Simplicity Check (Handling Zero Cycles)}
+
+If the graph contains zero-weight edges, zero-weight odd cycles ($C_{odd}$) might exist. Traversing such a cycle allows flipping the parity of the length without increasing the total weight $W$.
+
+Suppose the shortest weight segment $u \to v$ is $W_{uv}$. If $D[v][0].W = D[v][1].W = W_{uv}$.
+Let $L_p$ be the minimum length achieving $W_{uv}$ with parity $p$. If $L_p > L_{1-p}$, the path of length $L_p$ must have resulted from traversing $C_{odd}$ (since it is longer but has the same weight).
+
+In the context of the overall TSP, allowing non-minimal length paths $u \to v$ that rely on cycles for parity flipping introduces a high risk of making the global path non-simple, as those cycles might reuse nodes crucial for other simple segments or cycles.
+
+To strictly enforce simplicity and minimality among equal-weight paths:
+\begin{itemize}
+    \item If $D[v][0].W = D[v][1].W$ and $L_p > L_{1-p}$, we treat the segment corresponding to $(W_{uv}, L_p)$ as non-simple or non-optimal. We effectively exclude this option by setting $W_{uv, p} = \infty$.
+\end{itemize}
+This ensures that if a weight $W_{uv}$ can be achieved by two parities, we only accept the one achieved by the minimum possible physical length $L_{min}$.
+
+\subsection{3. Traveling Salesperson Dynamic Programming (TSP DP)}
+
+We define the DP state based on the set of visited essential nodes, the current location, and the accumulated parity.
+
+Let $K$ be the number of essential nodes, indexed $0$ to $K-1$. Let $S$ be index $S_{idx}$ and $T$ be index $T_{idx}$.
+
+$DP[mask][u][p]$: Minimum total weight of a simple path starting at $S$, visiting exactly the subset of essential nodes indicated by $mask$ (where $u$ must be the last node visited), ending at $u$, with the total path length parity $p$.
+
+\subsubsection*{Initialization}
+We calculate the initial segments $S \to u$ for all $u \in V_{ess}$.
+$$
+DP[1 \ll u_{idx}][u][p] = W_{S u, p}
+$$
+
+\subsubsection*{Transitions}
+We iterate through masks in increasing order of size. For every mask containing $u$, and for every unvisited node $v$:
+$$
+DP[mask | (1 \ll v_{idx})][v][p'] = \min_{u \in mask, p_{uv} \in \{0, 1\}} \left( DP[mask][u][p] + W_{uv, p_{uv}} \right)
+$$
+where the resulting total parity is $p' = (p + p_{uv}) \pmod 2$.
+We use the precomputed simple segment weights $W_{uv, p_{uv}}$ calculated in Step 1 and validated in Step 2.
+
+\subsubsection*{Final Answer}
+The target requires visiting all essential nodes ($mask = 2^K - 1$), ending at $T$, and having odd total length parity ($p=1$).
+The final minimum weight is:
+$$
+\text{Answer} = DP[2^K - 1][T][1]
+$$
+
+\section{Complexity Analysis}
+
+\subsubsection{Time Complexity}
+\begin{enumerate}
+    \item \textbf{Precomputation:} We run $K$ instances of the modified Dijkstra algorithm. Since the state includes parity, the effective graph size is $2N$ vertices and $2M$ transitions. Using a Fibonacci heap or standard priority queue implementation:
+    $$
+    O(K \cdot (M \log N + N \log N)) = O(K(N+M) \log N)
+    $$
+    \item \textbf{TSP DP:} The number of DP states is $O(2^K \cdot K \cdot 2)$. Each state transition involves iterating over $K$ possible previous nodes $u$ and 2 parities.
+    $$
+    O(2^K \cdot K \cdot (K \cdot 2)) = O(2^K K^2)
+    $$
+\end{enumerate}
+Total Time Complexity: $O(K(N+M) \log N + 2^K K^2)$.
+
+\subsubsection{Space Complexity}
+The required space is dominated by the storage for the $K$ Dijkstra runs (for $W_{uv, p}$), and the DP table.
+$$
+O(KN + 2^K K)
+$$

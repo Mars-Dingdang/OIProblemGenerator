@@ -1,0 +1,110 @@
+```latex
+\section{Core Observation}
+
+The key insight is that the problem reduces to finding the maximum weight independent set on a path with non-adjacent vertices constraint. For a linear path, this can be solved with dynamic programming where each vertex has two states (selected/not selected). To handle arbitrary tree paths and updates efficiently, we need a data structure that can:
+\begin{enumerate}
+    \item Quickly combine DP solutions for path segments
+    \item Support point updates of vertex weights
+\end{enumerate}
+
+This leads to representing each path segment as a $2 \times 2$ matrix where $dp[a][b]$ stores the maximum sum for that segment when the left endpoint has state $a$ and right endpoint has state $b$ ($0$ = not taken, $1$ = taken).
+
+\section{Solution Details}
+
+\subsection{Heavy-Light Decomposition Setup}
+
+First, decompose the tree using Heavy-Light Decomposition (HLD):
+\begin{itemize}
+    \item Each vertex is assigned to exactly one heavy path
+    \item Each heavy path becomes a linear segment in our data structure
+    \item Any tree path can be decomposed into $O(\log n)$ heavy path segments
+\end{itemize}
+
+We build a segment tree over each heavy path's Euler tour order. For simplicity, we can flatten all heavy paths into one array with appropriate boundaries.
+
+\subsection{Segment Tree with DP Matrices}
+
+Each segment tree node stores a $2 \times 2$ matrix $M$ where:
+\begin{itemize}
+    \item $M[0][0]$: Best sum when both ends are not taken
+    \item $M[0][1]$: Best sum when left not taken, right taken
+    \item $M[1][0]$: Best sum when left taken, right not taken
+    \item $M[1][1]$: Best sum when both ends are taken
+\end{itemize}
+
+\textbf{Base Case (Leaf Node):}
+For a single vertex $v$ with weight $w$:
+\[
+M = \begin{pmatrix}
+0 & -\infty \\
+w & w
+\end{pmatrix}
+\]
+Explanation: When considering one vertex as both left and right endpoint:
+\begin{itemize}
+    \item $M[0][0] = 0$: Vertex not taken
+    \item $M[0][1] = -\infty$: Impossible (right taken but left not for same vertex)
+    \item $M[1][0] = w$: Vertex taken (states must match)
+    \item $M[1][1] = w$: Vertex taken
+\end{itemize}
+
+\subsection{Merging Two Matrices}
+
+Given two adjacent segments with matrices $L$ and $R$, their combined matrix $C$ is computed as:
+\[
+C[a][b] = \max_{\substack{x \in \{0,1\} \\ y \in \{0,1\}}} \left(L[a][x] + R[y][b] + \delta(x,y)\right)
+\]
+where $\delta(x,y) = -\infty$ if $x = 1$ and $y = 1$ (adjacent vertices both taken), otherwise $0$.
+
+This merging operation is associative, allowing us to use segment trees. The $-\infty$ ensures the non-adjacent constraint is maintained between segments.
+
+\subsection{Handling Queries}
+
+For a path query between vertices $u$ and $v$:
+\begin{enumerate}
+    \item Decompose the path into $O(\log n)$ segments using HLD
+    \item For each segment, query the segment tree to get its DP matrix
+    \item Combine matrices in the correct order along the path
+    \item The answer is $\max(M[0][0], M[0][1], M[1][0], M[1][1])$ of the final combined matrix
+\end{enumerate}
+
+\textbf{Important:} When combining segments from different heavy paths, we must respect the tree's actual adjacency. The merging formula automatically handles this through the $\delta(x,y)$ term.
+
+\subsection{Handling Updates}
+
+For a vertex weight update:
+\begin{enumerate}
+    \item Locate the vertex's position in the segment tree (via HLD mapping)
+    \item Update the leaf node with the new weight
+    \item Propagate changes upward, recomputing matrices using the merge operation
+\end{enumerate}
+
+\section{Complexity Analysis}
+
+\subsection{Time Complexity}
+\begin{itemize}
+    \item \textbf{HLD decomposition:} $O(n)$
+    \item \textbf{Segment tree operations:}
+    \begin{itemize}
+        \item Each segment tree query/update: $O(\log n)$
+        \item Each merge operation: $O(1)$ (constant 4×4 combinations)
+    \end{itemize}
+    \item \textbf{Path queries:} $O(\log n)$ segments × $O(\log n)$ per segment tree query = $O(\log^2 n)$
+    \item \textbf{Updates:} $O(\log n)$
+    \item \textbf{Total:} $O((n + q) \log^2 n)$ where $q$ is number of queries
+\end{itemize}
+
+\subsection{Space Complexity}
+\begin{itemize}
+    \item \textbf{HLD data structures:} $O(n)$
+    \item \textbf{Segment tree:} $O(n)$ nodes, each storing a $2 \times 2$ matrix
+    \item \textbf{Total:} $O(n)$
+\end{itemize}
+
+\subsection{Optimization Notes}
+\begin{itemize}
+    \item The segment tree can be implemented with iterative queries for better constant factors
+    \item For further optimization, the $2 \times 2$ matrices can be packed into integers and operations vectorized
+    \item In practice, the $\log^2 n$ factor performs well for $n \leq 10^5$
+\end{itemize}
+```

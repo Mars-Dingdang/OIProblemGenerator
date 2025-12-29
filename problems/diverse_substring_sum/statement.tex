@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, fullpage}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily, breaklines=true, frame=single}
+
+\begin{document}
+
+\section*{Problem Description}
+In the quantum archives of the Andromeda Nebula, ancient data crystals store knowledge in binary sequences. The Celestial Archivists have discovered that certain substrings, called \textit{diverse}, resonate with cosmic energy when all their contiguous $k$-length fragments are unique. A substring $t$ of the binary sequence $s$ is deemed \textit{diverse for parameter $k$} if every contiguous fragment of length $k$ within $t$ appears exactly once. The total cosmic resonance of $s$ is defined as the sum of diverse substrings across all valid parameters $k \geq 1$. 
+
+Your mission, as a newly certified Archivist, is to compute this cosmic resonance for a given binary string. The challenge lies in the quantum entanglement of substrings and parameters—each substring may contribute to multiple $k$ values, but only when its $k$-length fragments exhibit absolute uniqueness. Failure to account for all entangled pairs $(t, k)$ will destabilize the archive's quantum coherence.
+
+Formally, for a binary string $s$ of length $n$, count all pairs $(t, k)$ where:
+\begin{itemize}
+    \item $t$ is a substring of $s$,
+    \item $k \geq 1$,
+    \item $|t| \geq k$, and
+    \item all contiguous substrings of $t$ of length $k$ are pairwise distinct.
+\end{itemize}
+
+\section*{Input}
+The first line contains an integer $n$ ($1 \leq n \leq 2 \times 10^5$), the length of the binary string. \\
+The second line contains the binary string $s$ of length $n$, consisting only of \texttt{0} and \texttt{1}.
+
+\section*{Output}
+Output a single integer representing the total cosmic resonance—the sum of diverse substrings over all valid $k \geq 1$.
+
+\section*{Constraints}
+\begin{itemize}
+    \item $1 \leq n \leq 2 \times 10^5$
+    \item $s$ contains only characters \texttt{0} and \texttt{1}
+\end{itemize}
+
+\section*{Sample}
+\begin{lstlisting}
+Input:
+3
+010
+
+Output:
+9
+\end{lstlisting}
+\textbf{Explanation:} \\
+For $s = \texttt{010}$:
+\begin{itemize}
+    \item $k=1$: Substrings \texttt{0}, \texttt{1}, \texttt{0} (length 1), \texttt{01}, \texttt{10} (length 2) are diverse $\Rightarrow 5$ substrings
+    \item $k=2$: Substrings \texttt{01}, \texttt{10} (length 2), \texttt{010} (length 3) are diverse $\Rightarrow 3$ substrings
+    \item $k=3$: Substring \texttt{010} (length 3) is diverse $\Rightarrow 1$ substring
+\end{itemize}
+Total resonance: $5 + 3 + 1 = 9$.
+
+\end{document}

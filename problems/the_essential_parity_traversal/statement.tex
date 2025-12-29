@@ -1,0 +1,79 @@
+\section*{The Essential Parity Traversal}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Time Limit:} & 1.0 second \\
+\textbf{Memory Limit:} & 256 megabytes \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection*{Problem Description}
+
+You are given a directed graph $G=(V, E)$ consisting of $N$ vertices and $M$ edges. Each edge $e \in E$ has a non-negative integer weight $w(e) \ge 0$. The vertices are 1-indexed.
+
+A specific set of $K$ vertices, denoted $V_{ess}$, is designated as 'Essential Nodes'. You are given a source vertex $S$ and a target vertex $T$. Both $S$ and $T$ are guaranteed to be essential nodes, $S, T \in V_{ess}$.
+
+Your task is to find a path $P$ from $S$ to $T$ such that its total weight, denoted $W(P)$, is minimized, subject to two strict requirements:
+
+\begin{enumerate}
+    \item \textbf{Simplicity:} The path $P$ must be a simple path. That is, $P$ must visit no vertex more than once.
+    \item \textbf{Parity:} The length of the path, $L(P)$ (defined as the number of edges in $P$), must be odd.
+\end{enumerate}
+
+Determine the minimum total weight $W(P)$ satisfying both conditions.
+
+\subsection*{Input Format}
+
+The first line contains five integers: $N$, $M$, $K$, $S$, and $T$ ($1 \le N \le 50,000$; $1 \le M \le 100,000$; $2 \le K \le 18$; $1 \le S, T \le N$, $S \neq T$). $N$ is the number of vertices, $M$ is the number of edges, $K$ is the number of essential nodes, $S$ is the source index, and $T$ is the target index.
+
+The next $K$ lines each contain a single integer, listing the index of an essential node in $V_{ess}$. Note that $S$ and $T$ are guaranteed to be included in this list.
+
+The next $M$ lines describe the edges. Each line contains three integers $u_i$, $v_i$, and $w_i$ ($1 \le u_i, v_i \le N$; $0 \le w_i \le 10^9$), indicating a directed edge from $u_i$ to $v_i$ with weight $w_i$.
+
+\subsection*{Output Format}
+
+Output a single integer representing the minimum weight of an odd-length simple path from $S$ to $T$. If no such path exists, output \texttt{-1}.
+
+\subsection*{Constraints}
+
+\begin{itemize}
+    \item $1 \le N \le 50,000$
+    \item $1 \le M \le 100,000$
+    \item $2 \le K \le 18$
+    \item $0 \le w_i \le 10^9$
+    \item $S$ and $T$ are distinct essential nodes.
+\end{itemize}
+
+\subsection*{Sample Input}
+\begin{verbatim}
+5 6 3 1 5
+1
+3
+5
+1 2 1
+2 3 1
+3 5 1
+1 4 10
+4 2 1
+2 5 1
+\end{verbatim}
+
+\subsection*{Sample Output}
+\begin{verbatim}
+3
+\end{verbatim}
+
+\subsubsection*{Explanation for Sample}
+
+The graph has $N=5$ vertices. Source $S=1$, Target $T=5$. Essential nodes are $\{1, 3, 5\}$.
+
+We seek a minimum weight path with an odd number of edges.
+
+\begin{itemize}
+    \item Path $P_1$: $1 \to 2 \to 5$. Length $L=2$ (Even). Weight $1 + 1 = 2$. (Invalid length)
+    \item Path $P_2$: $1 \to 2 \to 3 \to 5$. Length $L=3$ (Odd). Weight $1 + 1 + 1 = 3$. This path is simple.
+    \item Path $P_3$: $1 \to 4 \to 2 \to 5$. Length $L=3$ (Odd). Weight $10 + 1 + 1 = 12$. This path is simple.
+\end{itemize}
+The minimum weight for a path satisfying the odd length and simplicity requirements is 3.

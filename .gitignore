@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.env
+.vscode/
+chroma_db/
+problems/*/data/
+problems/*/output/
+*.exe
+*.o
+*.log
