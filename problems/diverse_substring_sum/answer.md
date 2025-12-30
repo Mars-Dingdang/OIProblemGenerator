@@ -1,3 +1,38 @@
+The provided problem asks to compute the **total cosmic resonance** of a binary string $s$, which is defined as the sum of the number of *diverse substrings* for all valid parameters $k \ge 1$. A substring $t$ is diverse for parameter $k$ if all contiguous substrings of length $k$ in $t$ are pairwise distinct. This condition is equivalent to saying that no substring of length $k$ appears twice in $t$.
+
+Let $max\_repeat(t)$ be the length of the longest substring that appears at least twice in $t$. The substring $t$ is diverse for parameter $k$ if and only if $k > max\_repeat(t)$ and $k \le |t|$. Thus, the contribution of a substring $t$ to the total resonance is $|t| - max\_repeat(t)$ (if positive, otherwise 0). Since $max\_repeat(t) < |t|$ for any string with length $\ge 1$, the total resonance is simply:
+$$ \sum_{t \subseteq s} (|t| - max\_repeat(t)) = \sum_{t \subseteq s} |t| - \sum_{t \subseteq s} max\_repeat(t) $$
+The first part, $\sum_{t \subseteq s} |t|$, is the sum of lengths of all substrings of $s$, which is $\frac{n(n+1)(n+2)}{6}$ for a string of length $n$. The core of the problem is to compute the second part: the sum of the length of the longest repeating substring over all substrings of $s$.
+
+This problem can be efficiently solved using the **Suffix Automaton (SAM)** of the reversed string $s^R$ (which corresponds to the Suffix Tree of $s$) combined with a **sweep-line algorithm** and a **Segment Tree Beats** data structure. The approach leverages the fact that the set of all repeating substrings can be characterized by pairs of positions $(p, q)$ in $s$ (representing two occurrences of a substring) that are adjacent in the suffix structure.
+
+### Algorithm
+
+1.  **Construct the Suffix Automaton (SAM)** for the reversed string $s^R$. The parent tree of this SAM corresponds to the Suffix Tree of the original string $s$. Each node $u$ in the parent tree represents a set of substrings that appear in the same right-end positions in $s^R$ (left-end positions in $s$). Let $len(u)$ be the length of the longest string represented by node $u$.
+
+2.  **Collect "Repetition Pairs"**: We are interested in pairs of starting positions $(p, q)$ in $s$ (with $p < q$) such that the longest common prefix starting at $p$ and $q$ has some length $L$. Specifically, we only need to consider pairs that are "adjacent" in the set of occurrences of some node in the Suffix Tree.
+    *   Traverse the parent tree. For each node $u$, maintain the set of starting positions of occurrences in $s$ (which are $n - \text{endpos}_{s^R} + 1$).
+    *   Use **Small-to-Large Merging** (DSU on Tree) to merge position sets from children to parents.
+    *   When merging a smaller set into a larger set, for each position $x$ in the smaller set, find its predecessor $y$ and successor $z$ in the larger set. These pairs $(y, x)$ and $(x, z)$ represent a potential longest repeating substring of length $len(u)$ starting at these positions.
+    *   Store these significant pairs as events: `events[p].push_back({q, len(u)})` where $p < q$. There are $O(n \log n)$ such pairs.
+
+3.  **Sweep-Line with Segment Tree**:
+    *   We want to compute $\sum_{l=1}^n \sum_{r=l}^n F(l, r)$, where $F(l, r) = \max \{ \min(len, r-q+1) \mid (p, q, len) \text{ is a pair}, p \ge l, q \le r \}$.
+    *   Iterate $l$ from $n$ down to $1$.
+    *   Maintain a Segment Tree over the index $r$ ($1 \le r \le n$). The tree will maintain the current value of $V_r = \max_{(p, q, len), p \ge l} (\min(len, r-q+1))$ for each $r$, and allow querying the sum $\sum_{r=l}^n V_r$.
+    *   When moving from $l+1$ to $l$, activate all pairs with starting position $p=l$. For a pair $(q, len)$, we perform a range update on the Segment Tree:
+        *   For $r \in [q, q+len-1]$, update $V_r \leftarrow \max(V_r, r - q + 1)$. This is an update with a linear function of slope 1.
+        *   For $r \in [q+len, n]$, update $V_r \leftarrow \max(V_r, len)$. This is an update with a constant.
+    *   These updates can be handled using a **Segment Tree Beats** approach (specifically designed for `chmax` with arithmetic progressions). Since the values are non-decreasing and we only take maximums, a simplified version or a standard implementation supporting "Range Chmax with Line" suffices.
+    *   After updates, add the sum of $V_r$ for $r \in [l, n]$ to the total sum of `max_repeat`.
+
+4.  **Final Calculation**:
+    *   Calculate Total Length Sum: $S_{len} = \frac{n(n+1)(n+2)}{6}$.
+    *   Calculate Result: $S_{len} - \text{Total Sum of Max Repeats}$.
+
+### C++ Solution
+
+```cpp
 #include <iostream>
 #include <vector>
 #include <string>
@@ -343,3 +378,4 @@ int main() {
     
     return 0;
 }
+```
