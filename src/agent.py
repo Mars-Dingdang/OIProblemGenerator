@@ -17,13 +17,19 @@ class ProblemConcept(BaseModel):
     complexity: str = Field(description="Expected time and space complexity")
 
 class OIProblemAgent:
-    def __init__(self):
+    def __init__(self, model_name: str = "Qwen3-235B-A22B-Thinking-2507"):
         # 初始化 LLM
-        # 使用 Qwen3-235B-A22B-Thinking-2507 模型
+        # 支持的模型:
+        # 1. Qwen3-235B-A22B-Thinking-2507
+        # 2. DeepSeek-V3.2-Thinking
+        # 3. DeepSeek-R1-0528
+        
+        print(f"🤖 Initializing Agent with model: {model_name}")
+        
         self.llm = ChatOpenAI(
             api_key=os.getenv("OPENAI_API_KEY"),
             base_url=os.getenv("OPENAI_BASE_URL"),
-            model="Qwen3-235B-A22B-Thinking-2507",
+            model=model_name,
             temperature=0.7
         )
         self.knowledge_base = KnowledgeBase()

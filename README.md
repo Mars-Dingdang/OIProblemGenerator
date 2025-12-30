@@ -36,8 +36,16 @@ python src/main.py --build_kb
 Run the generator via command line:
 
 ```bash
-# Basic usage
+# Basic usage (uses default model Qwen3-235B-A22B-Thinking-2507)
 python src/main.py --difficulty "Codeforces 1500" --topic "Dynamic Programming"
+
+# Select a specific model
+python src/main.py --difficulty "Codeforces 2400" --topic "Graph Theory" --model "DeepSeek-V3.2-Thinking"
+
+# Available models:
+# - Qwen3-235B-A22B-Thinking-2507 (Default)
+# - DeepSeek-V3.2-Thinking
+# - DeepSeek-R1-0528
 
 # Specify output directory
 python src/main.py --difficulty "Luogu Blue" --topic "Graph Theory" --output_dir "./my_problems"
