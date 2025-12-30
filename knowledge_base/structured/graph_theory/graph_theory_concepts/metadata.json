@@ -1,0 +1,11 @@
+{
+    "name": "图论相关概念",
+    "category": "图论",
+    "complexity": "N/A",
+    "scenarios": "Foundation for all graph algorithms",
+    "extensions": [
+        "Graph representation",
+        "Graph properties",
+        "Special graphs"
+    ]
+}

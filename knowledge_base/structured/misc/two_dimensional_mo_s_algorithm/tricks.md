@@ -1,0 +1,7 @@
+- **Block size optimization**: Use $ B = \max\left(1, \frac{(n \cdot m)^{0.5}}{q^{0.25}}\right) $ to balance movement of pointers across dimensions.
+- **Coordinate normalization**: Always discretize input values when dealing with large or non-integer ranges.
+- **Four-dimensional sorting**: Queries are sorted by blocks in $ (x1, y1, x2, y2) $, enabling efficient transition between states.
+- **Row/column update abstraction**: Separate `mo_algo_row` and `mo_algo_column` functions simplify adding/removing entire lines.
+- **Odd-even optimization**: In some variants, reverse order for alternate blocks reduces cache misses and pointer movements.
+- **Value domain blocking**: For queries like k-th smallest, combine spatial Mo’s with value-range blocking to enable binary search over answers.
+- **Handle zero block length**: The calculated block size may be 0 due to large $ q $; always clamp to at least 1.

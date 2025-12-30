@@ -1,0 +1,17 @@
+{
+    "name": "霍夫曼树",
+    "category": "数据结构",
+    "complexity": {
+        "time": "O(n log n)",
+        "space": "O(n)"
+    },
+    "scenarios": [
+        "最优前缀编码",
+        "数据压缩",
+        "带权路径长度最小化"
+    ],
+    "extensions": [
+        "Huffman编码",
+        "自适应Huffman树"
+    ]
+}

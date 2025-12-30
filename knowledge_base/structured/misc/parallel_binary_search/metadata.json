@@ -1,0 +1,16 @@
+{
+    "name": "整体二分",
+    "category": "杂项",
+    "complexity": "O(T log n) where T is the time for one operation on the data structure (e.g., O(log n) for BIT).",
+    "scenarios": [
+        "Offline queries with answer monotonicity",
+        "Static/dynamic k-th smallest in interval",
+        "Range predecessor/successor",
+        "Constructing monotonic sequences with min operations"
+    ],
+    "extensions": [
+        "Dynamic updates (insert/delete)",
+        "Multi-dimensional (e.g., 2D range queries with BIT of BIT)",
+        "Parallelization (inherently parallel across queries)"
+    ]
+}

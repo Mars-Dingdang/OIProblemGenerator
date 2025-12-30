@@ -1,0 +1,18 @@
+{
+    "name": "二次剩余",
+    "category": "数学/数论",
+    "complexity": "O(log p) for basic operations, O(log p) for Cipolla/Tonelli-Shanks with random steps",
+    "scenarios": [
+        "Solving quadratic congruence x² ≡ a (mod p) for prime p",
+        "Determining if a number is a quadratic residue modulo p",
+        "Computing square roots modulo prime p",
+        "Used in cryptographic algorithms and primality testing"
+    ],
+    "extensions": [
+        "Legendre and Jacobi symbols for quadratic residue testing",
+        "Quadratic reciprocity law",
+        "Cipolla algorithm for square root modulo prime",
+        "Tonelli-Shanks algorithm for square root modulo prime",
+        "Generalization to k-th residues"
+    ]
+}

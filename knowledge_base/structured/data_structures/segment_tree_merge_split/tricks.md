@@ -1,0 +1,8 @@
+- **Tree merging via DFS**: Use post-order traversal to merge segment trees from children to parent, maintaining information like frequency maps.
+- **Difference on tree**: Convert path updates into four point updates using $+1$ at endpoints and $-1$ at LCA and its parent.
+- **Dynamic node allocation**: Always use dynamic opening with memory pooling or garbage collection to avoid MLE.
+- **Merge in place**: Merge one tree into another destructively (second tree is consumed), reducing overhead.
+- **Split only on ordered structures**: Splitting makes sense only when the underlying sequence is ordered (e.g., key-sorted in weight segment trees).
+- **Node recycling during merge**: When merging two trees and deleting one, explicitly free nodes to prevent conflicts during future splits.
+- **Complexity bound**: Total number of nodes created across all merges is $O(n \log n)$ for $n$ initial elements due to sparse structure.
+- **Use as persistent DS without persistence overhead**: Merging behaves like rollback-free persistence by structural sharing.

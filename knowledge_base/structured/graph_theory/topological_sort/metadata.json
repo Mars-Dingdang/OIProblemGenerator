@@ -1,0 +1,19 @@
+{
+    "name": "拓扑排序",
+    "category": "图论",
+    "complexity": {
+        "time": "O(V + E)",
+        "space": "O(V)"
+    },
+    "scenarios": [
+        "DAG上的动态规划",
+        "任务调度与依赖解析",
+        "关键路径分析(AOE网)",
+        "检测有向图中的环"
+    ],
+    "extensions": [
+        "Kahn算法",
+        "DFS实现",
+        "AOV网与AOE网应用"
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "name": "指数生成函数",
+    "category": "数学",
+    "complexity": "Varies by application",
+    "scenarios": "Counting combinatorial objects with labeled elements, such as permutations, set partitions, labeled trees/graphs, and problems involving distributions of labeled items.",
+    "extensions": "Polynomial exp/ln for set partitions and labeled structures, applications in probability and expectation calculations, combination with other generating function techniques."
+}

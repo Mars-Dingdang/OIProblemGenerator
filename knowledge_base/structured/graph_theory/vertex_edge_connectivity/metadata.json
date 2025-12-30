@@ -1,0 +1,22 @@
+{
+    "name": "点/边连通度",
+    "category": "图论",
+    "sub_category": "连通性相关",
+    "complexity": {
+        "edge_connectivity_max_flow": "O(|V|^2|E|min(|V|^2/3, |E|^1/2))",
+        "global_min_cut_stoer_wagner": "O(|V||E| + |V|^2 log|V|)",
+        "vertex_connectivity": "O(|V|^2|E|min(|V|^2/3, |E|^1/2))"
+    },
+    "references": [
+        "APIO2018 铁人两项",
+        "Codeforces #487 E. Tourists",
+        "SDOI2018 战略游戏",
+        "SDOI2015 寻宝游戏"
+    ],
+    "related_topics": [
+        "最大流最小割定理",
+        "Menger 定理",
+        "Stoer–Wagner 算法",
+        "圆方树"
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "name": "概率 DP",
+    "category": "动态规划",
+    "complexity": "Varies by problem, often O(n^2) or O(n*m)",
+    "scenarios": [
+        "Solving probability problems (forward DP)",
+        "Solving expectation problems (backward DP)",
+        "Problems with Markov processes",
+        "Games of chance",
+        "Random walks"
+    ],
+    "extensions": [
+        "Combined with state compression DP",
+        "Tree DP",
+        "Gaussian elimination for DP with aftereffects",
+        "Matrix exponentiation for linear recurrences"
+    ]
+}

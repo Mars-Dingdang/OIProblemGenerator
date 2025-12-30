@@ -1,0 +1,16 @@
+{
+    "name": "表达式求值",
+    "category": "杂项",
+    "complexity": "O(n)",
+    "scenarios": [
+        "Evaluate arithmetic expressions",
+        "Convert infix to postfix (Reverse Polish Notation)",
+        "Handle parentheses, unary and binary operators",
+        "Support operator precedence and associativity"
+    ],
+    "extensions": [
+        "Support for variables",
+        "Expression equivalence checking",
+        "Exponentiation and right-associative operators"
+    ]
+}

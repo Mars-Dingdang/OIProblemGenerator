@@ -1,0 +1,6 @@
+- **Block size tuning**: Use $ S = \frac{n}{\sqrt{m}} $ for optimal complexity $ O(n\sqrt{m}) $. When $ m \ll n $, using $ \sqrt{n} $ leads to suboptimal performance.
+- **Odd-even sorting**: For blocks with odd index, sort `r` in ascending order; for even index, sort `r` in descending order. This reduces unnecessary back-and-forth movement of the right pointer, typically improving speed by ~30%.
+- **Move order matters**: Always expand the interval before shrinking. Correct sequences: `(l--, r++, l++, r--)`, `(l--, r--, r++, l++)`, etc. Avoid cases where `l > r+1` occurs during transition to prevent negative counts.
+- **Avoid invalid comparisons**: In comparator, never return `true` for both `a < b` and `b < a`. Handle equal `r` values carefully — do not use `<=` or `>=` in sort conditions.
+- **Empty interval handling**: Initialize with `l=1, r=0` to represent empty interval, allowing safe expansion.
+- **Efficient update formulas**: Use algebraic simplifications like $ \binom{a+1}{2} - \binom{a}{2} = a $ to maintain counts in $ O(1) $ per move.

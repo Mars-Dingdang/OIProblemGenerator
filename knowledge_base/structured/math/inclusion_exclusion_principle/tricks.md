@@ -1,0 +1,12 @@
+- **Complementary counting**: Often easier to compute total minus invalid cases using inclusion-exclusion.
+- **Symmetry in binomial coefficients**: The alternating sum of binomial coefficients ∑(-1)^k C(n,k) equals 0 for n>0, which is key in proofs.
+- **Subset enumeration optimization**: Use bitmask iteration from 1 to (1<<n)-1; complexity O(2^n). For large n, consider meet-in-the-middle or FMT.
+- **Preprocessing intersections**: If intersection sizes depend only on subset size or specific properties, precompute them to avoid recomputation.
+- **Min-max inclusion-exclusion**: Transforms max/min problems into sums of mins/maxes, especially useful for expected values: E[max] = ∑ (-1)^{|T|-1} E[min over T].
+- **Generalized to k-th statistics**: Formulas exist for k-th max/min using binomial coefficients.
+- **Application to number theory**: Deriving Euler's totient φ(n) = n ∏ (1 - 1/p_i) is a classic inclusion-exclusion on prime divisors.
+- **DAG counting**: Relax "exactly j sources" to "at least j sources" via inclusion-exclusion to simplify DP.
+- **Infinite coin change with limits**: Transform bounded coin problem into unbounded via subtracting (limit+1)*value for selected coins.
+- **Tree DP with inclusion-exclusion**: For problems like "expected time to visit set S", compute f(T)=E[min hitting time for T] via tree Gaussian elimination, then combine via inclusion-exclusion.
+- **Using FMT (Fast Möbius Transform)**: To compute g(S) = ∑_{T⊆S} (-1)^{|S|-|T|} f(T) for all S in O(n 2^n) time.
+- **Dual form**: f(S) = ∑_{S⊆T} g(T) ⇒ g(S) = ∑_{S⊆T} (-1)^{|T|-|S|} f(T) (superset inclusion-exclusion).

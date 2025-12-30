@@ -1,0 +1,10 @@
+{
+    "name": "Stoer–Wagner Algorithm",
+    "category": "图论",
+    "complexity": "O(|V||E| + |V|^2 log|V|)",
+    "scenarios": "全局最小割问题，无源汇无向图最小割",
+    "extensions": [
+        "可用于动态图最小割近似",
+        "结合并查集优化实现"
+    ]
+}

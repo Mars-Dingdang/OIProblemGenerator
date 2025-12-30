@@ -1,0 +1,10 @@
+- **Splay on every access**: Always splay after find/insert/delete to maintain amortized performance.
+- **Lazy propagation with care**: When applying lazy tags in range operations (e.g., flip), ensure `push_down` is called before traversing children and before splaying the modified node.
+- **Virtual sentinels**: Add dummy nodes at both ends of the sequence (e.g., positions 0 and n+1) to simplify boundary handling in interval queries.
+- **Efficient build**: Construct a degenerate left-chain tree in O(n), then splay the first node to balance information propagation.
+- **Merge & split duality**: Use `loc` to bring boundaries into position, extract subtree, and reattach via `merge`, enabling treap-like behavior.
+- **Rank-based indexing**: Maintain subtree sizes (`sz`) to support order-statistic operations like k-th element or rank query.
+- **Avoid repeated comparisons**: Cache comparison results during descent (e.g., using `v > val[x]` as direction index).
+- **Zig-zig vs Zig-zag optimization**: The double rotation strategy reduces depth faster than single rotations, crucial for amortized bounds.
+- **Information maintenance**: Update `sz` on all structural changes; use `push_up` after modifying child pointers.
+- **Node reuse**: Instead of deletion, decrement count (`cnt`) and only remove when zero — supports duplicates efficiently.

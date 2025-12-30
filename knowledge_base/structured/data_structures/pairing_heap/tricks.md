@@ -1,0 +1,7 @@
+- **Two-pass merge in `delete_min`**: Always merge children in two passes — first pair up adjacent siblings (from left to right), then merge the resulting heaps from right to left. This order is crucial for amortized complexity.
+- **Lazy structure**: No need to maintain balance or auxiliary data like rank/size; rely on the self-adjusting behavior through careful merge ordering.
+- **Parent pointer for `decrease_key`**: Required to efficiently detach a node. Note that the `father` pointer may point to a left sibling if the node is not the first child.
+- **Efficient merging via sibling list**: The use of a singly linked list of siblings enables simple insertion and lazy evaluation during merges.
+- **Recursive `merges` guarantees correct order**: The recursion ensures that merging happens from right to left, which is essential for maintaining amortized performance.
+- **Use in median maintenance**: Can be combined with two heaps (e.g., max-min heap pair) for problems like running median, though pairing heap itself excels more in merge-heavy scenarios.
+- **Constant factor advantage**: Due to minimal overhead per node, pairing heaps often outperform Fibonacci heaps in practice despite similar theoretical bounds.

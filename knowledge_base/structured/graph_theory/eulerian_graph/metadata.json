@@ -1,0 +1,14 @@
+{
+    "name": "欧拉图",
+    "category": "图论",
+    "complexity": {
+        "time": "O(m)",
+        "space": "O(n + m)"
+    },
+    "scenarios": [
+        "寻找欧拉回路或欧拉通路",
+        "混合图定向问题",
+        "边覆盖路径构造"
+    ],
+    "algorithm": "Hierholzer"
+}

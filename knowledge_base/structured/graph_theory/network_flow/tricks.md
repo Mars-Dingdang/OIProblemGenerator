@@ -1,0 +1,5 @@
+- **Dinic's Algorithm** is commonly used for efficient maximum flow computation with complexity $O(V^2E)$.
+- Use **level graph** and **blocking flow** to optimize DFS-based augmenting paths.
+- **Scaling technique** can be applied in some variants to improve performance.
+- **Minimum cut** can be found after max flow by checking reachable nodes from the source in the residual graph.
+- **Flow networks** can model various problems like bipartite matching, assignment, and connectivity.

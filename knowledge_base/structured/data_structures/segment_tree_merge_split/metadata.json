@@ -1,0 +1,20 @@
+{
+    "name": "线段树合并 & 分裂",
+    "category": "数据结构",
+    "complexity": {
+        "merge": "O(n log n) total over all merges",
+        "split": "O(log n)"
+    },
+    "scenarios": [
+        "维护树上可重集信息",
+        "自下而上传递子树信息",
+        "动态权值线段树操作",
+        "支持分裂的集合操作"
+    ],
+    "extensions": [
+        "动态开点",
+        "内存回收",
+        "与LCA结合使用",
+        "差分优化树上修改"
+    ]
+}

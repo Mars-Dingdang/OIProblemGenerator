@@ -1,0 +1,7 @@
+- **Unary vs Binary Operator Detection**: Use a flag `may_be_unary` that is set to `true` after `'('` or at the start of expression, and reset after operands or `')'`.
+- **Negative Encoding for Unary Operators**: Encode unary `'+'` and `'-'` as negative values (e.g., `- '+'`) to distinguish from binary ones and assign higher precedence.
+- **Right-Associative Handling**: For right-associative operators (like exponentiation), only pop from stack when the top has **strictly greater** priority, not equal.
+- **Infix to Postfix Conversion**: The same algorithm can generate RPN by outputting numbers immediately and pushing/popping operators based on priority.
+- **Stack-Based Evaluation**: Reverse Polish Notation allows linear-time evaluation using a single operand stack.
+- **Operator Precedence Map**: Define a clear priority function to handle `+/-` vs `*/` correctly.
+- **Robust Token Parsing**: Skip whitespace and parse multi-digit numbers properly in one pass.

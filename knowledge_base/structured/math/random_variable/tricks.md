@@ -1,0 +1,7 @@
+- **Random Variable Classification**: Random variables are classified as discrete (countable range) or continuous (uncountable range). Discrete variables are described by probability mass functions (PMF), continuous by probability density functions (PDF).
+- **Indicator Function**: For an event A, the indicator random variable I_A equals 1 if A occurs, 0 otherwise. Useful for representing events as random variables.
+- **Distribution Function Properties**: The cumulative distribution function (CDF) F(x) = P(X ≤ x) is right-continuous, monotonically non-decreasing, with limits F(-∞)=0 and F(+∞)=1. Any function satisfying these is a valid CDF.
+- **Continuous Variable Nuance**: For continuous X, P(X = x) is often 0, but not always (e.g., mixed distributions). The probability density f(x) is the derivative of F(x) where it exists.
+- **Transformation Patterns**: To compute probabilities for intervals, use P(a < X ≤ b) = F(b) - F(a). For continuous variables, this equals the integral of the PDF over (a, b].
+- **Expectation via Indicator**: E[X] can be computed using indicator variables and linearity of expectation, especially for counting problems.
+- **Common Distributions**: Familiarize with standard distributions (Bernoulli, Binomial, Poisson, Uniform, Exponential, Normal) and their properties (mean, variance, CDF).

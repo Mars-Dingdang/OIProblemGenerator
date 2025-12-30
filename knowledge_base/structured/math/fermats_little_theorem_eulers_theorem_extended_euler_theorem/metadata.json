@@ -1,0 +1,18 @@
+{
+    "name": "费马小定理 & 欧拉定理 & 扩展欧拉定理",
+    "category": "数学/数论",
+    "complexity": {
+        "application": "O(log exponent) for modular exponentiation via fast pow"
+    },
+    "scenarios": [
+        "Modular exponentiation with large exponents",
+        "Primality testing (Fermat test)",
+        "Power tower (tetration) modulo m",
+        "Problems requiring reduction of exponents modulo φ(m)"
+    ],
+    "extensions": [
+        "Fermat's Little Theorem (special case for prime modulus)",
+        "Euler's Theorem (general modulus with gcd(a,m)=1)",
+        "Extended Euler Theorem (general modulus for any a, m)"
+    ]
+}

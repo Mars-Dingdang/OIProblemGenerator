@@ -1,0 +1,14 @@
+{
+    "name": "记忆化搜索",
+    "category": "动态规划",
+    "complexity": "O(state_space_size) (each state computed once)",
+    "scenarios": [
+        "Dynamic programming problems with overlapping subproblems",
+        "When recursion is natural and state transitions are clear",
+        "When iterative DP order is non-trivial or boundaries are complex"
+    ],
+    "extensions": [
+        "Top-down DP",
+        "Recursive DP with memoization"
+    ]
+}

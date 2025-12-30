@@ -1,0 +1,16 @@
+{
+    "name": "可持久化数据结构",
+    "category": "数据结构",
+    "complexity": "O(log n) per operation for most variants",
+    "scenarios": [
+        "需要访问历史版本的数据结构",
+        "离线查询不同时间点的状态",
+        "支持撤销操作或版本控制"
+    ],
+    "extensions": [
+        "persistent_segment_tree",
+        "persistent_treap",
+        "persistent_wblt",
+        "persistent_array"
+    ]
+}

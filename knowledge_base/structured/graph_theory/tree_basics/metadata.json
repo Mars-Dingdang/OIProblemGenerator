@@ -1,0 +1,13 @@
+{
+    "name": "树基础 (Tree Basics)",
+    "category": "图论 (Graph Theory)",
+    "complexity": "Traversal: O(n) time, O(n) space (or O(1) for Morris).",
+    "scenarios": "Tree traversal (DFS, BFS, Morris), calculating depth/parent, binary tree reconstruction, level-order output.",
+    "extensions": [
+        "Tree DP",
+        "LCA",
+        "Tree Diameter",
+        "Heavy-Light Decomposition",
+        "Centroid Decomposition"
+    ]
+}

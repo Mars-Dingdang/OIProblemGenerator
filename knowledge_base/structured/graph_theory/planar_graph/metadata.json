@@ -1,0 +1,21 @@
+{
+    "name": "平面图",
+    "category": "图论",
+    "complexity": {
+        "time_planarity_checking": "O(n)",
+        "space_planarity_checking": "O(n)"
+    },
+    "scenarios": [
+        "平面性判定",
+        "对偶图转换",
+        "最小割转最短路",
+        "稀疏图性质利用"
+    ],
+    "extensions": [
+        "极大平面图（平面三角剖分）",
+        "外平面图",
+        "Kuratowski定理与Wagner定理",
+        "四色定理",
+        "Fáry定理"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "name": "最小直径生成树",
+    "category": "图论",
+    "sub_category": "生成树问题",
+    "complexity": {
+        "time": "O(n^3)",
+        "space": "O(n^2)"
+    },
+    "prerequisites": [
+        "Floyd-Warshall算法",
+        "树的直径"
+    ],
+    "scenarios": [
+        "无向图中寻找直径最小的生成树",
+        "网络设计中最小化最长路径"
+    ],
+    "references": [
+        "https://riteme.site/blog/2018-6-18/mdst.html#_3",
+        "Uri Zwick. Directed Minimum Spanning Trees"
+    ]
+}

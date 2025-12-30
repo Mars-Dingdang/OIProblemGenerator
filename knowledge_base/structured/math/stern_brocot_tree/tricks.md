@@ -1,0 +1,10 @@
+- **Binary Search Tree Property**: The tree is a BST on rational numbers, enabling binary search for any target rational.
+- **Mediant Insertion**: Each new fraction is the mediant (a+c)/(b+d) of its neighbors, ensuring monotonicity and reduced form.
+- **Matrix Representation**: Each node corresponds to a 2x2 matrix S = [[b, a], [d, c]]; moving left multiplies by L = [[1,0],[1,1]], right by R = [[1,1],[0,1]].
+- **Continued Fraction Connection**: The path from root to fraction p/q is encoded by the continued fraction expansion of p/q (with trailing 1). Even-indexed terms are R moves, odd-indexed are L moves.
+- **Fast Location**: Use the continued fraction algorithm (Euclidean) for O(log min(p,q)) location instead of naive O(p+q) search.
+- **Best Approximations**: For irrationals, the tree provides a sequence of rational approximations (convergents of the continued fraction).
+- **Farey Sequence Relation**: The Farey sequence of order n is a subsequence of the Stern–Brocot tree (restricting denominators ≤ n).
+- **Calkin–Wilf Tree**: An alternative tree with simpler parent-child rules (p/q → p/(p+q) and (p+q)/q). Its level-order traversal yields the same fractions as Stern–Brocot but in bit-reversed order.
+- **Stern Diatomic Sequence**: Numerators of the Calkin–Wilf tree in level order satisfy a(2n)=a(n), a(2n+1)=a(n)+a(n+1).
+- **Ford Circles**: Each reduced fraction p/q corresponds to a circle tangent to the x-axis at (p/q,0). Two circles are tangent iff the fractions are Farey neighbors (bc-ad=±1).

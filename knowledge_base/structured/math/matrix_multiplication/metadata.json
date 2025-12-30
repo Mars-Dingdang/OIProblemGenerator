@@ -1,0 +1,19 @@
+{
+    "name": "矩阵乘法",
+    "category": "数学",
+    "complexity": "O(n^3) for naive multiplication, O(n^3 log k) for matrix exponentiation",
+    "scenarios": [
+        "Matrix exponentiation for linear recurrences (e.g., Fibonacci)",
+        "Graph path counting (fixed length)",
+        "Graph shortest paths with fixed edge count",
+        "Expression of linear transformations (e.g., segment tree with matrix tags)",
+        "Solving linear systems"
+    ],
+    "extensions": [
+        "Strassen algorithm (O(n^2.81))",
+        "Coppersmith–Winograd algorithm (theoretical)",
+        "Sparse matrix optimization",
+        "Modular arithmetic with large moduli",
+        "Block matrix multiplication for cache efficiency"
+    ]
+}

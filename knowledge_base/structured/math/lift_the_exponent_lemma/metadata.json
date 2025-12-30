@@ -1,0 +1,14 @@
+{
+    "name": "升幂引理 (Lift the Exponent Lemma)",
+    "category": "数学/数论",
+    "complexity": "O(log n) for computing ν_p",
+    "scenarios": [
+        "Computing the p-adic valuation of expressions like x^n ± y^n",
+        "Number theory problems involving divisibility and prime powers",
+        "Olympiad-level number theory"
+    ],
+    "extensions": [
+        "Generalized LTE for composite moduli",
+        "Applications in solving exponential Diophantine equations"
+    ]
+}

@@ -1,0 +1,7 @@
+- **Add a time dimension**: Treat each query as `(l, r, time)` where `time` is the number of modifications applied so far.
+- **Three-dimensional sorting**: Sort queries by block of `l`, then block of `r`, then `time`. Block size typically set to `n^(2/3)` for optimal complexity.
+- **Time movement**: When moving between queries, adjust the current state by applying or reverting modifications to align the time dimension.
+- **Efficient update handling**: When applying a modification at position `pos`, if `pos` lies within the current `[L, R]`, remove the old value and add the new one; otherwise, just update the array.
+- **Undo is symmetric**: Reverting a modification is equivalent to applying a reverse change.
+- **Block size optimization**: Theoretically optimal block size is `∛(2n²t/m)`, but in practice using `n^(2/3)` works well and simplifies implementation.
+- **Complexity trade-off**: Right endpoint is grouped into blocks (not sorted globally) to avoid high cost from either unordered right endpoints (`O(n)` per query) or unordered time (`O(t)` per query).

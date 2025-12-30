@@ -1,0 +1,23 @@
+{
+    "name": "ST 表",
+    "category": "数据结构",
+    "problem_type": "可重复贡献问题",
+    "preprocessing_complexity": "Θ(n log n)",
+    "query_complexity": "Θ(1)",
+    "modification_support": false,
+    "properties": [
+        "结合律",
+        "幂等性（x opt x = x）"
+    ],
+    "common_applications": [
+        "RMQ (Range Maximum/Minimum Query)",
+        "区间 GCD",
+        "区间按位与",
+        "区间按位或"
+    ],
+    "references": [
+        "Luogu P3865",
+        "SCOI2007 降雨量",
+        "[USACO07JAN] Balanced Lineup"
+    ]
+}

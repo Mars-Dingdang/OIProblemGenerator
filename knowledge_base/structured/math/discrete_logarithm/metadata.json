@@ -1,0 +1,15 @@
+{
+    "name": "离散对数",
+    "category": "数学",
+    "complexity": "O(√m) for BSGS, O(√m log m) with map",
+    "scenarios": [
+        "求解离散对数问题",
+        "密码学",
+        "模方程 a^x ≡ b (mod m)"
+    ],
+    "extensions": [
+        "扩展BSGS (exBSGS) 处理 a 与 m 不互质的情况",
+        "指数循环节",
+        "原根相关"
+    ]
+}

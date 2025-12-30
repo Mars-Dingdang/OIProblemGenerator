@@ -1,0 +1,7 @@
+- **Path Copying**: 在每次修改路径上的节点时，复制该节点以避免影响历史版本。这是可持久化的核心思想。
+- **Use Count Optimization**: 使用 `use` 数组记录每个节点的父节点数量。当 `use[p] <= 1` 时，可以直接修改而不复制，减少内存开销和常数。
+- **Lazy Propagation with Refresh**: 下放懒标记前必须调用 `refresh` 复制当前节点，防止污染其他版本；同时对子节点也需 `spread`（即带复制地打标记）。
+- **Merge/Split 可持久化**: 所有操作基于 `merge` 和 `split`，它们天然适合从上到下的路径复制策略，类似于可持久化线段树。
+- **Avoid Unnecessary Cloning**: 仅在真正修改节点信息或其子树结构变动时才进行复制，静态查询无需复制。
+- **Memory Pool & Recycling**: 使用栈 `tsh` 回收删除的节点编号，提升内存利用率，防止 MLE。
+- **Version Management**: 维护一个根数组 `root[]` 存储每个版本的根节点，便于回溯任意历史状态。

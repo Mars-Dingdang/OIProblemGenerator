@@ -1,0 +1,7 @@
+{
+    "name": "Amortized Analysis",
+    "category": "Algorithm Basics",
+    "complexity": "O(1) amortized per operation",
+    "scenarios": "Analyzing the average cost of a sequence of operations in data structures (e.g., dynamic arrays, stacks with multi-pop).",
+    "extensions": "Accounting method, potential method, aggregate analysis."
+}

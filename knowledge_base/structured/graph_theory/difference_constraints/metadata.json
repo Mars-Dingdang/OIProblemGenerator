@@ -1,0 +1,17 @@
+{
+    "name": "差分约束",
+    "category": "图论",
+    "sub_category": "最短路",
+    "complexity": "O(nm)",
+    "algorithm": "Bellman-Ford / SPFA",
+    "purpose": "求解形如 x_i - x_j ≤ c 的不等式组的可行性",
+    "scenarios": [
+        "判断差分约束系统是否有解",
+        "将不等式关系转化为图上最短路径问题",
+        "处理相对限制条件的调度或分配问题"
+    ],
+    "extensions": [
+        "结合二分答案处理最大化/最小化目标",
+        "对数变换处理乘法形式的约束（如 x_i / x_j ≤ c）"
+    ]
+}

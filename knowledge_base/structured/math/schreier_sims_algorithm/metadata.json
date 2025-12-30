@@ -1,0 +1,16 @@
+{
+    "name": "Schreier–Sims 算法",
+    "category": "数学",
+    "complexity": "时间复杂度 O(n^5) 或 O(n^4) 随机情况，空间复杂度 O(n^3)",
+    "scenarios": [
+        "计算有限置换群的阶数",
+        "成员判定（判断置换是否属于群）",
+        "计算群的基础轨道和稳定化子链",
+        "构建基和强生成集 (BSGS)"
+    ],
+    "extensions": [
+        "随机化版本 (Monte Carlo)",
+        "Jerrum 筛 (Jerrum filter) 优化强生成集大小到 O(n)",
+        "Schreier 树存储陪集代表系以节省空间"
+    ]
+}

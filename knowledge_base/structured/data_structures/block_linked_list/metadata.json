@@ -1,0 +1,18 @@
+{
+    "name": "块状链表",
+    "category": "数据结构",
+    "complexity": {
+        "query": "O(sqrt(n))",
+        "update": "O(sqrt(n))",
+        "split": "O(sqrt(n))"
+    },
+    "scenarios": [
+        "frequent insertions and deletions in sequences",
+        "problems where balanced trees are overkill",
+        "sqrt decomposition based data structures"
+    ],
+    "extensions": [
+        "rope from STL",
+        "persistent versions using balanced trees"
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Entringer Number",
+    "category": "Combinatorics",
+    "complexity": "O(n^2) for DP table",
+    "scenarios": "Counting alternating permutations starting with a given element, zigzag permutations, Euler zigzag numbers, combinatorial enumeration",
+    "extensions": "Seidel–Entringer–Arnold triangle, relation to Euler numbers (secant numbers) and tangent numbers, generating functions, connections to Bernoulli numbers"
+}

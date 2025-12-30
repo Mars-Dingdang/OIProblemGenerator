@@ -1,0 +1,7 @@
+- **2-coloring characterization**: A graph is bipartite if and only if it is 2-colorable. This provides a direct algorithmic approach via DFS/BFS coloring.
+- **Odd cycle detection**: A graph is bipartite if and only if it contains no odd-length cycles. During traversal, if an edge connects two vertices of the same color, an odd cycle exists.
+- **Component-wise processing**: Since coloring in one connected component does not affect others, process each component independently for correctness and efficiency.
+- **Use XOR for alternating colors**: Using `color ^ 1` simplifies switching between two colors (0 and 1) during traversal.
+- **Early termination**: As soon as a conflicting edge (same-colored adjacent vertices) is found, return `false` immediately — no need to continue.
+- **Applicable to both directed and undirected graphs**: For directed graphs, treat edges as undirected when checking bipartiteness unless direction affects adjacency.
+- **Preprocessing step for matching algorithms**: Bipartite checking is often the first step before applying algorithms like Hungarian or max-flow in bipartite graphs.

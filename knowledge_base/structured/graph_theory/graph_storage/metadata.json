@@ -1,0 +1,54 @@
+{
+    "name": "图的存储",
+    "category": "图论",
+    "complexity": {
+        "direct_edge_storage": {
+            "query_edge": "O(m)",
+            "traverse_out_edges": "O(m)",
+            "traverse_graph": "O(nm)",
+            "space": "O(m)"
+        },
+        "adjacency_matrix": {
+            "query_edge": "O(1)",
+            "traverse_out_edges": "O(n)",
+            "traverse_graph": "O(n^2)",
+            "space": "O(n^2)"
+        },
+        "adjacency_list": {
+            "query_edge": "O(d+(u)) or O(log(d+(u))) with sorting",
+            "traverse_out_edges": "O(d+(u))",
+            "traverse_graph": "O(n + m)",
+            "space": "O(m)"
+        },
+        "linked_forward_star": {
+            "query_edge": "O(d+(u))",
+            "traverse_out_edges": "O(d+(u))",
+            "traverse_graph": "O(n + m)",
+            "space": "O(m)"
+        }
+    },
+    "scenarios": {
+        "direct_edge_storage": [
+            "Kruskal's algorithm (edge sorting)",
+            "multiple graph constructions (e.g., original and reverse graph)"
+        ],
+        "adjacency_matrix": [
+            "dense graphs",
+            "fast edge existence queries (O(1))",
+            "graphs without multiple edges"
+        ],
+        "adjacency_list": [
+            "general-purpose storage",
+            "when sorting outgoing edges is needed"
+        ],
+        "linked_forward_star": [
+            "efficient memory usage",
+            "static graph representation (common in competitive programming)"
+        ]
+    },
+    "extensions": [
+        "weighted edges",
+        "directed/undirected graphs",
+        "dynamic graph modifications (adjacency list supports easily)"
+    ]
+}

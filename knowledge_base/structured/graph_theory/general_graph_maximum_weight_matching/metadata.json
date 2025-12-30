@@ -1,0 +1,18 @@
+{
+    "name": "一般图最大权匹配",
+    "category": "图论",
+    "sub_category": "匹配",
+    "complexity": {
+        "time": "O(n^3)",
+        "space": "O(n^2)"
+    },
+    "scenarios": [
+        "最大权完美匹配",
+        "最大权匹配（通过添加零权边转化为完美匹配）"
+    ],
+    "extensions": [
+        "带花树算法（Blossom Algorithm）",
+        "原始对偶方法（Primal-Dual Method）",
+        "顶标（Vertex Labeling）与等边（Equality Edge）"
+    ]
+}

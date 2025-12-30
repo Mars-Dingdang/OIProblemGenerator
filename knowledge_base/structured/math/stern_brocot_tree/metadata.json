@@ -1,0 +1,23 @@
+{
+    "name": "Stern–Brocot Tree",
+    "category": "Mathematics / Number Theory",
+    "complexity": {
+        "build": "O(n^2) for first n layers",
+        "find_naive": "O(p+q)",
+        "find_fast": "O(log(p+q))",
+        "find_continued_fraction": "O(log min(p,q))"
+    },
+    "scenarios": [
+        "Enumerating all positive reduced fractions",
+        "Binary search on rational numbers",
+        "Finding best rational approximations with bounded denominator",
+        "Encoding rational numbers as strings (Stern–Brocot number system)",
+        "Related to continued fractions and Farey sequences"
+    ],
+    "extensions": [
+        "Calkin–Wilf tree (alternative representation)",
+        "Farey sequences",
+        "Stern diatomic sequence",
+        "Ford circles"
+    ]
+}

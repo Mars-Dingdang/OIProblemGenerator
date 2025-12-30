@@ -1,0 +1,17 @@
+{
+    "name": "Prüfer Sequence",
+    "category": "图论",
+    "complexity": {
+        "construction": "O(n log n) with heap, O(n) linear method",
+        "reconstruction": "O(n log n) with heap, O(n) linear method"
+    },
+    "scenarios": [
+        "Proving Cayley's formula",
+        "Counting spanning trees in complete graphs",
+        "Counting ways to connect components in a graph"
+    ],
+    "extensions": [
+        "Cayley's formula: number of labeled trees on n nodes is n^(n-2)",
+        "Generalization to disconnected graphs: counting ways to add k-1 edges to connect k components"
+    ]
+}

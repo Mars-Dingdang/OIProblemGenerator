@@ -1,0 +1,7 @@
+{
+    "name": "杜教筛",
+    "category": "数学",
+    "complexity": "O(n^{2/3}) with linear precomputation of O(n^{2/3})",
+    "scenarios": "Computing prefix sums of arithmetic functions (e.g., Möbius μ, Euler φ) in sublinear time.",
+    "extensions": "Can be combined with other techniques like Dirichlet convolution, number theory blocking, and linear sieve precomputation."
+}

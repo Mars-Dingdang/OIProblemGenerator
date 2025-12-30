@@ -1,0 +1,18 @@
+{
+    "name": "划分树",
+    "category": "数据结构",
+    "complexity": {
+        "query": "O(log n)",
+        "construction": "O(n log n)",
+        "space": "O(n log n)"
+    },
+    "scenarios": [
+        "区间第K大查询",
+        "动态逆序对问题（在线）",
+        "强制在线场景下的高效替代方案"
+    ],
+    "extensions": [
+        "结合树状数组处理删除操作",
+        "用于多层块内贡献维护"
+    ]
+}

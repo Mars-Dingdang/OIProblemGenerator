@@ -1,0 +1,7 @@
+{
+    "name": "平衡三进制",
+    "category": "数学",
+    "complexity": "O(log n) for conversion",
+    "scenarios": "Representing numbers with digits -1, 0, 1; useful in some combinatorial and number theory problems",
+    "extensions": "Can be used for balanced numeral systems with other bases"
+}

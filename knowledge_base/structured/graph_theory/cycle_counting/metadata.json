@@ -1,0 +1,23 @@
+{
+    "name": "环计数问题",
+    "category": "图论",
+    "subtypes": [
+        "普通环计数",
+        "三元环计数",
+        "四元环计数"
+    ],
+    "complexity": {
+        "ordinary_cycle": "O(2^n * m)",
+        "triangle_cycle": "O(m√m)",
+        "quadrilateral_cycle": "O(m√m)"
+    },
+    "scenarios": [
+        "简单环计数",
+        "共边三元环统计",
+        "导出子图结构分析"
+    ],
+    "extensions": [
+        "菊花图计数",
+        "链状结构去重"
+    ]
+}

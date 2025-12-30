@@ -1,0 +1,8 @@
+- **Key Observation**: In LCS with n >> m, note that answer ≤ m. This allows using a greedy or optimized DP that focuses on matches.
+- **State Redefinition**: Instead of dp[i][j], use dp[j] with rolling array, and track previous diagonal value to handle matches.
+- **Complexity Reduction**: From O(nm) to O(nm) but with much smaller memory, or sometimes O(n log m) using binary search for LIS-like transformations.
+- **General Approach**: Look for bounds on answer or state values; if one dimension is much smaller, try to eliminate the larger dimension by iterating over it and updating states for the smaller dimension.
+- **Common Patterns**:
+  - When answer is small, state can be defined in terms of answer value.
+  - Use bitset for boolean DP to speed up transitions.
+  - Convert problem to another known problem (e.g., LCS to LIS when one sequence has distinct elements).

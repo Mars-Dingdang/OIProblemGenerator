@@ -1,0 +1,18 @@
+{
+    "name": "矩阵树定理",
+    "category": "图论",
+    "complexity": "O(n^3)",
+    "scenarios": [
+        "生成树计数",
+        "有向图根向/叶向树形图计数",
+        "带权图生成森林计数",
+        "Cayley公式证明",
+        "BEST定理基础"
+    ],
+    "extensions": [
+        "Prüfer序列",
+        "BEST定理",
+        "特征值形式",
+        "Cauchy-Binet公式应用"
+    ]
+}

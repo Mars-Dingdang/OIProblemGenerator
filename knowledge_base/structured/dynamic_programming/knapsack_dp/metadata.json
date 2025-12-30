@@ -1,0 +1,26 @@
+{
+    "name": "背包 DP",
+    "category": "动态规划",
+    "complexity": "O(n * m * K) for K-th best knapsack, O(n * m) for 0/1 knapsack",
+    "scenarios": "Resource allocation, subset selection with constraints, optimization with limited capacity",
+    "extensions": [
+        "0/1 knapsack",
+        "unbounded knapsack",
+        "bounded knapsack",
+        "group knapsack",
+        "dependency knapsack",
+        "K-th best knapsack"
+    ],
+    "references": [
+        "背包问题九讲 - 崔添翼",
+        "USACO07 DEC Charm Bracelet",
+        "Luogu P1616",
+        "Luogu P1776",
+        "Luogu P1833",
+        "HDU 5410",
+        "Luogu P1855",
+        "Luogu P1757",
+        "Luogu P1064",
+        "HDU 2639"
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "name": "Euler Tour Tree",
+    "category": "数据结构",
+    "complexity": {
+        "make_root": "O(log n)",
+        "insert": "O(log n)",
+        "delete": "O(log n)",
+        "connectivity_query": "O(log n)"
+    },
+    "scenarios": [
+        "Dynamic tree problems",
+        "Subtree information maintenance",
+        "Connectivity queries in dynamic forests"
+    ],
+    "extensions": [
+        "Can be combined with other data structures (Splay, Treap, B-trees)",
+        "Supports subtree aggregate queries like subtree min/max/sum"
+    ]
+}

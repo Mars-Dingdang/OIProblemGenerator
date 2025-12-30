@@ -1,0 +1,7 @@
+{
+    "name": "复杂度",
+    "category": "算法基础",
+    "complexity": "O(1), O(log n), O(n), O(n log n), O(n^2), O(2^n), etc.",
+    "scenarios": "Evaluating algorithm efficiency, estimating runtime for given input size, comparing algorithms",
+    "extensions": "Amortized analysis, probabilistic analysis, space complexity"
+}

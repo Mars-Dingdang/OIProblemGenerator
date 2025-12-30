@@ -1,0 +1,7 @@
+{
+    "name": "动态 DP",
+    "category": "动态规划",
+    "complexity": "O((n + q log n) log n) per update/query with heavy-light decomposition and segment tree",
+    "scenarios": "Tree DP with point/edge weight updates (e.g., maximum weighted independent set, maximum matching)",
+    "extensions": "Supports modifications on trees, generalized matrix multiplication (max-plus algebra), heavy-light decomposition, segment tree"
+}

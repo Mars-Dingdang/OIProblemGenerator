@@ -1,0 +1,92 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, fullpage}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{enumitem}
+
+\title{Editorial: Component Colors}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Core Observation}
+The key insight for solving the problem is recognizing that the connected components formed by edges with weight at most a threshold $w$ can be efficiently represented and queried using a Kruskal Reconstruction Tree (minimized for threshold queries). By processing edges in increasing order and constructing a tree where each internal node corresponds to a component merge (annotated with the merging edge's weight), we create a structure where the connected component for any threshold $w$ is represented by the highest ancestor node (in this tree) with weight $\leq w$. Additionally, storing distinct color counts per component via small-to-large set merging during tree construction enables efficient query resolution.
+
+\section{Solution}
+We solve the problem through the following steps:
+
+\subsection*{Preprocessing}
+\begin{enumerate}[leftmargin=*, noitemsep]
+    \item \textbf{Build Kruskal Reconstruction Tree (min tree):}
+        \begin{itemize}
+            \item Sort all $m$ edges by weight in increasing order.
+            \item Initialize a DSU to track connected components. Each component stores:
+            \begin{itemize}
+                \item Root node in the reconstruction tree.
+                \item A set of distinct colors (initially the node's color) and the distinct color count.
+            \end{itemize}
+            \item For each edge $(u, v)$ in sorted order (weight $w$):
+            \begin{itemize}
+                \item Find DSU representatives for $u$ and $v$. Skip if they are the same.
+                \item Create a new internal tree node $x$ with weight $w$.
+                \item Set $x$ as parent of the DSU roots for $u$ and $v$'s components.
+                \item Merge the color sets from both components into $x$ using small-to-large:
+                    \begin{itemize}
+                        \item Always merge the smaller set into the larger set.
+                        \item Update the distinct color count for $x$ as the size of the merged set.
+                    \end{itemize}
+                \item Update the DSU: merge components and set $x$ as the new root.
+            \end{itemize}
+        \end{itemize}
+    \item \textbf{Binary Lifting Setup:}
+        \begin{itemize}
+            \item The reconstruction tree has $N = 2n - 1$ nodes (original nodes + internal nodes).
+            \item For each node, precompute binary lifting table $\text{up}[i][j]$ (ancestor $2^j$ levels up).
+            \item Initialize: $\text{up}[i][0] = \text{parent}(i)$ for all nodes (leaves have $\text{parent} = -1$).
+            \item For $j = 1$ to $\text{MAX\_LOG}-1$:
+                \[
+                    \text{up}[i][j] = 
+                    \begin{cases} 
+                        \text{up}[\text{up}[i][j-1]][j-1] & \text{if } \text{up}[i][j-1] \neq -1 \\
+                        -1 & \text{otherwise}
+                    \end{cases}
+                \]
+        \end{itemize}
+\end{enumerate}
+
+\subsection*{Query Processing}
+For each query $(v, w)$:
+\begin{enumerate}[leftmargin=*, noitemsep]
+    \item Start at leaf node $v$.
+    \item Traverse up using binary lifting:
+        \begin{algorithmic}[1]
+            \STATE $u \gets v$
+            \FOR{$j = \text{MAX\_LOG}-1$ \textbf{downto} $0$}
+                \IF{$\text{up}[u][j] \neq -1 \ \mathbf{and}\ \text{weight}[\text{up}[u][j]] \leq w$}
+                    \STATE $u \gets \text{up}[u][j]$
+                \ENDIF
+            \ENDFOR
+            \RETURN $\text{distinct}[u]$ \COMMENT{Distinct color count at node $u$}
+        \end{algorithmic}
+\end{enumerate}
+
+\section{Complexity Analysis}
+\begin{itemize}
+    \item \textbf{Preprocessing:}
+        \begin{itemize}
+            \item Sorting edges: $O(m \log m)$.
+            \item Kruskal tree construction: $O(m \alpha(n))$ for DSU operations plus $O(n \log^2 n)$ for small-to-large set merging (each color moved $O(\log n)$ times at $O(\log n)$ cost per move).
+            \item Binary lifting table: $O(N \log N) = O(n \log n)$.
+            \item Total: $O(m \log m + n \log^2 n)$.
+        \end{itemize}
+    \item \textbf{Queries:}
+        \begin{itemize}
+            \item Each query: $O(\log n)$ via binary lifting.
+            \item $q$ queries: $O(q \log n)$.
+        \end{itemize}
+    \item \textbf{Overall:} $O(m \log m + n \log^2 n + q \log n)$.
+\end{itemize}
+
+\end{document}

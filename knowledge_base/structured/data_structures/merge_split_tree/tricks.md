@@ -1,0 +1,6 @@
+- **Key Observation**: A contiguous segment in a permutation is an interval where the difference between maximum and minimum equals its length minus one: `max - min == r - l`.
+- **Construction Trick**: Use an incremental method with a stack to maintain the current merge-split forest. At each step, try to attach the new element as a child or merge nodes based on continuity.
+- **Efficient Query for $L_i$**: Maintain a helper array $Q_j = \text{max}(j,i) - \text{min}(j,i) - (i-j)$ using a segment tree with lazy propagation. The left boundary of the current continuous segment is the smallest $j$ such that $Q_j = 0$.
+- **Monotonic Stack Optimization**: Use two monotonic stacks (one increasing, one decreasing) to track changes in min and max efficiently when extending the array, enabling range updates on the segment tree.
+- **Tree Encoding**: Internal nodes are either *merge points* (合点): children form increasing/decreasing sequences, or *split points* (析点): no proper sub-interval of children forms a contiguous segment.
+- **Query via LCA**: To find the minimal contiguous interval covering positions $[l,r]$, map them to leaves, compute their LCA in the merge-split tree, and use node type (merge/split) to determine output bounds.

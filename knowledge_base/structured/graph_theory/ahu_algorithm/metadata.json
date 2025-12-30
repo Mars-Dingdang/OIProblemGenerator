@@ -1,0 +1,23 @@
+{
+    "name": "AHU Algorithm",
+    "category": "图论",
+    "sub_category": "树上问题",
+    "complexity": {
+        "time_ahuprime": "O(n)",
+        "time_quicksort": "O(n log n)",
+        "time_naive": "O(n^2)"
+    },
+    "scenarios": [
+        "判断有根树同构",
+        "判断无根树同构（结合重心）"
+    ],
+    "extensions": [
+        "树哈希",
+        "括号序表示树结构"
+    ],
+    "references": [
+        "SPOJ-TREEISO",
+        "Luogu P6329",
+        "ZJOI2007 捉迷藏"
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "name": "动态规划基础",
+    "category": "动态规划",
+    "complexity": {
+        "LCS": "O(n*m)",
+        "LIS_naive": "O(n^2)",
+        "LIS_optimized": "O(n log n)"
+    },
+    "scenarios": [
+        "数字三角形",
+        "最长公共子序列 (LCS)",
+        "最长不下降/上升子序列 (LIS/LNDS)"
+    ],
+    "extensions": [
+        "DAG上的DP",
+        "位运算优化LCS",
+        "输出具体序列"
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "name": "最小环",
+    "category": "图论",
+    "complexity": {
+        "floyd": "O(n^3)",
+        "dijkstra_enum": "O(m(n + m) log n)",
+        "brute_force": "O(n^2 m)"
+    },
+    "scenarios": [
+        "无向图中寻找边权和最小的简单环（至少3个节点）",
+        "有向图最小环变种",
+        "动态删点/恢复点下的最小环查询"
+    ],
+    "extensions": [
+        "Floyd算法过程中利用中间点k的状态检测环",
+        "路径还原通过pos数组递归实现",
+        "可扩展至带删除与恢复操作的动态图问题"
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "name": "进位制",
+    "category": "数学",
+    "complexity": "O(n) for conversion where n is number of digits",
+    "scenarios": "Base conversion, bit manipulation, low-level representation, reading/writing numbers in different bases",
+    "extensions": "Arbitrary base conversion, negative base, balanced ternary, base conversion for fractions"
+}

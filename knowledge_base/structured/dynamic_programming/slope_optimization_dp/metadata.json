@@ -1,0 +1,7 @@
+{
+    "name": "斜率优化",
+    "category": "动态规划优化",
+    "complexity": "O(n) 或 O(n log n)",
+    "scenarios": "DP 转移方程可化为 b_i = min_{j<i} (y_j - k_i * x_j) 形式，其中 x_j, y_j 只与 j 有关，k_i 只与 i 有关。常用于代价为平方或其他凸函数的序列分段问题。",
+    "extensions": "二分/CDQ/平衡树维护凸包（当斜率或横坐标不单调时）"
+}

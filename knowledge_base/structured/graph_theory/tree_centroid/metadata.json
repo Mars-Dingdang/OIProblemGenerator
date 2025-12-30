@@ -1,0 +1,14 @@
+{
+    "name": "树的重心",
+    "category": "图论",
+    "complexity": "O(n)",
+    "scenarios": [
+        "树上分治",
+        "动态维护重心",
+        "子树重心查询"
+    ],
+    "extensions": [
+        "点分治",
+        "换根DP"
+    ]
+}

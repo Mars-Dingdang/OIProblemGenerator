@@ -1,0 +1,17 @@
+{
+    "name": "析合树",
+    "category": "数据结构",
+    "complexity": {
+        "construction": "O(n log n) or O(n)",
+        "query": "O(log n)"
+    },
+    "scenarios": [
+        "counting or querying contiguous intervals in permutations",
+        "solving problems involving intrinsic intervals",
+        "efficiently answering interval queries on value-continuous segments"
+    ],
+    "extensions": [
+        "LCA for querying minimal covering segment",
+        "RMQ and segment tree with lazy propagation for construction"
+    ]
+}

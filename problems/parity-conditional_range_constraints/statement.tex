@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, fullpage}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\section*{Problem Description}
+
+In the heart of the Quantum Lattice, $n$ entangled qubit resonators form the foundation of reality stabilization. Each resonator $i$ can exist in a \textit{ground state} ($0$) or an \textit{excited state} ($1$). The Lattice is protected by $m$ Chrono-Parity Safeguards—ancient protocols established by the Cosmic Weavers to prevent quantum decoherence.
+
+Each safeguard is defined by a tuple $(t, l, r, j)$:
+\begin{itemize}
+    \item \textbf{Type A} ($t = 0$): If the segment $[l, r]$ contains an \textit{even} number of resonators, then for every resonator $i \in [l, r]$, if $i$ is in ground state, resonator $j$ \textit{must} be excited.
+    \item \textbf{Type B} ($t = 1$): If the segment $[l, r]$ contains an \textit{odd} number of resonators, then for every resonator $i \in [l, r]$, if $j$ is excited, resonator $i$ \textit{must} be in ground state.
+\end{itemize}
+
+Your mission is to determine whether a valid state configuration exists that satisfies \textbf{all} active Chrono-Parity Safeguards. Note that a safeguard is only active when its parity condition holds; otherwise, it imposes no constraints.
+
+Formally, given integers $n$ and $m$, and $m$ quadruples $(t, l, r, j)$, decide if there exists a binary array $s[1..n]$ such that for every quadruple:
+\begin{itemize}
+    \item If $t = 0$ and $(r - l + 1) \equiv 0 \pmod{2}$, then $\forall i \in [l, r]$, $s[i] = 0 \implies s[j] = 1$.
+    \item If $t = 1$ and $(r - l + 1) \equiv 1 \pmod{2}$, then $\forall i \in [l, r]$, $s[j] = 1 \implies s[i] = 0$.
+\end{itemize}
+
+This problem lies at the intersection of constraint satisfaction and combinatorial parity logic, requiring deep structural insight to resolve within stringent computational limits.
+
+\section*{Input}
+
+The first line contains two integers $n$ and $m$ ($1 \leq n, m \leq 10^5$).
+
+Each of the next $m$ lines contains four integers $t$, $l$, $r$, $j$ ($t \in \{0, 1\}$, $1 \leq l \leq r \leq n$, $1 \leq j \leq n$), describing a Chrono-Parity Safeguard.
+
+\section*{Output}
+
+Print \texttt{YES} if a valid state assignment exists, otherwise print \texttt{NO}.
+
+\section*{Constraints}
+
+\begin{itemize}
+    \item $1 \leq n, m \leq 10^5$
+    \item $1 \leq l \leq r \leq n$
+    \item $1 \leq j \leq n$
+    \item $t \in \{0, 1\}$ for all safeguards
+\end{itemize}
+
+\section*{Sample}
+
+\textbf{Sample Input:}
+\begin{verbatim}
+2 2
+0 1 2 1
+0 1 2 2
+\end{verbatim}
+
+\textbf{Sample Output:}
+\begin{verbatim}
+YES
+\end{verbatim}
+
+\textbf{Sample Input:}
+\begin{verbatim}
+2 3
+0 1 2 1
+0 1 2 2
+1 1 1 2
+\end{verbatim}
+
+\textbf{Sample Output:}
+\begin{verbatim}
+NO
+\end{verbatim}
+
+\end{document}

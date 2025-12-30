@@ -1,0 +1,28 @@
+{
+    "name": "Self-Adjusting Top Tree",
+    "category": "数据结构",
+    "complexity": {
+        "time": {
+            "access": "O(log n) amortized",
+            "link_cut": "O(log n) amortized",
+            "query_update": "O(log n) amortized"
+        },
+        "space": "O(n)"
+    },
+    "scenarios": [
+        "Fully dynamic forest maintenance",
+        "Path and subtree queries/updates on trees",
+        "Link-cut operations with complex aggregations",
+        "Non-local search in dynamic trees"
+    ],
+    "extensions": [
+        "Supports both path and subtree lazy propagation",
+        "Based on Splay Tree with extended node structure (three children)",
+        "Uses Compress and Rake operations for tree contraction"
+    ],
+    "references": [
+        "Self-Adjusting Top Trees - Tarjan and Werneck (2005)",
+        "Dynamic trees as search trees via euler tours - Robert E. Tarjan",
+        "Randomized fully dynamic graph algorithms - Henzinger et al."
+    ]
+}

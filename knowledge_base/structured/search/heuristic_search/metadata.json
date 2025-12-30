@@ -1,0 +1,7 @@
+{
+    "name": "启发式搜索",
+    "category": "搜索",
+    "complexity": "Depends on heuristic function; often reduces exponential search space.",
+    "scenarios": "Optimization problems like knapsack, pathfinding, puzzle solving where brute force is too slow.",
+    "extensions": "A* search, IDA*, best-first search, beam search."
+}

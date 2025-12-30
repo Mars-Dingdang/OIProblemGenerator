@@ -1,0 +1,6 @@
+- **Key observation**: The expectation equations can be simplified using algebraic manipulation by isolating the recursive term $ f(u) $ or $ g(u) $ on one side.
+- For unit edge weights, $ f(u) = \sum_{v \in \text{subtree}(u)} \deg(v) = 2 \cdot (\text{size of subtree}) - 1 $, because each edge contributes twice to degrees except the parent edge.
+- Use post-order DFS to compute $ f(u) $ (from child to parent), then pre-order or top-down to compute $ g(u) $ (from parent to child).
+- Optimization: After deriving $ g(u) = g(p_u) + f(p_u) - f(u) $, you can compute $ g $ values in linear time without resumming siblings.
+- Handle root specially: $ g(\text{root}) = 0 $, and $ f(\text{leaf}) = w(\text{parent}, \text{leaf}) $.
+- In unweighted trees, $ f(u) $ equals the total number of edges traversed in all paths from $ u $'s subtree nodes upward — this gives combinatorial intuition.

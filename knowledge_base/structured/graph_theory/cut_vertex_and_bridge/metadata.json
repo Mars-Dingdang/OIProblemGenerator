@@ -1,0 +1,18 @@
+{
+    "name": "割点和桥",
+    "category": "图论",
+    "sub_category": "连通性相关",
+    "complexity": {
+        "time": "O(n + m)",
+        "space": "O(n)"
+    },
+    "scenarios": [
+        "求无向图的割点",
+        "求无向图的桥（割边）",
+        "处理点双连通分量和边双连通分量问题"
+    ],
+    "extensions": [
+        "可扩展至有重边的图中求桥",
+        "可用于构造块状树（block-cut tree）或边双缩点"
+    ]
+}

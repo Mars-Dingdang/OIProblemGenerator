@@ -1,0 +1,19 @@
+{
+    "name": "Boyer–Moore 算法",
+    "category": "字符串",
+    "complexity": {
+        "preprocessing": "O(m + σ) for bad character rule, O(m) for good suffix rule",
+        "searching": "Average O(n/m), worst O(n*m) (but often sublinear in practice)"
+    },
+    "scenarios": [
+        "Single pattern matching in large texts",
+        "When alphabet is large (e.g., ASCII, Unicode)",
+        "When pattern is long"
+    ],
+    "extensions": [
+        "Horspool simplification",
+        "Sunday algorithm (Quick Search)",
+        "Galil rule for multiple matches",
+        "Apostolico–Giancarlo algorithm"
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "name": "位运算",
+    "category": "数学",
+    "complexity": "O(1) per operation",
+    "scenarios": [
+        "Efficient arithmetic operations",
+        "Set representation (bitmask)",
+        "Direct bit manipulation tasks",
+        "Optimizing low-level computations"
+    ],
+    "extensions": [
+        "Bitset for large sets",
+        "Built-in GCC functions (__builtin_popcount, etc.)",
+        "Bitmask DP"
+    ]
+}

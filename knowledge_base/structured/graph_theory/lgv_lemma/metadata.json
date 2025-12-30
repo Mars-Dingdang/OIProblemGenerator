@@ -1,0 +1,18 @@
+{
+    "name": "Lindström–Gessel–Viennot Lemma",
+    "category": "图论",
+    "subcategory": "路径计数, 行列式, 不相交路径",
+    "applicable_graph": "有向无环图 (DAG)",
+    "time_complexity": "O(n^3) for determinant computation via Gaussian elimination",
+    "preconditions": [
+        "有向无环图",
+        "起点集合 A 和终点集合 B 大小均为 n",
+        "路径不相交（顶点不重复）"
+    ],
+    "references": [
+        "CF348D Turtles",
+        "HDU 5852 Intersection is not allowed!",
+        "「北京省选集训 2019」生成树计数",
+        "AGC051D C4"
+    ]
+}

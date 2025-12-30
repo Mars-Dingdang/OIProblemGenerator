@@ -1,0 +1,7 @@
+{
+    "name": "公平组合游戏 (Impartial Combinatorial Game)",
+    "category": "数学",
+    "complexity": "状态图 O(|V|+|E|)，SG 函数计算 O(状态数×后继数)，Nim 和 O(n)",
+    "scenarios": "Nim 游戏及其变体（Bachet, Moore's Nim-k, 阶梯 Nim, Fibonacci Nim, Wythoff 游戏），翻硬币游戏，公平博弈问题",
+    "extensions": "Sprague–Grundy 定理，SG 函数，Nim 数，反常规则 (misère)，非公平博弈 (partizan game)"
+}

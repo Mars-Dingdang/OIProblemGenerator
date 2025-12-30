@@ -1,0 +1,7 @@
+{
+    "name": "字符串基础",
+    "category": "字符串",
+    "complexity": "Varies per operation",
+    "scenarios": "Basic string manipulation, input/output, comparison, searching, concatenation, copying",
+    "extensions": "String algorithms (e.g., KMP, hashing), string processing in contests"
+}

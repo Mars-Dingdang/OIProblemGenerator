@@ -1,0 +1,7 @@
+{
+    "name": "对角化",
+    "category": "数学/线性代数",
+    "complexity": "O(n^3) for eigendecomposition",
+    "scenarios": "Simplifying matrix powers, solving linear systems, spectral methods, quantum mechanics, principal component analysis (PCA).",
+    "extensions": "Jordan normal form for non-diagonalizable matrices, Schur decomposition, singular value decomposition (SVD)."
+}

@@ -1,0 +1,7 @@
+{
+    "name": "符号化方法",
+    "category": "数学",
+    "complexity": "Varies by construction (e.g., O(n log n) for generating functions)",
+    "scenarios": "Combinatorial enumeration, generating function manipulation, counting problems (e.g., partitions, trees, subsets)",
+    "extensions": "Unlabeled/labeled systems, restricted constructions (SEQ_k, MSET_k, PSET_k, CYC_k), applications to integer partitions, tree counting, and combinatorial designs"
+}

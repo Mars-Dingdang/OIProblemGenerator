@@ -1,0 +1,21 @@
+{
+    "name": "哈希表",
+    "category": "数据结构",
+    "complexity": {
+        "insert": "O(1) expected",
+        "query": "O(1) expected",
+        "worst_case": "O(n)"
+    },
+    "scenarios": [
+        "快速键值查找",
+        "计数",
+        "去重",
+        "缓存"
+    ],
+    "extensions": [
+        "拉链法",
+        "闭散列法",
+        "双哈希",
+        "字符串哈希"
+    ]
+}

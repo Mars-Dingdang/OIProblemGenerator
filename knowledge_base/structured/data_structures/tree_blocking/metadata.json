@@ -1,0 +1,18 @@
+{
+    "name": "树分块",
+    "category": "数据结构",
+    "complexity": {
+        "preprocessing": "O(n√n + nc/32)",
+        "query": "O(√n + c/32)",
+        "total": "O((n + m)(√n + c/32))"
+    },
+    "scenarios": [
+        "树上路径查询",
+        "颜色统计（如数颜色个数、求mex）",
+        "与bitset结合优化信息合并"
+    ],
+    "extensions": [
+        "可用于树上莫队",
+        "支持带修问题的扩展较少，通常有更优做法"
+    ]
+}

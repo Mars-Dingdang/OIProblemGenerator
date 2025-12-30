@@ -1,0 +1,17 @@
+{
+    "name": "AA Tree",
+    "category": "数据结构",
+    "complexity": {
+        "insert": "O(log n)",
+        "delete": "O(log n)",
+        "search": "O(log n)"
+    },
+    "scenarios": [
+        "有序数据的高效存储与检索",
+        "替代红黑树以简化实现"
+    ],
+    "extensions": [
+        "基于2-3树模拟",
+        "使用level代替颜色标记"
+    ]
+}

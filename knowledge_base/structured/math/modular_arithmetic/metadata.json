@@ -1,0 +1,20 @@
+{
+    "name": "模算术 (Modular Arithmetic)",
+    "category": "数学 (Mathematics)",
+    "complexity": "O(1) for basic operations; O(log b) for exponentiation",
+    "scenarios": [
+        "Modular operations in number theory problems",
+        "Handling large numbers by modulo",
+        "Implementing modular integer classes",
+        "Optimizing modular multiplication for large moduli"
+    ],
+    "extensions": [
+        "Modular inverse",
+        "Modular division",
+        "Modular factorial and binomial coefficients",
+        "Modular square root",
+        "Modular logarithm",
+        "Modular exponentiation",
+        "Chinese Remainder Theorem"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "name": "k 短路",
+    "category": "图论",
+    "complexity": {
+        "time_a_star": "O(k * m * log(k * m))",
+        "time_persistent_heap": "O(m log m + k log k)",
+        "space_a_star": "O(k * m)"
+    },
+    "scenarios": [
+        "求有向图中从起点 s 到终点 t 的第 k 短路径（允许重复点和边）",
+        "适用于路径可重复经过的 k 最短途径问题"
+    ],
+    "extensions": [
+        "A* 搜索",
+        "可持久化可并堆（左偏树或随机堆）",
+        "最短路树与偏离边建模"
+    ],
+    "prerequisites": [
+        "Dijkstra 算法",
+        "A* 算法",
+        "可持久化可并堆"
+    ]
+}

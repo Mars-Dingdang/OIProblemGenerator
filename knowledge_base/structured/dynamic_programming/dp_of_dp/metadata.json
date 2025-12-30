@@ -1,0 +1,11 @@
+{
+    "name": "DP 套 DP",
+    "category": "动态规划",
+    "complexity": "Varies; depends on inner DFA state count and outer DP dimension.",
+    "scenarios": "Sequence counting, probability/expectation problems where inner DP can be abstracted as a DFA.",
+    "extensions": [
+        "State compression of inner DP",
+        "DFA minimization",
+        "Handling large state spaces via BFS generation"
+    ]
+}

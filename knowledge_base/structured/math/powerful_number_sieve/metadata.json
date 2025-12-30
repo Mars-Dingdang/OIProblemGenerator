@@ -1,0 +1,7 @@
+{
+    "name": "Powerful Number 筛",
+    "category": "数学/数论",
+    "complexity": "时间复杂度 O(√n log n) 或 O(n^(2/3))，空间复杂度 O(√n)",
+    "scenarios": "用于求积性函数的前缀和，要求存在一个易求前缀和的积性函数 g 满足对于素数 p 有 g(p) = f(p)",
+    "extensions": "常与杜教筛结合使用以计算 G(n)，适用于特定积性函数前缀和问题，如 Luogu P5325 和 LOJ #6053"
+}

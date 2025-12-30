@@ -1,0 +1,24 @@
+{
+    "name": "可持久化线段树",
+    "also_known_as": [
+        "主席树",
+        "函数式线段树"
+    ],
+    "category": "数据结构",
+    "sub_category": "可持久化数据结构",
+    "time_complexity": {
+        "update": "O(log n)",
+        "query": "O(log n)"
+    },
+    "space_complexity": "O(n log n)",
+    "scenarios": [
+        "区间第k小查询",
+        "历史版本回溯",
+        "函数式编程支持",
+        "持久化并查集实现"
+    ],
+    "extensions": [
+        "可持久化并查集",
+        "带权值的持久化结构"
+    ]
+}

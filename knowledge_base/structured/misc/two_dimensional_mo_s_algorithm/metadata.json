@@ -1,0 +1,16 @@
+{
+    "name": "二维莫队",
+    "category": "杂项",
+    "sub_category": "离线算法",
+    "time_complexity": "Θ(n²·q^(1/4) + q log q)",
+    "scenarios": [
+        "二维区间查询",
+        "子矩阵统计",
+        "离线处理二维数据"
+    ],
+    "extensions": [
+        "回滚莫队",
+        "值域分块",
+        "奇偶优化排序"
+    ]
+}

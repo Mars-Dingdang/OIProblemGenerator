@@ -1,0 +1,18 @@
+{
+    "name": "行列式",
+    "category": "数学/线性代数",
+    "complexity": "O(n^3) using Gaussian elimination; factorial O(n!) by definition",
+    "scenarios": [
+        "Linear algebra computations",
+        "Checking matrix invertibility",
+        "Computing eigenvalues",
+        "Volume scaling factor of linear transformations",
+        "Solving linear systems via Cramer's rule"
+    ],
+    "extensions": [
+        "Modular determinant",
+        "Determinant of sparse matrices",
+        "Determinant of block matrices",
+        "Permanent (similar but without sign)"
+    ]
+}

@@ -1,0 +1,6 @@
+- **Two-Pass DFS**: First pass (`dfsd`) computes the longest and second-longest paths within each subtree. Second pass (`dfsu`) propagates the best path outside the subtree via parent.
+- **Avoiding Overlap**: When updating `up` values, use `d2[parent]` instead of `d1[parent]` if the child lies on the primary longest path to prevent overlapping paths.
+- **Center Uniqueness**: The center is unique unless two nodes yield the same minimal longest path length — in which case they are adjacent and both valid centers.
+- **Diameter Connection**: Since the center lies on the diameter, you can first find the diameter (via two BFS/DFS), then scan along it to find the point minimizing the maximum distance.
+- **Optimal Merging**: When connecting two trees, linking their centers minimizes the resulting diameter.
+- **Binary Search Alternative**: In some problems (e.g., minimizing maximum distance), binary search on answer + greedy validation may be used instead.

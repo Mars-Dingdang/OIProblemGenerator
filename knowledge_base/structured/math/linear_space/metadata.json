@@ -1,0 +1,21 @@
+{
+    "name": "线性空间",
+    "category": "数学",
+    "subcategory": "线性代数",
+    "complexity": "N/A (mathematical foundation)",
+    "scenarios": [
+        "Vector space theory",
+        "Linear independence",
+        "Span, basis, dimension",
+        "Subspaces, direct sum",
+        "Linear transformations",
+        "Solving linear systems"
+    ],
+    "extensions": [
+        "Linear basis",
+        "Gaussian elimination",
+        "Matrix rank",
+        "Determinant",
+        "Eigenvalues/eigenvectors"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "name": "字符串匹配",
+    "category": "字符串",
+    "complexity": {
+        "brute_force": {
+            "best": "O(n)",
+            "worst": "O(mn)",
+            "average": "O(n) (if pattern has at least two different characters)"
+        },
+        "hash": "O(n+m)",
+        "kmp": "O(n+m)"
+    },
+    "scenarios": [
+        "单串匹配",
+        "多串匹配",
+        "匹配任意后缀"
+    ],
+    "extensions": [
+        "字符串哈希",
+        "前缀函数与KMP算法",
+        "AC自动机",
+        "后缀数组",
+        "后缀自动机"
+    ]
+}

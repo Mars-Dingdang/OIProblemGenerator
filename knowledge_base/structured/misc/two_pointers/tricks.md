@@ -1,0 +1,7 @@
+- **Floyd's Tortoise and Hare**: Use two pointers moving at different speeds to detect cycles in linked lists. The fast pointer moves two steps per iteration, the slow moves one. If they meet, there's a cycle.
+- **Finding Cycle Entry**: After detecting a cycle, reset one pointer to the start and move both one step at a time. The meeting point is the cycle's entry.
+- **Sliding Window**: For problems like "subarray with product less than K" or "longest subarray with absolute difference within limit", maintain a window with two pointers (left and right) and adjust based on conditions.
+- **Two Sum in Sorted Array**: Use one pointer at the start and one at the end, moving inward based on the sum compared to the target.
+- **Three Sum**: Sort the array, fix one element, and use two pointers to find pairs that sum to the negative of the fixed element.
+- **Offline vs. Online**: Offline algorithms process all queries at once, often enabling optimizations like sorting queries or using divide-and-conquer (e.g., CDQ, Mo's algorithm). Online algorithms process queries one by one as they arrive.
+- **Problem Transformation**: Many problems can be reduced to two-pointer scenarios by sorting or using auxiliary data structures (e.g., hash maps for character matching).

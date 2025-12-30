@@ -1,0 +1,7 @@
+{
+    "name": "扩展卢卡斯定理 (Extended Lucas Theorem)",
+    "category": "数学 / 数论",
+    "complexity": "预处理 O(√m + Σ p_i^α_i), 查询 O(log m + Σ log_{p_i} n)",
+    "scenarios": "计算组合数 C(n, k) mod m 当 m 不是质数时",
+    "extensions": "可用于任意模数 m 的组合数取模，支持大 n, k"
+}

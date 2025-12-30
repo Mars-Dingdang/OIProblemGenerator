@@ -1,0 +1,18 @@
+{
+    "name": "线性映射",
+    "category": "数学",
+    "subcategory": "线性代数",
+    "complexity": "O(n^3) for matrix multiplication",
+    "scenarios": [
+        "Representing linear transformations",
+        "Basis change",
+        "Coordinate transformations",
+        "Kernel and image analysis"
+    ],
+    "extensions": [
+        "Linear transformation",
+        "Matrix representation",
+        "Transition matrix",
+        "Kernel and image spaces"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "name": "二进制集合操作",
+    "category": "数学",
+    "complexity": {
+        "subset_iteration": "O(2^popcount(m)) for iterating subsets of a mask m",
+        "all_submasks": "O(3^n) for iterating all submasks of all masks of length n"
+    },
+    "scenarios": [
+        "Bitmask DP",
+        "Set operations via bitwise operations",
+        "Subset enumeration",
+        "Modulo power of two",
+        "Power of two detection"
+    ],
+    "extensions": [
+        "Gosper's Hack for iterating subsets of fixed size",
+        "Iterating supersets",
+        "Bitmask DP optimizations (SOS DP)"
+    ]
+}

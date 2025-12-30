@@ -1,0 +1,9 @@
+- **Distinct substrings count**: Sum over all states `(len[v] - len[link[v]])`. This counts all substrings represented by each state.
+- **Terminal states**: After construction, mark all states on the suffix link path from `last` to the root as terminal (accepting suffixes).
+- **Occurrence positions**: The `endpos` set size for a state can be computed via DP on the suffix link tree (each state's count = sum of children's counts + (1 if it's a prefix state)).
+- **Longest common substring of two strings**: Build SAM for first string, then run the second string through it while tracking current length; answer is max length matched.
+- **Lexicographically k-th substring**: Perform DP on SAM DAG to count paths from each state, then DFS to find the k-th path.
+- **Generalized SAM**: Insert multiple strings separated by unique delimiters; SAM will represent all substrings of all strings.
+- **Space optimization**: For small alphabet (e.g., 26), use `int next[26]` instead of `map` for O(1) transitions.
+- **Avoiding clone in case 3**: The clone state splits the `endpos` set; only clone when `len[q] > len[p] + 1` to keep SAM minimal.
+- **Linear time proof**: Each `sam_extend` creates at most 2 states, and total transitions updated is O(n) due to monotonic movement of `p` along suffix links.

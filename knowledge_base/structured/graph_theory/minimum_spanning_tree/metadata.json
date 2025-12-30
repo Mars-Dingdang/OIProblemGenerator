@@ -1,0 +1,26 @@
+{
+    "name": "最小生成树",
+    "category": "图论",
+    "algorithms": [
+        "Kruskal",
+        "Prim",
+        "Boruvka"
+    ],
+    "complexity": {
+        "Kruskal": "O(m log m)",
+        "Prim (heap)": "O((n + m) log n)",
+        "Prim (brute force)": "O(n^2 + m)",
+        "Boruvka": "O(E log V)"
+    },
+    "scenarios": [
+        "稀疏图",
+        "稠密图",
+        "生成森林",
+        "唯一性判定",
+        "次小生成树"
+    ],
+    "extensions": [
+        "最小生成树唯一性",
+        "非严格/严格次小生成树"
+    ]
+}

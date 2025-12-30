@@ -1,0 +1,21 @@
+{
+    "name": "并查集",
+    "category": "数据结构",
+    "complexity": {
+        "average": "O(α(n)) per operation",
+        "worst_without_heuristic": "O(m log n)",
+        "worst_without_path_compression": "O(m log n)"
+    },
+    "scenarios": [
+        "Dynamic connectivity",
+        "Union-find problems",
+        "Component merging",
+        "Cycle detection"
+    ],
+    "extensions": [
+        "带权并查集 (Weighted DSU)",
+        "带删除并查集 (DSU with deletion)",
+        "可持久化并查集 (Persistent DSU)",
+        "种类并查集/拓展域 (Types/Extended domain DSU)"
+    ]
+}

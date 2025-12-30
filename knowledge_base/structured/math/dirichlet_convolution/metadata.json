@@ -1,0 +1,12 @@
+{
+    "name": "Dirichlet 卷积",
+    "category": "数学",
+    "complexity": "O(n log n) 一般情形；O(n log log n) 若 g 为积性函数；O(n) 若结果 h 为积性函数",
+    "scenarios": "数论函数运算，积性函数前缀和（如杜教筛），莫比乌斯反演，约数和/个数函数推导",
+    "extensions": [
+        "Dirichlet 生成函数",
+        "Euler 乘积",
+        "积性函数线性筛",
+        "Dirichlet 前缀和/差分"
+    ]
+}

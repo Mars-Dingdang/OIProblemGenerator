@@ -1,0 +1,22 @@
+{
+    "name": "多项式与生成函数",
+    "category": "数学",
+    "complexity": {
+        "multiplication": "O(n log n) via FFT",
+        "inversion": "O(n log n)",
+        "composition": "O(n^2) or O((n log n)^1.5)",
+        "gcd": "O(n log^2 n) via Half-GCD"
+    },
+    "scenarios": [
+        "Generating function manipulation",
+        "Polynomial arithmetic",
+        "Combinatorial counting",
+        "Formal power series operations"
+    ],
+    "extensions": [
+        "Formal derivative/integral",
+        "Multi-point evaluation/interpolation",
+        "Modular polynomial arithmetic",
+        "Lagrange inversion"
+    ]
+}

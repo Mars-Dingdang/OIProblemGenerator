@@ -1,0 +1,19 @@
+{
+    "name": "双指针",
+    "category": "杂项",
+    "complexity": "O(n)",
+    "scenarios": [
+        "Detect cycles in linked lists (Floyd's cycle detection)",
+        "Find subarrays with product less than K",
+        "Find longest subarray with absolute difference within limit",
+        "Match longest word by deleting characters",
+        "Two Sum II (sorted array)",
+        "Three Sum"
+    ],
+    "extensions": [
+        "Offline algorithms",
+        "CDQ divide and conquer",
+        "Overall binary search",
+        "Mo's algorithm"
+    ]
+}

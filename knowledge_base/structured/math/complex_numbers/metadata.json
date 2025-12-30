@@ -1,0 +1,19 @@
+{
+    "name": "复数",
+    "category": "数学",
+    "complexity": "O(1) per basic operation",
+    "scenarios": [
+        "Coordinate transformations (polar, cylindrical, spherical)",
+        "FFT (Fast Fourier Transform)",
+        "Geometry rotations",
+        "Solving polynomial equations",
+        "Signal processing"
+    ],
+    "extensions": [
+        "Euler's formula",
+        "Roots of unity",
+        "Complex exponentiation",
+        "Complex logarithms",
+        "Complex trigonometric functions"
+    ]
+}

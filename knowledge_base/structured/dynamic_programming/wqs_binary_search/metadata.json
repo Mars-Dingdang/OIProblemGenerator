@@ -1,0 +1,11 @@
+{
+    "name": "WQS 二分",
+    "category": "动态规划优化",
+    "complexity": "O(T(n) log L)",
+    "scenarios": "带数量限制的优化问题，目标函数关于限制是凸的",
+    "extensions": [
+        "高维 WQS 二分",
+        "实数二分",
+        "对偶方法"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "name": "Link-Cut Tree",
+    "category": "数据结构",
+    "complexity": "O(log n) amortized per operation",
+    "operations": [
+        "Access",
+        "MakeRoot",
+        "FindRoot",
+        "Link",
+        "Cut",
+        "Split",
+        "Path Query/Update"
+    ],
+    "scenarios": [
+        "Dynamic tree problems",
+        "Maintaining path information under edge updates",
+        "Connectivity queries in dynamic forests",
+        "Lazy propagation on tree paths"
+    ],
+    "extensions": [
+        "Support for lazy tags (add, multiply, reverse)",
+        "Subtree size maintenance",
+        "Custom pushup/pushdown logic"
+    ]
+}

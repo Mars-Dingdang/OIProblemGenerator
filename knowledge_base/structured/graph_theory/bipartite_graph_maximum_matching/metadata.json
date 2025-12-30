@@ -1,0 +1,20 @@
+{
+    "name": "二分图最大匹配",
+    "category": "图论",
+    "sub_category": "匹配",
+    "complexity_kuhn": "O(|V||E|)",
+    "complexity_hopcroft_karp": "O(|V|^(1/2)|E|)",
+    "scenarios": [
+        "最大配对问题",
+        "任务分配",
+        "二分图最小点覆盖（通过Kőnig定理）",
+        "关键点与关键边识别",
+        "Dulmage–Mendelsohn分解"
+    ],
+    "extensions": [
+        "归约为最大流问题",
+        "线性规划形式",
+        "Hopcroft-Karp算法作为Dinic的特例",
+        "与Berge引理的关系"
+    ]
+}

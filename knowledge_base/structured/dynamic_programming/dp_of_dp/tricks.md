@@ -1,0 +1,10 @@
+- **Core Idea**: Abstract the inner DP (which checks sequence validity/computes a value) as a Deterministic Finite Automaton (DFA). Then run an outer DP over this DFA to count sequences or compute expectations.
+- **State Compression**: The inner DP state is often a vector (e.g., LCS DP row). Compress it using bitmasks (if differences are 0/1) or by bounding values (e.g., limiting to 0..4).
+- **DFA Minimization**: Merge equivalent states to reduce state count. All "accepting" (e.g., winning) states can often be collapsed into one.
+- **BFS State Generation**: Instead of enumerating all possible inner states (which may be huge), start from the initial state and explore reachable states via transitions. This constructs the DFA on-the-fly.
+- **Handling Large State Spaces**: Use mapping (e.g., `unordered_map`, `map`) to store outer DP states dynamically if the state space is sparse.
+- **Common Problem Patterns**:
+  - Counting sequences where a property (e.g., LCS length) matches a condition.
+  - Expected time until a condition is met (e.g., in games or random processes).
+  - Problems where the inner DP is a known algorithm (e.g., LCS, substring matching, game evaluation).
+- **Optimization**: Precompute all transitions between inner states for each possible input symbol to speed up outer DP.

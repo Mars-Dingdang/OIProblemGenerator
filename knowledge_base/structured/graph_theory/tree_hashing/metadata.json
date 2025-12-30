@@ -1,0 +1,17 @@
+{
+    "name": "树哈希",
+    "category": "图论",
+    "sub_category": "树上问题",
+    "complexity": "O(n log n) or O(n) with optimizations",
+    "scenarios": [
+        "判断树同构（有根/无根）",
+        "统计本质不同的子树结构",
+        "换根DP配合哈希进行全局比较",
+        "生成括号序列方案数去重"
+    ],
+    "extensions": [
+        "结合重心优化无根树同构判定",
+        "使用双哈希防碰撞",
+        "应用于动态规划状态压缩"
+    ]
+}

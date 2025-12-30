@@ -1,0 +1,7 @@
+{
+    "name": "状态设计优化",
+    "category": "动态规划",
+    "complexity": "Varies per problem; often reduces complexity by redefining state dimensions.",
+    "scenarios": "Optimizing DP by redesigning the state definition rather than just the transition. Often used when naive state leads to high complexity, but problem constraints or properties allow a more compact representation.",
+    "extensions": "Common in problems like LCS with large n and small m, or when answer is bounded."
+}

@@ -1,0 +1,6 @@
+- **Heuristic Function**: Design a function that estimates the best possible outcome from a given state (e.g., remaining maximum value in knapsack). This guides search and enables pruning.
+- **Feasibility Pruning**: In knapsack, skip branches if adding an item exceeds capacity.
+- **Optimality Pruning**: If the current value plus the heuristic estimate cannot beat the best-known solution, prune that branch.
+- **Ordering**: Sort items by a heuristic (e.g., value-to-weight ratio) to improve pruning efficiency.
+- **Generalization**: Heuristic search is a framework; specific algorithms like A* use heuristics for pathfinding, while IDA* combines iterative deepening with heuristic estimates.
+- **Common Problems**: Knapsack, 15-puzzle, shortest path with obstacles, scheduling optimization.

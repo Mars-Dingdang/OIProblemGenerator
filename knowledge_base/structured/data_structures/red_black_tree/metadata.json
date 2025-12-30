@@ -1,0 +1,21 @@
+{
+    "name": "红黑树",
+    "category": "数据结构",
+    "sub_category": "平衡二叉搜索树",
+    "time_complexity": {
+        "insert": "O(log n)",
+        "erase": "O(log n)",
+        "search": "O(log n)",
+        "find_min": "O(log n)",
+        "find_max": "O(log n)"
+    },
+    "space_complexity": "O(n)",
+    "properties": [
+        "每个节点为红色或黑色",
+        "NIL节点（空叶子）为黑色",
+        "红色节点的子节点必须为黑色",
+        "从根到任意NIL路径上的黑色节点数相同（黑高一致）",
+        "根节点通常为黑色（非强制但常见）"
+    ],
+    "relation_to_other_structures": "4阶B树（2-3-4树）的等价二叉表示"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Slope Trick",
+    "category": "DP Optimization",
+    "complexity": "O(n log n) typical",
+    "scenarios": "DP with convex cost functions, often involving absolute value sums, min/max operations, and piecewise linear functions.",
+    "extensions": "Maintaining breakpoints vs. slopes, handling constraints (e.g., bounded differences), and connections to min-plus convolution and Minkowski sum."
+}

@@ -1,0 +1,15 @@
+{
+    "name": "最小费用最大流",
+    "category": "图论",
+    "sub_category": "网络流",
+    "algorithm_type": "flow_network",
+    "variants": [
+        "SSP (Successive Shortest Path)",
+        "Primal-Dual"
+    ],
+    "time_complexity": {
+        "ssp_bellman_ford": "O(n * m * f)",
+        "primal_dual_dijkstra": "O(f * (m * log n))"
+    },
+    "applicable_constraints": "No negative cycles initially for SSP; Primal-Dual handles negative edges via potential function"
+}

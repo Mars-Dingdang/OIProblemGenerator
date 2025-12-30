@@ -1,0 +1,14 @@
+{
+    "name": "支配树",
+    "category": "图论",
+    "complexity": "O(n \\log n)",
+    "scenarios": [
+        "求解每个点的支配点",
+        "ZJOI2012 灾难问题",
+        "控制流分析"
+    ],
+    "extensions": [
+        "可用于DAG上构建",
+        "结合LCA和拓扑排序"
+    ]
+}

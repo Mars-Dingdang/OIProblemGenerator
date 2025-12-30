@@ -1,0 +1,16 @@
+{
+    "name": "形式幂级数复合与复合逆",
+    "category": "数学",
+    "complexity": "O(M(n) log n) for composition and compositional inverse using Kinoshita–Li algorithm, where M(n) is polynomial multiplication time (usually O(n log n) with FFT).",
+    "scenarios": [
+        "Computing f(g(x)) mod x^n for formal power series f and g.",
+        "Finding compositional inverse g(x) such that f(g(x)) ≡ g(f(x)) ≡ x (mod x^n).",
+        "Implementing polynomial functions like exp, log, power via composition.",
+        "Solving combinatorial enumeration problems using Lagrange inversion."
+    ],
+    "extensions": [
+        "Handling g(0) ≠ 0 via Taylor shift.",
+        "Power projection problem: computing [x^(n-1)] P(x,y)/Q(x,y) mod y^m.",
+        "Kronecker substitution for bivariate polynomial multiplication."
+    ]
+}

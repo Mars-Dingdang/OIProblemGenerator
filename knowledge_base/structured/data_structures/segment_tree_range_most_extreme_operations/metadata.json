@@ -1,0 +1,25 @@
+{
+    "name": "线段树处理历史区间最值",
+    "category": "数据结构",
+    "sub_category": "线段树",
+    "complexity": {
+        "time": {
+            "update": "O(m log^2 n)",
+            "query": "O(log n)"
+        },
+        "space": "O(n)"
+    },
+    "scenarios": [
+        "区间取 min/max 操作",
+        "维护区间历史最值",
+        "支持区间加、区间 min、区间 max 的混合操作",
+        "统计伴随数组变化次数"
+    ],
+    "reference": [
+        "吉老师 2016 年国家集训队论文",
+        "HDU5306 Gorgeous Sequence",
+        "BZOJ4695 最假女选手",
+        "Mzl loves segment tree",
+        "CTSN loves segment tree"
+    ]
+}

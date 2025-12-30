@@ -1,0 +1,7 @@
+{
+    "name": "数论基础",
+    "category": "数学",
+    "complexity": "O(1) for basic operations, O(log min(a,b)) for gcd, O(sqrt(n)) for prime factorization",
+    "scenarios": "Modular arithmetic, divisibility, prime numbers, greatest common divisor, least common multiple, congruence, residue systems, number-theoretic functions",
+    "extensions": "Euclidean algorithm, extended Euclidean algorithm, modular inverse, Chinese remainder theorem, Euler's theorem, Fermat's little theorem, linear Diophantine equations"
+}

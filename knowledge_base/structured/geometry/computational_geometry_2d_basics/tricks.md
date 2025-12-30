@@ -1,0 +1,10 @@
+- **Point-line relation**: Use cross product `v × PQ`. Negative → right, zero → on, positive → left.
+- **Segment intersection**: Combine **quick rejection test** (bounding box) and **straddling test** (cross product signs).
+- **Point in polygon**: **Ray casting algorithm** (even-odd rule) works for simple polygons. Choose ray with irrational slope to avoid edge cases.
+- **Polygon area**: Use shoelace formula: `S = 0.5 * |Σ (x_i*y_{i+1} - x_{i+1}*y_i)|`. Sign indicates orientation.
+- **Line intersection**: Solve using vector method: `t = (v2 × u) / (v1 × v2)`, where `u = P1 - P2`.
+- **Circle-line intersection**: Project center onto line, use Pythagorean theorem to find chord half-length.
+- **Circle-circle intersection**: Compute distance `d`, use law of cosines to find intersection chord.
+- **Precision**: Use `EPS = 1e-9` and `sgn()` function for floating-point comparisons.
+- **Avoid degeneracy**: Check parallel lines, coincident points, zero-length vectors.
+- **Performance**: Many operations are O(1); polygon algorithms are O(n).

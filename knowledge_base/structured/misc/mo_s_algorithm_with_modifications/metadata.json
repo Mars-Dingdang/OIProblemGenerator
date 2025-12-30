@@ -1,0 +1,14 @@
+{
+    "name": "带修改莫队",
+    "category": "离线算法",
+    "complexity": "O(n^(5/3)) when n, m, t are of same magnitude, or O(n^(2/3) * m^(2/3) * t^(1/3)) in general",
+    "scenarios": [
+        "Range query with updates",
+        "Offline queries with point modifications",
+        "Counting distinct elements in range with updates"
+    ],
+    "extensions": [
+        "Can be extended to tree structures with Euler Tour",
+        "Can combine with other Mo's variants like rollback Mo"
+    ]
+}

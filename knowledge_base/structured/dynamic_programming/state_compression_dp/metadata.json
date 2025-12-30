@@ -1,0 +1,14 @@
+{
+    "name": "状压 DP",
+    "category": "动态规划",
+    "complexity": "Typically O(n * 2^n) or O(n * 3^n), where n is the number of bits/states.",
+    "scenarios": [
+        "Problems with small state space (n ≤ 20-25) where each element can be in a small set of states (often binary).",
+        "Classic examples: placing kings/queens on a chessboard, traveling salesman problem (TSP), subset selection with constraints, graph coloring on small graphs."
+    ],
+    "extensions": [
+        "Plug DP (contour DP)",
+        "DP on broken profile",
+        "DP with bitmask representing sets of vertices in graphs."
+    ]
+}

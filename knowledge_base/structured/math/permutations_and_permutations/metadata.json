@@ -1,0 +1,22 @@
+{
+    "name": "置换和排列",
+    "category": "数学",
+    "complexity": {
+        "inversion_count": "O(n log n)",
+        "rank_to_permutation": "O(n log n)",
+        "permutation_to_rank": "O(n log n)"
+    },
+    "scenarios": [
+        "计算逆序数",
+        "计算排列的排名（康托展开）",
+        "根据排名生成排列",
+        "分析置换的奇偶性、阶、型",
+        "置换的幂运算（结合快速幂）"
+    ],
+    "extensions": [
+        "置换群",
+        "Pólya计数",
+        "第一类斯特林数",
+        "行列式展开"
+    ]
+}

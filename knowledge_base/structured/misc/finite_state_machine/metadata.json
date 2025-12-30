@@ -1,0 +1,23 @@
+{
+    "name": "有限状态自动机",
+    "category": "杂项",
+    "type": [
+        "DFA",
+        "NFA"
+    ],
+    "complexity": {
+        "dfa_simulation": "O(n)",
+        "nfa_simulation": "O(ns^2)",
+        "minimization": "O(s log s)"
+    },
+    "extensions": [
+        "KMP",
+        "AC_automaton",
+        "SAM"
+    ],
+    "related_topics": [
+        "正则语言",
+        "Myhill-Nerode定理",
+        "正则表达式"
+    ]
+}

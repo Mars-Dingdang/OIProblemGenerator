@@ -1,0 +1,9 @@
+- **Existence of solution**: The equation a*x ≡ b (mod n) has a solution if and only if gcd(a, n) divides b.
+- **Number of solutions**: If a solution exists, there are exactly d = gcd(a, n) distinct solutions modulo n, given by x ≡ x0 + k*(n/d) (mod n) for k = 0, 1, ..., d-1, where x0 is the smallest non-negative solution.
+- **Using modular inverse**: When gcd(a, n) = 1, the unique solution is x ≡ b * a^{-1} (mod n), where a^{-1} is the modular inverse of a modulo n.
+- **Transformation to linear Diophantine equation**: The congruence is equivalent to the linear Diophantine equation a*x + n*y = b. Solve using extended Euclidean algorithm to find a particular solution (x0, y0), then generate all solutions.
+- **Handling large numbers**: Use 64-bit integers (long long) for intermediate multiplications to avoid overflow when a, b, n are large (up to 10^9).
+- **Negative coefficients**: If a or b is negative, reduce them modulo n to positive equivalents first (e.g., a = (a % n + n) % n).
+- **Precomputation**: If solving multiple equations with the same modulus n, precompute modular inverses for numbers coprime to n using linear sieve or Fermat's little theorem (if n is prime).
+- **Common pitfall**: Forgetting to divide n by d after checking divisibility, which leads to incorrect modulus in the final solution.
+- **Optimization**: The extended Euclidean algorithm can be implemented iteratively to avoid recursion overhead.

@@ -1,0 +1,19 @@
+{
+    "name": "块状数据结构",
+    "category": "数据结构",
+    "complexity": {
+        "query": "O(sqrt(n) log n)",
+        "update": "O(sqrt(n) log n)"
+    },
+    "scenarios": [
+        "range queries",
+        "point updates",
+        "offline queries",
+        "Mo's algorithm"
+    ],
+    "extensions": [
+        "Mo's algorithm",
+        "fractional cascading",
+        "2D sqrt decomposition"
+    ]
+}

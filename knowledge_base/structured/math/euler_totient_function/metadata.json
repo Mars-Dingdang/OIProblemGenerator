@@ -1,0 +1,17 @@
+{
+    "name": "欧拉函数 (Euler's totient function)",
+    "category": "数学 / 数论",
+    "complexity": "单次计算 O(√n)，线性筛预处理 O(n)",
+    "scenarios": [
+        "计算小于等于 n 且与 n 互质的数的个数",
+        "化简最大公约数求和问题",
+        "欧拉反演",
+        "数论分块预处理"
+    ],
+    "extensions": [
+        "线性筛求欧拉函数",
+        "Pollard Rho 优化质因数分解",
+        "欧拉定理",
+        "费马小定理"
+    ]
+}

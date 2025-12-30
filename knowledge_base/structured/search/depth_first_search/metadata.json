@@ -1,0 +1,18 @@
+{
+    "name": "DFS（深度优先搜索）",
+    "category": "搜索",
+    "complexity": "O(branch_factor ^ depth) in worst case",
+    "scenarios": [
+        "全排列",
+        "组合",
+        "子集",
+        "图的连通性",
+        "回溯问题",
+        "枚举所有可能性"
+    ],
+    "extensions": [
+        "迭代加深搜索 (IDS)",
+        "记忆化搜索",
+        "剪枝优化"
+    ]
+}

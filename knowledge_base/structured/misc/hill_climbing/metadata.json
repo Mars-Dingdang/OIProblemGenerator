@@ -1,0 +1,14 @@
+{
+    "name": "爬山算法",
+    "category": "杂项",
+    "complexity": "O(iterations * neighborhood_size)",
+    "scenarios": [
+        "单峰函数优化",
+        "无法推导解析解的复杂几何或数学问题",
+        "多维状态空间中的局部最优求解"
+    ],
+    "extensions": [
+        "模拟退火（避免局部最优）",
+        "多次重启（不同初始点、温度参数调整）"
+    ]
+}

@@ -1,0 +1,13 @@
+- **State Representation**: Encode the current search state compactly (e.g., as integers, bitmasks, or tuples). Use global arrays/vectors to track the current path.
+- **Pruning**:
+  - **Feasibility Pruning**: Stop if the current partial solution cannot possibly lead to a valid complete solution.
+  - **Optimality Pruning (Branch and Bound)**: Stop if the current partial solution is already worse than the best found so far.
+  - **Symmetry Breaking**: Avoid exploring symmetric states (e.g., in permutations, fix an order).
+- **Order of Exploration**: Sometimes exploring branches with higher promise first (heuristic) can find a solution faster.
+- **Iterative Deepening**: Use DFS with increasing depth limit to combine DFS's memory efficiency with BFS's completeness.
+- **Backtracking with Constraints**: For problems like N-Queens, maintain arrays for columns, diagonals to check validity in O(1).
+- **Memoization (DFS + DP)**: Store results of subproblems (states) to avoid recomputation. Often used in game theory or combinatorial counting.
+- **Meet-in-the-Middle**: Split the problem into two halves, solve each with DFS, and combine results. Reduces O(2^N) to O(2^(N/2)).
+- **Bitmask for Subsets**: Use integer bitmasks to represent subsets, enabling fast set operations and state transitions.
+- **Path Recovery**: Store a `parent` array or reconstruct the path from the recursion stack.
+- **Avoiding Stack Overflow**: For deep recursion, consider an iterative stack implementation or increase compiler stack size.

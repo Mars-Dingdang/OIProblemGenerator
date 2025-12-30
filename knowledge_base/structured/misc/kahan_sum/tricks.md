@@ -1,0 +1,5 @@
+- The variable `c` accumulates the low-order bits lost during each addition, effectively compensating for rounding errors.
+- This algorithm is especially useful when summing a large number of floating-point values where precision loss becomes significant.
+- Works best when the magnitude of the numbers varies significantly; small values added to large sums retain their contribution.
+- Can be adapted to double precision (`double`) and generalized to other compensated arithmetic operations.
+- In competitive programming, it's often used as a black-box improvement for problems involving tight floating-point tolerances, such as binary search on real numbers or geometric calculations.

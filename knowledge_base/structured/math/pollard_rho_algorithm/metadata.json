@@ -1,0 +1,7 @@
+{
+    "name": "Pollard Rho 算法",
+    "category": "数学 / 数论",
+    "complexity": "期望 O(√p) 或 O(N^{1/4})，其中 p 是 N 的最小素因子",
+    "scenarios": "大整数分解（非平凡因子），求最大素因子",
+    "extensions": "与 Miller-Rabin 素性测试结合，倍增优化，Brent 判环"
+}

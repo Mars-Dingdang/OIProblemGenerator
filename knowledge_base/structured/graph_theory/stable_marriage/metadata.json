@@ -1,0 +1,21 @@
+{
+    "name": "稳定婚姻问题",
+    "category": "图论",
+    "subcategory": "图的匹配",
+    "algorithm": "Gale-Shapley 算法",
+    "complexity": {
+        "time": "O(n^2)",
+        "space": "O(n^2)"
+    },
+    "scenarios": [
+        "双边市场一对一匹配",
+        "学校录取",
+        "医疗资源分配",
+        "劳动力市场"
+    ],
+    "extensions": [
+        "学院招生问题（多对一匹配）",
+        "稳定室友问题（无性别限制）",
+        "住房分配问题（单边匹配）"
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "name": "格雷码",
+    "category": "杂项",
+    "complexity": {
+        "construction": "O(n)",
+        "inverse": "O(k)"
+    },
+    "scenarios": [
+        "生成相邻仅一位不同的二进制序列",
+        "Karnaugh图优化",
+        "递归构造与位运算优化问题"
+    ],
+    "extensions": [
+        "平衡格雷码",
+        "非二进制格雷码"
+    ]
+}

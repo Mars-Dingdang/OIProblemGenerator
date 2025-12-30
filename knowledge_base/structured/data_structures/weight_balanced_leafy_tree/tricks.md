@@ -1,0 +1,12 @@
+- **Leaf-only storage**: Only leaf nodes store actual values; internal nodes store metadata (e.g., max, sum) for efficient queries.
+- **Weight-based balancing**: Balance is maintained using subtree weight ratios (`α` ∈ (0.182, 0.292]), ensuring O(log n) height.
+- **Merge-driven operations**: Insertion/deletion can be implemented via split and merge, enabling persistence.
+- **Rotation vs Merge balancing**: 
+  - Rotation-based: Faster in practice, uses single/double rotations similar to AVL.
+  - Merge-based: Simpler correctness proof, naturally persistent.
+- **Integer threshold optimization**: Use integer comparisons like `sz[ch[x][1]] > 3 * sz[ch[x][0]]` instead of floating-point `ALPHA` to avoid precision issues and improve speed.
+- **Efficient memory reuse**: Node pooling with stack allocation ensures O(1) amortized node creation and prevents memory leaks during splits.
+- **Logarithmic merge complexity**: Merging two trees takes O(|log(w₁/w₂)|), making it efficient when sizes are close.
+- **Recommended parameters**: Use (α, β) = (1/4, 2/3) — simple integer logic (`> 3*` and `> 2*`) avoids floats and works well in practice.
+- **Persistent design**: Since no destructive updates occur (old nodes preserved), WBLT supports full persistence naturally.
+- **Interval operations support**: Like splay trees or treaps, WBLT can handle range reversals, lazy propagation, etc., due to flexible split/merge structure.

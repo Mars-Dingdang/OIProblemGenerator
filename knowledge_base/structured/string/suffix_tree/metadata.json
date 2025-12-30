@@ -1,0 +1,21 @@
+{
+    "name": "后缀树",
+    "category": "字符串",
+    "complexity": {
+        "construction": "O(n)",
+        "space": "O(n * |Σ|) or O(n) with map"
+    },
+    "scenarios": [
+        "Longest common substring of multiple strings",
+        "Pattern matching",
+        "Finding repeated substrings",
+        "Computing LCP efficiently",
+        "Cyclical pattern matching"
+    ],
+    "extensions": [
+        "Ukkonen's algorithm",
+        "Suffix automaton (reverse SAM) construction",
+        "Implicit suffix tree",
+        "Suffix tree with suffix links"
+    ]
+}

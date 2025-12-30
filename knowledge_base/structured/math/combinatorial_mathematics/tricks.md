@@ -1,0 +1,16 @@
+- **Cayley's formula**: Number of labeled trees on n vertices is n^{n-2}.
+- **Prüfer sequence**: Bijection between labeled trees and sequences of length n-2, useful for counting and constructing trees.
+- **Generating functions**: Use ordinary (OGF) or exponential (EGF) generating functions to encode sequences and solve recurrences; convolution corresponds to combinatorial operations.
+- **Burnside's lemma / Polya enumeration**: Count distinct objects under group actions (symmetries), e.g., graph coloring up to isomorphism.
+- **Inclusion–exclusion principle**: Count unions of sets by alternating sums; common in problems with constraints.
+- **Stirling numbers of the second kind**: S(n,k) counts ways to partition n labeled objects into k unlabeled non-empty subsets; recurrence S(n,k)=k*S(n-1,k)+S(n-1,k-1).
+- **Catalan numbers**: C_n = (1/(n+1)) * C(2n, n) count binary trees, Dyck paths, valid parentheses.
+- **Tree counting formulas**: Number of unlabeled rooted trees given by recurrence; use OGF with Euler transform.
+- **Graph enumeration**: Labeled graphs: 2^{C(n,2)}; connected labeled graphs via exponential formula (log of OGF).
+- **Exponential formula**: If A(x) is EGF for labeled structures, exp(A(x)) counts sets of these structures.
+- **Lagrange inversion**: Extract coefficients from implicitly defined generating functions.
+- **Dynamic programming with combinatorial coefficients**: Combine DP states using binomial/multinomial coefficients.
+- **Partition numbers**: Represent integer n as sum of positive integers; use pentagonal number theorem for recurrence.
+- **Linear recurrences**: Solve with matrix exponentiation or generating functions.
+- **Möbius inversion**: Inversion on posets, useful for divisor sums and inclusion-exclusion.
+- **OEIS (Online Encyclopedia of Integer Sequences)**: Look up sequences for known formulas (e.g., A000088 for unlabeled graphs).

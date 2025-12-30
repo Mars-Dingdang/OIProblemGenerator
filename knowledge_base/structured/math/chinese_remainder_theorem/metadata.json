@@ -1,0 +1,7 @@
+{
+    "name": "中国剩余定理",
+    "category": "数学/数论",
+    "complexity": "O(k) for standard CRT, O(k^2) for Garner algorithm",
+    "scenarios": "Solving systems of linear congruences with pairwise coprime moduli; representing large integers with mixed radix; combining results from separate modular computations.",
+    "extensions": "Garner algorithm for mixed radix representation; extension to non-coprime moduli via pairwise merging."
+}

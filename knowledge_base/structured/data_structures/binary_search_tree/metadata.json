@@ -1,0 +1,24 @@
+{
+    "name": "二叉搜索树",
+    "category": "数据结构",
+    "complexity": {
+        "search": "O(h)",
+        "insert": "O(h)",
+        "delete": "O(h)",
+        "min_max": "O(h)",
+        "rank_query": "O(h)",
+        "kth_query": "O(h)"
+    },
+    "scenarios": [
+        "动态维护有序集合",
+        "支持重复元素的插入、删除和查询",
+        "求某元素的排名或第k小元素",
+        "作为平衡树的基础结构"
+    ],
+    "extensions": [
+        "AVL Tree",
+        "Splay Tree",
+        "Size Balanced Tree (SBT)",
+        "Red-Black Tree"
+    ]
+}

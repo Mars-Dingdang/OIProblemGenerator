@@ -1,0 +1,5 @@
+- **Probabilistic balancing**: Instead of strict balancing like AVL or Red-Black trees, skip lists use randomness to maintain balance with high probability, simplifying implementation.
+- **Efficient k-th element access**: By simulating "position tracking" during descent through levels, you can locate the k-th smallest element in $ O(\log n) $ time.
+- **Layered traversal optimization**: At each level, skip as far as possible without overshooting the target index, then drop down — similar to binary search over layers.
+- **Memory vs. performance trade-off**: Maximum level can be capped (e.g., $ \log n $) to prevent excessive memory usage while preserving asymptotic performance.
+- **Use in functional contexts**: While not inherently persistent, skip lists can be adapted for partial persistence with versioning of node pointers.

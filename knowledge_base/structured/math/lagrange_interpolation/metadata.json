@@ -1,0 +1,15 @@
+{
+    "name": "Lagrange 插值法",
+    "category": "数学",
+    "complexity": "朴素 O(n²)，优化 O(n log² n) 或 O(n)（横坐标连续整数）",
+    "scenarios": [
+        "已知 n+1 个点对 (x_i, y_i)，构造一个次数不超过 n 的多项式 f(x) 满足 f(x_i) = y_i",
+        "求多项式在给定点的值",
+        "求和式 ∑_{i=1}^n i^k 等自然数幂和问题"
+    ],
+    "extensions": [
+        "Newton 插值法（支持 O(n) 插入新点）",
+        "多项式快速插值（O(n log² n)）",
+        "横坐标为连续整数时的 O(n) 插值"
+    ]
+}

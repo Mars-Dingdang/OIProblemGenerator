@@ -1,0 +1,18 @@
+{
+    "name": "约瑟夫问题",
+    "category": "杂项",
+    "complexity": {
+        "naive": "Θ(n^2)",
+        "linear": "Θ(n)",
+        "logarithmic": "Θ(k log n)"
+    },
+    "scenarios": [
+        "Simulation of elimination in a circle",
+        "Problems involving modular arithmetic and recurrence",
+        "Optimization using recursion and mathematical reduction"
+    ],
+    "extensions": [
+        "Variant with k=2 has closed-form solution",
+        "Can be generalized to arbitrary starting positions and step sizes"
+    ]
+}

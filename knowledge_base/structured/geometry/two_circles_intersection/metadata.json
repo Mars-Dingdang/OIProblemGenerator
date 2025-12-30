@@ -1,0 +1,7 @@
+{
+    "name": "两圆交点",
+    "category": "计算几何",
+    "complexity": "O(1) per intersection pair",
+    "scenarios": "Finding intersection points of two circles, used in problems involving circle geometry, triangulation, or visibility.",
+    "extensions": "Can be extended to find intersection of circle and line, or circle and ellipse. Also used in Voronoi diagrams and Delaunay triangulation."
+}

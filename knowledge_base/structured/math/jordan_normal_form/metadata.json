@@ -1,0 +1,7 @@
+{
+    "name": "Jordan 标准型 (Jordan Normal Form)",
+    "category": "数学 (Mathematics)",
+    "complexity": "O(n^3) 用于计算特征值和特征向量，构造 Jordan 基可能更复杂",
+    "scenarios": "线性代数理论、矩阵分析、微分方程系统、控制理论、量子力学",
+    "extensions": "有理标准型 (Rational Canonical Form)、广义特征向量 (Generalized Eigenvectors)、矩阵函数 (Matrix Functions)"
+}

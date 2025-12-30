@@ -1,0 +1,16 @@
+{
+    "name": "可持久化可并堆",
+    "category": "数据结构",
+    "subcategory": "可持久化数据结构",
+    "complexity": {
+        "time": "O(m log n)",
+        "space": "O(m log n)"
+    },
+    "scenarios": [
+        "k短路问题",
+        "需要保留历史版本的堆合并操作"
+    ],
+    "extensions": [
+        "可持久化左偏树"
+    ]
+}

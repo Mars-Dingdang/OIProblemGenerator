@@ -1,0 +1,7 @@
+- **`mutable` keyword**: Allows modification of `v` in `set` elements without erasing and reinserting, crucial for performance.
+- **Split order matters**: Always call `split(r + 1)` before `split(l)` to avoid iterator invalidation during erase.
+- **Interval extraction**: Use `split` to isolate `[l, r]`, then iterate or modify the range safely.
+- **Complexity relies on randomness**: The amortized efficiency depends heavily on random data and frequent range assignments; adversarial inputs can degrade performance to O(n²).
+- **Use linked list for small intervals**: When the number of intervals is small, a hand-written linked list may outperform `std::set` due to lower constant factors.
+- **Memory management**: In linked list implementations, consider freeing deleted nodes to prevent memory leaks in long-running programs.
+- **Map-based implementation**: Using `std::map` simplifies `split` by leveraging `upper_bound` and `insert` with hint for better clarity and similar performance.

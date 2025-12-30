@@ -1,0 +1,17 @@
+{
+    "name": "空间优化简介",
+    "category": "杂项",
+    "complexity": "Varies by technique",
+    "scenarios": [
+        "Persistent data structures",
+        "Sparse graph storage",
+        "Bit-level optimization",
+        "Union-find with path compression and union by size"
+    ],
+    "extensions": [
+        "Information entropy lower bound",
+        "Memory-efficient DSU",
+        "Rolling arrays",
+        "Bitset optimization"
+    ]
+}

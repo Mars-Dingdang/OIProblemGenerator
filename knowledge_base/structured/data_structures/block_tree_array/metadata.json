@@ -1,0 +1,19 @@
+{
+    "name": "分块套树状数组",
+    "category": "数据结构",
+    "time_complexity": {
+        "query": "O(√n + log(√n) * log n)",
+        "update": "O(√n + log(√n) * log n)"
+    },
+    "space_complexity": "O(n√n)",
+    "scenarios": [
+        "二维平面点数查询（强制在线）",
+        "矩形区域查询",
+        "排列交集查询",
+        "MEX 相关问题中的三维偏序降维"
+    ],
+    "extensions": [
+        "可扩展为分块套线段树或其它内层数据结构",
+        "支持点更新、区间查询的二维偏序问题"
+    ]
+}

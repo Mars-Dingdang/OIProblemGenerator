@@ -1,0 +1,10 @@
+- **Coloring Scheme**: Each node is colored black (fully in set), white (fully out), or gray (partial). This helps identify which parts need restructuring.
+- **Split Function**: Critical for preserving all valid permutations when handling gray nodes. It splits a subtree into white-left and black-right segments, recursively processing gray children.
+- **Top-down Reduction**: More practical than bottom-up. Only processes gray nodes, deferring work until necessary.
+- **Q-node Linearity Constraint**: In a Q-node, non-white nodes must appear contiguously, and within that span, non-black nodes must be absent except at ends. This enforces adjacency.
+- **Gray Node Limits**: A P-node can have at most two gray children; a Q-node with multiple gray children must satisfy strict ordering (white-gray-black or reverse).
+- **Node Recycling**: Using a pool (`pool_`) to reuse deleted node indices improves memory efficiency and avoids fragmentation.
+- **Post-processing Cleanup**: After each insertion, remove unary nodes (with one child) to keep the tree compact.
+- **Failure Detection**: Early termination via `Fail()` when structural constraints are violated (e.g., too many gray nodes).
+- **Permutation Extraction**: Final answer is obtained by DFS traversal of the reduced PQ tree.
+- **Constraint Order Matters**: Constraints should ideally be processed from largest to smallest to minimize splits and improve performance.

@@ -1,0 +1,16 @@
+{
+    "name": "AVL Tree",
+    "category": "数据结构",
+    "complexity": {
+        "time": "O(log n) for insert, delete, search",
+        "space": "O(n)"
+    },
+    "scenarios": [
+        "Ordered map/set implementation",
+        "Range queries",
+        "Dynamic data with frequent updates"
+    ],
+    "extensions": [
+        "Can be extended to support rank, select, predecessor, successor operations"
+    ]
+}

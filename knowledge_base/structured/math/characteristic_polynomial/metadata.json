@@ -1,0 +1,17 @@
+{
+    "name": "特征多项式",
+    "category": "数学/线性代数",
+    "complexity": "O(n³) 使用 Hessenberg 算法",
+    "scenarios": [
+        "计算矩阵的特征多项式",
+        "求特征值",
+        "判断矩阵相似",
+        "Cayley-Hamilton 定理应用"
+    ],
+    "extensions": [
+        "最小多项式",
+        "矩阵对角化",
+        "Jordan 标准形",
+        "特征值加速递推"
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "name": "DFS（图论）",
+    "category": "图论",
+    "time_complexity": "O(n + m)",
+    "space_complexity": "O(n)",
+    "scenarios": [
+        "遍历或搜索树或图",
+        "遍历图的连通块",
+        "建立DFS树",
+        "求强连通分量"
+    ],
+    "extensions": [
+        "DFS序列",
+        "括号序列",
+        "DFS树"
+    ]
+}

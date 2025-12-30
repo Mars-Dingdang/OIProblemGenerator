@@ -1,0 +1,16 @@
+{
+    "name": "最大团搜索算法",
+    "category": "图论",
+    "algorithm": "Bron–Kerbosch",
+    "complexity": "O(3^{n/3}) worst-case for maximal cliques",
+    "scenarios": [
+        "Finding maximum clique in an undirected graph",
+        "Enumerating all maximal cliques",
+        "Social network analysis",
+        "Bioinformatics (e.g., protein interaction networks)"
+    ],
+    "extensions": [
+        "Bron–Kerbosch with pivot optimization",
+        "Bron–Kerbosch with vertex ordering"
+    ]
+}

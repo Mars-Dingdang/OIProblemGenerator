@@ -1,0 +1,5 @@
+- **Pivot Optimization**: Choose a pivot vertex $u$ from $P \cup X$, then only iterate over vertices $v \in P$ that are not adjacent to $u$. This avoids redundant recursive calls because any maximal clique containing $v$ and not $u$ would be found when processing $u$'s non-neighbors.
+- **Early Termination**: In counting problems (e.g., POJ 2989), terminate DFS early if the count exceeds a threshold (e.g., 1000) to avoid TLE.
+- **Vertex Ordering**: Sorting vertices by degree or using degeneracy ordering can improve performance significantly.
+- **Pruning with DP Array**: Precompute $dp[i]$: the size of the maximum clique in the subgraph induced by vertices $\{i, i+1, ..., n\}$. Use it during DFS to prune branches where $current\_size + dp[u] \leq best\_so\_far$.
+- **Set Representation**: Represent sets $R, P, X$ efficiently using arrays or bitsets. The recursion uses incremental updates and backtracking via array index management.

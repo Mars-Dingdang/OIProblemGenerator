@@ -1,0 +1,19 @@
+{
+    "name": "素性测试",
+    "category": "数学/数论",
+    "complexity": {
+        "trial_division": "O(√n)",
+        "fermat": "O(k log n) per test",
+        "miller_rabin": "O(k log n) per test"
+    },
+    "scenarios": [
+        "判断单个整数是否为素数",
+        "需要高正确率的素数判定",
+        "大整数（如 64 位）的确定性素性测试"
+    ],
+    "extensions": [
+        "Pollard Rho 因数分解",
+        "确定性 Miller–Rabin 基底集",
+        "反素数（Highly Composite Numbers）"
+    ]
+}

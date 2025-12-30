@@ -1,0 +1,30 @@
+{
+    "name": "Sqrt Tree",
+    "category": "数据结构",
+    "preprocessing_time": "O(n log log n)",
+    "query_time": "O(1)",
+    "point_update_time": "O(sqrt(n))",
+    "range_update_time": [
+        "O(sqrt(n) log log n)",
+        "O(sqrt(n))"
+    ],
+    "space_complexity": "O(n log log n)",
+    "operations": [
+        "range query",
+        "point update",
+        "range update"
+    ],
+    "applicable_operations": [
+        "gcd",
+        "min",
+        "max",
+        "+",
+        "and",
+        "or",
+        "xor"
+    ],
+    "extensions": [
+        "indexed sqrt tree",
+        "lazy propagation"
+    ]
+}

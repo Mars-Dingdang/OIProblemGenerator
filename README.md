@@ -61,4 +61,13 @@ The `knowledge_base/` directory currently contains:
 - *NOI Papers* (National Olympiad in Informatics papers from 1999-2025)
 
 You can add more PDF files to this directory and run `python src/main.py --build_kb` to update the knowledge base.
+
+## Updates
+
+### 2025-12-30: Knowledge Base Refactoring & Model Optimization
+- **Structured Knowledge Base**: Refactored the knowledge base to support a 3-level structured format (Metadata, Template, Tricks) for better retrieval accuracy.
+- **Auto-Population Script**: Added `src/auto_populate_kb.py` to automatically extract structured algorithm data from the OI Wiki PDF using LLMs (defaulting to `DeepSeek-V3.2-Instruct`, later I used `Qwen3-235B-A22B-Instruct-2507` due to connection problems of DeepSeek, and I found the latter much faster than DeepSeek though DeepSeek indeed gave more detailed summary in the json file).
+- **Prompt Engineering**: Integrated `PROBLEM_SETTING_GUIDELINES` into the default prompts to ensure generated problems meet high-quality OI standards.
+- **Model Selection**: Added support for multiple models (Qwen3, DeepSeek-V3.2, DeepSeek-R1) via the `--model` argument.
+- **Enhanced Retrieval**: Updated `src/knowledge_base.py` to prioritize structured knowledge retrieval before falling back to vector search.
  

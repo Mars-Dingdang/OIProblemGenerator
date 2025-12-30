@@ -1,0 +1,19 @@
+{
+    "name": "容斥原理",
+    "category": "数学",
+    "complexity": "O(2^n * f(n)) where f(n) is the cost of computing intersection sizes",
+    "scenarios": [
+        "Counting problems with constraints (e.g., number of integer solutions with upper bounds)",
+        "Number theory (e.g., counting coprime pairs, Euler's totient function derivation)",
+        "Graph theory (e.g., DAG counting, graph coloring)",
+        "Probability and expectation (e.g., min-max inclusion-exclusion for expected hitting times)",
+        "Set operations (union size from intersection sizes)"
+    ],
+    "extensions": [
+        "Min-max inclusion-exclusion (for max/min of random variables)",
+        "Generalized inclusion-exclusion (Möbius inversion on subsets)",
+        "Inclusion-exclusion with generating functions",
+        "Inclusion-exclusion for prime factorization (e.g., Euler's totient)",
+        "FMT/FWT for fast subset summation"
+    ]
+}

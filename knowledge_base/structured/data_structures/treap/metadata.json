@@ -1,0 +1,23 @@
+{
+    "name": "Treap",
+    "category": "数据结构",
+    "complexity": {
+        "insert": "O(log n) expected",
+        "delete": "O(log n) expected",
+        "query_rank": "O(log n)",
+        "query_value_by_rank": "O(log n)",
+        "query_prev": "O(log n)",
+        "query_nex": "O(log n)"
+    },
+    "scenarios": [
+        "Balanced binary search tree operations",
+        "Order statistic tree (k-th smallest element)",
+        "Dynamic ranking queries",
+        "Supports split and merge in non-rotating version"
+    ],
+    "extensions": [
+        "Non-rotating Treap (FHQ-Treap)",
+        "Persistent Treap",
+        "Sequence maintenance with split/merge"
+    ]
+}

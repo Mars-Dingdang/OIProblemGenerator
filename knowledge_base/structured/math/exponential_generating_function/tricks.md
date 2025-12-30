@@ -1,0 +1,15 @@
+- **EGF Multiplication**: The product of two EGFs corresponds to binomial convolution: if \(\hat{F}(x)\) and \(\hat{G}(x)\) are EGFs of sequences \(a_n\) and \(b_n\), then \(\hat{F}(x)\hat{G}(x)\) is the EGF of \(c_n = \sum_{i=0}^n \binom{n}{i} a_i b_{n-i}\). This is key for combining labeled structures.
+- **Polynomial exp for Set Partitions**: For a labeled combinatorial class with EGF \(\hat{F}(x)\), the EGF for sets (unordered collections) of objects from that class is \(\exp(\hat{F}(x))\), provided \(\hat{F}(x)\) has constant term 0 (no empty object). This is because exp accounts for the symmetry of unordered collections (dividing by \(k!\) for \(k\) components).
+- **Connection to Ordinary GF**: An EGF \(\hat{F}(x) = \sum a_n \frac{x^n}{n!}\) is simply the ordinary generating function for the sequence \(\frac{a_n}{n!}\). This allows converting problems between the two views.
+- **Common EGFs**:
+  - Permutations: \(\frac{1}{1-x}\) (ordinary GF for \(n!\)), but as EGF it's \(\sum n! \frac{x^n}{n!} = \frac{1}{1-x}\).
+  - Cyclic permutations (cycles): \(-\ln(1-x)\).
+  - Sets (subsets): \(e^x\).
+  - Derangements: \(\exp(-\ln(1-x) - x) = \frac{e^{-x}}{1-x}\).
+- **Labeled Constructions**: Use EGFs for labeled objects: product for labeled product (pairing), exp for sets, log for connected components, etc. This parallels the symbolic method for unlabeled objects with ordinary GFs.
+- **Applications in Problems**:
+  - Counting labeled graphs (connected vs. all) via exp and ln.
+  - Counting forests of labeled trees: if trees have EGF \(T(x)\), forests have EGF \(\exp(T(x))\).
+  - Distributions of labeled balls into labeled boxes (or similar) often involve EGFs with factors like \(e^{\lambda x}\).
+- **Implementation Notes**: Polynomial exponentiation (exp) and logarithm (ln) are essential operations, typically implemented via Newton's method with FFT/NTT in \(O(n \log n)\). Ensure the constant term of the argument for exp is 0 to avoid overcounting.
+- **Problem Transformations**: When a problem involves sums over partitions of labeled items (e.g., operations on sequences where order matters only via counts), consider EGFs to encode the combinatorial choices, especially with symmetry factors like factorials.

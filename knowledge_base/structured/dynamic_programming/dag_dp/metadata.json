@@ -1,0 +1,16 @@
+{
+    "name": "DAG 上的 DP",
+    "category": "动态规划",
+    "complexity": "O(V+E) for DAG traversal, but depends on problem-specific state and transitions",
+    "scenarios": [
+        "Problems that can be modeled as a Directed Acyclic Graph (DAG) where states have partial order and no cycles",
+        "Longest/shortest path problems on DAG",
+        "Problems with transitive dependencies (e.g., scheduling, layering, topological ordering)"
+    ],
+    "extensions": [
+        "Memory optimization (e.g., rolling arrays)",
+        "Topological sort for iterative DP",
+        "Multiple DAGs or layered DAGs",
+        "Combining with other DP techniques (e.g., bitmask, tree DP)"
+    ]
+}

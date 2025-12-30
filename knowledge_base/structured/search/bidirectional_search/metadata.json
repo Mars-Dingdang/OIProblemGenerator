@@ -1,0 +1,24 @@
+{
+    "name": "双向搜索",
+    "category": "搜索",
+    "complexity": "指数减半，例如从 O(a^b) 降至 O(a^{b/2})",
+    "scenarios": [
+        "状态空间搜索（如八数码、迷宫）",
+        "组合搜索（如开关灯问题）",
+        "输入数据较小但暴力搜索会超时"
+    ],
+    "extensions": [
+        "双向 BFS",
+        "Meet in the Middle",
+        "结合启发式搜索"
+    ],
+    "authors": [
+        "FFjet",
+        "ChungZH",
+        "frank-xjh",
+        "hsfzLZH1",
+        "Xarfa",
+        "AndrewWayne",
+        "hcx1204"
+    ]
+}

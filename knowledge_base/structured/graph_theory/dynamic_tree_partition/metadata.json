@@ -1,0 +1,20 @@
+{
+    "name": "动态树分治 (Dynamic Tree Partition)",
+    "category": "图论 (Graph Theory)",
+    "complexity": {
+        "build": "O(n log n)",
+        "query": "O(log n)",
+        "update": "O(log n)"
+    },
+    "scenarios": [
+        "带点权/边权修改的树上路径信息统计问题",
+        "动态查询树上最远黑点距离",
+        "动态查询距离某点不超过 y 的结点权值和",
+        "支持点权修改的树形结构"
+    ],
+    "extensions": [
+        "点分树 (Centroid Tree)",
+        "可删堆 (Removable Heap)",
+        "动态开点权值线段树 (Dynamic Segment Tree)"
+    ]
+}

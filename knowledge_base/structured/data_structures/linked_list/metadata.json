@@ -1,0 +1,23 @@
+{
+    "name": "链表",
+    "category": "数据结构",
+    "complexity": {
+        "insertion": "O(1)",
+        "deletion": "O(1)",
+        "random_access": "O(n)",
+        "search": "O(n)"
+    },
+    "scenarios": [
+        "频繁插入删除，随机访问需求低",
+        "实现栈、队列、LRU缓存等",
+        "内存非连续分配场景"
+    ],
+    "extensions": [
+        "单向链表",
+        "双向链表",
+        "循环链表",
+        "双向循环链表",
+        "跳表",
+        "块状链表"
+    ]
+}

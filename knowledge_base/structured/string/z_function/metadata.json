@@ -1,0 +1,14 @@
+{
+    "name": "Z 函数（扩展 KMP）",
+    "category": "字符串",
+    "complexity": "O(n)",
+    "scenarios": [
+        "字符串匹配",
+        "计算本质不同子串数",
+        "寻找字符串整周期"
+    ],
+    "extensions": [
+        "与KMP/前缀函数的对比",
+        "Galil规则优化"
+    ]
+}

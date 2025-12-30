@@ -1,0 +1,23 @@
+{
+    "name": "有限状态自动机",
+    "category": "杂项",
+    "complexity": "O(n) for simulation, depends on construction method",
+    "scenarios": [
+        "字符串匹配",
+        "正则表达式引擎",
+        "语言识别",
+        "动态规划状态压缩",
+        "NP-hard问题的状态转移建模"
+    ],
+    "extensions": [
+        "Thompson构造法（NFA构建）",
+        "DFA最小化（Myhill–Nerode定理）",
+        "Moore机与Mealy机（输出自动机）",
+        "非确定性有限自动机（NFA）与确定性有限自动机（DFA）转换"
+    ],
+    "references": [
+        "Hopcroft, Motwani, Ullman. Introduction to Automata Theory",
+        "国家集训队2021论文 徐哲安",
+        "Myhill–Nerode theorem - Wikipedia"
+    ]
+}

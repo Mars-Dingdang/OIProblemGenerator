@@ -1,0 +1,7 @@
+{
+    "name": "辛普森积分法 / Simpson's Rule",
+    "category": "数学 / 数值积分",
+    "complexity": "普通辛普森法: O(N) 其中 N 是分段数；自适应辛普森法: 递归深度与精度相关，通常 O(log(1/eps)) 次函数求值",
+    "scenarios": "数值积分，计算函数在区间上的定积分近似值，特别是当原函数难以解析积分时。常用于计算几何、物理模拟、概率统计等领域。",
+    "extensions": "自适应辛普森法（Adaptive Simpson's Method），龙贝格积分（Romberg Integration），高斯积分（Gaussian Quadrature）"
+}

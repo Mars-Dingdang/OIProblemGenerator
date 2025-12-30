@@ -1,0 +1,5 @@
+- **Recurrence relation**: $ J_{n,k} = (J_{n-1,k} + k) \mod n $ enables a simple $ \Theta(n) $ solution.
+- **Large $ n $, small $ k $ optimization**: When $ k $ is small, jump multiple eliminations at once by removing $ \lfloor n/k \rfloor $ people in one round, reducing problem size to $ n - \lfloor n/k \rfloor $.
+- **Position restoration**: After solving subproblem, adjust result by accounting for skipped indices due to deletions. If the result is negative, add $ n $; otherwise, shift by $ \text{res}/(k-1) $ to compensate for the compressed numbering.
+- **Base cases**: Handle $ k = 1 $ directly as $ n-1 $, and $ n = 1 $ as 0 for efficient recursion.
+- **Avoiding simulation**: Instead of simulating each deletion (which takes $ \Theta(n^2) $), use mathematical recurrence to reduce time complexity significantly.

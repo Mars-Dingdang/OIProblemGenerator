@@ -1,0 +1,22 @@
+{
+    "name": "左偏树",
+    "category": "数据结构",
+    "type": "可并堆",
+    "complexity": {
+        "merge": "O(log n)",
+        "insert": "O(log n)",
+        "delete_min": "O(log n)",
+        "delete_any": "O(log n)"
+    },
+    "scenarios": [
+        "合并多个堆",
+        "树上启发式合并",
+        "支持懒标记的堆操作",
+        "维护每个节点一个堆（如线段树合并类问题）"
+    ],
+    "extensions": [
+        "支持懒标记下传",
+        "结合并查集维护堆顶",
+        "启发式合并优化标记下传"
+    ]
+}

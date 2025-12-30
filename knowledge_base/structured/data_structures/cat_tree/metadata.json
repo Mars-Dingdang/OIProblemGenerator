@@ -1,0 +1,15 @@
+{
+    "name": "猫树",
+    "category": "数据结构",
+    "complexity": {
+        "build": "O(n log n)",
+        "query": "O(1) merges"
+    },
+    "scenarios": [
+        "static range queries",
+        "expensive merge operations like linear basis"
+    ],
+    "extensions": [
+        "optimized for O(log^2 w) linear basis merging"
+    ]
+}

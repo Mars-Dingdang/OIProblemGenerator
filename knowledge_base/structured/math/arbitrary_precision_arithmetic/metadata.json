@@ -1,0 +1,13 @@
+{
+    "name": "高精度计算",
+    "category": "数学",
+    "complexity": "Addition/Subtraction: O(n); Multiplication: O(n^2) naive, O(n log n) with FFT; Division: O(n^2) naive",
+    "scenarios": "Integer arithmetic when numbers exceed built-in integer limits (e.g., 10^1000). Common in problems requiring exact large integer calculations.",
+    "extensions": [
+        "压位高精度 (base representation)",
+        "Karatsuba multiplication",
+        "FFT-based multiplication",
+        "Newton's method for division",
+        "Modular arithmetic with large numbers"
+    ]
+}

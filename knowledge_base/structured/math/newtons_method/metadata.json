@@ -1,0 +1,7 @@
+{
+    "name": "牛顿迭代法",
+    "category": "数学/数值算法",
+    "complexity": "平方收敛",
+    "scenarios": "求方程近似解、平方根计算",
+    "extensions": "求解整数平方根、牛顿分形"
+}

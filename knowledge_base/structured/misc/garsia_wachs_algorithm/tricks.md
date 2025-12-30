@@ -1,0 +1,7 @@
+- The algorithm efficiently solves the problem of merging adjacent elements with minimum total cost when the naive $O(n^3)$ interval DP is too slow.
+- Uses **sentinels** (`∞`) at both ends to simplify boundary condition checks.
+- Key insight: Instead of trying all intervals, it greedily merges triplets where `num[i-1] <= num[i+1]`, which guarantees an optimal substructure.
+- After merging two elements into `temp`, we insert `temp` just after the rightmost element greater than `temp` to maintain ordering constraints.
+- Although the merging appears non-local, the final cost corresponds to a valid sequence of adjacent merges due to the invariant that larger values block insertion.
+- Can be optimized further using balanced BST or finger trees for $O(n \log n)$ performance; basic vector-based version is acceptable for moderate $n$.
+- Common transformation: Any problem involving repeated merging of adjacent items with cost = sum can potentially use this instead of convex hull trick or Knuth optimization.

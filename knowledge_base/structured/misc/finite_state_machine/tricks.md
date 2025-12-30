@@ -1,0 +1,8 @@
+- **Myhill-Nerode Theorem**: A language is regular iff the number of equivalence classes under Nerode relation is finite. This gives a method to construct minimal DFA by merging equivalent states.
+- **Powerset Construction**: Convert NFA to DFA efficiently, though worst-case state explosion (up to $2^n$) may occur.
+- **Bitset Optimization**: Speed up NFA simulation using bitset operations to track active states in $O(s/w)$ per transition.
+- **Regular Language Closure Properties**: Use union, concatenation, Kleene star, complement, intersection, etc., to build complex FSMs from simple ones.
+- **Automatic Minimization**: Apply Hopcroft’s algorithm ($O(s \log s)$) to minimize DFA states for efficiency.
+- **String Processing Applications**: Precompute automata for pattern matching (e.g., KMP failure function as DFA).
+- **Dynamic Programming + Automaton**: In problems like expression evaluation over strings, use DP on short prefixes to define states, then apply Myhill-Nerode to build compact DFA.
+- **Efficient Querying**: Combine DFA with binary lifting or segment trees ("cat tree") for fast static range queries on string properties.

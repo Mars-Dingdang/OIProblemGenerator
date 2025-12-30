@@ -1,0 +1,9 @@
+- **Plan before coding**: Write out the entire process on paper to clarify logic and avoid mistakes.
+- **Modularize code**: Use functions, structs, or classes to separate different parts of the simulation (e.g., input parsing, step simulation, output).
+- **Normalize units**: Convert all measurements to a common unit (e.g., seconds, meters) to simplify calculations and comparisons.
+- **Debug in blocks**: Test each module independently to isolate errors quickly.
+- **Use clear variable names**: Avoid confusion by naming variables descriptively (e.g., `current_position`, `time_elapsed`).
+- **Handle edge cases**: Consider scenarios like exact matches (e.g., worm reaches top exactly) or zero movements.
+- **Optimize loops**: For repetitive simulations, look for patterns that allow mathematical shortcuts (e.g., using division instead of loops for linear processes).
+- **Simulate state changes**: Represent the system state with variables and update them step-by-step; use data structures like arrays or maps for complex states.
+- **Time management**: In contests, if simulation seems too slow, consider whether the problem can be solved analytically instead.

@@ -1,0 +1,7 @@
+{
+    "name": "数位 DP",
+    "category": "动态规划",
+    "complexity": "O(log N * states * transitions)",
+    "scenarios": "统计满足特定条件的数字个数，条件与数位相关，上界极大（如 10^18）",
+    "extensions": "与AC自动机结合处理字符串匹配，处理回文/镜像数，处理前导零敏感问题"
+}

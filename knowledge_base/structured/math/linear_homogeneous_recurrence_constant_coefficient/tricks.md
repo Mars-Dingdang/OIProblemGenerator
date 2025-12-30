@@ -1,0 +1,11 @@
+## Key Observations
+- **Fiduccia Algorithm**: Expresses the k-th term as the inner product of the polynomial representing initial terms and the polynomial x^k modulo the characteristic polynomial Γ(x). This reduces the problem to polynomial modular exponentiation, achieving O(M(d) log k) time.
+- **Rational Function Representation**: The generating function of the sequence is a rational function P(x)/Q(x) where Q(x) = x^d Γ(1/x). This representation is crucial for the Bostan–Mori algorithm.
+- **Bostan–Mori Algorithm**: Efficiently computes a single coefficient [x^k] P(x)/Q(x) by exploiting the property that Q(x)Q(-x) is even, halving the problem size each iteration. Complexity is O(M(d) log k).
+- **Slice Coefficients**: For computing consecutive terms [x^[L,R)] P(x)/Q(x), the algorithm recursively computes slices of size O(d) using the even denominator property, maintaining O(M(d) log L + M(R-L)) time.
+- **Matrix Connection**: The companion matrix of Γ(x) encodes the recurrence; the k-th power of its transpose gives the shifted sequence. The first row corresponds to x^k mod Γ(x).
+- **Optimizations**: Use fast polynomial multiplication (FFT/NTT) to achieve M(d) = O(d log d). For large k, this is far superior to matrix exponentiation which is O(d^3 log k).
+- **Handling Non-Homogeneous Cases**: Can be reduced to homogeneous by increasing the order.
+- **Numerical Stability**: For exact computations over finite fields, use modular arithmetic; for floating-point, beware of precision issues with large k.
+- **Precomputation**: The characteristic polynomial Γ(x) depends only on the recurrence coefficients, so it can be precomputed and reused for multiple queries with different k.
+- **Extension to Multi-Term Queries**: The slice-coefficient technique allows efficient batch computation of consecutive terms, useful for problems requiring a range of sequence values.

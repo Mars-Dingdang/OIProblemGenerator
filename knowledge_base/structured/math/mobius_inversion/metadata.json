@@ -1,0 +1,23 @@
+{
+    "name": "莫比乌斯反演",
+    "category": "数学 / 数论",
+    "complexity": {
+        "single_mu": "O(sqrt(n))",
+        "preprocess_mu": "O(n)",
+        "dirichlet_presum": "O(n log log n)",
+        "typical_application": "O(n) preprocessing, O(sqrt(n)) per query with number theory blocking"
+    },
+    "scenarios": [
+        "Counting pairs (i, j) with gcd(i, j) = k",
+        "Summation involving lcm(i, j)",
+        "Dirichlet convolution and prefix sums",
+        "Inverting sums over divisors or multiples"
+    ],
+    "extensions": [
+        "Dirichlet convolution",
+        "Multiplicative functions and linear sieve",
+        "Number theory blocking",
+        "Generalized inversion with completely multiplicative functions",
+        "Dirichlet prefix sum and difference"
+    ]
+}

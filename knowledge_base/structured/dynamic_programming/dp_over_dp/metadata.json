@@ -1,0 +1,7 @@
+{
+    "name": "DP 套 DP",
+    "category": "动态规划",
+    "complexity": "Varies, often exponential state space reduced via automaton minimization",
+    "scenarios": "Problems where the inner state is defined by another DP or a complex combinatorial condition (e.g., counting sequences satisfying certain constraints, verifying properties via an automaton).",
+    "extensions": "DFA minimization, automaton construction, state compression"
+}

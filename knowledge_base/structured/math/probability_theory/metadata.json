@@ -1,0 +1,7 @@
+{
+    "name": "概率论",
+    "category": "数学",
+    "complexity": "O(1) for basic properties, O(n) for sums, O(1) for integrals",
+    "scenarios": "Random variable analysis, expectation calculation, variance and covariance, probability transformations, conditional expectation",
+    "extensions": "Law of large numbers, central limit theorem, Markov chains, probability generating functions"
+}

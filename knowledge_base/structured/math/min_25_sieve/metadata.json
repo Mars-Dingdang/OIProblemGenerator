@@ -1,0 +1,7 @@
+{
+    "name": "Min_25 筛",
+    "category": "数学/数论",
+    "complexity": "O(n^{2/3}/log n) 或 O(n^{1-ε})",
+    "scenarios": "积性函数前缀和，要求 f(p) 为关于 p 的多项式（完全积性函数之和），且 f(p^c) 可快速计算",
+    "extensions": "Extended Eratosthenes Sieve, 洲阁筛"
+}

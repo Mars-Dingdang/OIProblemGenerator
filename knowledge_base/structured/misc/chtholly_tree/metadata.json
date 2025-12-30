@@ -1,0 +1,29 @@
+{
+    "name": "珂朵莉树",
+    "alternative_names": [
+        "Chtholly Tree",
+        "Old Driver Tree",
+        "ODT"
+    ],
+    "category": "杂项",
+    "origin": "CF896C",
+    "data_structures": [
+        "std::set",
+        "std::map",
+        "linked list"
+    ],
+    "complexity": {
+        "set_implementation": "O(m log n)",
+        "set_randomized": "O(n log log n)",
+        "list_implementation": "O(n log n)"
+    },
+    "scenarios": [
+        "interval assignment operations",
+        "random data with many range assignments",
+        "color segment merging problems"
+    ],
+    "extensions": [
+        "mapping idea generalization (see Luogu article)",
+        "Julia and Python high-precision sum variants (contextual reference)"
+    ]
+}

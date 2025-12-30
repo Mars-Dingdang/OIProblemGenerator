@@ -1,0 +1,8 @@
+- **Tree-in-tree structure**: Use Fenwick tree / segment tree as outer structure, each node maintains a dynamic segment tree on values.
+- **Simultaneous traversal**: During query, collect roots from the outer tree and perform binary search across all inner trees at once.
+- **Coordinate compression**: Since values can be large, compress them into ranks to reduce the range of the inner segment tree.
+- **Dynamic allocation**: Inner trees use dynamic nodes to avoid O(n^2) space; total space is O(n log² n).
+- **Fenwick over segment tree**: Prefer Fenwick tree for outer layer due to smaller constant and easier prefix handling.
+- **Update procedure**: For modification, remove old value and insert new value along all affected outer nodes (O(log n) nodes, each O(log n) time).
+- **Query optimization**: Reuse static k-th logic by comparing total count in left subtrees; decide direction based on summed counts.
+- **Alternative approaches**: If offline, consider CDQ divide and conquer or overall binary search to avoid complex data structures.

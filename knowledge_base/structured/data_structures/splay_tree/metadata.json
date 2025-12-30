@@ -1,0 +1,24 @@
+{
+    "name": "Splay Tree",
+    "category": "数据结构",
+    "complexity": {
+        "insert": "O(log n) amortized",
+        "delete": "O(log n) amortized",
+        "query": "O(log n) amortized",
+        "rotate": "O(1)",
+        "splay": "O(log n) amortized"
+    },
+    "scenarios": [
+        "balanced binary search tree",
+        "sequence manipulation",
+        "interval operations",
+        "dynamic ranking",
+        "lazy propagation with range updates"
+    ],
+    "extensions": [
+        "support for lazy propagation",
+        "range reversal",
+        "merge and split operations",
+        "order statistic tree"
+    ]
+}

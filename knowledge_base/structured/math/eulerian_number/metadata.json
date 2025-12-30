@@ -1,0 +1,7 @@
+{
+    "name": "Eulerian Number",
+    "category": "Mathematics",
+    "complexity": "O(n*m) for DP calculation.",
+    "scenarios": "Counting permutations of [1..n] with exactly m ascents (positions where element > previous element). Used in combinatorial enumeration.",
+    "extensions": "Can be extended to signed Eulerian numbers, Eulerian polynomials, and connections to other combinatorial numbers like Stirling numbers."
+}

@@ -1,0 +1,37 @@
+{
+    "name": "带花树算法 (Blossom Algorithm)",
+    "category": "图论",
+    "sub_category": "图的匹配",
+    "problem": "一般图最大匹配",
+    "complexity": {
+        "time": "O(|V| |E|^2)",
+        "space": "O(|V| + |E|)"
+    },
+    "scenarios": [
+        "一般图最大基数匹配",
+        "存在奇环的图中寻找增广路径",
+        "非二分图匹配问题"
+    ],
+    "extensions": [
+        "可修改用于解决一般图最大权匹配",
+        "基于Tutte矩阵和高斯消元的随机化算法（替代方法）"
+    ],
+    "references": [
+        "The Dynamic Hungarian Algorithm for the Assignment Problem with Changing Costs",
+        "A Fast Dynamic Assignment Algorithm for Solving Resource Allocation Problems",
+        "UOJ #79. 一般图最大匹配"
+    ],
+    "author": [
+        "H-J-Granger",
+        "accelsao",
+        "Ir1d",
+        "Early0v0",
+        "Henry-ZHR",
+        "HeliumOI",
+        "AntiLeaf",
+        "ShizuhaAki",
+        "pukui"
+    ],
+    "year": 1961,
+    "inventor": "Jack Edmonds"
+}

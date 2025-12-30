@@ -1,0 +1,7 @@
+{
+    "name": "模拟",
+    "category": "算法基础",
+    "complexity": "Varies by problem, typically O(n) or O(1) per step",
+    "scenarios": "Simulating processes described in problem statements, such as games, physical processes, or step-by-step operations",
+    "extensions": "Often combined with other algorithms like BFS, DFS, or greedy for more complex simulations"
+}

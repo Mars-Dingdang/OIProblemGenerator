@@ -1,0 +1,7 @@
+{
+    "name": "Lucas 定理",
+    "category": "数学",
+    "complexity": "O(p + T log_p n) for prime modulus p, T queries; for composite modulus, depends on factorization and prime powers",
+    "scenarios": "Computing large binomial coefficients modulo a number, especially when n is huge (e.g., 1e18) and modulus is relatively small (e.g., 1e6)",
+    "extensions": "exLucas algorithm for composite modulus, factorial modulo prime power, Chinese Remainder Theorem integration"
+}

@@ -1,0 +1,11 @@
+- **Balance Factor**: Defined as `right_height - left_height`. AVL tree maintains balance by ensuring the absolute value of the balance factor is at most 1.
+- **Rotations**: Four types based on imbalance:
+  - Left-Left case → Right rotate
+  - Right-Right case → Left rotate
+  - Left-Right case → Left rotate child, then right rotate current
+  - Right-Left case → Right rotate child, then left rotate current
+- **Maintain After Update**: Always call `updateHeight()` and `maintainBalance()` after insertion or deletion.
+- **Recursive Insert/Delete**: Easier to implement with recursion since rebalancing happens on the way back up.
+- **Efficient Height Storage**: Store height in each node instead of computing it every time — crucial for performance.
+- **Fibonacci-like Growth**: Minimum number of nodes in an AVL tree of height $ h $ follows a recurrence similar to Fibonacci, proving $ h = O(\log n) $.
+- **Use Cases**: Prefer over regular BST when guaranteed $ O(\log n) $ operations are required. Slightly faster lookups than Red-Black trees but slower insertions/deletions due to more rotations.

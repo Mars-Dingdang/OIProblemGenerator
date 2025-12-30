@@ -1,0 +1,30 @@
+{
+    "name": "手指树",
+    "category": "数据结构",
+    "complexity": {
+        "const_snoc": "O(1)",
+        "viewl_viewr": "O(1)",
+        "measure_length": "O(1)",
+        "append": "O(log min(l1,l2))",
+        "split": "O(log min(n,l-n))",
+        "index": "O(log min(n,l-n))",
+        "replicate": "O(log n)",
+        "fromList_toList_reverse": "O(l)"
+    },
+    "applications": [
+        "双端队列",
+        "随机访问序列",
+        "有序序列",
+        "区间树",
+        "优先级队列"
+    ],
+    "extensions": [
+        "幺半群标记（monoidal tag）",
+        "持久化数据结构"
+    ],
+    "based_on": "2-3 tree",
+    "authors": [
+        "Ralf Hinze",
+        "Ross Paterson"
+    ]
+}

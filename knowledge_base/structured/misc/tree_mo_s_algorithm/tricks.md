@@ -1,0 +1,9 @@
+- **Euler Tour Transformation**: Convert tree into sequence using DFS entry and exit (f[x], g[x]), then apply standard Mo's algorithm.
+- **Virtual Node Toggle**: When adding/removing node `x` in bracket sequence: use `add(x)` for `+x`, `del(x)` for `-x`. Use XOR toggle (`vis[x] ^= 1`) to manage inclusion.
+- **LCA Handling**: If query path doesn't naturally include LCA (e.g., when both endpoints are not ancestor), manually add and remove LCA during answer collection.
+- **Block Size Optimization**: For plain tree Mo’s, block size ≈ `n^(2/3)`; with time dimension, use `n^0.6` for balanced complexity.
+- **True Tree Blocking**: Use HLD-style DFS to partition tree into blocks where each block has diameter ≤ block size. Maintain stack during DFS1: pop subtree when size ≥ `step`.
+- **Time Dimension Integration**: Add third dimension (time) to queries; maintain versioned updates and roll back/forward during pointer movement.
+- **Query Sorting**: Sort by `(block[u], block[v], time)` to minimize total movement.
+- **Path Symmetric Update**: Move two pointers independently toward target; use `update()` on nodes along path except LCA, which is handled separately.
+- **Avoid Double Flip at LCA**: Since moving both pointers may cancel flip at LCA, exclude it from `move()` and manually include it only during answer calculation.

@@ -1,0 +1,17 @@
+{
+    "name": "向量运算 (Vector Operations)",
+    "category": "数学/线性代数 (Mathematics/Linear Algebra)",
+    "complexity": "O(1) for basic operations",
+    "scenarios": [
+        "计算几何",
+        "物理模拟",
+        "图形学",
+        "线性代数基础"
+    ],
+    "extensions": [
+        "仿射变换",
+        "四元数旋转",
+        "矩阵表示",
+        "高维推广"
+    ]
+}

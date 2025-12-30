@@ -1,0 +1,11 @@
+- **Modular Inverse**: The inverse exists iff gcd(f, g) = 1 in polynomial ring.
+- **Truncated Inverse**: Usually computed modulo x^n, denoted f^{-1}(x).
+- **Newton's Method**: Use iterative doubling: B_{k+1} = B_k * (2 - A * B_k) mod x^{2k}.
+- **NTT/FFT**: Use NTT for O(n log n) multiplication; ensure modulus supports primitive roots.
+- **Common Pitfall**: Cannot compute inverse via IDFT(DFT(1)/DFT(f)) because that gives inverse modulo x^n - 1, not x^n.
+- **Generating Functions**: Inverse is crucial for operations on ordinary/exponential generating functions.
+- **Real-rooted Polynomials**: For real coefficients, complex roots come in conjugate pairs; this can simplify factorization.
+- **Bairstow's Method**: An iterative method to find quadratic factors of real polynomials, related to Lin's algorithm described.
+- **Precision**: For floating-point FFT, beware of numerical errors; consider using NTT with integer modulus when possible.
+- **Sparse Polynomials**: If polynomial is sparse, specialized algorithms may be faster than general NTT.
+- **Application**: Used in polynomial division (via multiplying by inverse of reversed divisor), composition, and generating function manipulations.

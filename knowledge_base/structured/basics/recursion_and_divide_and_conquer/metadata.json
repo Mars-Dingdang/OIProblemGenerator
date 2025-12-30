@@ -1,0 +1,17 @@
+{
+    "name": "递归 & 分治",
+    "category": "算法基础",
+    "complexity": "Varies by problem. Recursion depth O(n) can cause stack overflow. Divide and conquer often O(n log n) for problems like merge sort.",
+    "scenarios": [
+        "Tree/graph traversal",
+        "Merge sort, quick sort",
+        "Binary search",
+        "Solving problems that can be broken into identical subproblems (e.g., Path Sum III)",
+        "Backtracking"
+    ],
+    "extensions": [
+        "Memoization",
+        "Dynamic programming (for overlapping subproblems)",
+        "Tail recursion optimization"
+    ]
+}

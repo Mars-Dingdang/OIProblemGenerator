@@ -1,0 +1,12 @@
+- **Loop reordering**: Swap loops to `i-k-j` order for better cache locality, reducing constant factor.
+- **Sparse matrices**: Skip zero entries to speed up multiplication when matrix is sparse.
+- **Modular arithmetic**: Apply modulo after each multiplication to avoid overflow.
+- **Matrix exponentiation**: Use binary exponentiation to compute `A^k` in O(n³ log k).
+- **Linear recurrences**: Encode recurrence as matrix multiplication (e.g., Fibonacci: `[F_n, F_{n-1}] = [F_{n-1}, F_{n-2}] * [[1,1],[1,0]]`).
+- **Path counting**: For a graph with adjacency matrix `G`, number of length-k paths from i to j is `(G^k)[i][j]`.
+- **Min-plus semiring**: Replace `+` with `min` and `*` with `+` for shortest paths with fixed edge count.
+- **Augmented matrix**: Add extra dimensions to handle constants, linear terms, or geometric progressions in recurrences.
+- **Segment tree with matrices**: Use matrices to represent and compose linear transformations for range updates/queries.
+- **Block matrix multiplication**: Divide matrix into blocks to improve cache performance.
+- **Eigenvalue decomposition**: For diagonalizable matrices, compute `A^k = P D^k P^{-1}` for faster exponentiation.
+- **Cayley-Hamilton theorem**: Reduce high powers using characteristic polynomial to lower degree.

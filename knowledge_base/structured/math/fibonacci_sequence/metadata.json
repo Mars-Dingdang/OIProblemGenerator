@@ -1,0 +1,24 @@
+{
+    "name": "斐波那契数列",
+    "category": "数学",
+    "complexity": {
+        "recursive": "O(2^n)",
+        "iterative": "O(n)",
+        "matrix_exponentiation": "O(log n)",
+        "fast_doubling": "O(log n)"
+    },
+    "scenarios": [
+        "计算第n个斐波那契数",
+        "模意义下周期性计算",
+        "齐肯多夫编码",
+        "GCD性质证明",
+        "矩阵快速幂应用"
+    ],
+    "extensions": [
+        "卢卡斯数列",
+        "皮萨诺周期",
+        "斐波那契编码",
+        "矩阵形式",
+        "通项公式"
+    ]
+}

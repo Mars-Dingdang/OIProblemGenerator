@@ -1,0 +1,25 @@
+{
+    "name": "可持久化字典树",
+    "category": "数据结构",
+    "complexity": {
+        "time": "O(log C) per operation",
+        "space": "O(n log C)"
+    },
+    "scenarios": [
+        "查询区间内与给定值异或的最大结果",
+        "支持历史版本回溯的Trie操作",
+        "前缀和结合可持久化数据结构处理区间问题"
+    ],
+    "extensions": [
+        "01-Trie",
+        "可持久化平衡树",
+        "可持久化线段树"
+    ],
+    "references": [
+        "Luogu P3835",
+        "Luogu P3919",
+        "Codeforces 702F",
+        "Luogu P5055",
+        "Luogu P5350"
+    ]
+}

@@ -1,0 +1,6 @@
+- **Maintain indices instead of values**: Store array indices in the deque to easily track element positions and remove out-of-window elements.
+- **Two monotonic queues for min and max**: When both extremes are needed in a sliding window, use one increasing and one decreasing deque simultaneously.
+- **Amortized O(1) operations**: Each element is pushed and popped at most once, leading to overall O(n) time.
+- **Offline RMQ via sorting queries by right endpoint**: Process queries in increasing order of `r`, maintain a monotonic stack (or queue), then binary search for the first index ≥ `l` to answer each query.
+- **Combine with two pointers**: For variable-sized intervals where condition depends on range min/max difference (e.g., Flowerpot), move `R` to satisfy condition, then shrink `L`; monotonic queues help maintain min/max efficiently.
+- **Use `deque` from STL**: Although called a queue, monotonic queue requires popping from the back — `std::deque` supports this.

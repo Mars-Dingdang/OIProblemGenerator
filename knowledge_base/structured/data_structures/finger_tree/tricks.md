@@ -1,0 +1,7 @@
+- **Persistent Structure**: Finger trees are inherently persistent, meaning all versions of the structure are preserved after modifications — ideal for rollback or versioning scenarios.
+- **Monoidal Annotation**: By attaching a monoid (e.g., size, min priority, sum) to internal nodes, finger trees can support indexed access (`index`, `split`) and ordered sequences efficiently.
+- **Amortized Constant Time Access at Ends**: The design ensures that operations like `cons`, `snoc`, `viewl`, and `viewr` run in amortized O(1) time by keeping digits (1–4 elements) at both ends.
+- **Efficient Split and Concatenation**: Using the monoid measure, splitting at a given position takes O(log min(n, l−n)) time. Similarly, concatenation is efficient when sizes differ greatly.
+- **Generalization Over Sequences**: Can represent deques, sequences with indexed access, priority queues, interval trees — just by changing the annotation type.
+- **Digit Flexibility**: Expanding digit capacity to four elements (instead of three) is crucial to maintain constant-time deque operations while allowing structural flexibility during concatenation.
+- **Recursive Spine Structure**: The middle spine is itself a finger tree of `Node<T>`, enabling logarithmic depth and efficient recursive decomposition.

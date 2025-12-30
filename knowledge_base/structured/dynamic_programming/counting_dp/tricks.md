@@ -1,0 +1,11 @@
+- **Partitioning the set**: The core idea is to partition the counting set S into disjoint subsets based on a parameter (e.g., the last element). This allows using recurrence: |S| = Σ |subset_i|.
+- **Ordered vs. unordered partitions**: For ordered partitions (compositions), the recurrence is f(n,k) = Σ_{i=1}^{n-k+1} f(n-i, k-1). For unordered partitions (integer partitions), define dp[n][m] as partitions of n using numbers ≤ m, with recurrence dp[n][m] = dp[n][m-1] + dp[n-m][m] (if n ≥ m).
+- **Difference from optimization DP**: In counting DP, subsets must be disjoint to avoid double-counting. In optimization DP (like knapsack), subsets can overlap because we take max/min.
+- **Common patterns**:
+  - **Prefix sums optimization**: Replace inner loops with prefix sums to reduce complexity (e.g., from O(n^3) to O(n^2)).
+  - **Generating functions**: Many counting problems can be solved via generating functions, which sometimes align with DP recurrences.
+  - **Inclusion–exclusion**: Combine counting DP with inclusion–exclusion to handle constraints.
+  - **State compression**: For problems with additional constraints (e.g., limits on element values), use state compression or digit DP techniques.
+- **Complexity notes**: Naive implementations may be O(n^2) or O(n^2 log n) due to harmonic series. Optimizations (like prefix sums) can improve to O(n^2) or better.
+- **Base cases**: Carefully define base cases (e.g., f(0,0)=1 for partitions).
+- **Modular arithmetic**: Since counts can be large, usually compute modulo a prime (e.g., 1e9+7).

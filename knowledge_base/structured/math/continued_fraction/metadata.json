@@ -1,0 +1,17 @@
+{
+    "name": "连分数",
+    "category": "数学",
+    "complexity": "O(log min(p, q)) for rational representation; O(n) for convergents",
+    "scenarios": [
+        "Rational approximation",
+        "Diophantine approximation",
+        "Solving linear Diophantine equations",
+        "Best rational approximations"
+    ],
+    "extensions": [
+        "Quadratic irrationals",
+        "Periodic continued fractions",
+        "Simultaneous approximation",
+        "Lattice reduction"
+    ]
+}

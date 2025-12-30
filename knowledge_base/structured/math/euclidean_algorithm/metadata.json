@@ -1,0 +1,17 @@
+{
+    "name": "欧几里得算法 / Euclidean Algorithm",
+    "category": "数学 / Number Theory",
+    "complexity": "O(log min(a, b))",
+    "scenarios": [
+        "计算最大公约数 (gcd)",
+        "计算最小公倍数 (lcm)",
+        "解线性丢番图方程 (扩展欧几里得)",
+        "判断两数是否互质",
+        "化简分数"
+    ],
+    "extensions": [
+        "扩展欧几里得算法 (EXGCD)",
+        "Stein算法 (二进制gcd)",
+        "多个数的gcd/lcm"
+    ]
+}

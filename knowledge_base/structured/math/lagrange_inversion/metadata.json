@@ -1,0 +1,7 @@
+{
+    "name": "Lagrange 反演",
+    "category": "数学",
+    "complexity": "O(n log n) 或 O(n) 取决于实现",
+    "scenarios": "求解形式幂级数的复合逆，计算树计数等组合问题",
+    "extensions": "可用于无标号树计数、烷基计数等组合类问题"
+}

@@ -1,0 +1,19 @@
+{
+    "name": "二次域",
+    "category": "数学 / 数论",
+    "complexity": "O(1) for basic operations; factorization and unit solving depend on specific problems.",
+    "scenarios": [
+        "Solving quadratic integer equations (e.g., x² + y² = n, x² - xy + y² = n)",
+        "Analyzing Gaussian integers and Eisenstein integers",
+        "Finding integer points on circles and ellipses",
+        "Solving Pythagorean triples and related Diophantine equations",
+        "Prime factorization in quadratic integer rings"
+    ],
+    "extensions": [
+        "Gaussian integers (Z[i])",
+        "Eisenstein integers (Z[ω])",
+        "Pell equations for real quadratic fields",
+        "Ideal factorization in Dedekind domains",
+        "Dirichlet's unit theorem"
+    ]
+}

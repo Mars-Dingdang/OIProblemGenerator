@@ -1,0 +1,17 @@
+{
+    "name": "拆点",
+    "category": "图论",
+    "sub_category": "网络流, 分层图最短路",
+    "common_usage": [
+        "处理点权或点流量限制",
+        "分层图建模",
+        "最短路中状态扩展"
+    ],
+    "complexity": "O((n*k + m*k) log (n*k)) for layered Dijkstra",
+    "related_problems": [
+        "结点有流量限制的最大流",
+        "[JLOI2011] 飞行路线",
+        "最小斯坦纳树",
+        "[WC2008] 游览计划"
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "name": "概率不等式",
+    "category": "数学",
+    "complexity": "O(1) per inequality",
+    "scenarios": [
+        "随机化算法分析",
+        "估计概率上界/下界",
+        "近似算法精度保证",
+        "抽奖/采样问题",
+        "随机撒点估算"
+    ],
+    "extensions": [
+        "Union Bound",
+        "Markov Inequality",
+        "Chebyshev Inequality",
+        "Chernoff Inequality",
+        "Hoeffding Inequality"
+    ]
+}

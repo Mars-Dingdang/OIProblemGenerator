@@ -1,0 +1,24 @@
+{
+    "name": "匈牙利算法 (Kuhn-Munkres Algorithm)",
+    "category": "图论",
+    "sub_category": "二分图匹配",
+    "complexity": {
+        "time": "O(n^3)",
+        "space": "O(n^2)"
+    },
+    "scenarios": [
+        "二分图最大权完美匹配",
+        "分配问题（Assignment Problem）",
+        "带权二分图匹配"
+    ],
+    "extensions": [
+        "动态匈牙利算法",
+        "转化为最小费用最大流模型"
+    ],
+    "references": [
+        "Kuhn’s Algorithm - Maximum Bipartite Matching",
+        "Dulmage–Mendelsohn decomposition",
+        "陈胤伯。浅谈图的匹配算法及其应用。2015 年信息学奥林匹克中国国家队候选队员论文集。",
+        "Bondy, John Adrian, and Uppaluri Siva Ramachandra Murty. Graph theory with applications."
+    ]
+}

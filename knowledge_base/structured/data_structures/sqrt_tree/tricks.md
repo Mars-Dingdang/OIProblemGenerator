@@ -1,0 +1,8 @@
+- **Binary Optimization for Layer Detection**: To find the minimal node covering $[l, r]$ in $O(1)$, use XOR of endpoints: $l \oplus r$, then compute its highest set bit. This identifies the layer where the interval spans multiple blocks.
+- **Power-of-Two Padding**: Extend sequence length to next power of two with identity elements (e.g., 0 for +, ∞ for min) so that block sizes are powers of two and bitwise operations can determine block membership.
+- **Index Tree Optimization**: Replace the root-level $B$ array with another Sqrt Tree (`index`) to reduce point update complexity from $O(n)$ to $O(\sqrt{n})$. Non-root nodes keep simple $B$ arrays.
+- **Lazy Propagation Variants**:
+  - *Top-layer only*: Only first-level blocks have lazy tags. On update, rebuild partially covered blocks and reset `index`. Achieves $O(\sqrt{n} \log \log n)$ update, $O(1)$ query.
+  - *Full-tree tagging*: Any node can have a lazy tag. During query, combine ancestor tags. Faster update $O(\sqrt{n})$, slower query $O(\log \log n)$.
+- **Efficient Reconstruction**: When updating, only rebuild affected prefix, suffix, and between arrays in changed blocks, and propagate updates down recursively.
+- **Combining Answers**: For query $[l, r]$, answer = $\text{suf}[l] \circ \text{middle blocks} \circ \text{pref}[r]$, where middle part is queried via `between` or `index` tree.

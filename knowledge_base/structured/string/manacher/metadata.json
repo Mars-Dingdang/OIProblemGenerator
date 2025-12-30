@@ -1,0 +1,15 @@
+{
+    "name": "Manacher 算法",
+    "category": "字符串",
+    "complexity": "O(n)",
+    "scenarios": [
+        "计算字符串所有回文子串",
+        "求最长回文子串",
+        "统计回文子串数量"
+    ],
+    "extensions": [
+        "统一处理奇偶长度回文",
+        "回文树（Palindromic Tree）",
+        "结合哈希进行回文匹配"
+    ]
+}

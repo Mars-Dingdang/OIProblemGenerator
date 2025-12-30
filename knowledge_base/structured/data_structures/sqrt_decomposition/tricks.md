@@ -1,0 +1,8 @@
+- **Block size**: Use $ \sqrt{n} $ as the default block size to balance between query and update complexity.
+- **Lazy propagation with permanent markers**: For range add operations, maintain a `delta` array per block. When querying, adjust values by adding `delta[block_id]`.
+- **Sorted auxiliary array**: Maintain a sorted copy of each block (`t[]`) to enable binary search for queries like "count elements ≥ z" in $ O(\log \text{block size}) $.
+- **Pushdown before access**: In assignment updates, use a sentinel value (e.g., `INF`) to indicate no pending assignment. Always `pushdown` on edge blocks before modifying or querying them.
+- **Re-sort after modification**: After updating any element in a block (especially partial), re-sort the block’s auxiliary array to preserve order.
+- **Hybrid handling**: Handle three parts separately: left partial block, full blocks, right partial block.
+- **Offline optimization**: Combine with Mo's Algorithm when dealing with many offline range queries — reorder queries by block to achieve $ O((n + q)\sqrt{n}) $.
+- **Memory layout**: Store block boundaries (`st`, `ed`), membership (`belong`), and sizes (`size_`) during preprocessing for fast access.

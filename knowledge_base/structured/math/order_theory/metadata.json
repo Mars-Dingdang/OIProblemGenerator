@@ -1,0 +1,17 @@
+{
+    "name": "序理论",
+    "category": "数学",
+    "complexity": "O(1) for basic operations, O(n log n) for applications like Dilworth's theorem",
+    "scenarios": [
+        "偏序集（poset）的构造与分析",
+        "Dilworth定理与Mirsky定理的应用（如导弹拦截问题）",
+        "格（lattice）与有向集（directed set）",
+        "C++中自定义比较器（严格弱序）"
+    ],
+    "extensions": [
+        "Dilworth定理与Hall婚配定理等价",
+        "Erdős–Szekeres定理的证明",
+        "Hasse图与DAG的关系",
+        "Zorn引理与选择公理"
+    ]
+}

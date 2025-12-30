@@ -1,0 +1,20 @@
+{
+    "name": "替罪羊树",
+    "category": "数据结构",
+    "complexity": {
+        "query": "O(log n)",
+        "insert": "O(log n) amortized",
+        "delete": "O(log n) amortized",
+        "rebuild": "Θ(k) for subtree of size k"
+    },
+    "scenarios": [
+        "平衡树维护可重集",
+        "需要简单实现且常数较小的场景",
+        "不支持区间操作但要求均摊对数复杂度"
+    ],
+    "extensions": [
+        "支持懒删除",
+        "可通过重构实现完全清理空节点",
+        "可结合排名查询、前驱后继等平衡树常规操作"
+    ]
+}

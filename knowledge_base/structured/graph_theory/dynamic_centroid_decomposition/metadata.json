@@ -1,0 +1,19 @@
+{
+    "name": "动态点分治",
+    "category": "图论",
+    "complexity": {
+        "preprocessing": "O(n log n)",
+        "query_update": "O(log^2 n) or O(log n) depending on data structures"
+    },
+    "scenarios": [
+        "树上路径信息统计",
+        "带修改的树上距离相关查询",
+        "最远黑点对（如捉迷藏问题）",
+        "子树内满足距离条件的节点权值和"
+    ],
+    "extensions": [
+        "结合可删堆维护极值",
+        "结合动态开点线段树维护区间和",
+        "结合LCA预处理计算距离"
+    ]
+}

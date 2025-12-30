@@ -1,0 +1,17 @@
+{
+    "name": "单调队列",
+    "category": "数据结构",
+    "complexity": {
+        "time": "O(n)",
+        "space": "O(n)"
+    },
+    "scenarios": [
+        "sliding window maximum/minimum",
+        "RMQ with fixed interval",
+        "optimization for DP with monotonicity"
+    ],
+    "extensions": [
+        "can be combined with two pointers",
+        "used in offline query processing"
+    ]
+}

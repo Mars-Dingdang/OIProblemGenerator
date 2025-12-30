@@ -1,0 +1,7 @@
+{
+    "name": "常系数齐次线性递推",
+    "category": "数学",
+    "complexity": "O(M(d) log k) where M(d) is polynomial multiplication time",
+    "scenarios": "Computing the k-th term of a linear homogeneous recurrence with constant coefficients when k >> d",
+    "extensions": "Fiduccia algorithm, Bostan-Mori algorithm, rational function representation, slice coefficients for consecutive terms"
+}

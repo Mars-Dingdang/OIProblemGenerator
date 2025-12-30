@@ -1,0 +1,15 @@
+{
+    "name": "DP 优化",
+    "category": "动态规划",
+    "complexity": "Varies by specific technique",
+    "scenarios": [
+        "Longest Common Subsequence with swapped state dimensions",
+        "Hamiltonian cycle detection with bitmask DP and state compression",
+        "Knapsack with swapped value/volume dimensions"
+    ],
+    "extensions": [
+        "State definition swapping",
+        "Bitmask compression",
+        "Preprocessing for O(1) transitions"
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "name": "左偏红黑树",
+    "category": "数据结构",
+    "complexity": {
+        "insert": "O(log n)",
+        "delete": "O(log n)",
+        "query": "O(log n)"
+    },
+    "scenarios": [
+        "有序集合维护",
+        "动态排名查询",
+        "区间最值操作",
+        "替代 std::set 在需要定制行为时的场景"
+    ],
+    "extensions": [
+        "支持 size 字段维护以实现顺序统计树（OS Tree）",
+        "可扩展为支持重复元素的多重集"
+    ]
+}

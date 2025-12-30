@@ -1,0 +1,7 @@
+{
+    "name": "随机子集选择算法",
+    "category": "数学",
+    "complexity": "期望抛硬币次数 O(n + sqrt(n) log n)",
+    "scenarios": "从 n 个元素中随机选取 n/2 个元素的随机化算法",
+    "extensions": "结合 Hoeffding 不等式分析偏移量，应用于 Balls and Bins 问题"
+}

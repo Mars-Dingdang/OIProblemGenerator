@@ -1,0 +1,19 @@
+{
+    "name": "跳表",
+    "category": "数据结构",
+    "complexity": {
+        "access": "O(log n)",
+        "insert": "O(log n)",
+        "delete": "O(log n)"
+    },
+    "scenarios": [
+        "快速访问第 k 个元素",
+        "替代平衡树的随机化数据结构",
+        "需要有序索引但避免复杂平衡操作的场景"
+    ],
+    "references": [
+        "Skip Lists: A Probabilistic Alternative to Balanced Trees",
+        "Skip List",
+        "A Skip List Cookbook"
+    ]
+}

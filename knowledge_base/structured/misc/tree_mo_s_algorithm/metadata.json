@@ -1,0 +1,15 @@
+{
+    "name": "树上莫队",
+    "category": "杂项",
+    "complexity": "O(n^{5/3}) for basic, O(n^{7/6}) with time dimension",
+    "scenarios": [
+        "Path queries on trees",
+        "Offline dynamic tree path queries",
+        "Color frequency based path value computation"
+    ],
+    "extensions": [
+        "With time dimension (带修改树上莫队)",
+        "Using Euler Tour (括号序)",
+        "True tree blocking using heavy-light decomposition"
+    ]
+}

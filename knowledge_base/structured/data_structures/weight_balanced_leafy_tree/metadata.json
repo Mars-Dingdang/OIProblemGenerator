@@ -1,0 +1,15 @@
+{
+    "name": "Weight Balanced Leafy Tree",
+    "abbreviation": "WBLT",
+    "category": "数据结构",
+    "sub_category": "平衡树",
+    "time_complexity": {
+        "insert_delete": "O(log n)",
+        "merge": "O(|log(w1/w2)|)",
+        "balance_maintenance": "O(1)"
+    },
+    "space_complexity": "Θ(n)",
+    "persistent": true,
+    "supports_interval_operations": true,
+    "notes": "Combines Weight Balanced Tree and Leafy Tree concepts; maintains balance via rotation or merging."
+}

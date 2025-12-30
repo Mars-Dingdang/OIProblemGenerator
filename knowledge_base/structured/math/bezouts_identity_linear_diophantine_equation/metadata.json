@@ -1,0 +1,16 @@
+{
+    "name": "裴蜀定理 & 一次不定方程",
+    "category": "数学/数论",
+    "complexity": "扩展欧几里得算法 O(log min(a, b))",
+    "scenarios": [
+        "判断线性组合存在性",
+        "求解二元/多元一次不定方程",
+        "Frobenius硬币问题（Sylvester定理）",
+        "最小代价组合问题（如Codeforces 510D）"
+    ],
+    "extensions": [
+        "扩展欧几里得算法",
+        "多元一次不定方程通解构造",
+        "Frobenius问题推广"
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "name": "线性同余方程",
+    "category": "数学/数论",
+    "complexity": "O(log min(a, n)) for solving a single equation using extended Euclidean algorithm.",
+    "scenarios": [
+        "Solving equations of the form a*x ≡ b (mod n).",
+        "Used in modular arithmetic problems, number theory, and cryptography.",
+        "Often a sub-step in Chinese Remainder Theorem."
+    ],
+    "extensions": [
+        "System of linear congruences (Chinese Remainder Theorem).",
+        "Linear congruences with multiple variables.",
+        "Congruences with composite modulus where a and n are not coprime."
+    ]
+}

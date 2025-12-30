@@ -1,0 +1,24 @@
+{
+    "name": "Kinetic Tournament Tree",
+    "category": "数据结构",
+    "complexity": {
+        "time": "O(n log^2 n + m log^3 n)",
+        "space": "O(n)"
+    },
+    "scenarios": [
+        "维护随时间变化的函数最大值",
+        "支持区间平移操作（按系数加权区间加）",
+        "动态维护线性函数在 x=0 处的最大值"
+    ],
+    "extensions": [
+        "可推广至高次多项式函数（s次多项式，交点数有限）",
+        "结合事件队列隐式维护证书失效时间"
+    ],
+    "references": [
+        "2016 年国家集训队论文",
+        "HDU5306 Gorgeous Sequence",
+        "BZOJ4695 最假女选手",
+        "CTS loves segment tree",
+        "CPU 监控"
+    ]
+}

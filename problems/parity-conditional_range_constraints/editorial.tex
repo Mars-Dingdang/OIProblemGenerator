@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, fullpage}
+\begin{document}
+
+\title{Editorial: Parity-Conditional Range Constraints}
+\author{}
+\date{}
+\maketitle
+
+\section*{Core Observation}
+The problem involves enforcing constraints on boolean variables over ranges where the constraint type depends on the parity of the range length $L = r - l + 1$. Specifically, for a constraint on range $[l, r]$, the required condition changes based on $L \mod 2$. The key insight is that constraints can be separated into two independent groups: those active for even-length ranges ($L \equiv 0 \mod 2$) and those active for odd-length ranges ($L \equiv 1 \mod 2$). For each group, we can use a dedicated segment tree to efficiently add implication edges for entire ranges in $O(\log n)$ time per constraint, avoiding the $O(n)$ cost per constraint that would arise from naive iteration.
+
+\section*{Solution}
+We model the problem as a 2-SAT instance where variables represent the boolean states of $n$ elements. The solution constructs an implication graph with auxiliary nodes from segment trees to handle range constraints efficiently.
+
+\textbf{Step 1: Build two segment trees} \\
+Construct two segment trees:
+\begin{itemize}
+    \item $\mathcal{T}_0$ for constraints active on \textbf{even-length} ranges ($L \equiv 0 \mod 2$)
+    \item $\mathcal{T}_1$ for constraints active on \textbf{odd-length} ranges ($L \equiv 1 \mod 2$)
+\end{itemize}
+Each tree covers the full range $[1, n]$ and has $O(n)$ nodes. For every node $u$ in tree $\mathcal{T}_p$ (where $p \in \{0,1\}$), introduce an auxiliary variable $y_u^{(p)}$.
+
+\textbf{Step 2: Add internal tree edges} \\
+For each segment tree $\mathcal{T}_p$, add the following edges to the implication graph:
+\begin{itemize}
+    \item \textbf{Internal nodes:} For node $u$ with children $v, w$, add:
+    \[
+        y_u^{(p)} \to y_v^{(p)} \quad \text{and} \quad y_u^{(p)} \to y_w^{(p)}
+    \]
+    \item \textbf{Leaf nodes:} For leaf $u$ covering position $i$, add:
+    \[
+        y_u^{(p)} \to x_i
+    \]
+\end{itemize}
+These edges propagate truth values from any segment tree node down to all leaves in its range, ensuring that if $y_u^{(p)}$ is true, all $x_i$ in the segment must be true.
+
+\textbf{Step 3: Process constraints} \\
+For each constraint on range $[l, r]$:
+\begin{enumerate}
+    \item Compute parity $p = (r - l + 1) \mod 2$.
+    \item Decompose $[l, r]$ into $O(\log n)$ segments using $\mathcal{T}_p$ (standard segment tree decomposition).
+    \item For each segment tree node $u$ in the decomposition:
+    \begin{itemize}
+        \item If the constraint requires $x_l$ to imply the range (e.g., for even-length constraints), add:
+        \[
+            x_l \to y_u^{(p)}
+        \]
+        \item If the constraint requires $x_r$ to imply the range (e.g., for odd-length constraints), add:
+        \[
+            x_r \to y_u^{(p)}
+        \]
+    \end{itemize}
+\end{enumerate}
+This step adds $O(\log n)$ edges per constraint. The decomposition ensures implications from the source variable ($x_l$ or $x_r$) propagate to all positions in $[l, r]$ via the segment tree structure.
+
+\textbf{Step 4: Solve 2-SAT} \\
+The final graph has:
+\begin{itemize}
+    \item $n$ primary variables ($x_1, \dots, x_n$)
+    \item $O(n)$ auxiliary variables (from two segment trees)
+    \item $O(n)$ edges from tree structures
+    \item $O(m \log n)$ edges from constraints
+\end{itemize}
+Solve the 2-SAT instance using Kosaraju's algorithm (or Tarjan's) on the implication graph. The solution exists iff no variable $x_i$ and its negation $\neg x_i$ are in the same strongly connected component.
+
+\section*{Complexity}
+\begin{itemize}
+    \item \textbf{Space complexity:} \\
+    Each segment tree uses $O(n)$ space for nodes and edges. Processing $m$ constraints adds $O(m \log n)$ edges. Total space is $O(n + m \log n) = O((n + m) \log n)$.
+    
+    \item \textbf{Time complexity:} \\
+    \begin{itemize}
+        \item Building segment trees: $O(n)$ per tree $\implies O(n)$
+        \item Processing constraints: $O(\log n)$ per constraint $\implies O(m \log n)$
+        \item 2-SAT solving: Linear in graph size $O((n + m) \log n)$
+    \end{itemize}
+    Overall time is $O((n + m) \log n)$.
+\end{itemize}
+The segment tree optimization reduces the edge count from $O(nm)$ (naive) to $O((n + m) \log n)$, making the solution feasible for large inputs.
+
+\end{document}

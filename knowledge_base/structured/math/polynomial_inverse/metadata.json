@@ -1,0 +1,7 @@
+{
+    "name": "多项式逆元",
+    "category": "数学",
+    "complexity": "O(n log n) via FFT/NTT",
+    "scenarios": "多项式运算、生成函数、形式幂级数",
+    "extensions": "多项式除法、多项式取模、多项式开根、多项式指数/对数"
+}

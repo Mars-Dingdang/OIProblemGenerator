@@ -1,0 +1,7 @@
+{
+    "name": "贝尔数",
+    "category": "数学/组合数学",
+    "complexity": "O(n^2) for triangle method, O(n log n) with exponential generating functions",
+    "scenarios": "Counting set partitions, combinatorial problems",
+    "extensions": "Related to Stirling numbers of the second kind, Touchard's congruence, Dobinski's formula"
+}

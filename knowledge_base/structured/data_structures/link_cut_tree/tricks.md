@@ -1,0 +1,9 @@
+- **Access is the core**: Every operation flows through `Access`, which brings the path from root to node into a single Splay.
+- **MakeRoot for undirected paths**: Use `makeroot(x)` before `access(y)` to handle path queries between any two nodes.
+- **Split for path isolation**: `split(x, y)` pulls the path between `x` and `y` into one Splay rooted at `y`, enabling direct query/update.
+- **Lazy propagation order matters**: When supporting multiple tags (e.g., add/mul/rev), always apply multiplication before addition during pushdown.
+- **Virtual tree via Splay roots**: The parent pointer of a Splay root points to its upper-level node in the original tree — this forms virtual edges.
+- **No need to maintain original tree**: The auxiliary tree (LCT) fully represents the dynamic forest; only auxiliary structure needs updating.
+- **Finding LCA**: Two consecutive `Access` calls: `Access(u)`, then `Access(v)` returns LCA as the second return value.
+- **Edge existence check in Cut**: To safely cut an edge, ensure after `split(x,y)`: `ch[y][0] == x` and `x` has no right child (i.e., no extra branches).
+- **Avoid common pitfalls**: Always call `update()` before `splay()` to propagate lazy tags along the access path.

@@ -1,0 +1,6 @@
+- **Block size is fixed**: Instead of recalculating $\sqrt{n}$ dynamically as elements are inserted or deleted, use a fixed block size (e.g., $10^3$ for $n \leq 10^6$) to avoid complexity and maintain performance.
+- **Splitting on overflow**: When a block exceeds $2 \times \sqrt{n}$ elements, split it into two blocks of roughly $\sqrt{n}$ size. This prevents degradation to $O(n)$ operations.
+- **Efficient insertion**: To insert an element, locate the correct block and shift elements within the array part; this is $O(\sqrt{n})$, much faster than full array shifts.
+- **Use `__gnu_cxx::rope` as alternative**: In competitive programming, `rope<char>` can serve as a drop-in replacement for block-linked lists with $O(\log n)$ operations, though it's not exactly the same structure.
+- **Lazy propagation idea doesn't apply**: Unlike segment trees, block-based structures usually don't support complex lazy updates, but custom tagging per block can help in Mo's algorithm style problems.
+- **Memory locality advantage**: Blocks are arrays, so traversal is cache-friendly compared to pure linked lists.

@@ -1,0 +1,10 @@
+- **Reducing Modulo Operations**: For addition/subtraction of numbers in [0, MOD), adjust result by a single addition/subtraction instead of using `%` to avoid expensive modulo.
+- **Fast Multiplication for Large Moduli**: Use `__int128` for multiplication if available: `(long long)a * b % MOD` becomes `(__int128)a * b % MOD`. Alternatively, use `long double`-based fast multiplication when `__int128` is not available.
+- **Barrett Reduction**: Precompute a constant to replace division by MOD with multiplication and shift, reducing modulo cost when MOD is fixed and many operations are performed.
+- **Montgomery Multiplication**: Map numbers to Montgomery space to perform modular multiplication without explicit modulo operations, efficient for many consecutive multiplications.
+- **Modulo Powers of Two**: For MOD = 2^k, modulo can be done via bitmask `x & (MOD-1)`. Inverse can be computed via Newton–Hensel iteration: `x = x * (2 - v * x)` repeated.
+- **Handling Negative Numbers**: Always adjust modulo results to be in [0, MOD) by adding MOD if negative.
+- **Exponentiation Optimization**: Use binary exponentiation (fast pow) for modular exponentiation, reducing O(b) to O(log b).
+- **Precomputing Powers**: When repeatedly exponentiating by the same base, precompute powers in steps (e.g., for base^0, base^1, base^2, ...) to accelerate.
+- **Modular Inverse for Prime MOD**: Use Fermat's little theorem: `a^(MOD-2) % MOD` if MOD is prime, computed via fast pow.
+- **Combining Mod Operations**: For expressions like `(a * b + c) % MOD`, compute modulo after each operation to avoid overflow, or use larger integer types.

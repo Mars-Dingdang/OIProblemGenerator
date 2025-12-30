@@ -1,0 +1,7 @@
+- **Core Idea**: When moduli are pairwise coprime, a unique solution modulo the product exists.
+- **Garner Algorithm**: Useful for mixed radix representation (e.g., converting residues back to a large integer). Complexity O(k²).
+- **Non-Coprime Moduli**: Merge equations pairwise using extended Euclidean algorithm. Solve m₁p - m₂q = a₂ - a₁; solution exists iff gcd(m₁, m₂) divides (a₂ - a₁).
+- **Problem Transformation**: If a modulus is not prime but square-free (product of distinct primes), compute answers modulo each prime factor separately and combine with CRT.
+- **Common Pitfall**: Ensure moduli are pairwise coprime for standard CRT; otherwise, use the extended method.
+- **Optimization**: Precompute modular inverses if solving multiple systems with the same moduli.
+- **Example Application**: In problems like calculating G^(sum of binomial coefficients) mod M where M is not prime but square-free, compute exponent modulo each prime factor of (M-1) using Lucas theorem, then combine with CRT.

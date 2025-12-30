@@ -1,0 +1,18 @@
+{
+    "name": "域论",
+    "category": "数学",
+    "complexity": "O(1) for basic operations, O(n^2) for naive polynomial operations, O(n log n) with FFT/NTT",
+    "scenarios": [
+        "Constructing finite field extensions (e.g., GF(p^n))",
+        "Polynomial operations over extension fields",
+        "Algebraic number computations (e.g., quadratic fields)",
+        "Fast Fourier Transform over finite fields",
+        "Coding theory and cryptography"
+    ],
+    "extensions": [
+        "Galois theory",
+        "Algebraic number theory",
+        "Coding theory",
+        "Cryptography (elliptic curves, pairing-based crypto)"
+    ]
+}

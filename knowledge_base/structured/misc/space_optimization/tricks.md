@@ -1,0 +1,6 @@
+- **Information entropy** provides a theoretical lower bound on space: $ H(X) = -\sum P(x) \log_2 P(x) $. For uniform distribution over $ n $ values, at least $ \log_2 n $ bits are required.
+- **Avoid storing redundant data**: In persistent segment trees, only store newly created nodes ($ O(\log n) $ per update).
+- **Prefer adjacency lists over matrices** for sparse graphs to avoid storing numerous zero entries.
+- **Use bit-level storage**: `std::vector<bool>` or `bitset` to reduce memory usage from bytes to bits per element.
+- **Rolling arrays** in DP (e.g., 01 knapsack) cut space from $ O(nW) $ to $ O(W) $ by reusing previous state.
+- **Union-Find space optimization**: Combine parent and size arrays into one by using negative values to mark roots (value = -size), reducing array count from 2 to 1.

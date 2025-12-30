@@ -1,5 +1,6 @@
 import os
 import glob
+import torch
 from typing import List
 from tqdm import tqdm
 from langchain_community.document_loaders import PyMuPDFLoader
@@ -12,7 +13,14 @@ class KnowledgeBase:
     def __init__(self, persist_directory: str = "./chroma_db"):
         self.persist_directory = persist_directory
         # 使用本地 HuggingFace 模型生成 Embedding，避免消耗 API 额度且速度快
-        self.embedding_function = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+        # 自动检测设备 (GPU/CPU)
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+        print(f"🖥️ Using device for embeddings: {device}")
+
+        self.embedding_function = HuggingFaceEmbeddings(
+            model_name="all-MiniLM-L6-v2",
+            model_kwargs={'device': device}
+        )
         
         # 初始化向量数据库
         if os.path.exists(persist_directory):
@@ -27,14 +35,68 @@ class KnowledgeBase:
         """
         根据查询检索相关知识
         """
-        if not self.vector_store:
-            return "Knowledge base not initialized. Please run with --build_kb first."
-            
-        print(f"🔍 Searching knowledge base for: {query}")
-        results = self.vector_store.similarity_search(query, k=k)
+        context_parts = []
         
-        context = "\n\n".join([f"--- Source: {doc.metadata.get('source', 'Unknown')} ---\n{doc.page_content}" for doc in results])
-        return context
+        # 1. 尝试直接匹配结构化知识库中的算法
+        structured_info = self.get_algorithm_info(query)
+        if structured_info:
+            print(f"🎯 Found structured knowledge for: {query}")
+            context_parts.append(f"=== Structured Knowledge for {query} ===\n{structured_info}")
+        
+        # 2. 向量检索
+        if self.vector_store:
+            print(f"🔍 Searching vector database for: {query}")
+            results = self.vector_store.similarity_search(query, k=k)
+            vector_context = "\n\n".join([f"--- Source: {doc.metadata.get('source', 'Unknown')} ---\n{doc.page_content}" for doc in results])
+            context_parts.append(f"=== Retrieved Context ===\n{vector_context}")
+        else:
+            context_parts.append("Vector database not initialized.")
+            
+        return "\n\n".join(context_parts)
+
+    def get_algorithm_info(self, topic: str) -> str:
+        """
+        直接从结构化目录中查找算法信息
+        """
+        import json
+        structured_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "knowledge_base", "structured")
+        
+        # 简单的关键词匹配
+        topic_lower = topic.lower().replace(" ", "_")
+        
+        found_content = []
+        
+        for root, dirs, files in os.walk(structured_dir):
+            if "metadata.json" in files:
+                # 检查文件夹名是否匹配
+                folder_name = os.path.basename(root).lower()
+                
+                # 检查 metadata 中的 name 是否匹配
+                try:
+                    with open(os.path.join(root, "metadata.json"), "r", encoding="utf-8") as f:
+                        meta = json.load(f)
+                    algo_name = meta.get("name", "").lower()
+                except:
+                    algo_name = ""
+                
+                # 匹配逻辑：文件夹名包含 topic 或 topic 包含文件夹名，或者 name 匹配
+                if topic_lower in folder_name or folder_name in topic_lower or topic_lower in algo_name or algo_name in topic_lower:
+                    # 找到了！提取所有信息
+                    info = f"Algorithm: {meta.get('name')}\n"
+                    info += f"Category: {meta.get('category')}\n"
+                    info += f"Complexity: {meta.get('complexity')}\n"
+                    
+                    if "tricks.md" in files:
+                        with open(os.path.join(root, "tricks.md"), "r", encoding="utf-8") as f:
+                            info += f"\n--- Tricks & Observations ---\n{f.read()}\n"
+                            
+                    if "template.cpp" in files:
+                        with open(os.path.join(root, "template.cpp"), "r", encoding="utf-8") as f:
+                            info += f"\n--- Standard Template ---\n```cpp\n{f.read()}\n```\n"
+                    
+                    found_content.append(info)
+        
+        return "\n\n".join(found_content)
 
     def ingest_documents(self, source_dir: str):
         """

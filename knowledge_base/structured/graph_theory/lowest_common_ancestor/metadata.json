@@ -1,0 +1,49 @@
+{
+    "name": "最近公共祖先",
+    "category": "图论",
+    "algorithms": [
+        {
+            "method": "naive",
+            "preprocessing_time": "O(n)",
+            "query_time": "Θ(n)",
+            "description": "通过向上跳跃直到相遇求LCA"
+        },
+        {
+            "method": "倍增",
+            "preprocessing_time": "O(n log n)",
+            "query_time": "O(log n)",
+            "description": "使用fa[x][i]数组倍增跳转"
+        },
+        {
+            "method": "Tarjan",
+            "preprocessing_time": "O(n)",
+            "query_time": "O(m α(m+n, n) + n)",
+            "type": "offline",
+            "description": "基于DFS和并查集的离线算法"
+        },
+        {
+            "method": "Euler Tour + RMQ",
+            "preprocessing_time": "O(n log n)",
+            "query_time": "O(1)",
+            "description": "将LCA转化为RMQ问题，使用ST表"
+        },
+        {
+            "method": "Plus-Minus-One RMQ",
+            "preprocessing_time": "O(n)",
+            "query_time": "O(1)",
+            "description": "利用欧拉序相邻差为±1的性质实现线性RMQ"
+        },
+        {
+            "method": "树链剖分",
+            "preprocessing_time": "O(n)",
+            "query_time": "O(log n)",
+            "description": "基于重链剖分的查询"
+        },
+        {
+            "method": "Link Cut Tree",
+            "query_time": "O(log n)",
+            "type": "dynamic",
+            "description": "支持动态操作的LCT方法"
+        }
+    ]
+}

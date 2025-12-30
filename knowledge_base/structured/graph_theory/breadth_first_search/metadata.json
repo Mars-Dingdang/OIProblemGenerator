@@ -1,0 +1,20 @@
+{
+    "name": "BFS（图论）",
+    "category": "图论",
+    "time_complexity": "O(n + m)",
+    "space_complexity": "O(n)",
+    "scenarios": [
+        "无权图最短路径",
+        "求连通块",
+        "状态转移最小步数",
+        "有向无权图最小环",
+        "最短路必经边/点",
+        "偶数长度最短路",
+        "0-1权值最短路（双端队列BFS）",
+        "优先队列BFS（Dijkstra基础）"
+    ],
+    "extensions": [
+        "双端队列BFS (0-1 BFS)",
+        "优先队列BFS"
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "name": "后缀数组",
+    "category": "字符串",
+    "complexity": {
+        "construction": "O(n log n) with doubling and radix sort, O(n) with SA-IS or DC3",
+        "query_lcp": "O(1) with RMQ preprocessing"
+    },
+    "scenarios": [
+        "pattern matching",
+        "longest common prefix queries",
+        "distinct substring counting",
+        "finding repeated substrings",
+        "lexicographically minimal string construction",
+        "cyclic shifts"
+    ],
+    "extensions": [
+        "height array",
+        "LCP queries via RMQ",
+        "SA-IS algorithm",
+        "DC3 algorithm"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "name": "后缀平衡树",
+    "category": "字符串",
+    "complexity": {
+        "construction": "O(n log n) with tag method",
+        "insert": "O(log n)",
+        "delete": "O(log n)",
+        "query_rank": "O(|t| log n)"
+    },
+    "scenarios": [
+        "Maintaining order of all suffixes of a dynamic string",
+        "Online suffix array construction",
+        "Counting occurrences of a pattern in a dynamic string",
+        "Supporting insertion/deletion at the beginning of the string"
+    ],
+    "extensions": [
+        "Persistent version using persistent balanced tree",
+        "Supporting arbitrary position updates by maintaining reversed string"
+    ]
+}

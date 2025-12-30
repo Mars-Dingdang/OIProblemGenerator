@@ -1,0 +1,15 @@
+{
+    "name": "Kahan Summation Algorithm",
+    "category": "杂项",
+    "complexity": "O(n)",
+    "scenarios": [
+        "Accurate floating-point summation",
+        "Reducing rounding errors in cumulative sums",
+        "Numerical computations with high precision requirements"
+    ],
+    "extensions": [
+        "Kahan–Babuška algorithm",
+        "Neumaier summation",
+        "Pairwise summation"
+    ]
+}

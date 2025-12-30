@@ -1,0 +1,15 @@
+{
+    "name": "AC 自动机",
+    "category": "字符串",
+    "complexity": "O(∑|s_i| + n|Σ| + |S|) with trie graph, O(∑|s_i| + |S|) without",
+    "scenarios": [
+        "多模式匹配",
+        "字符串统计",
+        "AC自动机上DP"
+    ],
+    "extensions": [
+        "拓扑排序优化",
+        "DFS优化",
+        "状态压缩优化"
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "name": "最小树形图",
+    "category": "图论",
+    "algorithm": [
+        "朱刘算法 (Zhu-Liu Algorithm)",
+        "Tarjan's DMST Algorithm"
+    ],
+    "complexity": {
+        "zhu_liu": "O(nm)",
+        "tarjan": "O(m + n log n)"
+    },
+    "scenarios": "有向图上的最小生成树，指定根节点，所有其他节点从根可达",
+    "extensions": [
+        "适用于非强连通图时需添加无穷权边",
+        "支持缩环-更新-展开的两阶段结构"
+    ]
+}

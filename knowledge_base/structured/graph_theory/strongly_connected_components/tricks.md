@@ -1,0 +1,8 @@
+- **Root Node Identification**: A node $u$ is the root of an SCC if and only if $dfn[u] == low[u]$. This is the key condition for popping the stack.
+- **Stack Usage**: Only nodes currently in the DFS stack are considered when updating `low[u]` via back edges. Nodes not in the stack have already been assigned to their SCCs.
+- **Reverse Topological Order**: The order in which SCCs are identified by Tarjan’s algorithm is the reverse of the topological order of the component DAG. Thus, no additional topological sort is needed for DP over DAG after shrinking.
+- **Efficient Shrinking**: After computing SCCs, you can build a new DAG where each node represents an SCC. Add edge between components if there was an edge between any two nodes in respective components (avoid duplicates).
+- **Kosaraju Advantage**: Kosaraju’s algorithm explicitly gives SCCs in topological order (on the condensation graph) due to processing nodes in decreasing order of finishing times in the reversed graph.
+- **Memory Efficiency**: Garbow’s algorithm uses two stacks to avoid maintaining a separate `in_stack` array, making it slightly more memory efficient in practice.
+- **Initialization Safety**: Always initialize arrays like `dfn`, `low`, `scc`, etc., to zero. Use pre-increment (`++dfncnt`) to ensure numbering starts correctly.
+- **Tree Edge vs Back/Cross Edge Handling**: Only tree edges lead to recursive calls; back edges update `low` with `dfn[v]`, while cross edges (to already processed SCCs) are ignored.

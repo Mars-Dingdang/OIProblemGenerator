@@ -1,0 +1,20 @@
+{
+    "name": "PQ Tree",
+    "category": "数据结构",
+    "complexity": {
+        "construction": "O(n + sum|S_i|) in theory, O(nm) in practice for m constraints",
+        "per_operation": "amortized linear in the size of the constraint set"
+    },
+    "scenarios": [
+        "Finding a permutation such that each given subset forms a contiguous segment",
+        "Interval representation and consecutive ones problem",
+        "Graph planarity testing (original application)"
+    ],
+    "references": [
+        "Booth, K.S., Lueker, G.S. (1976). Testing for the consecutive ones property, interval graphs, and graph planarity using PQ-tree algorithms."
+    ],
+    "authors": [
+        "isdanni",
+        "xyf007"
+    ]
+}

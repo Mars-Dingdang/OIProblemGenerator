@@ -1,0 +1,15 @@
+{
+    "name": "CDQ 分治",
+    "category": "杂项",
+    "complexity": "O(n log^2 n) for typical problems (e.g., 3D partial order)",
+    "scenarios": [
+        "Solving point-pair problems",
+        "Optimizing 1D/1D DP transitions",
+        "Converting dynamic problems to static problems"
+    ],
+    "extensions": [
+        "Multi-dimensional partial order",
+        "Offline dynamic data structures",
+        "Scanline integration"
+    ]
+}

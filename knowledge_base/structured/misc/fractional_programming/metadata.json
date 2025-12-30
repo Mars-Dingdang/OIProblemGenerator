@@ -1,0 +1,24 @@
+{
+    "name": "分数规划",
+    "category": "杂项",
+    "techniques": [
+        "Binary Search on Answer",
+        "Dinkelbach Algorithm"
+    ],
+    "common_constraints": [
+        "Exactly k items selected",
+        "Denominator at least W",
+        "Spanning tree",
+        "Cycle in graph"
+    ],
+    "problem_types": [
+        "Maximize ratio ∑a_i * w_i / ∑b_i * w_i",
+        "Minimize ratio"
+    ],
+    "complexity": "O(log(1/eps) * T_check)",
+    "scenarios": [
+        "01 selection with ratio optimization",
+        "Graph problems: MST, shortest cycle",
+        "Knapsack-like constraints"
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Delaunay 三角剖分",
+    "category": "计算几何",
+    "complexity": "O(n log n)",
+    "scenarios": [
+        "网格生成",
+        "插值",
+        "Voronoi图构造",
+        "最近邻查询"
+    ],
+    "extensions": [
+        "三维Delaunay",
+        "约束Delaunay三角剖分",
+        "Voronoi图对偶"
+    ]
+}

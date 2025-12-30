@@ -1,0 +1,10 @@
+- **Minimax Principle**: In sequential zero-sum games, the optimal strategy for player 1 is to maximize the minimum guaranteed payoff (maximin), while player 2 minimizes the maximum payoff (minimax). Use recursion or DP with states (position, player).
+- **State Reduction**: For games like Nim, use Grundy numbers (Sprague-Grundy theorem) to convert impartial games into Nim heaps.
+- **Symmetry and Invariants**: Look for symmetric positions or invariants (e.g., XOR of heap sizes in Nim) to identify winning/losing states.
+- **Mixed Strategies**: In simultaneous games, players randomize actions to achieve Nash equilibrium. Solve via linear programming (LP) using the payoff matrix.
+- **Alpha-Beta Pruning**: For large game trees (e.g., chess), use alpha-beta pruning to reduce search space.
+- **Memoization**: Cache results of game states to avoid recomputation in DP-based solutions.
+- **Game Transformation**: Some games can be transformed into equivalent forms (e.g., subtracting a constant from payoffs to make it zero-sum).
+- **BFS for Round Counting**: To find minimum/maximum rounds to win/lose, perform BFS from terminal states and track depths.
+- **Pattern Observation**: In specific problems (e.g., Codeforces 794E), observe that operations reduce to max/min on adjacent elements, leading to O(n) solutions.
+- **Duality**: The minimax theorem ensures that maximin equals minimax in mixed strategies, guaranteeing a unique value.

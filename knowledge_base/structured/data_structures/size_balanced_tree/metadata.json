@@ -1,0 +1,23 @@
+{
+    "name": "Size Balanced Tree",
+    "category": "数据结构",
+    "proposed_by": "陈启峰",
+    "year": 2007,
+    "type": "self-balancing binary search tree",
+    "time_complexity": {
+        "insert": "O(log n)",
+        "delete": "O(log n)",
+        "query": "O(log n)",
+        "rank_query": "O(log n)"
+    },
+    "space_complexity": "O(n)",
+    "scenarios": [
+        "dynamic order statistic queries",
+        "maintaining a balanced BST with efficient rank operations",
+        "problems requiring frequent insertions, deletions, and rank queries"
+    ],
+    "extensions": [
+        "can be extended to support lazy propagation in some variants",
+        "used as a building block for more complex data structures like treap alternatives"
+    ]
+}

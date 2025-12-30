@@ -1,0 +1,34 @@
+{
+    "name": "配对堆",
+    "category": "数据结构",
+    "type": "可并堆",
+    "operations": [
+        "insert",
+        "find_min",
+        "delete_min",
+        "meld",
+        "decrease_key"
+    ],
+    "complexity": {
+        "find_min": "O(1)",
+        "insert": "O(1) amortized",
+        "meld": "O(1) amortized",
+        "delete_min": "O(log n) amortized",
+        "decrease_key": "Ω(log log n) lower bound, conjectured O(1)"
+    },
+    "features": [
+        "自调整",
+        "基于势能分析",
+        "结构简单",
+        "常数小",
+        "无法可持久化"
+    ],
+    "references": [
+        "The pairing heap: a new form of self-adjusting heap",
+        "On the efficiency of pairing heaps and related data structures"
+    ],
+    "problems": [
+        "SPOJ RMID - Running Median",
+        "洛谷 P1801 黑匣子"
+    ]
+}

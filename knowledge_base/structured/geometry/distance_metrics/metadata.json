@@ -1,0 +1,21 @@
+{
+    "name": "距离",
+    "category": "计算几何",
+    "complexity": {
+        "euclidean": "O(d) per pair, where d is dimension",
+        "manhattan": "O(d) per pair",
+        "chebyshev": "O(d) per pair"
+    },
+    "scenarios": [
+        "Coordinate distance calculations",
+        "Clustering problems",
+        "Grid pathfinding",
+        "Nearest neighbor queries"
+    ],
+    "extensions": [
+        "Minkowski distance",
+        "Hamming distance",
+        "Cosine similarity",
+        "Jaccard index"
+    ]
+}

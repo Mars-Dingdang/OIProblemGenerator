@@ -1,0 +1,18 @@
+{
+    "name": "笛卡尔树",
+    "category": "数据结构",
+    "complexity": {
+        "build": "O(n)",
+        "query": "O(1) or O(log n) depending on use"
+    },
+    "scenarios": [
+        "构建满足BST和堆性质的二叉树",
+        "解决与区间极值相关的DP问题",
+        "最大子矩形问题",
+        "RMQ（范围最小查询）预处理"
+    ],
+    "extensions": [
+        "Treap 是一种随机权值的笛卡尔树",
+        "可用于构建笛卡尔树上DP"
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Main–Lorentz 算法",
+    "category": "字符串",
+    "complexity": "O(n log n)",
+    "scenarios": "寻找字符串中的所有重串（tandem repetitions）或最长重串",
+    "extensions": "可输出所有重串的起始和终止位置，但最坏时间复杂度会达到 O(n²)"
+}

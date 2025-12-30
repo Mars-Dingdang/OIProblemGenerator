@@ -1,0 +1,13 @@
+## Key Observations
+- **C vs C++ Strings**: C strings (char arrays) are lightweight but error-prone; C++ strings (std::string) are safer and more convenient but may have overhead.
+- **Complexity Pitfalls**: `strlen()` in loop conditions is O(n) per call without O2 optimization; precompute length.
+- **String Comparison**: `strcmp()` returns negative/zero/positive, not just -1/0/1; use comparisons like `strcmp(a,b) < 0`.
+- **Buffer Overflows**: Always ensure destination buffers are large enough for `strcpy`, `strcat`, `sprintf`; prefer `strncpy` or C++ strings.
+- **Input/Output**: For C++, `cin`/`cout` with `string` is simpler; for C, `scanf("%s", s)` reads until whitespace (no spaces).
+- **Palindromes**: Check with two pointers: `i` from start, `j` from end, compare `s[i] == s[j]`.
+- **Hamming Distance**: For equal-length strings, count positions where characters differ; can use XOR on characters.
+- **Efficiency**: For heavy string operations, consider using `std::string_view` (C++17) to avoid copies.
+- **Common Transformations**:
+  - Convert to lowercase/uppercase: loop and use `tolower()`/`toupper()`.
+  - Reverse a string: `std::reverse(s.begin(), s.end())`.
+  - Split by delimiter: use `strtok()` (C) or `std::stringstream` (C++).

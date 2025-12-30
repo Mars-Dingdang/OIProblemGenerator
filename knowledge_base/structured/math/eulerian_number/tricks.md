@@ -1,0 +1,9 @@
+- **Recurrence Relation**: A(n, m) = (n - m) * A(n-1, m-1) + (m + 1) * A(n-1, m). This is the standard DP recurrence derived from inserting n into permutations of length n-1.
+- **Base Cases**: A(n, 0) = 1 (only descending permutation), A(n, m) = 0 if m >= n or n = 0.
+- **Symmetry**: Eulerian numbers are symmetric: A(n, m) = A(n, n - 1 - m). This can halve computation.
+- **Generating Function**: Eulerian polynomials can be used for faster computation via convolution or FFT for large n.
+- **Modulo Arithmetic**: When numbers are large, compute modulo using modular arithmetic; recurrence remains valid.
+- **Precomputation**: Precompute DP table up to required n for O(1) queries.
+- **Connection to Other Sequences**: Eulerian numbers count permutations by ascents; related to Stirling numbers of the second kind via Worpitzky's identity.
+- **Optimization**: For single query (n, m), use memoized recursion to avoid full table.
+- **Applications**: Counting permutations with given ascent/descent patterns, analyzing sorting algorithms, and combinatorial probability.

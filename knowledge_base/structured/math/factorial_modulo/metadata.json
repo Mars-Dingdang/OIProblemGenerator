@@ -1,0 +1,11 @@
+{
+    "name": "阶乘取模",
+    "category": "数学/数论",
+    "complexity": "O(p^α) 预处理，O(log_p n) 查询",
+    "scenarios": "计算阶乘模素数或素数幂，用于组合数取模、Wilson 定理应用等",
+    "extensions": [
+        "Legendre 公式",
+        "Kummer 定理",
+        "中国剩余定理组合模数"
+    ]
+}

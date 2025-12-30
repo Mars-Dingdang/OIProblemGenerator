@@ -1,0 +1,23 @@
+{
+    "name": "Garsia–Wachs Algorithm",
+    "category": "杂项",
+    "complexity": {
+        "time": "O(n log n)",
+        "space": "O(n)"
+    },
+    "scenarios": [
+        "Optimal binary tree construction",
+        "Minimum cost to merge adjacent elements (e.g., stones, slimes)",
+        "Problems with large input size where O(n^3) interval DP is too slow"
+    ],
+    "extensions": [
+        "Can be used to construct optimal alphabetic binary trees",
+        "Functional implementations exist (e.g., in Haskell)"
+    ],
+    "references": [
+        "POJ 1738 An old Stone Game",
+        "ATCODER N-Slimes",
+        "Wikipedia: Garsia–Wachs algorithm",
+        "A new proof of the Garsia-Wachs algorithm"
+    ]
+}

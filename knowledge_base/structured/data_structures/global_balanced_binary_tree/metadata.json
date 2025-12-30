@@ -1,0 +1,19 @@
+{
+    "name": "全局平衡二叉树",
+    "category": "数据结构",
+    "complexity": {
+        "query": "O(log n)",
+        "update": "O(log n)",
+        "build": "O(n log n)"
+    },
+    "scenarios": [
+        "动态树上链查询与修改",
+        "支持子树操作和LCA查询",
+        "替代常数较大的LCT",
+        "动态DP优化"
+    ],
+    "extensions": [
+        "可结合矩阵维护动态DP信息",
+        "支持标记永久化减少pushdown开销"
+    ]
+}

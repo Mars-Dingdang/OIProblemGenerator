@@ -1,0 +1,17 @@
+{
+    "name": "序列自动机",
+    "category": "字符串",
+    "complexity": {
+        "construction": "O(n * |Σ|)",
+        "query": "O(1) per transition"
+    },
+    "scenarios": [
+        "checking if a string is a subsequence of another",
+        "counting distinct subsequences",
+        "finding shortest non-common subsequence"
+    ],
+    "extensions": [
+        "combined with suffix automaton for complex problems",
+        "DP on two automata"
+    ]
+}

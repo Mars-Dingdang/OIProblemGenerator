@@ -1,0 +1,30 @@
+{
+    "name": "最大流",
+    "category": "图论",
+    "sub_category": "网络流",
+    "algorithms": [
+        "Ford–Fulkerson",
+        "Edmonds–Karp",
+        "Dinic",
+        "MPM"
+    ],
+    "complexity": {
+        "edmonds_karp": "O(|V| |E|^2)",
+        "dinic": "O(|V|^2 |E|)",
+        "dinic_unit_capacity": "O(|E| min(|E|^(1/2), |V|^(2/3)))",
+        "dinic_bipartite_matching": "O(|E| sqrt(|V|))",
+        "mpm": "O(|V|^3)"
+    },
+    "scenarios": [
+        "二分图最大匹配",
+        "单位容量网络",
+        "点边约束建模",
+        "最大流最小割问题"
+    ],
+    "extensions": [
+        "最小费用最大流",
+        "上下界网络流",
+        "Dinic + 当前弧优化",
+        "多路增广"
+    ]
+}

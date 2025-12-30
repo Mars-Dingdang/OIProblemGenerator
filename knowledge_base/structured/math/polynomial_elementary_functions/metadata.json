@@ -1,0 +1,20 @@
+{
+    "name": "多项式初等函数",
+    "category": "数学",
+    "complexity": "O(n log n) for most operations",
+    "scenarios": [
+        "Polynomial inversion (求逆)",
+        "Polynomial square root (开方)",
+        "Polynomial division & modulo (除法 & 取模)",
+        "Polynomial logarithm (对数函数)",
+        "Polynomial exponential (指数函数)",
+        "Polynomial trigonometric functions (三角函数)",
+        "Polynomial inverse trigonometric functions (反三角函数)"
+    ],
+    "extensions": [
+        "Newton's Method for faster convergence",
+        "Graeffe method for inversion",
+        "Using NTT for polynomial multiplication",
+        "Handling edge cases like constant term zero"
+    ]
+}

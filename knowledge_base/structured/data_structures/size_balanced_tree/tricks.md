@@ -1,0 +1,7 @@
+- **Rank Query Optimization**: Since each node stores subtree size, you can compute the rank of a key in $O(\log n)$ by traversing and summing sizes of left subtrees when moving right.
+- **Efficient Rebalancing**: The four balance cases ensure that after every insertion or deletion, the tree remains approximately balanced based on sibling and nephew subtree sizes.
+- **Stack-based Path Update in Deletion**: When removing a node with two children, use a stack to record the path to the successor so that all affected `size` fields can be updated bottom-up.
+- **Avoid Full Recursion in Fix Balance**: Only call `fixBalance` recursively on relevant subtrees (children) after rotation to avoid unnecessary overhead.
+- **Hybrid Rotation Handling**: Cases 1 and 4 involve double rotations (similar to AVL trees), but triggered by nephew size comparisons rather than height differences.
+- **Stable Performance Despite Lazy Deletion**: Even if balance is slightly broken after deletion, the amortized performance remains $O(\log n)$ due to strong insertion-time balancing.
+- **Use in Order Statistic Trees**: SBT naturally supports finding the k-th smallest element and rank queries without augmenting extra structures.

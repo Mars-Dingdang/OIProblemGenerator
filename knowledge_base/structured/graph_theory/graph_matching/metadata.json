@@ -1,0 +1,34 @@
+{
+    "name": "图的匹配",
+    "category": "图论",
+    "subcategories": [
+        "二分图最大匹配",
+        "二分图最大权匹配",
+        "一般图最大匹配",
+        "一般图最大权匹配"
+    ],
+    "algorithms": {
+        "bipartite_max_matching": {
+            "kuhn": "O(|V||E|)",
+            "hopcroft_karp": "O(|V|^{1/2}|E|)"
+        },
+        "bipartite_max_weight_matching": {
+            "hungarian": "O(|V|^2|E|) or O(|V|^2 log|V| + |V||E|)"
+        },
+        "general_max_matching": {
+            "edmonds_blossom": "O(|V|^2|E|)"
+        },
+        "general_max_weight_matching": {
+            "edmonds_blossom": "O(|V|^2|E|)"
+        }
+    },
+    "key_concepts": [
+        "匹配",
+        "增广路",
+        "交错路",
+        "交错树",
+        "Berge引理",
+        "Hall定理",
+        "Tutte定理"
+    ]
+}

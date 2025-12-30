@@ -1,0 +1,18 @@
+{
+    "name": "前缀函数与 KMP 算法",
+    "category": "字符串",
+    "complexity": "O(n+m) for KMP matching, O(n) for prefix function",
+    "scenarios": [
+        "字符串匹配",
+        "计算周期/border",
+        "统计前缀出现次数",
+        "字符串压缩",
+        "本质不同子串计数",
+        "构建自动机"
+    ],
+    "extensions": [
+        "可持久化字典树",
+        "AC自动机",
+        "Z函数"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "name": "高次剩余 & 单位根",
+    "category": "数学",
+    "complexity": {
+        "naive": "O(m^{1/2})",
+        "improved_tonelli_shanks": "O(m^{1/4+ε})"
+    },
+    "scenarios": [
+        "求解模意义下的高次方根",
+        "判断 k 次剩余",
+        "寻找模 m 的 k 次单位根（用于 NTT 等）"
+    ],
+    "extensions": [
+        "二次剩余",
+        "离散对数",
+        "原根",
+        "中国剩余定理",
+        "Pollard Rho 分解"
+    ]
+}

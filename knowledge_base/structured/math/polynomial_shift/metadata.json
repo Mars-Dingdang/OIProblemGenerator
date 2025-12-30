@@ -1,0 +1,7 @@
+{
+    "name": "多项式平移/连续点值平移",
+    "category": "数学",
+    "complexity": "多项式平移: O(n log^2 n) 分治法, O(n log n) Taylor/二项式法; 连续点值平移: O(n log n)",
+    "scenarios": "计算多项式平移系数、快速阶乘算法、第一类斯特林数·行、组合数前缀和、整式递推",
+    "extensions": "多点求值、整式递推、矩阵点值维护"
+}

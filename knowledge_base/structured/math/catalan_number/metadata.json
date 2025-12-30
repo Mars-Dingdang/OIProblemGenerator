@@ -1,0 +1,27 @@
+{
+    "name": "Catalan Number",
+    "category": "数学",
+    "complexity": "O(n) for precomputation using recurrence, O(1) for direct formula using binomial coefficients.",
+    "scenarios": [
+        "括号序列计数",
+        "出栈序列计数",
+        "二叉树计数",
+        "凸多边形三角剖分计数",
+        "圆内不相交弦计数",
+        "路径计数（不穿过对角线的格路）",
+        "+1/-1 序列计数（部分和非负）"
+    ],
+    "extensions": [
+        "广义 Catalan 数",
+        "Motzkin 数",
+        "Narayana 数",
+        "Super Catalan 数"
+    ],
+    "oeis": "A000108",
+    "formulas": [
+        "C_n = (1/(n+1)) * binom(2n, n)",
+        "C_n = binom(2n, n) - binom(2n, n+1)",
+        "C_n = ((4n-2)/(n+1)) * C_{n-1}",
+        "C_n = sum_{i=0}^{n-1} C_i * C_{n-1-i}"
+    ]
+}

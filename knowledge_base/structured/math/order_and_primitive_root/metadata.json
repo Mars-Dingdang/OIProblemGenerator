@@ -1,0 +1,17 @@
+{
+    "name": "阶 & 原根",
+    "category": "数学 / 数论",
+    "complexity": "求原根: O(g_m log² m) 枚举 + O(φ(m) 质因数分解时间). 阶的计算: O(φ(m) 质因数分解时间).",
+    "scenarios": [
+        "离散对数 (DLP) 的基础",
+        "模幂运算的循环结构分析",
+        "密码学 (如 Diffie-Hellman 密钥交换)",
+        "构造特定阶的元素"
+    ],
+    "extensions": [
+        "Carmichael 函数",
+        "离散对数 (BSGS, Pohlig-Hellman)",
+        "指数与原根的关系",
+        "模 2^e 的既约剩余系结构 (±5^k 形式)"
+    ]
+}

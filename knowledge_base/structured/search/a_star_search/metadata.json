@@ -1,0 +1,15 @@
+{
+    "name": "A* 搜索算法",
+    "category": "搜索",
+    "complexity": "取决于启发函数 h(x)，最坏情况可能访问所有满足 f(x) ≤ C* 的节点，其中 C* 是最短路径长度。",
+    "scenarios": [
+        "带权有向图的最短路径搜索",
+        "k 短路问题",
+        "八数码等状态空间搜索"
+    ],
+    "extensions": [
+        "可采纳性 (admissible)",
+        "一致性 (consistent)",
+        "与 Dijkstra、BFS 的关系"
+    ]
+}

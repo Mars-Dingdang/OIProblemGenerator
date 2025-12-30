@@ -1,0 +1,19 @@
+{
+    "name": "莫队算法",
+    "category": "杂项",
+    "complexity": {
+        "time": "O(n√n) when n and m are same order, O(n√m) with optimal block size",
+        "space": "O(n)"
+    },
+    "scenarios": [
+        "Offline interval query problems",
+        "Sequence queries where adjacent intervals can be extended in O(1)",
+        "Tree path queries (with extension)",
+        "Problems supporting modifications (with Mo's with updates)"
+    ],
+    "extensions": [
+        "Tree Mo",
+        "Mo with updates",
+        "Odd-even optimization"
+    ]
+}

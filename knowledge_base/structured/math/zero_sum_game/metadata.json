@@ -1,0 +1,7 @@
+{
+    "name": "零和游戏",
+    "category": "数学",
+    "complexity": "Varies (e.g., O(n) for specific problems, linear programming for general cases)",
+    "scenarios": "Two-player zero-sum games, sequential games (e.g., Nim variants, turn-based games), simultaneous games (e.g., rock-paper-scissors)",
+    "extensions": "Mixed strategies, Nash equilibrium, minimax theorem, linear programming solutions"
+}

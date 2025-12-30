@@ -1,0 +1,21 @@
+{
+    "name": "Binary Heap",
+    "category": "数据结构",
+    "complexity": {
+        "insert": "O(log n)",
+        "delete": "O(log n)",
+        "get_max": "O(1)",
+        "build_heap": "O(n)"
+    },
+    "scenarios": [
+        "Priority Queue implementation",
+        "Dynamic maintenance of extremal values",
+        "Efficient heap construction from array",
+        "Support for decrease-key/increase-key operations"
+    ],
+    "extensions": [
+        "Fibonacci Heap",
+        "Binomial Heap",
+        "d-ary Heap"
+    ]
+}

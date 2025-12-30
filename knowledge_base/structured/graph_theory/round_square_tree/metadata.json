@@ -1,0 +1,16 @@
+{
+    "name": "圆方树",
+    "category": "图论",
+    "subcategory": "连通性相关",
+    "based_on": "Tarjan算法",
+    "uses": [
+        "点双连通分量",
+        "割点",
+        "树上问题转化"
+    ],
+    "complexity": "O(n + m)",
+    "applies_to": [
+        "无向图",
+        "仙人掌图（扩展）"
+    ]
+}

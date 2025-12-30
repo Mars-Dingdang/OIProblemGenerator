@@ -1,0 +1,20 @@
+{
+    "name": "Tree Center",
+    "category": "Graph Theory",
+    "sub_category": "Tree Problems",
+    "complexity": {
+        "time": "O(n)",
+        "space": "O(n)"
+    },
+    "scenarios": [
+        "Finding optimal root to minimize longest path from root",
+        "Minimizing maximum distance in tree networks",
+        "Facility location problems (e.g., placing fire stations)",
+        "Tree diameter and center-related optimization"
+    ],
+    "related_algorithms": [
+        "Tree Diameter",
+        "Two DFS for Longest Path",
+        "Dynamic Programming on Trees"
+    ]
+}

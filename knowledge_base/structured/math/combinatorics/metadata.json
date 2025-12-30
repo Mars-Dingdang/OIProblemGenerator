@@ -1,0 +1,7 @@
+{
+    "name": "组合数学",
+    "category": "数学",
+    "complexity": "O(n^2) for naive combination computation, O(n) with precomputed factorials and modular inverses",
+    "scenarios": "Counting problems, probability, binomial expansions, combinatorial identities, inclusion-exclusion, stars and bars, permutations with repetitions, circular permutations",
+    "extensions": "Multinomial theorem, generating functions, combinatorial number theory, combinatorial optimization, combinatorial designs"
+}

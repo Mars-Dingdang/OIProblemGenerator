@@ -1,0 +1,16 @@
+{
+    "name": "后缀自动机 (SAM)",
+    "category": "字符串",
+    "complexity": "O(n) construction, O(n) states and transitions",
+    "scenarios": [
+        "Counting distinct substrings",
+        "Searching all occurrences of a pattern",
+        "Finding the longest common substring of multiple strings",
+        "Finding the lexicographically k-th substring"
+    ],
+    "extensions": [
+        "Generalized SAM for multiple strings",
+        "SAM with dynamic programming for various substring statistics",
+        "Link/cut tree on suffix links for advanced queries"
+    ]
+}

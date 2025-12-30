@@ -1,0 +1,7 @@
+{
+    "name": "类欧几里德算法",
+    "category": "数学",
+    "complexity": "O(log min{a, c, n})",
+    "scenarios": "求和 ∑_{i=0}^{n} ⌊(ai+b)/c⌋ 及其变体（如 ∑ i⌊(ai+b)/c⌋, ∑ ⌊(ai+b)/c⌋²），直线下整点计数，处理无理数斜率（如 √r）",
+    "extensions": "万能欧几里得算法（universal_euclidean_algorithm）"
+}

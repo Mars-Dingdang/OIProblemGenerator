@@ -1,0 +1,7 @@
+{
+    "name": "DFS（搜索）",
+    "category": "搜索",
+    "complexity": "O(branch_factor^depth) (exponential in worst case)",
+    "scenarios": "Enumerating all possible states/solutions (e.g., permutations, combinations, partitions, pathfinding in implicit graphs), backtracking problems, constraint satisfaction problems (CSPs), puzzles (N-Queens, Sudoku)",
+    "extensions": "Iterative Deepening DFS (IDDFS), Depth-Limited Search, Backtracking with pruning, Memoization (DFS with DP), Meet-in-the-Middle"
+}

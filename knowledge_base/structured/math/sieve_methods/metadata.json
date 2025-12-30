@@ -1,0 +1,16 @@
+{
+    "name": "筛法",
+    "category": "数学/数论",
+    "complexity": {
+        "eratosthenes": "O(n log log n)",
+        "linear": "O(n)"
+    },
+    "scenarios": [
+        "素数筛选",
+        "积性函数预处理（欧拉函数、莫比乌斯函数、约数个数、约数和）"
+    ],
+    "extensions": [
+        "欧拉筛",
+        "埃氏筛优化（筛至平方根、只筛奇数、位压缩、分块筛选）"
+    ]
+}

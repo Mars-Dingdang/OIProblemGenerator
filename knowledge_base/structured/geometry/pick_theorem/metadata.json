@@ -1,0 +1,16 @@
+{
+    "name": "Pick's theorem",
+    "category": "Computational Geometry",
+    "complexity": "O(n) for polygon with n vertices",
+    "scenarios": [
+        "Counting lattice points inside and on the boundary of a simple polygon with integer vertices",
+        "Calculating area of lattice polygon",
+        "Problems involving grid points and polygons"
+    ],
+    "extensions": [
+        "Generalization to parallelogram lattice",
+        "Generalization to non-simple polygons using Euler characteristic",
+        "Higher-dimensional Ehrhart polynomial",
+        "Equivalence to Euler's formula"
+    ]
+}

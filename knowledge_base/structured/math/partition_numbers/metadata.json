@@ -1,0 +1,17 @@
+{
+    "name": "分拆数",
+    "category": "数学",
+    "complexity": "O(n^2) for k-partition DP, O(n sqrt(n)) via pentagonal number theorem",
+    "scenarios": [
+        "Counting ways to partition integer n into positive integer summands",
+        "Counting partitions with exactly k parts",
+        "Counting partitions with distinct parts",
+        "Counting partitions with odd parts"
+    ],
+    "extensions": [
+        "k-partition numbers",
+        "distinct partition numbers",
+        "odd partition numbers",
+        "pentagonal number theorem for O(n sqrt(n)) computation"
+    ]
+}

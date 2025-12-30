@@ -1,0 +1,16 @@
+{
+    "name": "范德蒙德卷积",
+    "category": "数学",
+    "complexity": "O(1) per query with precomputed factorials and modular inverses",
+    "scenarios": [
+        "组合数学推导",
+        "组合恒等式证明",
+        "公式化简",
+        "计数问题"
+    ],
+    "extensions": [
+        "推论公式",
+        "广义形式",
+        "与生成函数结合"
+    ]
+}

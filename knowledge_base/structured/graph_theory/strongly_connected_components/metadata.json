@@ -1,0 +1,21 @@
+{
+    "name": "Strongly Connected Components (SCC)",
+    "category": "图论",
+    "algorithms": [
+        "Tarjan",
+        "Kosaraju",
+        "Garbow"
+    ],
+    "complexity": "O(n + m)",
+    "scenarios": [
+        "Finding maximal strongly connected subgraphs in directed graphs",
+        "缩点 (Shrinking SCCs into nodes to form a DAG)",
+        "Topological sorting on component graphs",
+        "Solving 2-SAT problems",
+        "Finding cycles in directed graphs"
+    ],
+    "extensions": [
+        "Tarjan's algorithm can be extended to find bridges, articulation points, and biconnected components in undirected graphs.",
+        "Kosaraju's algorithm is conceptually simpler and easier to verify due to its two-pass DFS structure."
+    ]
+}

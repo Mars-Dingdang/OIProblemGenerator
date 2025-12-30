@@ -1,0 +1,5 @@
+- The key idea is to precompute prefix and suffix information at each level so that any query interval crosses the midpoint of their LCA node in the tree.
+- Query complexity reduces to $O(1)$ merge operations by leveraging the LCA of leaf nodes representing `l` and `r`.
+- Especially effective when merge operation is expensive (e.g., linear basis with $O(\log^2 w)$).
+- Since it's static, no updates are allowed — ideal for offline or preprocessing-heavy scenarios.
+- Uses divide-and-conquer structure similar to segment tree but trades space ($O(n \log n)$) for faster queries.

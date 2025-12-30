@@ -1,0 +1,18 @@
+- **Dimension Selection**: Alternate between dimensions during construction to ensure balanced partitioning across all axes.
+- **Median Splitting**: Use `nth_element` to select median along current dimension, ensuring subtree sizes differ by at most one. This guarantees tree height of $ O(\log n) $.
+- **Bounding Box Pruning**: Store min/max per dimension in each node. During range queries, skip subtrees whose bounding boxes do not intersect the query rectangle.
+- **Efficient Construction**: Building the tree takes $ O(n \log n) $ due to $ O(n) $ median selection using `nth_element`, repeated over $ O(\log n) $ levels.
+- **Query Complexity**: In 2D, worst-case query time is $ O(\sqrt{n}) $. For $ k $-dimensional space, it's $ O(n^{1 - 1/k}) $, assuming uniform distribution.
+- **Dynamic Updates**:
+  - **Binary Grouping**: Maintain multiple K-D Trees of sizes that are powers of two. Insertions create size-1 trees and merge equal-sized ones. Query runs on all trees. Amortized insertion: $ O(\log^2 n) $, query: $ O(n^{1-1/k}) $.
+  - **Sqrt Decomposition**: Batch insertions up to $ B $, then rebuild entire structure. Optimal $ B = \Theta(\sqrt{n} \log n) $ balances update and query times.
+- **Nearest Neighbor Search**:
+  - Use bounding box distance estimation as heuristic.
+  - Traverse children in order of proximity to query point.
+  - Prune branches where minimum possible distance exceeds current best.
+- **Farthest Neighbor / K-Farthest Pairs**:
+  - Replace nearest-distance estimate with farthest possible distance from query point to bounding box.
+  - Maintain a min-heap of top-k distances found so far.
+  - Since unordered pairs are counted once but traversed twice (i,j) and (j,i), double input $ k $.
+- **Memory Efficiency**: K-D Tree uses linear memory and performs well under tight constraints (e.g., 20MB), making it suitable when segment trees or Fenwick trees are too heavy.
+- **No Rotation Support**: Unlike BST variants, K-D Tree cannot rotate nodes without breaking dimensional ordering — hence balance must be maintained externally via rebuilding.

@@ -1,0 +1,7 @@
+{
+    "name": "二维计算几何基础",
+    "category": "计算几何",
+    "complexity": "O(1) for basic operations, O(n) for polygon algorithms",
+    "scenarios": "Point-line relation, segment intersection, point-in-polygon, polygon area/perimeter, line-circle intersection, circle-circle intersection",
+    "extensions": "3D geometry, convex hull, half-plane intersection, Delaunay triangulation, Voronoi diagram"
+}

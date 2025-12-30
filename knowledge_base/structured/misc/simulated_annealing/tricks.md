@@ -1,0 +1,7 @@
+- **Maintain global best**: Always track the best solution ever encountered, not just the current one.
+- **Cooling schedule**: Use a high initial temperature $ T_0 \approx 10^5 $, cooling factor $ d \approx 0.97 $, and terminate at $ T_k \approx 10^{-3} $.
+- **Final local search**: After annealing, perform additional random sampling around the final solution to refine it.
+- **Random step scaling**: The perturbation size is proportional to the current temperature, allowing large jumps early and fine-tuning late.
+- **Energy difference acceptance**: Accept worse solutions with probability $ e^{-\Delta E / T} $ to escape local optima.
+- **Multiple runs**: For better results, restart the algorithm from different initial points.
+- **Problem transformation**: Convert discrete or combinatorial problems into continuous energy landscapes suitable for SA.

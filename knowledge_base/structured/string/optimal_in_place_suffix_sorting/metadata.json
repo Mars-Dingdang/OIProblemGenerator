@@ -1,0 +1,14 @@
+{
+    "name": "最优原地后缀排序算法",
+    "category": "字符串",
+    "complexity": "O(n)",
+    "scenarios": [
+        "线性时间、原地空间的后缀数组构造"
+    ],
+    "extensions": [
+        "SA-IS",
+        "Suffix Array"
+    ],
+    "reference": "Li, Zhize; Li, Jian; Huo, Hongwei (2016). Optimal In-Place Suffix Sorting. SPIRE 2016.",
+    "prerequisite": "非常熟悉 SA-IS 算法"
+}

@@ -1,0 +1,9 @@
+- **Modeling as DAG**: Identify states as nodes and transitions as directed edges. Ensure no cycles (partial order).
+- **Topological order**: For iterative DP, process nodes in topological order to guarantee subproblems are solved before their dependents.
+- **Memory search**: Often easier to implement with recursion + memoization, especially when DAG is implicit.
+- **State expansion**: Sometimes a single logical state (e.g., a brick) needs to be split into multiple nodes (e.g., different orientations).
+- **Longest/shortest path**: DAG DP essentially computes longest or shortest paths. Use `max` for longest, `min` for shortest.
+- **Multiple sources/sinks**: Add a super-source (e.g., ground) with edges to all possible starts, and super-sink from all possible ends.
+- **Avoiding recomputation**: Memoization or topological DP ensures each subproblem is solved once.
+- **Transformation**: Some problems (e.g., interval DP, tree DP) can be reinterpreted as DAG DP by defining appropriate states and transitions.
+- **Optimization**: If DAG is layered, you can use rolling arrays to save memory. Also, pruning unreachable states early can speed up.

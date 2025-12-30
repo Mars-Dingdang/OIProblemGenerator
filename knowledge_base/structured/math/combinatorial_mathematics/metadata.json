@@ -1,0 +1,7 @@
+{
+    "name": "组合数学",
+    "category": "数学",
+    "complexity": "Varies by specific problem (e.g., O(n log n) for generating functions, O(n^2) for DP counting)",
+    "scenarios": "Counting labeled/unlabeled graphs, trees, connected components, isomorphisms, sequences, polynomials, and combinatorial structures; used in problems involving enumeration, probability, and generating functions.",
+    "extensions": "Generating functions, Polya enumeration theorem, Burnside's lemma, inclusion-exclusion principle, recurrence relations, Stirling numbers, Catalan numbers, partition numbers, tree counting formulas, graph enumeration."
+}

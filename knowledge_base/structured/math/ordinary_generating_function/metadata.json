@@ -1,0 +1,17 @@
+{
+    "name": "普通生成函数 (Ordinary Generating Function, OGF)",
+    "category": "数学",
+    "complexity": "O(n log n) for convolution using FFT/NTT",
+    "scenarios": [
+        "序列计数",
+        "组合问题",
+        "递推关系求解",
+        "封闭形式化简"
+    ],
+    "extensions": [
+        "指数生成函数 (EGF)",
+        "形式幂级数运算",
+        "多项式复合",
+        "生成函数在组合计数中的应用"
+    ]
+}
