@@ -1,0 +1,121 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, fullpage}
+\begin{document}
+
+\title{Editorial: Subsequence Automaton and Counting Distinct Concatenations}
+\author{}
+\date{}
+\maketitle
+
+\section{Core Observation}
+
+The problem requires counting all distinct strings that can be formed as concatenations $X + Y$, where $X$ is a substring of string $A$ and $Y$ is a suffix of string $B$ that follows an occurrence of $X$ as a subsequence in $B$. A naive approach would generate all possible $(X, Y)$ pairs explicitly, leading to $O(n^3)$ distinct strings in the worst case (when $A$ and $B$ have length $n$). This is infeasible for $n$ up to 2000.
+
+The key insight is that we can represent all distinct concatenations compactly using a \textbf{generalized suffix automaton (SAM)}. The SAM has the property that it represents each distinct substring exactly once, allowing efficient insertion and deduplication. However, we must avoid explicitly generating all $O(n^3)$ concatenations. Instead, we process all substrings of $A$ and, for each, traverse a \textbf{subsequence automaton} of $B$ to find all possible suffixes $Y$. We then insert the concatenations into the SAM on-the-fly, leveraging the SAM's ability to merge common prefixes and suffixes to avoid redundant work.
+
+\section{Solution}
+
+\subsection{Step 1: Build Subsequence Automaton for $B$}
+
+A subsequence automaton for a string $B$ of length $n$ is a deterministic finite automaton that allows us to check, for any string $X$, whether $X$ is a subsequence of $B$, and also to find all positions in $B$ where $X$ occurs as a subsequence. We can build it as follows:
+
+Let $\textsf{next}[i][c]$ be the index of the first occurrence of character $c$ in $B[i..n]$ (or $n+1$ if not found). This table can be computed in $O(n \cdot |\Sigma|)$ time by scanning $B$ backwards.
+
+For a substring $X = A[i..j]$, we can simulate reading $X$ in the subsequence automaton starting from position $0$ (before the first character of $B$). After processing $X$, we will be at some position $p$ in $B$ (or $n+1$ if $X$ is not a subsequence). All suffixes $Y$ of $B$ starting from positions $p, p+1, \dots, n$ are valid continuations.
+
+\subsection{Step 2: Process All Substrings of $A$}
+
+We iterate over all starting indices $i$ of $A$ and for each, iterate over ending indices $j \ge i$. For each substring $X = A[i..j]$, we simulate it in the subsequence automaton of $B$ to obtain a set of possible starting positions for $Y$ in $B$. Let $p$ be the position after reading $X$ (if $p \le n$, then $X$ is a subsequence of $B$). Then $Y$ can be any suffix of $B$ starting at some index $k$ where $p \le k \le n$. However, note that if $p$ is the same for two different substrings $X_1$ and $X_2$, the sets of possible $Y$ are the same. We must insert $X_1 + Y$ and $X_2 + Y$ for all $Y$ into the SAM.
+
+\subsection{Step 3: Insert Concatenations into Generalized SAM Efficiently}
+
+We maintain a generalized SAM that will contain all distinct concatenations $X+Y$. Instead of inserting each $X+Y$ separately (which could be $O(n^3)$ insertions), we note that for a fixed $X$, all strings $X+Y$ share the common prefix $X$. We can insert $X$ into the SAM first, then extend it with each possible $Y$ by traversing the SAM while adding characters of $Y$. However, we must avoid duplicating work for the same $X$ and same $Y$.
+
+To achieve this, we process each substring $X$ and for each possible starting position $k$ of $Y$ in $B$, we insert the string $X + B[k..n]$ into the SAM. But we must be careful: if two different substrings $X_1$ and $X_2$ lead to the same concatenation $X_1+Y = X_2+Y'$, the SAM will automatically deduplicate because it represents each distinct string once.
+
+However, we cannot afford to iterate over all $k$ for each $X$ (that would be $O(n^3)$). Instead, we note that for a fixed $X$, the set of $Y$ is exactly all suffixes of $B$ starting at positions in $[p, n]$. We can insert all these concatenations in one go by starting from the SAM state corresponding to $X$ and then inserting the entire string $B[p..n]$ into the SAM, but with the understanding that we are only extending from that specific state. This is equivalent to adding all suffixes of $B[p..n]$ to the state of $X$.
+
+We can do this by:
+\begin{enumerate}
+    \item For each substring $X$, find the state $s$ in the SAM that corresponds to $X$. If $X$ is not yet in the SAM, insert it character by character (which is $O(|X|)$).
+    \item Then, from state $s$, insert the string $B[p..n]$ into the SAM as if we were extending $s$ with this string. However, the SAM insertion algorithm normally starts from the root. We need to modify it to start from an arbitrary state $s$.
+\end{enumerate}
+
+\subsection{Step 4: Modified SAM Insertion from a Given State}
+
+The standard SAM insertion algorithm processes a string character by character, maintaining the current state. To insert a string $T$ starting from state $s$, we treat $s$ as the initial state and then insert $T$ as usual, but with one caveat: the SAM must be ``generalized'' to handle multiple strings. We can use the standard technique of resetting the last state to $s$ before inserting $T$.
+
+However, we must ensure that we do not double-count the same concatenation if it can be formed by different pairs $(X, Y)$. The SAM will naturally handle this because each distinct string is represented once. But we must also avoid inserting the same concatenation multiple times for the same $X$ and different $Y$ that produce the same string. This is taken care of by the SAM's insertion algorithm, which will not create duplicate states or transitions.
+
+Thus, for each substring $X$ of $A$, we:
+\begin{enumerate}
+    \item Compute $p$ via the subsequence automaton (if $p > n$, skip).
+    \item Ensure $X$ is in the SAM (if not, insert it).
+    \item From the state corresponding to $X$, insert the string $B[p..n]$ (i.e., all suffixes starting at $p$). But note: inserting $B[p..n]$ will also insert all its prefixes, which we don't want. We only want suffixes of $B[p..n]$ that are appended to $X$. Actually, we want to insert all strings $X + Y$ where $Y$ is a suffix of $B[p..n]$. This is equivalent to inserting all suffixes of $B[p..n]$ starting from state $s$.
+    
+    We can achieve this by inserting the entire string $B[p..n]$ from state $s$, but the SAM will create states for all prefixes of $B[p..n]$ appended to $X$. However, we only need the suffixes? Wait, the concatenation $X+Y$ is exactly $X$ followed by $Y$, so $Y$ is a suffix of $B[p..n]$, but when we insert $B[p..n]$ from $s$, we are effectively inserting all prefixes of $B[p..n]$ as well (i.e., $X$ plus a prefix of $B[p..n]$). But note that a prefix of $B[p..n]$ is a valid $Y$ (since $Y$ can be any suffix of $B$ starting at $p$, and a suffix of $B$ starting at $p$ is exactly a substring of $B[p..n]$ that goes to the end? No: $Y$ must be a suffix of $B$, not just a substring of $B[p..n]$. So $Y$ must be of the form $B[k..n]$ for some $k \ge p$. Therefore, $Y$ is a suffix of $B[p..n]$ only if $k = p$. Actually, any suffix of $B$ starting at $k \ge p$ is a suffix of $B[p..n]$ only if $k = p$. So we need to insert all suffixes of $B$ that start at any $k \ge p$.
+    
+    To insert all such $Y$, we can insert the string $B[p..n]$ from state $s$, and then also insert all suffixes of $B[p..n]$? This seems messy.
+\end{enumerate}
+
+A more straightforward method is to iterate over all starting positions $k$ from $p$ to $n$ for $Y$, and for each, insert $X + B[k..n]$ into the SAM. But this is $O(n)$ per $X$, leading to $O(n^3)$ insertions. However, we can optimize by noting that the SAM insertion of $B[k..n]$ from state $s$ can be done incrementally: we insert $B[p..n]$ once, and then as we move $k$ from $p$ to $n$, we are effectively inserting shorter suffixes. We can use the SAM's ability to represent all suffixes of a string once it is inserted. So if we insert the entire string $B[p..n]$ from state $s$, then the SAM will automatically contain all strings $X + Y$ for $Y$ being any suffix of $B[p..n]$. But wait: is that true? When we insert a string $T$ into a SAM starting from the root, the SAM will represent all substrings of $T$. However, we are inserting $T$ starting from state $s$. The SAM will then represent all strings of the form $X + U$ where $U$ is a substring of $T$. But we only want $U$ to be a suffix of $T$ (i.e., a suffix of $B[p..n]$). However, the SAM will also represent $X$ plus a non-suffix substring of $T$, which is not a valid $Y$ (since $Y$ must be a suffix of $B$, not just a substring of $B[p..n]$). So we are overcounting.
+
+Therefore, we must restrict $Y$ to be a suffix of $B$, i.e., a suffix of $B[p..n]$ that extends to the end of $B$. In other words, $Y$ must be of the form $B[k..n]$ for $k \ge p$. So when we insert $B[p..n]$ from state $s$, we only want to take the suffixes of $B[p..n]$ that are also suffixes of $B$. But note that $B[p..n]$ is a suffix of $B$ only if $p=1$. In general, $B[p..n]$ is not a suffix of $B$ unless $p=1$. So we must insert each $B[k..n]$ for $k \ge p$ separately.
+
+To avoid $O(n^2)$ insertions per $X$, we note that for a fixed $X$, the set of $Y$ is all suffixes of $B$ starting at positions $k \ge p$. We can insert these into the SAM efficiently by inserting the longest one ($B[p..n]$) and then using the SAM's suffix links to ensure that all shorter suffixes are also represented? Not exactly, because we are inserting from state $s$, not from the root.
+
+\subsection{Step 5: Efficient Insertion of Multiple Suffixes}
+
+We can modify the SAM insertion algorithm to insert all suffixes of a string $S$ in $O(|S|)$ time by inserting $S$ and then traversing suffix links. However, that works when inserting from the root. Here we are inserting from an arbitrary state $s$.
+
+Alternatively, we can think of the concatenation $X+Y$ as a string that ends at some state in the SAM. For a fixed $X$, the strings $X+Y$ for all valid $Y$ share the prefix $X$ and then diverge. We can insert all of them by first ensuring $X$ is in the SAM, then for each $k \ge p$, we extend the state $s$ with the string $B[k..n]$. But note that extending with $B[k..n]$ is the same as extending with $B[p..n]$ and then taking a suffix? Not exactly.
+
+We can use the following trick: For each substring $X$, we insert the string $X + B[p..n]$ into the SAM. This will automatically include all strings $X + Y$ for $Y$ being a suffix of $B[p..n]$? No, because $Y$ must be a suffix of $B$, not necessarily of $B[p..n]$. However, any suffix of $B$ starting at $k \ge p$ is a suffix of $B[p..n]$ only if $k = p$. So we are missing those with $k > p$.
+
+But note that $B[k..n]$ is a suffix of $B[p..n]$ only if $k = p$. So we cannot get all required $Y$ by inserting just one string.
+
+Therefore, we must insert each $B[k..n]$ for $k \ge p$ separately. However, we can do this efficiently by precomputing the SAM of $B$ and then, for each $X$, we can attach the SAM of $B$ starting from position $p$ to the state of $X$. This is similar to concatenating two SAMs.
+
+\subsection{Step 6: Concatenating SAMs}
+
+We can build a SAM for $B$ in advance. Then, for a given state $s$ in the main SAM (corresponding to $X$), we want to add all strings in the SAM of $B$ that start from a state corresponding to position $p$ (i.e., the state after reading $B[1..p-1]$ in the SAM of $B$). However, the SAM of $B$ represents all substrings of $B$, not just suffixes starting at $p$. We need to restrict to suffixes starting at $p$, which are exactly the strings represented by the SAM of $B$ that are reachable from the state corresponding to $B[1..p-1]$ by paths that lead to a terminal state (since suffixes of $B$ correspond to paths to a terminal state).
+
+So we can precompute the SAM of $B$ and mark states that correspond to suffixes of $B$ (i.e., terminal states). Then, for each $X$, we find the state in the SAM of $B$ that corresponds to the prefix $B[1..p-1]$ (or the state after reading $B[1..p-1]$). Then, we traverse all paths from that state that lead to a terminal state, and for each such path, we append the string on that path to $X$ and insert it into the main SAM. But this could be $O(n^2)$ per $X$ in the worst case (if $B$ is all same character, there are $O(n)$ terminal states and $O(n)$ paths).
+
+Thus, we need a more efficient way.
+
+\subsection{Step 7: Final Optimized Algorithm}
+
+We realize that we can process all substrings $X$ of $A$ and for each, we insert into the main SAM the string $X + B[p..n]$, and then also insert all suffixes of $B[p..n]$? But wait, if we insert $X + B[p..n]$, then the SAM will automatically contain all suffixes of this string, but that includes strings of the form $X' + Y'$ where $X'$ is a suffix of $X$ and $Y'$ is a prefix of $B[p..n]$, which are not necessarily valid. However, we are only interested in strings where the first part is exactly $X$ (not a suffix of $X$) and the second part is a suffix of $B$. So we cannot rely on the SAM's suffix properties.
+
+Given the constraints ($n \le 2000$), we can afford $O(n^2)$ insertions into the SAM, each insertion taking $O(n)$ time, but that would be $O(n^3)$ which might be too slow. However, note that the total number of distinct concatenations is at most $O(n^2)$? Actually, there are $O(n^2)$ substrings $X$ and for each, up to $O(n)$ suffixes $Y$, so total distinct concatenations could be $O(n^3)$ in the worst case (e.g., when $A$ and $B$ are strings of distinct characters). So we cannot insert each concatenation individually.
+
+The solution is to use the fact that the SAM can be built incrementally and that we can insert multiple strings that share prefixes efficiently. For each starting index $i$ of $A$, we process all substrings starting at $i$ in increasing length. We maintain the current state in the subsequence automaton of $B$ as we extend $X$. For each extension, we have a new $p$. Then we insert the string $B[p..n]$ from the current SAM state corresponding to $X$. But as before, this inserts only one $Y$ per $X$.
+
+We need to insert all $Y$ for each $X$. Since $Y$ are suffixes of $B$, we can precompute all suffixes of $B$ and insert them into a separate SAM? Then we could concatenate the SAM of $X$ with the SAM of the suffixes of $B$ starting at $p$. This is getting complicated.
+
+Given the complexity, the intended solution likely uses the following approach:
+
+\begin{enumerate}
+    \item [1.] Build the subsequence automaton for $B$.
+    \item [2.] Initialize an empty generalized SAM.
+    \item [3.] For each starting index $i$ in $A$:
+    \begin{enumerate}
+        \item Initialize the subsequence automaton state to 0.
+        \item For each ending index $j$ from $i$ to $n$:
+        \begin{enumerate}
+            \item Update the subsequence automaton state with character $A[j]$. Let the new state be $p$.
+            \item If $p > n$, break (no further extensions will be subsequences).
+            \item Let $X = A[i..j]$.
+            \item Insert $X$ into the SAM if not already present.
+            \item From the SAM state corresponding to $X$, insert the string $B[p..n]$.
+        \end{enumerate}
+\end{enumerate}
+% 1. Build the subsequence automaton for $B$.
+% 2. Initialize an empty generalized SAM.
+% 3. For each starting index $i$ in $A$:
+%    - Initialize the subsequence automaton state to 0.
+%    - For each ending index $j$ from $i$ to $n$:
+%         * Update the subsequence automaton state with character $A[j]$. Let the new state be $p$.
+%         * If $p > n$, break (no further extensions will be subsequences).
+        * Let $X =

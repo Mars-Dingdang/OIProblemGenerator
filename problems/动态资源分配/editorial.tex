@@ -1,0 +1,147 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, fullpage}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+
+\begin{document}
+
+\title{Editorial: 动态资源分配}
+\author{}
+\date{}
+\maketitle
+
+\section*{问题简述}
+有 $m$ 种资源和 $n$ 个项目。每个资源 $j$ 的总量为 $C_j$，每个项目 $i$ 需要固定的资源集合 $S_i \subseteq \{1,\dots,m\}$。在 $q$ 个时间点上，每个项目 $i$ 有需求量 $D_{t,i}$。对于每个时间点 $t$，判断是否存在一种资源分配方案，使得：
+\begin{enumerate}[itemsep=0pt]
+    \item 每个资源 $j$ 分配的总量不超过 $C_j$。
+    \item 每个项目 $i$ 获得的总资源量等于 $D_{t,i}$。
+    \item 资源只能分配给需要它的项目。
+\end{enumerate}
+
+\section*{核心观察}
+\subsection*{可行性转化为最大流}
+将原问题建模为网络流：
+\begin{itemize}[itemsep=0pt]
+    \item 源点 $S$ 向每个资源点 $j$ 连边，容量为 $C_j$。
+    \item 每个资源点 $j$ 向所有需要它的项目点 $i$（即 $j \in S_i$）连边，容量为 $+\infty$（或足够大的值）。
+    \item 每个项目点 $i$ 向汇点 $T$ 连边，容量为当前时间点的需求量 $D_{t,i}$。
+\end{itemize}
+\textbf{关键性质}：存在可行分配当且仅当该网络的最大流等于所有项目的总需求量 $\sum_{i=1}^n D_{t,i}$。
+
+\subsection*{动态变化的本质}
+不同时间点仅改变项目 $\rightarrow$ 汇点的边容量。直接对每个时间点单独跑最大流复杂度为 $O(q \cdot \text{maxflow})$，不可接受。
+
+\subsection*{CDQ分治的核心思想}
+利用\textbf{分治结构}处理时间序列，通过\textbf{增量更新}网络流状态，避免重复计算。在每一层分治中：
+\begin{enumerate}[itemsep=0pt]
+    \item 先递归处理左半区间的时间点。
+    \item 将网络流状态更新到左区间结束时的状态（即中间时刻的状态）。
+    \item 基于这个状态递归处理右半区间。
+    \item 回退左区间的修改，恢复状态。
+\end{enumerate}
+这样，当递归到单个时间点时，当前流网络恰好对应该时刻的容量设置，可直接判断可行性。
+
+\section*{解决方案}
+\subsection*{1. 网络流建模与基本算法}
+构造二分图 $G=(V,E)$：
+\begin{align*}
+    V &= \{S, T\} \cup \{R_1,\dots,R_m\} \cup \{P_1,\dots,P_n\} \\
+    E &= \{(S,R_j) \mid j=1,\dots,m\} \\
+      &\cup \{(R_j,P_i) \mid j \in S_i\} \\
+      &\cup \{(P_i,T) \mid i=1,\dots,n\}
+\end{align*}
+边容量：
+\begin{align*}
+    c(S,R_j) &= C_j \\
+    c(R_j,P_i) &= +\infty \\
+    c(P_i,T) &= D_{t,i} \quad \text{(随时间变化)}
+\end{align*}
+使用Dinic算法求最大流。记 $V = n+m+2 \leq 102$，$E \leq n \cdot m + n + m \leq 2600$。
+
+\subsection*{2. 支持容量增量更新的最大流}
+需要支持快速修改一条边 $(P_i,T)$ 的容量，并调整当前流值。
+
+\subsubsection*{容量增加}
+设原容量为 $c_{\text{old}}$，新容量为 $c_{\text{new}} > c_{\text{old}}$。只需在残量网络上从 $P_i$ 出发寻找到 $T$ 的增广路，尝试增加流量 $\Delta = c_{\text{new}} - c_{\text{old}}$。
+
+\subsubsection*{容量减少}
+设原容量为 $c_{\text{old}}$，新容量为 $c_{\text{new}} < c_{\text{old}}$。如果当前通过该边的流量 $f \leq c_{\text{new}}$，则无需操作。否则，需要减少流量 $\Delta = f - c_{\text{new}}$：
+\begin{enumerate}[itemsep=0pt]
+    \item 将 $(P_i,T)$ 的容量暂时设为 $c_{\text{new}}$。
+    \item 在残量网络上从 $T$ 出发，寻找到 $P_i$ 的路径（相当于反向增广），将多余的 $\Delta$ 流量“推回”到 $P_i$。
+    \item 这个退流过程等价于在反向图上从 $T$ 到 $P_i$ 找增广路。
+\end{enumerate}
+
+\subsection*{3. CDQ分治框架}
+\begin{algorithm}[H]
+\caption{CDQ分治处理动态资源分配}
+\begin{algorithmic}[1]
+\Procedure{CDQ}{$l, r$}
+    \If{$l = r$}
+        \State 当前网络状态即为时间点 $l$ 的状态
+        \State 计算最大流，判断是否等于 $\sum_i D_{l,i}$，记录答案
+        \State \Return
+    \EndIf
+    \State $mid \gets \lfloor (l+r)/2 \rfloor$
+    \State \Call{CDQ}{$l, mid$} \Comment{递归处理左区间}
+    \State 记录当前网络流状态
+    \For{$t = l$ to $mid$}
+        \For{每个项目 $i$}
+            \State 将边 $(P_i,T)$ 容量从 $D_{t,i}$ 更新为 $D_{t+1,i}$
+        \EndFor
+    \EndFor
+    \State 现在网络处于时间点 $mid+1$ 的状态
+    \State \Call{CDQ}{$mid+1, r$} \Comment{递归处理右区间}
+    \State 回退上述所有容量更新，恢复进入本层时的状态
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{实现细节}：
+\begin{itemize}[itemsep=0pt]
+    \item 需要维护每条边 $(P_i,T)$ 的容量修改序列。
+    \item 每次更新后立即调整当前流值（增广或退流）。
+    \item 回退操作需要记录修改前的流量和容量，反向执行更新操作。
+\end{itemize}
+
+\subsection*{4. 整体算法流程}
+\begin{enumerate}[itemsep=0pt]
+    \item 读入数据，建立初始网络流图（项目到汇点容量设为 $D_{1,i}$）。
+    \item 运行 Dinic 算法计算初始最大流（作为第1层分治的起点）。
+    \item 调用 \textsc{CDQ}(1, q) 处理所有时间点。
+    \item 输出每个时间点的可行性结果。
+\end{enumerate}
+
+\section*{复杂度分析}
+\subsection*{时间复杂度}
+\begin{itemize}[itemsep=0pt]
+    \item \textbf{CDQ分治层数}：$O(\log q)$。
+    \item \textbf{每层操作}：在区间 $[l,r]$ 中，需要应用左区间所有时间点的容量更新。每个时间点更新 $n$ 条边，共 $O(n \cdot (mid-l+1))$ 次更新。
+    \item \textbf{单次更新代价}：容量增加/减少操作需要在残量网络上增广/退流。最坏情况下每次更新可能触发 $O(V \cdot E)$ 的Dinic算法，但实际中：
+    \begin{itemize}[itemsep=0pt]
+        \item 每次更新只影响一条边，增广/退流路径长度有限。
+        \item 分治过程中网络流状态逐渐变化，不会每次都需要完全重算。
+        \item 实际运行效率远低于理论上界。
+    \end{itemize}
+    \item \textbf{总复杂度}：$O(q \log q \cdot (n+m) \cdot E)$，在题目约束下可接受。
+\end{itemize}
+
+\subsection*{空间复杂度}
+\begin{itemize}[itemsep=0pt]
+    \item 网络流图：$O(V+E) = O(nm)$。
+    \item 分治递归栈：$O(\log q)$。
+    \item 修改记录：$O(q \cdot n)$ 用于回退操作。
+    \item 总空间：$O(qn + nm)$。
+\end{itemize}
+
+\section*{总结}
+本题结合了网络流建模、CDQ分治和动态图算法，核心在于：
+\begin{enumerate}[itemsep=0pt]
+    \item 将资源分配问题转化为二分图最大流问题。
+    \item 利用CDQ分治处理时间序列，避免对每个时间点独立计算。
+    \item 实现支持边容量增量更新的最大流算法，通过局部增广/退流高效调整流值。
+\end{enumerate}
+该解法充分利用了问题特性，通过分治结构将动态问题转化为静态问题序列，是处理一类在线/动态网络流问题的有效范式。
+
+\end{document}

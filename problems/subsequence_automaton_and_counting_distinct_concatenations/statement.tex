@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, fullpage}
+
+\begin{document}
+
+\section*{Problem Description}
+In the Kingdom of Stringoria, two master weavers, Alice and Bob, each possess a string of $n$ magical beads. Each bead is of a type represented by a lowercase English letter. The king, fascinated by their craft, proposes a challenge: Alice chooses any contiguous segment from her string, and Bob, using his string, finds every possible occurrence of that segment as a \emph{subsequence} (beads in order, but not necessarily adjacent) in his own string. For each such occurrence, Bob cuts his string right after the last bead of that subsequence and attaches the remaining suffix (if any) to Alice's segment, forming a new necklace.
+
+The king wonders: how many \emph{distinct} necklaces can be created by considering all possible contiguous segments from Alice's string and all their subsequence occurrences in Bob's string? Two necklaces are considered identical if they have exactly the same sequence of bead types.
+
+Your task is to compute this number modulo $10^9+7$.
+
+\vspace{0.2cm}
+\noindent \textbf{Formal definition:}
+Let $A$ and $B$ be two strings of length $n$. For every substring $X = A[i..j]$ (where $1 \le i \le j \le n$), let $\text{Occ}(X)$ be the set of all sequences of indices $1 \le q_1 < q_2 < \dots < q_{|X|} \le n$ such that $B[q_k] = X[k]$ for all $k$. For each such sequence, let $Y$ be the suffix of $B$ starting at index $q_{|X|}+1$ (if $q_{|X|} = n$, then $Y$ is the empty string). Then we add the string $X + Y$ (concatenation) to a multiset $S$. You need to find the number of distinct strings in $S$, i.e., $|S|$.
+
+\section*{Input}
+The first line contains an integer $T$ ($1 \le T \le 10$) — the number of test cases.
+
+For each test case:
+\begin{itemize}
+    \item The first line contains an integer $n$ ($1 \le n \le 2000$).
+    \item The second line contains string $A$ of length $n$.
+    \item The third line contains string $B$ of length $n$.
+\end{itemize}
+Both strings consist of lowercase English letters.
+
+\section*{Output}
+For each test case, output a single integer — the number of distinct strings in the multiset $S$, modulo $10^9+7$.
+
+\section*{Constraints}
+\begin{itemize}
+    \item $1 \le T \le 10$
+    \item $1 \le n \le 2000$
+    \item The sum of $n$ over all test cases does not exceed $2000$.
+    \item Strings $A$ and $B$ consist only of lowercase English letters.
+    \item Time limit: 3 seconds
+    \item Memory limit: 512 MB
+\end{itemize}
+
+\section*{Sample}
+\begin{verbatim}
+Input:
+1
+2
+ab
+ba
+
+Output:
+2
+\end{verbatim}
+
+\noindent \textbf{Explanation:}
+The substrings of $A$ are: ``a'', ``b'', ``ab''.
+\begin{itemize}
+    \item For $X =$ ``a'', it occurs as a subsequence in $B$ only at position $2$ (since $B[2] =$ `a'). The suffix of $B$ starting from index $3$ is empty, so the resulting string is ``a''.
+    \item For $X =$ ``b'', it occurs as a subsequence in $B$ only at position $1$. The suffix from index $2$ is ``a'', so the result is ``ba''.
+    \item For $X =$ ``ab'', there is no occurrence as a subsequence in $B$ (because `a' comes after `b' in $B$), so no string is produced.
+\end{itemize}
+The distinct strings are ``a'' and ``ba'', so the answer is $2$.
+
+\end{document}

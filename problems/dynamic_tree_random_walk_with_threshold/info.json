@@ -1,0 +1,6 @@
+{
+    "difficulty": "Codeforces 2700",
+    "topic": "Segment Tree Merge, Random Walk, Threshold",
+    "model": "DeepSeek-V3.2-Thinking",
+    "prompt": "D:/Anaconda/envs/oipg/python.exe src/main.py --difficulty "NOI" --topic "线段树合并维护树上随机游走的带修改动态规划问题，涉及概率DP，线段树合并，树上随机游走，要求需要若干个困难的obvervations才能做出来" --model "DeepSeek-V3.2-Thinking""
+}

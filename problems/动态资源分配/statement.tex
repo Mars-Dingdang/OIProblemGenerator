@@ -1,0 +1,108 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, fullpage}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+
+\begin{document}
+
+\section*{Problem: Dynamic Resource Allocation at NovaCorp}
+
+\subsection*{Story}
+In the year 2150, NovaCorp stands at the forefront of technological innovation, operating a massive orbital research complex. The complex houses $n$ cutting-edge research projects, each requiring specific combinations of $m$ rare cosmic resources—ranging from quantum-entangled processors to stabilized dark matter cores.
+
+Each project has a unique resource requirement pattern. The cosmic market is highly volatile, causing project resource demands to fluctuate dramatically. As Chief Resource Allocator, you must perform real-time feasibility checks at $q$ critical decision points.
+
+At each moment $t$, you receive updated total demand values $D_{t,i}$ for each project $i$—representing the total units needed across all resources that project $i$ requires. Given the fixed resource capacities $C_j$ aboard the station, you must determine whether a \textbf{perfect allocation} exists that exactly satisfies every project's demand without exceeding any resource's capacity.
+
+The fate of humanity's technological advancement rests on your algorithmic prowess!
+
+\subsection*{Formal Description}
+You are given:
+\begin{itemize}
+    \item $n$ projects and $m$ resource types.
+    \item A binary matrix $A$ of size $n \times m$, where $A_{i,j} = 1$ iff project $i$ requires resource $j$.
+    \item Resource capacities $C_1, C_2, \dots, C_m$.
+    \item $q$ time points, each with demand array $D_{t,1}, D_{t,2}, \dots, D_{t,n}$.
+\end{itemize}
+
+For each time $t$, determine whether there exists a non-negative allocation matrix $X^{(t)} \in \mathbb{Z}_{\ge 0}^{n \times m}$ such that:
+\begin{align*}
+    &\forall i \in [1, n], \quad \sum_{j=1}^{m} X^{(t)}_{i,j} = D_{t,i} \\
+    &\forall j \in [1, m], \quad \sum_{i=1}^{n} X^{(t)}_{i,j} \le C_j \\
+    &\forall i,j, \quad A_{i,j} = 0 \implies X^{(t)}_{i,j} = 0
+\end{align*}
+
+\subsection*{Input Format}
+The first line contains three integers $n$, $m$, $q$ ($1 \le n, m \le 50$, $1 \le q \le 1000$).
+
+The next $n$ lines each contain a string of length $m$ consisting of '0' and '1'. The $i$-th string describes which resources project $i$ needs.
+
+The next line contains $m$ integers $C_1, C_2, \dots, C_m$ ($1 \le C_j \le 10^4$).
+
+Finally, $q$ lines follow. The $t$-th of these lines contains $n$ integers $D_{t,1}, D_{t,2}, \dots, D_{t,n}$ ($0 \le D_{t,i} \le 10^4$).
+
+\subsection*{Output Format}
+Output $q$ lines. The $t$-th line should contain \texttt{YES} if a feasible allocation exists at time $t$, otherwise \texttt{NO}.
+
+\subsection*{Constraints}
+\begin{itemize}
+    \item $1 \le n, m \le 50$
+    \item $1 \le q \le 1000$
+    \item $1 \le C_j \le 10^4$
+    \item $0 \le D_{t,i} \le 10^4$
+    \item Each project requires at least one resource (each row of $A$ contains at least one '1').
+    \item Time limit: 2.0 seconds
+    \item Memory limit: 512 MB
+\end{itemize}
+
+\subsection*{Sample Input}
+\begin{verbatim}
+3 2 4
+10
+01
+11
+5 5
+2 3 4
+1 2 3
+0 0 0
+5 5 5
+\end{verbatim}
+
+\subsection*{Sample Output}
+\begin{verbatim}
+YES
+YES
+YES
+NO
+\end{verbatim}
+
+\subsection*{Sample Explanation}
+\textbf{Resource requirements:}
+\begin{itemize}
+    \item Project 1 needs only resource 1.
+    \item Project 2 needs only resource 2.
+    \item Project 3 needs both resources 1 and 2.
+\end{itemize}
+
+\textbf{Time 1:} Demands = [2, 3, 4]. One possible allocation:
+\begin{itemize}
+    \item Project 1: 2 units from resource 1.
+    \item Project 2: 3 units from resource 2.
+    \item Project 3: 3 units from resource 1 and 1 unit from resource 2.
+\end{itemize}
+Total used: resource 1: 5, resource 2: 4 (within capacities 5 and 5).
+
+\textbf{Time 2:} Demands = [1, 2, 3]. Allocation exists.
+
+\textbf{Time 3:} Demands = [0, 0, 0]. Trivially satisfied by allocating nothing.
+
+\textbf{Time 4:} Demands = [5, 5, 5]. Impossible because:
+\begin{itemize}
+    \item Projects 1 and 3 share resource 1. Maximum they can get is $C_1 = 5$.
+    \item Projects 2 and 3 share resource 2. Maximum they can get is $C_2 = 5$.
+    \item But project 1 needs 5, project 2 needs 5, and project 3 needs 5 from both resources.
+    \item Resource 1 would need at least $5 + 5 = 10 > 5$, similarly for resource 2.
+\end{itemize}
+
+\end{document}

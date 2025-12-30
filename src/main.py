@@ -17,8 +17,7 @@ def main():
     parser.add_argument("--difficulty", type=str, default="Codeforces 1500", help="Difficulty level (e.g., 'Codeforces 1500', 'Luogu Blue')")
     parser.add_argument("--topic", type=str, default="Dynamic Programming", help="Problem topic (e.g., 'Segment Tree', 'Network Flow')")
     parser.add_argument("--model", type=str, default="Qwen3-235B-A22B-Thinking-2507", 
-                        choices=["Qwen3-235B-A22B-Thinking-2507", "DeepSeek-V3.2-Thinking", "DeepSeek-R1-0528"],
-                        help="Select the LLM model to use")
+                        help="Select the LLM model to use (e.g., Qwen3..., DeepSeek..., gemini-2.0-flash-exp)")
     parser.add_argument("--output_dir", type=str, default="./problems", help="Directory to save generated problems")
     parser.add_argument("--build_kb", action="store_true", help="Build/Rebuild the knowledge base from ./knowledge_base folder")
     

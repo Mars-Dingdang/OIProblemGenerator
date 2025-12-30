@@ -1,0 +1,5 @@
+D:\Anaconda\envs\oipg\python.exe src/main.py --difficulty "Codeforces 2700-3000" --topic "Suffix Automaton, String Counting, Combinatorics, Advanced data_structures, 3 more key observations needed to solve the problem" --model "DeepSeek-V3.2-Thinking"
+
+difficulty: Codeforces 2000, Luogu Blue
+
+Algorithm: String - Trie, Hashing

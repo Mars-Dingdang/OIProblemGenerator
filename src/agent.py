@@ -1,6 +1,12 @@
 import os
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
+# Import the custom Gemini wrapper or standard one if available
+try:
+    from langchain_google_genai import ChatGoogleGenerativeAI
+except ImportError:
+    ChatGoogleGenerativeAI = None
+
 from src.knowledge_base import KnowledgeBase
 from src.generator import ContentGenerator
 from src.prompts import IDEATION_PROMPT_TEMPLATE, PROBLEM_SETTING_GUIDELINES
@@ -20,19 +26,34 @@ class ProblemConcept(BaseModel):
 class OIProblemAgent:
     def __init__(self, model_name: str = "Qwen3-235B-A22B-Thinking-2507"):
         # 初始化 LLM
-        # 支持的模型:
-        # 1. Qwen3-235B-A22B-Thinking-2507
-        # 2. DeepSeek-V3.2-Thinking
-        # 3. DeepSeek-R1-0528
-        
         print(f"🤖 Initializing Agent with model: {model_name}")
         
-        self.llm = ChatOpenAI(
-            api_key=os.getenv("OPENAI_API_KEY"),
-            base_url=os.getenv("OPENAI_BASE_URL"),
-            model=model_name,
-            temperature=0.7
-        )
+        if "gemini" in model_name.lower():
+            if ChatGoogleGenerativeAI is None:
+                raise ImportError("langchain_google_genai is not installed. Please install it to use Gemini models.")
+            
+            google_api_key = os.getenv("GOOGLE_API_KEY")
+            if not google_api_key:
+                raise ValueError("GOOGLE_API_KEY not found in environment variables.")
+                
+            # Map "gemini-3-pro-preview" to a valid model name if needed, 
+            # or assume the user passes the correct string.
+            # For now, we use the model_name passed in.
+            self.llm = ChatGoogleGenerativeAI(
+                model=model_name,
+                google_api_key=google_api_key,
+                temperature=0.7,
+                max_retries=10, # Increase retries for rate limits
+                request_timeout=60,
+            )
+        else:
+            self.llm = ChatOpenAI(
+                api_key=os.getenv("OPENAI_API_KEY"),
+                base_url=os.getenv("OPENAI_BASE_URL"),
+                model=model_name,
+                temperature=0.7
+            )
+            
         self.knowledge_base = KnowledgeBase()
         self.generator = ContentGenerator(self.llm)
 

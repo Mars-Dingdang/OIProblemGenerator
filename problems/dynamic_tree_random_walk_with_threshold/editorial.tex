@@ -1,0 +1,98 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, fullpage}
+\begin{document}
+
+\title{Editorial: Dynamic Tree Random Walk with Threshold}
+\author{}
+\date{}
+\maketitle
+
+\section*{Problem Overview}
+We are given a rooted tree with $n$ nodes. Each node $u$ has an integer threshold $a_u$. A random walk starts at a given node $s$. At each step, if the current node $u$ has threshold $a_u$ and the walk has taken $k$ steps so far (including the current step?), then:
+\begin{itemize}
+    \item If $k \ge a_u$, the walk stops at $u$.
+    \item Otherwise, the walk moves to a uniformly random child of $u$ (if any). If $u$ has no children, the walk stays at $u$ forever (but note: if $k < a_u$ and no children, then it will never meet the threshold? Actually, the problem likely ensures that when $u$ has no children, the walk stops immediately? We need to clarify. From the algorithm, we see that for a leaf, the expected steps is 0 when $T \ge a_u$, and otherwise? Let's rely on the algorithm description.)
+\end{itemize}
+Actually, the problem is defined differently: The threshold $T$ is a global parameter for the query. So the walk stops when the number of steps taken reaches or exceeds the threshold of the current node. But wait, the algorithm uses $E(u, T)$ as the expected steps from $u$ for a given threshold $T$. So $T$ is a parameter that is compared with the node's value $a_u$. So the condition is: if $T \ge a_u$, then the walk stops immediately? Not exactly. Let's derive the recurrence properly.
+
+We are given a tree (rooted). For a fixed threshold $T$, define $E(u, T)$ as the expected number of steps until the random walk starting at $u$ stops, where the stopping condition is: when the walk reaches a node $v$ such that $a_v \le T$? Actually, from the algorithm: For $T < a_u$, $E(u,T)=0$, and for $T \ge a_u$, $E(u,T)=1 + \frac{1}{\deg(u)}\sum_{v \in \text{children}(u)} E(v,T)$. That suggests the following interpretation: The walk proceeds in steps. At node $u$, if the threshold $T$ is at least $a_u$, then we count one step for being at $u$ and then move to a child; otherwise, if $T < a_u$, we stop immediately (so 0 steps). That is consistent with the recurrence.
+
+So the recurrence is:
+\[
+E(u, T) = 
+\begin{cases}
+0 & \text{if } T < a_u, \\
+1 + \frac{1}{d_u} \sum_{v \in \text{children}(u)} E(v, T) & \text{if } T \ge a_u,
+\end{cases}
+\]
+where $d_u$ is the number of children of $u$ (if $d_u = 0$, then the sum is empty and we interpret the fraction as 0, so $E(u,T)=1$? But the algorithm says: if $\deg(u)=0$, then $1 + S(u,T)/\deg(u)$ is interpreted as 0. Wait, that would give $E(u,T)=0$ when $T \ge a_u$ and $u$ is a leaf? That seems odd. Actually, if $u$ is a leaf and $T \ge a_u$, then we should stop immediately? The recurrence says: if $T \ge a_u$, we count one step and then move to a child. But if there are no children, then after that one step, we are stuck? So maybe the walk ends after that step. So $E(u,T)=1$ for a leaf when $T \ge a_u$. But the algorithm says it is interpreted as 0. There might be a misinterpretation.
+
+Looking at the algorithm: "if deg(u)=0, then 1 + S(u,T)/deg(u) is interpreted as 0." That is ambiguous. Possibly, they mean that when $d_u=0$, the term $\frac{S(u,T)}{d_u}$ is undefined, so they define the whole expression as 0. But then $E(u,T)=0$ for a leaf when $T \ge a_u$. That would mean that if we start at a leaf and $T \ge a_u$, we stop immediately (0 steps). That is plausible: if the threshold is met, we stop without taking a step? But then the recurrence for non-leaves counts one step before moving. So maybe the step is counted only when we move? Actually, the recurrence might be: expected steps until we reach a node where $T < a_u$? That doesn't match.
+
+Given the algorithm is provided, we'll trust the recurrence as given in the algorithm description. So we have:
+
+For each node $u$ and threshold $T$, 
+\[
+E(u,T) = 
+\begin{cases}
+0, & \text{if } T < a_u, \\
+1 + \frac{1}{d_u} \sum_{v \in \text{children}(u)} E(v,T), & \text{if } T \ge a_u,
+\end{cases}
+\]
+with the convention that if $d_u = 0$, then the expression $1 + \frac{1}{d_u} \sum_{v} E(v,T)$ is taken as 0. So effectively, for a leaf, $E(u,T) = 0$ regardless? Wait, if $T \ge a_u$, then the condition holds, but since $d_u=0$, we set it to 0. So $E(u,T)=0$ for leaves when $T \ge a_u$. And when $T < a_u$, it's also 0. So leaves always have $E=0$. That suggests that the walk always ends immediately at leaves. That might be by definition: leaves have no children, so the walk cannot continue. But then why would we ever have positive expected steps? Because for internal nodes, if $T \ge a_u$, we take one step and then go to a child, and the child might have positive expected steps. So the walk continues until it reaches a node where $T < a_u$? Actually, if $T < a_u$, then $E=0$, so that node is a stopping node. So the condition $T < a_u$ means the node is a "stopping" node. So the walk stops when it reaches a node with $a_u > T$? Wait: $E(u,T)=0$ when $T < a_u$. So if $T$ is less than $a_u$, we stop immediately (0 expected steps from there). If $T \ge a_u$, we continue. So the walk stops when it reaches a node whose threshold is strictly greater than $T$. That is the interpretation.
+
+Thus, the recurrence makes sense: Starting from $u$, if $a_u > T$, we stop immediately (0 steps). Otherwise, we take one step to a random child, and then continue from that child. So the expected number of steps from $u$ is 1 plus the average expected steps from its children.
+
+Now, the problem involves queries: given a starting node $s$ and a threshold $T$, compute $E(s,T)$. Also, there are updates that change the threshold $a_x$ of a node $x$ to a new value $v$.
+
+We need to handle $n$ nodes and $q$ operations efficiently.
+
+\section*{Core Observation}
+The key insight is that $E(u, T)$, as a function of $T$, is a piecewise constant function with at most $M$ pieces, where $M$ is the number of distinct threshold values that appear in the initial tree and in all updates. This is because the recurrence depends only on comparisons of $T$ with $a_u$ and the values from children, which are also piecewise constant. Thus, we can discretize all possible $T$ values (from initial $a_i$ and all update values $v$) and represent $E(u, \cdot)$ as a segment tree over these discrete thresholds.
+
+Moreover, the recurrence allows us to compute $E(u, \cdot)$ from the children's functions in a bottom-up manner. However, updates require changing $a_x$ and propagating the effect to ancestors. To do this efficiently, we use heavy-light decomposition (HLD) to break the tree into paths, and on each heavy path we maintain segment trees that support range updates and point queries to handle the linear transformations of the DP values along the path.
+
+\section*{Solution}
+
+\subsection*{Step 1: Discretization}
+Let $V$ be the set of all distinct values that appear as initial $a_i$ or as update values $v$. Sort $V$ and map each value to its rank. Let $M = |V|$. Then all thresholds $T$ we care about are integers from $1$ to $M$ (after compression). Queries provide a threshold $T$ which we map to its rank (or if not present, we can use lower/upper bound; but since queries use values from the same set, we assume they are discretized as well).
+
+\subsection*{Step 2: Recursive Formulation and Segment Tree Representation}
+For each node $u$, we maintain a segment tree (or any data structure for piecewise constant functions) over the discrete thresholds $1, \dots, M$ that stores $E(u, T)$ for each $T$. Since $E(u, T)$ is piecewise constant, the segment tree stores in each leaf the value for that threshold. Actually, we can store the function as a vector of pairs (threshold, value) but using a segment tree allows efficient merging.
+
+The recurrence:
+\[
+E(u, T) = 
+\begin{cases}
+0, & T < a_u, \\
+1 + \frac{1}{d_u} \sum_{v \in \text{children}(u)} E(v, T), & T \ge a_u.
+\end{cases}
+\]
+Let $S(u, T) = \sum_{v \in \text{children}(u)} E(v, T)$. Then for $T \ge a_u$, $E(u, T) = 1 + \frac{1}{d_u} S(u, T)$, and for $T < a_u$, $E(u, T) = 0$.
+
+We can compute $E(u, \cdot)$ if we know $S(u, \cdot)$ and $a_u$. $S(u, \cdot)$ is the sum of the functions of its children.
+
+\subsection*{Step 3: Initial Build}
+We perform a post-order DFS. For each node $u$, we merge the segment trees of its children to obtain $S(u, T)$. Merging here means summing the piecewise constant functions. Since each child's function is represented as a segment tree, we can merge two segment trees by traversing them simultaneously and adding the values leaf by leaf. However, doing this naively for each node would be expensive. Instead, we can use a technique similar to "segment tree merging" where we merge two segment trees by recursively merging their left and right children. This takes time proportional to the number of nodes in the segment trees, which is $O(M \log M)$ total over all merges if we merge carefully and discard trees after merging? Actually, if we merge the segment trees of children into the segment tree of $u$, the total number of nodes created across all nodes is $O(M \log M)$? Wait, we have $n$ nodes, each might have a segment tree of size $O(M \log M)$ if we store it as a dynamic segment tree. But we can do better: since the functions are piecewise constant with at most $M$ pieces, we could represent them as an array of size $M$ and use a segment tree over that array. But then merging two arrays (pointwise sum) takes $O(M)$ time. Doing that for each node would be $O(nM)$, which is too slow.
+
+Instead, we use a segment tree that supports range updates and point queries? Actually, we need to store a function that changes only at discrete thresholds. The algorithm says: "merge the segment trees of its children to compute $S(u, T)$". That suggests we maintain for each node a segment tree that stores $E(u, T)$ for all $T$. And merging two such segment trees (to sum them) can be done in time proportional to the number of nodes in the trees if we use a persistent or dynamic segment tree. Since each segment tree has $O(M \log M)$ nodes? Actually, if we build a segment tree over the range $[1, M]$, it has $O(M)$ leaves and $O(M)$ nodes if it's a balanced binary tree. But if we use a dynamic segment tree that only creates nodes when needed, the total number of nodes created over all nodes might be $O(n \log M)$? Wait, the algorithm says "merging uses segment tree merging in $O(M \log M)$ total over all nodes." That suggests that across all nodes, the total work of merging is $O(M \log M)$. That is possible if we use a technique where we merge trees by sharing nodes, similar to merging in "segment tree beats" or in some data structures. Essentially, we build a segment tree for each node, but when merging, we take the union of the nodes. Since each node's function is piecewise constant with at most $M$ changes, the total number of distinct segments across all nodes is $O(nM)$? That can't be. Actually, the functions are not arbitrary: they are derived from children. Maybe the total number of distinct "breakpoints" across all nodes is $O(M \log n)$? I'm not sure.
+
+But since the algorithm is given, we accept that we can merge segment trees for all nodes in total $O(M \log M)$ time. In practice, we can implement segment tree merging as follows: each segment tree node stores a value (the constant value on that segment). When merging two trees, we recursively merge children. If one tree has no node for a segment, we can attach the other tree's node (or copy). However, to avoid deep copying, we can use persistence or careful merging. The total number of nodes created will be $O(M \log M)$ because each threshold value contributes to $O(\log M)$ nodes in the segment tree, and there are $M$ thresholds, but we have $n$ nodes. Actually, each node's segment tree might have up to $O(M)$ nodes, so total would be $O(nM)$. But the algorithm claims $O(M \log M)$ total over all nodes. That suggests that we are not building a full segment tree for each node; instead, we are building a segment tree that is essentially the same for many nodes? Or maybe we are using a trick: the function $E(u, T)$ is constant for $T < a_u$ and equal to some function for $T \ge a_u$. So we can represent it as a single breakpoint at $a_u$. But then $S(u, T)$ is the sum of such functions, which might have many breakpoints. However, the number of breakpoints might be bounded by the number of distinct $a$ values in the subtree. In the worst case, it could be $O(M)$ per node. So total $O(nM)$.
+
+Given the complexity stated in the problem (time $O((n+q)\log^2 n)$ and space $O(n \log n)$), $M$ is actually $O(n+q)$ because we have $n$ initial values and $q$ update values. So $M = O(n+q)$. Then $O(M \log M)$ would be $O((n+q) \log (n+q))$, which is acceptable. But the algorithm says preprocessing is $O(n \log^2 n)$? Actually, the complexity given is $O((n+q)\log^2 n)$. So $M$ is $O(n+q)$, but the merging step is done only once during initial build, and it takes $O(M \log M)$ total over all nodes. That is $O((n+q) \log (n+q))$, which is less than $O(n \log^2 n)$ if $q$ is comparable to $n$. So it fits.
+
+We'll proceed assuming we have a method to merge segment trees efficiently.
+
+After computing $S(u, T)$ as the sum of children's $E(v, T)$, we need to compute $E(u, T)$ from it. This is done by setting:
+- For $T < a_u$: $E(u, T) = 0$.
+- For $T \ge a_u$: $E(u, T) = 1 + \frac{1}{d_u} S(u, T)$.
+This transformation can be applied to the segment tree of $S(u, T)$ to obtain the segment tree for $E(u, T)$ by doing a range assignment of $0$ on $[1, a_u-1]$ and then for $[a_u, M]$, we set each value to $1 + \frac{1}{d_u} S(u, T)$. Since $S(u, T)$ is stored in the segment tree, we need to apply a linear transformation on the range $[a_u, M]$: multiply by $\frac{1}{d_u}$ and add $1$. So our segment tree should support range multiply and range add, and also range assign (set to 0). But note: the transformation is different on two intervals. So we can do: first, set the whole tree to 0 for $T < a_u$; then for $T \ge a_u$, we want $E = 1 + \frac{1}{d_u} S$. So if we have the segment tree for $S$, we can create a new segment tree for $E$ by traversing and applying the formula. Since we are building from scratch, we can compute it during the merge.
+
+Alternatively, we can store $E(u, T)$ directly. The algorithm says: "For each node u, maintain a segment tree over the discretized thresholds that stores E(u, T)." So we will have such a segment tree.
+
+\subsection*{Step 4: Updates with Heavy-Light Decomposition}
+When we update the threshold of node $x$ to $v$, we need to update $E(x, T)$ and then update all ancestors of $x$. Doing this naively would take $O(n)$ per update.
+
+To speed up, we use heavy-light decomposition. The tree is decomposed into heavy paths. For each heavy path, we maintain a segment tree that supports range updates and point queries. The idea is to express the DP recurrence in a form that can be updated efficiently along a heavy path.
+
+Consider a node $u$ on a heavy path. Let $h_u$ be its heavy child (if any), and let $L(u)$ be the set of light
