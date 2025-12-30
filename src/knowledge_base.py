@@ -60,6 +60,14 @@ class KnowledgeBase:
             except Exception as e:
                 print(f"⚠️ Error loading {pdf_path}: {e}")
 
+        # 处理结构化数据 (Structured Data)
+        structured_dir = os.path.join(source_dir, "structured")
+        if os.path.exists(structured_dir):
+            print(f"📂 Scanning structured data in {structured_dir}...")
+            structured_docs = self._load_structured_data(structured_dir)
+            documents.extend(structured_docs)
+            print(f"📄 Added {len(structured_docs)} structured documents.")
+
         if not documents:
             print("❌ No documents found to ingest.")
             return
@@ -88,3 +96,53 @@ class KnowledgeBase:
                 self.vector_store.add_documents(batch)
                 
         print("✅ Knowledge base built successfully!")
+
+    def _load_structured_data(self, root_dir: str) -> List[Document]:
+        """
+        加载结构化知识库 (Level 1/2/3)
+        """
+        docs = []
+        import json
+        
+        for root, dirs, files in os.walk(root_dir):
+            # 检查是否存在 metadata.json，如果存在则认为是一个算法文件夹
+            if "metadata.json" in files:
+                try:
+                    with open(os.path.join(root, "metadata.json"), "r", encoding="utf-8") as f:
+                        meta = json.load(f)
+                    
+                    algo_name = meta.get("name", "Unknown Algorithm")
+                    
+                    # Level 1: Metadata
+                    content_l1 = f"Algorithm: {algo_name}\nCategory: {meta.get('category')}\n"
+                    content_l1 += f"Complexity: {meta.get('complexity')}\n"
+                    content_l1 += f"Scenarios: {', '.join(meta.get('scenarios', []))}\n"
+                    content_l1 += f"Extensions: {', '.join(meta.get('extensions', []))}"
+                    
+                    docs.append(Document(
+                        page_content=content_l1,
+                        metadata={"source": f"Structured KB - {algo_name} - Metadata", "type": "level1", "algorithm": algo_name}
+                    ))
+                    
+                    # Level 2: Template
+                    if "template.cpp" in files:
+                        with open(os.path.join(root, "template.cpp"), "r", encoding="utf-8") as f:
+                            template_code = f.read()
+                        docs.append(Document(
+                            page_content=f"Standard Template Code for {algo_name}:\n```cpp\n{template_code}\n```",
+                            metadata={"source": f"Structured KB - {algo_name} - Template", "type": "level2", "algorithm": algo_name}
+                        ))
+                        
+                    # Level 3: Tricks
+                    if "tricks.md" in files:
+                        with open(os.path.join(root, "tricks.md"), "r", encoding="utf-8") as f:
+                            tricks_content = f.read()
+                        docs.append(Document(
+                            page_content=f"Advanced Tricks and Key Observations for {algo_name}:\n{tricks_content}",
+                            metadata={"source": f"Structured KB - {algo_name} - Tricks", "type": "level3", "algorithm": algo_name}
+                        ))
+                        
+                except Exception as e:
+                    print(f"⚠️ Error loading structured data in {root}: {e}")
+                    
+        return docs

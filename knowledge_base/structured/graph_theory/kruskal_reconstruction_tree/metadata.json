@@ -1,0 +1,17 @@
+{
+    "name": "Kruskal Reconstruction Tree",
+    "category": "Graph Theory",
+    "complexity": {
+        "build": "O(M log M)",
+        "query": "O(log N)"
+    },
+    "scenarios": [
+        "Bottleneck Edge Query",
+        "Path Minimum/Maximum Query",
+        "Reachability with Edge Weight Constraints"
+    ],
+    "extensions": [
+        "Combined with Persistent Segment Tree",
+        "Combined with Heavy-Light Decomposition"
+    ]
+}

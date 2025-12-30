@@ -1,0 +1,21 @@
+{
+    "name": "Segment Tree",
+    "category": "Data Structures",
+    "complexity": {
+        "build": "O(N)",
+        "query": "O(log N)",
+        "update": "O(log N)"
+    },
+    "scenarios": [
+        "Range Query Point Update",
+        "Range Query Range Update (Lazy Propagation)",
+        "Segment Tree Beats (Historical Information)",
+        "Segment Tree Optimized Graph Construction"
+    ],
+    "extensions": [
+        "Dynamic Segment Tree",
+        "Persistent Segment Tree",
+        "Li Chao Tree",
+        "Segment Tree Merge"
+    ]
+}

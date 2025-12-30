@@ -3,6 +3,7 @@ from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from src.knowledge_base import KnowledgeBase
 from src.generator import ContentGenerator
+from src.prompts import IDEATION_PROMPT_TEMPLATE, PROBLEM_SETTING_GUIDELINES
 
 from langchain_core.output_parsers import JsonOutputParser
 from pydantic import BaseModel, Field
@@ -77,28 +78,7 @@ class OIProblemAgent:
         """
         parser = JsonOutputParser(pydantic_object=ProblemConcept)
 
-        prompt = ChatPromptTemplate.from_template(
-            """
-            You are an expert competitive programming problem setter (Codeforces Grandmaster level).
-            Your task is to design a NOVEL, HIGH-QUALITY OI problem based on the following requirements:
-            
-            Difficulty: {difficulty} (Target: Codeforces 2400+)
-            Topic: {topic}
-            
-            Relevant Knowledge/Context:
-            {context}
-            
-            Requirements:
-            1. **High Thinking Difficulty**: The problem should NOT be a standard template application. It must require deep insight, ad-hoc reasoning, or a clever transformation.
-            2. **Novelty**: Avoid common clichés. Combine the topic with interesting constraints or a secondary mechanic (e.g., parity, bitmasks, game theory).
-            3. **Solvability**: Ensure the problem is solvable within standard time limits (1-2s) using an efficient algorithm (not exponential).
-            4. **Story Potential**: Design the core logic such that it can be wrapped in an interesting story later (e.g., graph nodes as cities, edges as roads with specific rules).
-            
-            Please provide a high-level summary of the problem.
-            
-            {format_instructions}
-            """
-        )
+        prompt = ChatPromptTemplate.from_template(IDEATION_PROMPT_TEMPLATE)
         
         chain = prompt | self.llm | parser
         
@@ -108,6 +88,7 @@ class OIProblemAgent:
                 "difficulty": difficulty,
                 "topic": topic,
                 "context": context,
+                "guidelines": PROBLEM_SETTING_GUIDELINES,
                 "format_instructions": parser.get_format_instructions()
             })
             print("DEBUG: Ideation successful.")
