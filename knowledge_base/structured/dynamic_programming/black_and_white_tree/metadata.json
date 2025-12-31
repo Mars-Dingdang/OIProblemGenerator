@@ -1,0 +1,8 @@
+{
+    "name": "black_and_white_tree",
+    "chinese_name": "《黑白树》命题报告",
+    "author": "闫书弈",
+    "category": "dynamic_programming",
+    "complexity": "O(n√(n log n))",
+    "summary": "Given a tree with n nodes, each node is independently black or white with 50% probability. A random edge set is selected (each edge included with 50% probability). The score is mx if for every edge in the set, the number of black nodes on both sides differs (empty set is valid), otherwise 0. Compute the expected score multiplied by 2^(2n−1) modulo 998244353."
+}

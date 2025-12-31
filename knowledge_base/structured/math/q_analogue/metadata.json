@@ -1,0 +1,8 @@
+{
+    "name": "q_analogue",
+    "chinese_name": "浅谈 q-analogue",
+    "author": "李铭乐洋",
+    "category": "math",
+    "complexity": "O(√n poly log n)",
+    "summary": "该论文探讨了在信息学竞赛中使用 q-analogue 方法处理积性函数求和、Dirichlet 卷积以及相关数论问题。通过引入生成函数（如指数生成函数 Exp 和对数生成函数 Log）来刻画积性函数的性质，提出了一种高效计算积性函数前缀和的方法，时间复杂度为 O(n^{1/2} poly log n)。同时，文中还优化了该方法至 O(√n log²n / √log log n)，并讨论了其在幂级数运算中的应用。"
+}

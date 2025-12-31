@@ -1,0 +1,8 @@
+{
+    "name": "two_strings_query",
+    "chinese_name": "Two strings 试题讨论",
+    "author": "罗干",
+    "category": "string",
+    "complexity": "O(log n) per operation and query using enhanced suffix array and segment tree techniques.",
+    "summary": "Given two strings A and B, and a series of operations that modify string A (inserting characters at specific positions), answer queries about how many times string B appears as a contiguous substring in the current version of A. The challenge lies in efficiently maintaining and querying substring occurrences after dynamic modifications."
+}

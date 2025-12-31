@@ -1,0 +1,8 @@
+{
+    "name": "computational_geometry_in_oi",
+    "chinese_name": "OI 中的几何",
+    "author": "常瑞年",
+    "category": "geometry",
+    "complexity": "Varies by topic: O(n log n) for Delaunay triangulation and half-plane intersection; O(n) expected for grid-based closest pair; O(log²n) for dynamic point location; O(logᵈ⁻¹n) for d-dimensional orthogonal queries; O(√n) separator size for planar graphs.",
+    "summary": "This paper explores geometric topics relevant to the National Olympiad in Informatics (OI), covering computational geometry techniques such as half-plane intersection via point-line duality, grid-based randomized incremental algorithms for proximity problems, Delaunay triangulation and its applications (including Voronoi diagrams), circle inversion, 3D convex hulls, geometric data structures like point location and orthogonal range queries, planar separators and their generalizations to bounded genus graphs, and finite geometries including projective and affine planes with applications to combinatorial construction problems."
+}

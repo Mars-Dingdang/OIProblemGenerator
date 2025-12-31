@@ -1,0 +1,8 @@
+{
+    "name": "minimum_ratio_cycle",
+    "chinese_name": "浅谈最小比率环及其应用",
+    "author": "魏佳泽",
+    "category": "graph_theory",
+    "complexity": "O((V + E) log W)",
+    "summary": "The paper discusses the minimum ratio cycle problem, which involves finding a cycle in a directed graph with edge weights (cost and time) such that the ratio of total cost to total time is minimized. The algorithm uses binary search on the answer combined with checking for the existence of a negative cycle in a transformed graph where edge weights are adjusted by the current guess."
+}

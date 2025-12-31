@@ -1,0 +1,8 @@
+{
+    "name": "generating_function_stopping_time",
+    "chinese_name": "使用生成函数刻画随机过程停时的一类技巧",
+    "author": "叶开",
+    "category": "math",
+    "complexity": "O(√n polylog n)",
+    "summary": "This paper introduces a technique using generating functions to model and analyze stopping times in random processes. It focuses on transforming combinatorial problems involving multiplicative number-theoretic functions into algebraic forms, particularly through exponential (Exp) and logarithmic (Log) operations on Dirichlet generating functions. The method enables efficient computation of summatory functions related to arithmetic properties, achieving sub-linear time complexities by leveraging power series manipulations and optimized convolution techniques."
+}

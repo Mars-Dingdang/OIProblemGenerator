@@ -1,0 +1,8 @@
+{
+    "name": "complexity_analysis",
+    "chinese_name": "浅谈复杂度及其在解决问题方面的应用",
+    "author": "杨敏行",
+    "category": "misc",
+    "complexity": "O(n^{2/3}) or O(√n poly log n) depending on the method",
+    "summary": "The paper discusses the application of complexity analysis in solving algorithmic problems, focusing on advanced techniques for optimizing time and space complexity. It covers methods such as Dirichlet convolution, power sums, and sieve-based algorithms to compute summatory functions of multiplicative functions efficiently. The work also introduces optimization tricks like using logarithmic partitions and segmented sieves to reduce computational overhead."
+}

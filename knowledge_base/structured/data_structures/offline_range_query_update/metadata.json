@@ -1,0 +1,8 @@
+{
+    "name": "offline_range_query_update",
+    "chinese_name": "范围修改查询问题相关算法及其应用",
+    "author": "沈吉滪",
+    "category": "data_structures",
+    "complexity": "O(n + m * n^(1-1/d)) for d-dimensional space; O(n + m√n) for half-plane queries; O(n + m log min(n, m)) for sequences or tree paths.",
+    "summary": "This paper presents an offline algorithm for range modification and query problems where the data satisfies dual semigroup properties. The algorithm uses a divide-and-conquer approach on the operation sequence, maintaining a dynamic rooted forest of equivalence classes. It achieves optimal algebraic operation complexity by merging and splitting these classes efficiently during recursion."
+}

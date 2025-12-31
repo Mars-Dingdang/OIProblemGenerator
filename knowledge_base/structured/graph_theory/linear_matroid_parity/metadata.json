@@ -1,0 +1,8 @@
+{
+    "name": "linear_matroid_parity",
+    "chinese_name": "浅谈信息学竞赛中的线图问题",
+    "author": "翟锦程",
+    "category": "graph_theory",
+    "complexity": "O(mr^2) for unweighted, O(Vmn^3 log^2(Vn)) for weighted where V is the maximum weight",
+    "summary": "The paper discusses the Linear Matroid Parity Problem (LMPP), a generalization of classical combinatorial optimization problems such as maximum matching in general graphs and network flow. It presents a randomized algebraic algorithm based on matrix rank computation using compact and sparse constructions, with applications to various problems including weighted versions and constrained spanning trees."
+}

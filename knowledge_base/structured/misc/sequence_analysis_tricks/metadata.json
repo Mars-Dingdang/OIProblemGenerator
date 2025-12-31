@@ -1,0 +1,8 @@
+{
+    "name": "sequence_analysis_tricks",
+    "chinese_name": "序列相关问题的一些思路总结",
+    "author": "范斯喆",
+    "category": "misc",
+    "complexity": "Varies by problem; examples include O(n log²n), O(n²), O(n⁴), O(A log A), and O(n)",
+    "summary": "该论文总结了信息学竞赛中与序列相关问题的常见解题思路，包括已知序列上的区间贡献统计、待定序列的构造性DP、序列操作的转化与性质分析等。核心思想涵盖分治、笛卡尔树、动态规划状态设计、逆序对、差分构造、建图（如置换环、欧拉路径）以及操作代数化等技巧。"
+}

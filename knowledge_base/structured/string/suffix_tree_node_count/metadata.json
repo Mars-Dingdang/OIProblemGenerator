@@ -1,0 +1,8 @@
+{
+    "name": "suffix_tree_node_count",
+    "chinese_name": "《后缀树结点数》命题报告及一类区间问题的优化",
+    "author": "陈江伦",
+    "category": "string",
+    "complexity": "O(n log² n + m log n)",
+    "summary": "Given a string P of length n and m queries, each query asks for the number of nodes in the suffix tree of substring P[l, r]. The solution leverages properties of suffix trees and suffix automata, using techniques like dynamic trees, segment trees, binary search, hashing, and启发式合并 (heavy-light merging) to efficiently handle multiple interval queries. A key insight is that node contributions can be tracked via changes in 'last' and 'diff' positions of substrings, and repeated contributions are handled via monotonicity and binary search."
+}

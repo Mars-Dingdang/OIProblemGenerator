@@ -1,0 +1,8 @@
+{
+    "name": "linear_programming_duality",
+    "chinese_name": "再探线性规划对偶在信息学竞赛中的应用",
+    "author": "丁晓漫",
+    "category": "math",
+    "complexity": "Varies by problem; examples range from O(N) to O(N log N) depending on model transformation (e.g., DP or flow). The theoretical complexity of general LP is higher, but duality often enables polynomial-time combinatorial algorithms.",
+    "summary": "The paper explores the application of linear programming duality and Lagrangian duality in competitive programming. It demonstrates how primal linear programming problems can be transformed into dual forms, enabling efficient solutions via models like minimum cost flow or dynamic programming. Key applications include transforming constraints and objectives into solvable combinatorial structures, leveraging integer properties, and simplifying min-max problems using duality principles."
+}

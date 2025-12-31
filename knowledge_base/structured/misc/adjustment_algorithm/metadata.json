@@ -1,0 +1,8 @@
+{
+    "name": "adjustment_algorithm",
+    "chinese_name": "一类调整算法在信息学竞赛中的应用",
+    "author": "邓明扬",
+    "category": "misc",
+    "complexity": "Varies by problem; worst-case time can be exponential (e.g., O(n^(n/2+4)) for general graph matching), but average-case performance on random data is often efficient in practice.",
+    "summary": "The paper introduces a class of heuristic adjustment algorithms used in competitive programming, particularly for combinatorial optimization problems. These algorithms start from an initial feasible solution and iteratively improve it by making local adjustments within a neighborhood of the current state. The method is applied to various problems including maximum matching (both standard and implicit), graph coloring, Hamiltonian path, and approximation for NP-hard problems. While theoretical complexity is often hard to prove and worst-case performance may be poor, the algorithm performs exceptionally well on random or non-adversarial data, especially in answer-submission tasks and practical scenarios."
+}

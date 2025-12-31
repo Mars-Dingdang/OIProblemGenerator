@@ -1,0 +1,8 @@
+{
+    "name": "graph_connectivity_interactive",
+    "chinese_name": "《图上的游戏》命题报告",
+    "author": "左骏驰",
+    "category": "graph_theory",
+    "complexity": "O(n log m + m log m)",
+    "summary": "给定一个连通无向图，通过交互式查询判断0号点是否能通过指定边集到达某点u，要求在30000次查询内还原图中所有边的端点。解法分为三步：先构建生成树（化一般图为树），再将树分解为链结构处理，最后利用DFS序和分治思想确定非树边。"
+}

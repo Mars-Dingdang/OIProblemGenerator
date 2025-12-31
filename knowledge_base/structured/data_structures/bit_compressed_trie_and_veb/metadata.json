@@ -1,0 +1,8 @@
+{
+    "name": "bit_compressed_trie_and_veb",
+    "chinese_name": "浅谈亚log 数据结构在OI 中的应用",
+    "author": "钱易",
+    "category": "data_structures",
+    "complexity": "Time: O(log_w V) for bit-compressed trie, O(log log V) for vEB tree; Space: O(n) for both with optimizations.",
+    "summary": "The paper discusses two sub-logarithmic data structures—bit-compressed trie (also known as w-ary trie) and van Emde Boas tree (vEB tree)—for solving the Dynamic Predecessor Problem. These structures support insertion, deletion, predecessor, and successor queries efficiently in scenarios with moderate value ranges, offering better practical performance than traditional balanced trees or Fenwick trees in OI problems."
+}

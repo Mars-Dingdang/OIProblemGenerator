@@ -1,0 +1,8 @@
+{
+    "name": "leafy_tree_weight_balanced",
+    "chinese_name": "Leafy Tree 及其实现的加权平衡树",
+    "author": "王思齐",
+    "category": "data_structures",
+    "complexity": "O(log n) time per operation (insert, delete, query), O(log n) space; merging in O(log(max(a,b)/min(a,b))), splitting in O(log n).",
+    "summary": "Leafy Tree 是一种基于二叉树的数据结构，其中所有信息存储在叶子节点上，非叶节点存储其子树的合并信息。通过结合加权平衡策略（Weight Balanced Tree），该结构实现了高效的插入、删除、查询操作，并支持合并、分裂和可持久化。其核心优势在于简化了传统平衡树中对节点类型的复杂处理，同时保持 O(log n) 的时间复杂度。"
+}

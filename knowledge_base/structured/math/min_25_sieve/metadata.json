@@ -1,7 +1,8 @@
 {
-    "name": "Min_25 筛",
-    "category": "数学/数论",
-    "complexity": "O(n^{2/3}/log n) 或 O(n^{1-ε})",
-    "scenarios": "积性函数前缀和，要求 f(p) 为关于 p 的多项式（完全积性函数之和），且 f(p^c) 可快速计算",
-    "extensions": "Extended Eratosthenes Sieve, 洲阁筛"
+    "name": "min_25_sieve",
+    "chinese_name": "一些特殊的数论函数求和问题",
+    "author": "朱震霆",
+    "category": "math",
+    "complexity": "O(n^{3/4}/\\log n) for Min_25 sieve; O((x/\\log x)^{2/3}) for prime k-th power sum; \\tilde{O}(n^{1/3}) for divisor summatory function via Stern-Brocot cutting.",
+    "summary": "The paper discusses advanced techniques for summing special number-theoretic functions, focusing on three main parts: a simplified version of the sieve method for multiplicative functions (known as Min_25 sieve), efficient computation of prime power sums using Meissel-Lehmer-like methods, and an innovative geometric approach using Stern-Brocot Tree to compute divisor summatory functions by counting lattice points under hyperbolas."
 }

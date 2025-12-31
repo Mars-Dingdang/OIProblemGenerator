@@ -1,0 +1,8 @@
+{
+    "name": "directed_graph_scc_counting",
+    "chinese_name": "《A + B Problem》命题报告",
+    "author": "汪乐平",
+    "category": "math",
+    "complexity": "O(n log n)",
+    "summary": "Given a set S of allowed sizes for strongly connected components (SCCs), compute the expected number of SCCs with in-degree 0 in all labeled directed graphs of size i (for 1 ≤ i ≤ n), where each SCC's size must belong to S. The answer is computed modulo 998244353 using generating functions and combinatorial identities."
+}

@@ -1,0 +1,8 @@
+{
+    "name": "thue_morse_sequence",
+    "chinese_name": "浅谈 Thue-Morse 序列的性质及其应用",
+    "author": "郑钧",
+    "category": "string",
+    "complexity": "O(1) per term generation; O(n) for prefix generation; O(log n + deg^3 f) for polynomial sum queries",
+    "summary": "The Thue-Morse sequence is an infinite binary sequence defined in multiple equivalent ways, such as the parity of the number of 1s in the binary representation of an index. It has deep properties in combinatorics on words, including being overlap-free and cube-free, and finds applications in problems involving power sums, string hashing vulnerabilities, and constructing square-free sequences over ternary alphabets."
+}

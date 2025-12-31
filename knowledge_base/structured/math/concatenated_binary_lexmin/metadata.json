@@ -1,0 +1,8 @@
+{
+    "name": "concatenated_binary_lexmin",
+    "chinese_name": "《拼数》命题报告",
+    "author": "姜迅驰",
+    "category": "math",
+    "complexity": "O(N²), where N = |f(n)| ≈ log₂(n)",
+    "summary": "Given an integer n, arrange the numbers 1 to n in a permutation P such that the concatenation of their binary representations, S = f(P₁) + f(P₂) + ... + f(Pₙ), has the smallest possible lexicographical order. The goal is to compute the number of '1's in the first k bits of this string S. The solution leverages properties of infinite binary string comparisons and high-precision arithmetic to efficiently determine the optimal arrangement and answer queries without full construction."
+}

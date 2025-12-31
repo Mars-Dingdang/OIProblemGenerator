@@ -1,0 +1,8 @@
+{
+    "name": "rerooting_with_heavy_light_chains",
+    "chinese_name": "浅谈一类树上换根问题",
+    "author": "赵海鲲",
+    "category": "graph_theory",
+    "complexity": "Time: O(n log n) to O(n), depending on decomposition and problem; Space: O(n)",
+    "summary": "The paper discusses a class of tree rerooting problems where information must be maintained when changing the root of a tree. It focuses on using heavy-light decomposition (HLD) and long-chain decomposition to efficiently maintain subtree and complement-subtree information during rerooting, especially for depth-related or convex hull-based DP states. Key techniques include maintaining arrays along chains, handling light children separately, and using data structures like segment trees or heaps for efficient merging and querying."
+}

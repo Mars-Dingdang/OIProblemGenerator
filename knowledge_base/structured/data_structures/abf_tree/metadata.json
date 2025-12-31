@@ -1,0 +1,8 @@
+{
+    "name": "abf_tree",
+    "chinese_name": "《基础圆方树练习题》命题报告",
+    "author": "范致远",
+    "category": "data_structures",
+    "complexity": "O(mk log k log n + n log n)",
+    "summary": "The paper introduces a new data structure called ABF tree, designed to maintain a k-desert (a graph where each connected component is a k-cactus, i.e., every edge belongs to at most k simple cycles). The ABF tree combines the concepts of圆方树 (palm tree / round-square tree) and a modified LCT-like structure (AAA tree) to support dynamic operations such as edge addition, deletion, shortest path queries, and subtree (sub-cactus) modifications. It achieves efficient time complexity by leveraging structural properties of k-cacti and potential-based amortized analysis."
+}

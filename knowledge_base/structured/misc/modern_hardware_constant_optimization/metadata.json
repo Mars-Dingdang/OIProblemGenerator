@@ -1,0 +1,8 @@
+{
+    "name": "modern_hardware_constant_optimization",
+    "chinese_name": "论现代硬件上的常数优化",
+    "author": "宋佳兴",
+    "category": "misc",
+    "complexity": "O(√n poly log n)",
+    "summary": "This paper discusses constant optimization techniques on modern hardware, focusing on improving the efficiency of algorithms involving multiplicative functions, Dirichlet convolutions, and power sums. It presents methods to reduce time complexity by leveraging number-theoretic properties such as powerful numbers and optimized sieve techniques, achieving improved complexities like O(√n poly log n) for certain summation problems."
+}

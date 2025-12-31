@@ -1,0 +1,8 @@
+{
+    "name": "matrix_multiplication_reduction",
+    "chinese_name": "浅谈矩阵乘法与归约",
+    "author": "陈诺",
+    "category": "misc",
+    "complexity": "O(N^{2ω/(ω+1)}) time, where ω ≈ 2.371339; space varies by problem but generally O(N)",
+    "summary": "The paper discusses the relationship between matrix multiplication and various algorithmic problems through the concept of reduction. It shows how many classical data structure and graph problems (e.g., interval queries, triangle counting, path color counting) can be reduced to or from matrix multiplication, establishing conditional time complexity lower and upper bounds. By leveraging fast matrix multiplication algorithms, improved time complexities (better than O(n^1.5)) are achieved for several problems."
+}

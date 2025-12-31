@@ -1,0 +1,8 @@
+{
+    "name": "lattice_polynomial_factorization",
+    "chinese_name": "浅谈格算法在整系数多项式分解中的应用",
+    "author": "谢梓涵",
+    "category": "math",
+    "complexity": "O(n^6 log^3 B) for time, O(n^2 log B) for space, where n is the degree and B bounds the coefficient size.",
+    "summary": "The paper discusses the application of lattice algorithms, particularly the LLL algorithm, to factor integer-coefficient polynomials. It reduces polynomial factorization to finding short vectors in a lattice constructed from the polynomial's coefficients and uses properties of lattices to recover non-trivial factors efficiently."
+}

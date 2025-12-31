@@ -1,0 +1,8 @@
+{
+    "name": "linear_and_p-recursive_sequences",
+    "chinese_name": "两类递推数列的性质和应用",
+    "author": "钟子谦",
+    "category": "math",
+    "complexity": "O(n^2) for Berlekamp-Massey; O(m log m log k) for n-th term of linear recurrence; O(√(nd)(m^3 + m^2 log(nd))) for n-th term of P-recursive sequence",
+    "summary": "The paper discusses two types of recurrence sequences: linearly recursive sequences and P-recursive (polynomially recursive) sequences. It covers their definitions, fundamental properties, algorithms for finding minimal recurrence relations, and methods to compute the n-th term efficiently. Applications include optimizing dynamic programming, computing matrix minimum polynomials, solving sparse linear systems, and counting combinatorial structures using generating functions."
+}

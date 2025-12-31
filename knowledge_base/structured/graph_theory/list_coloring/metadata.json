@@ -1,0 +1,8 @@
+{
+    "name": "list_coloring",
+    "chinese_name": "浅谈图的列表着色问题",
+    "author": "钟自厚",
+    "category": "graph_theory",
+    "complexity": "Varies depending on graph structure; NP-complete in general.",
+    "summary": "The paper discusses the list coloring problem in graph theory, where each vertex is assigned a list of permissible colors, and the goal is to determine if a proper vertex coloring exists such that each vertex is colored with a color from its own list. The problem generalizes standard graph coloring and has applications in scheduling and resource allocation."
+}

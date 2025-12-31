@@ -1,0 +1,8 @@
+{
+    "name": "lgv_and_matrix_tree",
+    "chinese_name": "浅谈线性代数与图论的关系",
+    "author": "潘佳奇",
+    "category": "graph_theory",
+    "complexity": "Varies: O(K^3) for LGV determinant; O(n^3 + m) for matrix tree and matroid intersection; O(∑n_i^3 + n_i log n_i log L) for path counting in graph products.",
+    "summary": "The paper explores the deep connections between linear algebra and graph theory, focusing on the Lindström–Gessel–Viennot (LGV) lemma for counting non-intersecting paths in DAGs, its application to maximum flow via randomization and matrix rank, and the Kirchhoff Matrix-Tree Theorem for counting spanning trees and k-component forests using Laplacian matrices. It further extends these ideas to directed graphs (in-trees), matroid intersection, and graph products using Kronecker operations, enabling efficient solutions to advanced combinatorial problems."
+}

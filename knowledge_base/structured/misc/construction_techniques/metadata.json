@@ -1,0 +1,8 @@
+{
+    "name": "construction_techniques",
+    "chinese_name": "信息学竞赛中构造题的常用解题方法",
+    "author": "蒋凌宇",
+    "category": "misc",
+    "complexity": "Varies by problem; typical complexities include O(n + m) for graph-based constructions and O(n) for recursive or combinatorial constructions.",
+    "summary": "This paper discusses common techniques for solving construction problems in algorithm competitions, including the pigeonhole principle, DFS trees, and recursion. It presents several example problems such as Errich-Tac-Toe, Mine Sweeper II, Ehab's Last Corollary, Scenic Walkway Partition, Baggage, and Strange Housing, illustrating how to apply these methods to construct valid solutions under given constraints."
+}

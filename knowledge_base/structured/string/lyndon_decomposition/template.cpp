@@ -1,40 +1,26 @@
-// duval_algorithm
-vector<string> duval(string const& s) {
-    int n = s.size(), i = 0;
-    vector<string> factorization;
+std::vector<std::string> duval(const std::string& s) {
+    int n = s.length();
+    std::vector<std::string> factors;
+    int i = 0;
+    
     while (i < n) {
         int j = i + 1, k = i;
+        
         while (j < n && s[k] <= s[j]) {
-            if (s[k] < s[j])
-                k = i;
-            else
-                k++;
+            if (s[k] < s[j]) {
+                k = i;  // Reset reference to start of current Lyndon-like block
+            } else {
+                k++;    // Continue matching within current base
+            }
             j++;
         }
+        
+        // Extract repeated Lyndon blocks
         while (i <= k) {
-            factorization.push_back(s.substr(i, j - k));
+            factors.push_back(s.substr(i, j - k));
             i += j - k;
         }
     }
-    return factorization;
-}
-
-// smallest_cyclic_string
-string min_cyclic_string(string s) {
-    s += s;
-    int n = s.size();
-    int i = 0, ans = 0;
-    while (i < n / 2) {
-        ans = i;
-        int j = i + 1, k = i;
-        while (j < n && s[k] <= s[j]) {
-            if (s[k] < s[j])
-                k = i;
-            else
-                k++;
-            j++;
-        }
-        while (i <= k) i += j - k;
-    }
-    return s.substr(ans, n / 2);
+    
+    return factors;
 }

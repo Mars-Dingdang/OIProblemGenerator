@@ -1,0 +1,8 @@
+{
+    "name": "cactus_subgraph_with_modification",
+    "chinese_name": "《神奇的子图》命题报告及其拓展",
+    "author": "陈俊锟",
+    "category": "graph_theory",
+    "complexity": "O(n + m) + O((G(c,k)*c + k^4 log n) log n) + O(S(c,k) + G(c,k)n + m), where c=6, S(c,k)≤20000, G(c,k)≤1600",
+    "summary": "Given an undirected graph where every 7-vertex subset has a separating vertex, find a connected subgraph maximizing the sum of vertex weights, with each vertex having degree at most k. Support dynamic updates to vertex weights and output both the maximum weight sum and the number of optimal subgraphs modulo 64123. The solution uses圆方树 (Round-Square Tree) to convert the graph into a tree, then applies chain-based divide-and-conquer (heavy-light decomposition with segment trees) to support efficient dynamic programming updates."
+}

@@ -1,0 +1,8 @@
+{
+    "name": "vertex_weighted_graph_matching",
+    "chinese_name": "顶点带权的图匹配问题",
+    "author": "柯绎思",
+    "category": "graph_theory",
+    "complexity": "O(n^3)",
+    "summary": "The paper discusses the vertex-weighted graph matching problem, where each vertex in a graph has an associated weight, and the goal is to find a matching that maximizes the total weight of the matched vertices. The author presents theoretical insights and algorithmic techniques for solving this variant of the classical graph matching problem."
+}

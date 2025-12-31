@@ -1,0 +1,8 @@
+{
+    "name": "combinatorial_sum",
+    "chinese_name": "《组合数求和》命题报告",
+    "author": "吴思扬",
+    "category": "math",
+    "complexity": "O(m · (log N + d · log M) + d² · (log M)²)",
+    "summary": "Given integers n, m, d, and M, compute the XOR of f(j) for j from 0 to m-1, where f(j) is the sum of binomial coefficients C(i*d, j) modulo M for i from 0 to n-1. The problem involves advanced number theory techniques including Lucas's Theorem, Chinese Remainder Theorem, formal power series, and polynomial division under modular arithmetic with composite moduli."
+}

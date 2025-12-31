@@ -1,0 +1,8 @@
+{
+    "name": "substring_period_query",
+    "chinese_name": "子串周期查询问题的相关算法及其应用",
+    "author": "陈孙立",
+    "category": "string",
+    "complexity": "O(n log n) preprocessing time and space, O(log n) expected query time",
+    "summary": "The paper addresses the substring period query problem: given a string S and multiple queries of the form (l, r), determine all periods of the substring S[l..r]. Using properties of periodicity (e.g., Weak Periodicity Lemma) and a data structure called Dictionary of Basic Factors (DBF), the solution achieves O(n log n) preprocessing time and space, with O(log n) expected time per query. The set of periods is compactly represented using O(log n) arithmetic progressions."
+}

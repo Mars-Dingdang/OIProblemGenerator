@@ -1,8 +1,35 @@
-- **完美消除序列**：弦图当且仅当存在一个顶点排列，使得每个点在其后继导出子图中是单纯点（其邻居与其自身构成一个团）。
-- **最大势搜索（MCS）**：逆序编号，每次选择与最多已编号点相邻的未编号点，可在 $O(n + m)$ 时间内生成候选序列。
-- **判定序列合法性**：对每个点 $v_i$，设其在序列中后面的邻居为 $\{v_{c_1}, \dots, v_{c_k}\}$，只需检查 $v_{c_1}$（最早出现者）是否与其他所有邻居相连。若都连通，则为团。
-- **弦图性质**：团数等于色数（$\omega(G) = \chi(G)$），最大独立集等于最小团覆盖（$\alpha(G) = \kappa(G)$）。
-- **极大团结构**：每个极大团必为某个点 $x$ 与其在完美消除序列中后面的邻居的并集 $\{x\} \cup N(x)$。
-- **优化技巧**：用桶和链表维护 `label` 值实现 MCS 的线性复杂度；用邻接表或哈希集合加速团判断。
-- **极小点割集是团**：弦图中任意两点间的极小点割集的导出子图是一个团，可用于判定和构造。
-- **导出子图封闭性**：弦图的任意导出子图仍是弦图，支持归纳证明和递归算法设计。
+# 浅谈信息学竞赛中的弦图问题
+
+**Author:** 郭城志
+
+### Key Ideas and Observations
+
+- **Perfect Elimination Ordering (PEO)**: A vertex sequence where each vertex forms a clique with its neighbors that come later in the sequence. Every chordal graph has at least one PEO.
+
+- **Maximum Cardinality Search (MCS)**: An algorithm to compute a PEO. It assigns labels to vertices (initially 0), then repeatedly selects the unvisited vertex with the highest label, adds it to the front of the sequence, and increments the labels of its unvisited neighbors. Runs in O(n + m).
+
+- **Chordal Graph Recognition**: After running MCS, verify the result is a valid PEO by checking for each vertex `v`, whether its neighbor set in the future (C(v)) forms a clique. This can be optimized to O(n + m) by only checking if the first neighbor in C(v) connects to all others.
+
+- **Simplicial Vertex**: A vertex whose neighborhood is a clique. Chordal graphs always have at least one simplicial vertex; non-complete chordal graphs have two non-adjacent ones.
+
+- **Minimal Vertex Separator**: In chordal graphs, any minimal separator between two non-adjacent vertices is a clique.
+
+- **Coloring and Clique Number**: Using PEO from back to front and greedy coloring gives optimal coloring. The chromatic number χ(G) equals the clique number ω(G).
+
+- **Maximum Independent Set and Minimum Clique Cover**: Greedily select vertices in PEO order if not adjacent to any already selected. The size α(G) equals κ(G), and the sets C(v) for selected v form a minimum clique cover.
+
+- **Clique Tree**: A tree whose nodes are maximal cliques of G, such that for each vertex v, the set of cliques containing v forms a connected subtree. Every chordal graph has a clique tree, constructible incrementally in O(n + m).
+
+- **Subtree Representation**: Chordal graphs are exactly the intersection graphs of subtrees in a tree — this provides a powerful structural characterization.
+
+- **Equivalence Theorem**: For a graph G, the following are equivalent:
+  1. G is a chordal graph.
+  2. G is a subtree graph (intersection graph of subtrees on a tree).
+  3. G has a clique tree.
+
+- **Applications**:
+  - Counting valid colorings under equality/inequality constraints derived from KMP-like structures reduces to chordal graph coloring.
+  - Game theory problems reduce to tree traversal via clique tree transformation.
+  - Feedback vertex set on chordal graphs reduces to limiting clique sizes to ≤2, solvable via tree DP on clique tree.
+
+- **Structural Insight**: The clique tree transforms hard graph problems into easier tree problems, leveraging subtree intersection properties.

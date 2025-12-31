@@ -1,0 +1,8 @@
+{
+    "name": "tree_neighborhoods_by_heavy_chain_decomposition",
+    "chinese_name": "浅谈树上邻域问题的一种基于长链剖分的解法",
+    "author": "刘海峰",
+    "category": "data_structures",
+    "complexity": "O(n + Q) 预处理，O(1) 单次查询（离线与在线均适用）",
+    "summary": "该论文提出了一种基于长链剖分（heavy chain decomposition）的方法，用于高效处理静态树上的邻域查询问题。主要包括内邻域、外邻域和链邻域的群与半群信息查询。通过预处理将树上邻域问题转化为序列区间或树链上的查询问题，在离线情况下达到O(n + Q)时间复杂度，且可扩展至强制在线情形，利用k级祖先和LCA等技术实现O(1)查询。"
+}

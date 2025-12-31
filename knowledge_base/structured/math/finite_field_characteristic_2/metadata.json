@@ -1,0 +1,8 @@
+{
+    "name": "finite_field_characteristic_2",
+    "chinese_name": "浅谈有限域在OI 中的一些应用",
+    "author": "戚朗瑞",
+    "category": "math",
+    "complexity": "O(2^k * poly(n)) for longest simple path; O(2^{|M|} * |M|^2 * m * v) for Graph Motif, where v is the bit-length for field representation",
+    "summary": "The paper discusses applications of finite fields of characteristic 2 in solving two NP-hard problems in competitive programming: the longest simple path problem and the Maximum Graph Motif problem. By leveraging algebraic constructions over F_{2^v} and using randomization, it designs probabilistic polynomial-time algorithms (in terms of parameterized complexity) that determine existence of solutions via non-vanishing polynomials. The key idea is to cancel out invalid configurations (e.g., repeated vertices or color-number conflicts) using the property a + a = 0 in characteristic 2 fields."
+}

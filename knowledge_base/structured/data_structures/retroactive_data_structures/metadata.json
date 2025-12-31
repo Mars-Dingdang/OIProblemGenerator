@@ -1,0 +1,8 @@
+{
+    "name": "retroactive_data_structures",
+    "chinese_name": "浅谈可追溯化数据结构",
+    "author": "孔朝哲",
+    "category": "data_structures",
+    "complexity": "Varies by structure: O(1) for partial retroactive queue (using linked list), O(log m) for fully retroactive stack/deque/queue (using balanced BSTs), O(log²m) for partially retroactive priority queue, and O(log²m log log m) for fully retroactive priority queue using hierarchical checkpointing.",
+    "summary": "The paper discusses retroactive data structures, which allow modifications to past operations in a data structure's operation sequence. It covers partial retroactivity (supporting queries on the final state after inserting or deleting historical operations) and full retroactivity (supporting queries at any intermediate time). The author presents retroactive versions of union-find, queue, stack, deque, and priority queue, using techniques such as linked lists, balanced binary search trees, LCT for MST, and hierarchical checkpointing with scapegoat trees for efficient implementation."
+}

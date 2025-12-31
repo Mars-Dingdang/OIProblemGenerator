@@ -1,0 +1,8 @@
+{
+    "name": "generalized_series_parallel_graph_dp",
+    "chinese_name": "《公园》命题报告",
+    "author": "吴作同",
+    "category": "graph_theory",
+    "complexity": "O(n + Q log n)",
+    "summary": "Given a generalized series-parallel graph where each node has two weights (black/white) and each edge has two weights (same/different color), find the maximum total weight coloring of nodes. Support dynamic updates to node or edge weights. The solution uses reduction operations (remove degree-1 nodes, contract degree-2 nodes, merge multi-edges) to build an expression tree, then applies heavy-light decomposition with segment trees maintaining matrix-like transitions under (max, +) algebra for efficient updates."
+}

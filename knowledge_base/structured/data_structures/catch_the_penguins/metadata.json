@@ -1,0 +1,8 @@
+{
+    "name": "catch_the_penguins",
+    "chinese_name": "Catch The Penguins",
+    "author": "张闻涛",
+    "category": "data_structures",
+    "complexity": "O((N + Q)√N)",
+    "summary": "The paper discusses an algorithmic problem involving efficiently handling queries on a sequence of integers, where operations include adding values to ranges and querying the sum over intervals. It explores various optimization techniques such as brute force, square root decomposition, Mo's algorithm, and advanced data structures like segment trees with lazy propagation. The focus is on reducing time complexity using divide-and-conquer strategies, preprocessing, and offline query processing."
+}

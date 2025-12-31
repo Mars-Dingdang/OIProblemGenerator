@@ -1,0 +1,8 @@
+{
+    "name": "decision_monotonicity_linear_dp",
+    "chinese_name": "浅谈决策单调性动态规划的线性解法",
+    "author": "冯哲",
+    "category": "dynamic_programming",
+    "complexity": "O(N)",
+    "summary": "该论文探讨了具有决策单调性的动态规划问题，并提出了一种不依赖高级数据结构的线性时间解法。当状态转移方程满足四边形不等式（凸完全单调性）时，最优决策点具有单调性。作者基于SMAWK算法思想，结合分治与矩阵极值列的性质，在O(N)时间内解决了这类问题，优于传统的O(N log N)分治或斜率优化方法。"
+}

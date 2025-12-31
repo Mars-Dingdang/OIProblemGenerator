@@ -1,0 +1,8 @@
+{
+    "name": "gaussian_integer_lattice_point_count",
+    "chinese_name": "《整点计数》命题报告以及对高斯整数的若干研究",
+    "author": "徐翊轩",
+    "category": "math",
+    "complexity": "O(N^{3/4} / log N) or O(Min25(N)) for large N up to 1e11",
+    "summary": "Given integers N, k, and P, compute the sum of f(i)^k from i=1 to N modulo P, where f(i) is the number of integer lattice points on a circle centered at the origin with radius i. The solution leverages properties of Gaussian integers, Fermat's theorem on sums of two squares, and multiplicative function techniques including Min25 sieve for efficient prefix sum computation."
+}

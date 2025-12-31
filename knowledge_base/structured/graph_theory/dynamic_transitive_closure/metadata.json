@@ -1,0 +1,8 @@
+{
+    "name": "dynamic_transitive_closure",
+    "chinese_name": "动态传递闭包问题的探究",
+    "author": "孙耀峰",
+    "category": "graph_theory",
+    "complexity": "O(n^2) per operation for the online linear algebra method; O((m + q) log q * n^2 / w) for the offline time-segment-tree method",
+    "summary": "The paper explores algorithms for the dynamic transitive closure problem in directed graphs, which involves maintaining reachability information under edge insertions and deletions. It covers static methods (Floyd-Warshall, SCC, topological sorting), partially dynamic approaches supporting only insertions (e.g., tree-merging and incremental updates), and fully dynamic solutions using offline segment trees or randomized linear algebra techniques based on matrix determinant and inverse maintenance."
+}

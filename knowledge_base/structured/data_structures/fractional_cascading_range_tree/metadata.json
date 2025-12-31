@@ -1,0 +1,8 @@
+{
+    "name": "fractional_cascading_range_tree",
+    "chinese_name": "对信息学竞赛中二维平面处理问题的总结和再优化",
+    "author": "施良致",
+    "category": "data_structures",
+    "complexity": "Time: O((n + m) log n), Space: O(n log n)",
+    "summary": "The paper discusses optimization of 2D range query problems using Fractional Cascading to improve the standard Range Tree (segment tree over segment tree). By replacing inner segment trees with sorted arrays and prefix sums, and using pointer mapping between layers, the query time complexity is reduced from O(log²n) to O(log n) for online queries on 2D point sets, at the cost of O(n log n) space."
+}

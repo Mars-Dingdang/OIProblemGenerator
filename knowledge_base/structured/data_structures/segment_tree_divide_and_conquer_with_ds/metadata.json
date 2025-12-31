@@ -1,0 +1,8 @@
+{
+    "name": "segment_tree_divide_and_conquer_with_ds",
+    "chinese_name": "浅谈一类基于线段树分治的信息维护算法",
+    "author": "黄佳旭",
+    "category": "data_structures",
+    "complexity": "Time: O(n + (m log q + q) log n) for basic case; O(n + (m + q log q) log q log n) for persistent version. Space: O(n + m + q) after optimization.",
+    "summary": "This paper discusses an offline algorithm that combines segment tree divide and conquer with data structures like rollback DSU to maintain connectivity and aggregate information (e.g., max values) over time or versioned graphs. It handles edge insertions/deletions, supports queries on connected components, and extends to persistent versions using heavy-light decomposition and virtual trees."
+}

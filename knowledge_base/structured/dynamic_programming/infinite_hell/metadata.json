@@ -1,0 +1,8 @@
+{
+    "name": "infinite_hell",
+    "chinese_name": "《无限地狱》命题报告",
+    "author": "陈旭磊",
+    "category": "dynamic_programming",
+    "complexity": "O(n^{3/4}) for single-point evaluation with optimized recursion and O(n log n) for prefix computation via difference DP.",
+    "summary": "The problem asks to count the number of ways to partition integers 1 to n into three unordered sets such that no two elements from different sets have their sum in the third set. The solution involves deep combinatorial observations, number-theoretic reasoning (especially gcd and modular structure), and optimized dynamic programming using Möbius inversion and number-theoretic sieving techniques."
+}

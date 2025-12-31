@@ -1,0 +1,8 @@
+{
+    "name": "unconventional_block_size",
+    "chinese_name": "非常规大小分块算法初探",
+    "author": "徐明宽",
+    "category": "data_structures",
+    "complexity": "Varies by application; common examples: O(n√(n log n)), O(n^1.5 / √log n), O(n) preprocessing with O(1) query for LCA/RMQ/LA.",
+    "summary": "The paper explores the use of non-standard (unconventional) block sizes in block-based algorithms to optimize time and space complexity. It introduces a simple method for determining optimal block size using the balance between two or more complexity terms, often by solving A = B where A decreases and B increases with block size. Applications include optimizing Mo's algorithm, FFT-based string matching, sieve methods, and advanced data structure problems like LCA, RMQ, and LA via the Method of Four Russians, achieving theoretically optimal complexities such as O(n) preprocessing with O(1) queries."
+}

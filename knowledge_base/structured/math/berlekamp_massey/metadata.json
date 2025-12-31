@@ -1,0 +1,8 @@
+{
+    "name": "berlekamp_massey",
+    "chinese_name": "关于数列递归式的一些研究",
+    "author": "毛啸",
+    "category": "math",
+    "complexity": "O(n^2) time, O(n) space",
+    "summary": "The paper introduces the concept of 'recursive polynomials' and provides a detailed analysis of the Berlekamp-Massey algorithm, which computes the shortest linear recurrence (minimal generating polynomial) for a given sequence over any field. It discusses theoretical foundations, efficient implementation, and applications in counting recurrence relations, computing characteristic polynomials of sparse matrices, determinants, and spanning tree counts in graphs."
+}

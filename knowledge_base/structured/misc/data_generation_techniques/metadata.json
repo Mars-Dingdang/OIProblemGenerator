@@ -1,0 +1,8 @@
+{
+    "name": "data_generation_techniques",
+    "chinese_name": "浅谈信息学竞赛中数据的构造与生成",
+    "author": "刘一平",
+    "category": "misc",
+    "complexity": "Varies by structure: O(n) to O(n log n) for most generators; hash collision construction in O(1) or O(n) depending on method.",
+    "summary": "This paper discusses methods for constructing and generating test data in informatics competitions, focusing on sequences, trees, graphs, bracket sequences, and hash collision attacks. It covers randomized and targeted generation techniques to improve the strength of test cases for correctness and efficiency validation (e.g., via 'stress testing' or 'local judge'). Special attention is given to pitfalls in hashing and how to construct adversarial cases."
+}

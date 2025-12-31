@@ -1,0 +1,8 @@
+{
+    "name": "continued_fraction_euclidean",
+    "chinese_name": "连分数与欧几里得算法在 OI 中的应用",
+    "author": "柯怿憬",
+    "category": "math",
+    "complexity": "O(n^{2/3}) or O(\\sqrt{n} \\cdot \\text{polylog}(n))",
+    "summary": "The paper explores the application of continued fractions and the Euclidean algorithm in competitive programming, particularly for efficiently computing sums of multiplicative functions. It presents advanced techniques such as Dirichlet convolutions, power series manipulation (Exp and Log), and optimized algorithms to achieve sub-linear time complexities like O(n^(2/3)) or even O(√n polylog n) for problems involving arithmetic functions."
+}

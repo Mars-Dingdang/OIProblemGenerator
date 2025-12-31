@@ -1,0 +1,8 @@
+{
+    "name": "perfect_queue",
+    "chinese_name": "《完美的队列》命题报告",
+    "author": "林旭恒",
+    "category": "data_structures",
+    "complexity": "O(n √n)",
+    "summary": "Given n queues with capacity limits a_i and m operations, each inserting element x into all queues in the interval [l, r], elements are automatically popped from the front if a queue exceeds its capacity. After each operation, compute the number of distinct elements across all queues. The solution leverages offline processing,分块 (blocking), and two-pointer techniques to efficiently compute when each operation's inserted elements are fully removed, enabling efficient updates to the global distinct element count."
+}

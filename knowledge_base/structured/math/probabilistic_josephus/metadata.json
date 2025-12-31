@@ -1,0 +1,8 @@
+{
+    "name": "probabilistic_josephus",
+    "chinese_name": "浅谈一类基于概率的约瑟夫问题",
+    "author": "叶卓睿",
+    "category": "math",
+    "complexity": "O(n log n)",
+    "summary": "The paper studies a class of probabilistic Josephus problems where, in a circular arrangement of n positions, a pointer moves from position 1, and at each step the current position disappears with probability p before the pointer moves right. The goal is to compute various probability or expectation values, such as the probability that a given element is the last to disappear, the probability it is the i-th to disappear, or the expected lexicographic rank of the resulting elimination sequence."
+}

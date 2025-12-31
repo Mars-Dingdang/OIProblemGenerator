@@ -1,0 +1,8 @@
+{
+    "name": "regular_polygon_on_lattice",
+    "chinese_name": "《正多边形》命题报告",
+    "author": "杨景钦",
+    "category": "geometry",
+    "complexity": "O(N_B^2), where N_B is the number of points on the convex hull, which is bounded by O(R^(2/3)) for coordinate range R.",
+    "summary": "Given N integer-coordinate points (lattice points) in the plane, count the number of distinct subsets of points that form a regular polygon with at least 3 vertices, where each selected point must lie on the convex hull of the input set and cannot be strictly inside any triangle formed by other given points. The solution leverages deep geometric and number-theoretic properties of lattice points, particularly that only regular quadrilaterals (squares) can exist among regular polygons with all vertices on lattice points."
+}

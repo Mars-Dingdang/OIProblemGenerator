@@ -1,0 +1,8 @@
+{
+    "name": "large_capacity_knapsack_optimization",
+    "chinese_name": "浅谈 OI 中的大容量背包问题",
+    "author": "方心童",
+    "category": "dynamic_programming",
+    "complexity": "O(W^2 log W) for complete knapsack; O(n Σw_i log W) or O(n Σv_i log V) for multiple knapsack",
+    "summary": "The paper discusses optimization techniques for large-capacity knapsack problems in competitive programming, focusing on reducing the effective problem size using greedy preprocessing, number theory (such as modular arithmetic and the Frobenius problem), and divide-and-conquer strategies. It presents methods to transform complete and multiple knapsack problems into smaller-scale versions independent of the large capacity M, achieving better time complexity when W or V is small."
+}

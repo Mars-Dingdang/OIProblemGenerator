@@ -1,0 +1,8 @@
+{
+    "name": "bluestein_fft",
+    "chinese_name": "不一般的DFT",
+    "author": "周雨扬",
+    "category": "math",
+    "complexity": "O(n log n)",
+    "summary": "该论文介绍了Bluestein算法（又称Z变换），一种能够处理任意模长的快速傅里叶变换方法。通过将DFT转化为卷积形式，利用MTT或普通FFT实现O(n log n)复杂度的一般模长DFT。算法被应用于多项式多点求值、多点插值、循环卷积问题以及Vandermonde矩阵求解等场景，尤其在模数较小或具有特殊结构时表现出优势。"
+}

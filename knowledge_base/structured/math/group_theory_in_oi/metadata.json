@@ -1,0 +1,8 @@
+{
+    "name": "group_theory_in_oi",
+    "chinese_name": "浅谈群论在信息学竞赛中的简单应用",
+    "author": "虞皓翔",
+    "category": "math",
+    "complexity": "O(n^5) for Schreier-Sims; O(n^2 log n) for group verification with Light's algorithm",
+    "summary": "该论文介绍了群论在信息学竞赛中的基础应用，包括置换、群的基本概念、Burnside引理、Pólya计数定理及其扩展、群的判定算法（如Light算法）、群的表示（Cayley定理）以及计算群论中的Schreier-Sims算法。重点在于利用群作用于染色方案来解决计数问题，尤其是在对称性下的等价类计数，并提供了高效算法实现思路。"
+}

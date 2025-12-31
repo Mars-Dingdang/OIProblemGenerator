@@ -1,0 +1,8 @@
+{
+    "name": "convexity_proof_methods",
+    "chinese_name": "OI 题目中凸性的证明方法",
+    "author": "苟竞予",
+    "category": "misc",
+    "complexity": "Varies by problem; e.g., O(n log n), O(n log^5 n), or O(log^5 n) depending on application.",
+    "summary": "该论文系统总结了信息学竞赛中证明函数或序列凸性的三类方法：规约为常见模型（如费用流、四边形不等式）、代数方法、以及针对计算几何题的几何分析法。通过多个例题详细展示了如何严谨地证明题目中的凸性，强调在算法设计前对性质的严格推导。"
+}

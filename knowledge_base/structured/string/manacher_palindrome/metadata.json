@@ -1,0 +1,8 @@
+{
+    "name": "manacher_palindrome",
+    "chinese_name": "浅谈回文子串问题",
+    "author": "徐毅",
+    "category": "string",
+    "complexity": "O(n)",
+    "summary": "The paper discusses algorithms for solving palindrome substring problems, focusing on the Manacher algorithm to compute the radius of palindromic substrings centered at each position in linear time. It also covers applications such as finding the longest palindromic substring, counting intersecting palindromic pairs, and handling more complex constraints like double palindromes or encrypted palindromic passwords."
+}

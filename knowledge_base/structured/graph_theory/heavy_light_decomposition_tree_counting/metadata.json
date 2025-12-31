@@ -1,0 +1,8 @@
+{
+    "name": "heavy_light_decomposition_tree_counting",
+    "chinese_name": "浅谈一类树上统计相关问题",
+    "author": "朱羿恺",
+    "category": "graph_theory",
+    "complexity": "O(n log n) time and O(n log n) space",
+    "summary": "The paper discusses a class of tree-based counting problems where queries ask for the number of nodes within a certain distance from a given path. By leveraging heavy-light decomposition and efficient data aggregation along heavy chains, the solution achieves O(n log n) time complexity. The method splits contributions into those from heavy and light subtrees, using prefix sums and grouped updates to optimize performance."
+}

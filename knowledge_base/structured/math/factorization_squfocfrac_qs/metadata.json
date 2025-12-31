@@ -1,0 +1,8 @@
+{
+    "name": "factorization_squfocfrac_qs",
+    "chinese_name": "浅谈几种分解质因数方法",
+    "author": "罗思远",
+    "category": "math",
+    "complexity": "SQUFOF: O(n^(1/4)) expected; CFRAC: O(exp((1 + o(1))√(2 log n log log n))); QS: O(exp((1 + o(1))√(log n log log n)))",
+    "summary": "The paper discusses three advanced integer factorization algorithms—SQUFOF, CFRAC, and Quadratic Sieve (QS)—that go beyond basic trial division. These methods leverage number-theoretic properties such as continued fractions, smooth numbers, and congruences of squares to efficiently decompose large integers into prime factors, making them suitable for competitive programming problems involving large numbers."
+}

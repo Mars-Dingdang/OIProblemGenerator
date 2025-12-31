@@ -1,0 +1,8 @@
+{
+    "name": "tree_blocking_by_top_cluster",
+    "chinese_name": "浅谈一类树分块的构建算法及其应用",
+    "author": "周镇东",
+    "category": "data_structures",
+    "complexity": "静态构建: O(n); 动态维护单次: O(B) 均摊或 O(B) 最坏; 查询复杂度依应用而定，典型为 O(B + n/B log n) 或 O(n√n)。",
+    "summary": "该论文介绍了一类基于 top cluster 理论的树分块构建算法，将序列分块的思想推广到树结构上。通过 DFS 和栈维护边的划分，实现静态和动态的树分块，每个块大小为 O(B)，总块数为 O(n/B)。该结构可用于处理带修改和查询的复杂树上问题，如路径/子树第k小值、距离和统计等，并支持在动态树（link/cut）中以均摊或最坏复杂度维护分块结构。"
+}

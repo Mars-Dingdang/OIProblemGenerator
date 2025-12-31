@@ -1,0 +1,8 @@
+{
+    "name": "static_top_tree",
+    "chinese_name": "浅谈静态Top Tree 在树和广义串并联图上的应用",
+    "author": "程思元",
+    "category": "data_structures",
+    "complexity": "Time: O(log n) per update/query for trees; O(log^2 n) for generalized series-parallel graphs. Space: O(n log n) for storage of Top Tree and auxiliary structures.",
+    "summary": "The paper introduces static Top Tree, a data structure used to represent trees and generalized series-parallel graphs via cluster operations (compress, rake, twist). It discusses applications including information maintenance via pushup, point-divide on Top Tree, and constructing tree or graph block decompositions. The method supports efficient dynamic updates and queries on tree-based and generalized series-parallel graph problems by leveraging hierarchical clustering and recursive decomposition."
+}

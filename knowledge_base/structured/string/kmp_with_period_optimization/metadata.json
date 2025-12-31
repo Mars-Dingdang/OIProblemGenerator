@@ -1,0 +1,8 @@
+{
+    "name": "kmp_with_period_optimization",
+    "chinese_name": "《Fim 4》命题报告",
+    "author": "吴瑾昭",
+    "category": "string",
+    "complexity": "O((q + m) √(m log n)) time, O(n |Σ| + n log n) preprocessing space",
+    "summary": "Given a sequence of strings concatenated into a master string via an index array, answer multiple queries asking for the number of occurrences of a pattern string within a specified substring of the master string. The solution leverages properties of string periods and KMP's failure function to optimize matching across concatenated dictionary strings, especially when patterns are long or span multiple segments."
+}

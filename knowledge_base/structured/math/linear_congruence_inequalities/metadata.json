@@ -1,0 +1,8 @@
+{
+    "name": "linear_congruence_inequalities",
+    "chinese_name": "浅谈一类线性同余不等式问题",
+    "author": "杨鑫和",
+    "category": "math",
+    "complexity": "O(B^2 \\prod_{p \\leq B} p^{\\lfloor v_p(B)/2 \\rfloor}) for systems with max modulus ≤ B; O(\\log^2 m) for single inequality.",
+    "summary": "The paper discusses a class of problems involving linear congruence inequalities, both single and systems. It presents efficient algorithms to find the minimal solution of a single inequality using a Euclidean-like recursive method, and for systems, it introduces a 'prime exponent halving' technique to compute solution frequency and the minimal period of solutions by reducing the problem into coprime modulus cases via smart modulus decomposition."
+}

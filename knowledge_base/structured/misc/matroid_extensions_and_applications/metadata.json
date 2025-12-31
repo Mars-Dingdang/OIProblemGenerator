@@ -1,0 +1,8 @@
+{
+    "name": "matroid_extensions_and_applications",
+    "chinese_name": "浅谈拟阵的一些拓展及其应用",
+    "author": "杨乾澜",
+    "category": "misc",
+    "complexity": "O(r^2 n) for matroid intersection, where r is the maximum rank and n is the size of the ground set; complexity for union depends on reduction to intersection or other methods.",
+    "summary": "The paper discusses extensions of matroid theory, focusing on operations such as matroid intersection and union, which allow modeling complex combinatorial optimization problems. It demonstrates how these operations generalize greedy algorithms and apply to problems like bipartite matching, minimum spanning trees, arborescences, and colorful trees by combining constraints through matroid intersections or unions."
+}

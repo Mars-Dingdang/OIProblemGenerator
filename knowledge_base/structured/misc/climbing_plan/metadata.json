@@ -1,0 +1,8 @@
+{
+    "name": "climbing_plan",
+    "chinese_name": "登顶计划",
+    "author": "彭天翼",
+    "category": "misc",
+    "complexity": "O(n log n)",
+    "summary": "The paper discusses an algorithmic problem involving a mountain range represented by points on a plane. The goal is to compute the distance each point must travel to reach the peak, where visibility between points is determined by line-of-sight over the terrain. The solution involves preprocessing visible left and right peaks for each point, then using a divide-and-conquer or data structure approach to efficiently compute the total path length based on these visibility relationships."
+}

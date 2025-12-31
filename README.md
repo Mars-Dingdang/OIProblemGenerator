@@ -70,4 +70,11 @@ You can add more PDF files to this directory and run `python src/main.py --build
 - **Prompt Engineering**: Integrated `PROBLEM_SETTING_GUIDELINES` into the default prompts to ensure generated problems meet high-quality OI standards.
 - **Model Selection**: Added support for multiple models (Qwen3, DeepSeek-V3.2, DeepSeek-R1) via the `--model` argument.
 - **Enhanced Retrieval**: Updated `src/knowledge_base.py` to prioritize structured knowledge retrieval before falling back to vector search.
+
+### 2025-12-31: NOI Papers Activation & Knowledge Base Expansion
+- **NOI Papers Integration**: Successfully processed National Olympiad in Informatics (NOI) papers from 2013 to 2025.
+- **Automated Extraction**: Implemented `src/activate_noi_papers.py` to automatically extract paper metadata, summaries, complexity analysis, and advanced tricks/observations from the PDF collections.
+- **Smart Parsing**: Improved PDF parsing logic to accurately handle Table of Contents extraction and fuzzy page matching for locating specific papers within large PDF volumes.
+- **Model Usage**: Utilized `Qwen-235B-A22B-Instruct-2507` for high-quality text analysis and structured data extraction from the papers.
+- **Knowledge Base Rebuild**: Rebuilt the vector and structured knowledge base to include these high-value resources, significantly enhancing the agent's ability to reference advanced competitive programming techniques.
  

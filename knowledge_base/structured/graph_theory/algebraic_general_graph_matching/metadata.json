@@ -1,0 +1,8 @@
+{
+    "name": "algebraic_general_graph_matching",
+    "chinese_name": "基于线性代数的一般图匹配",
+    "author": "杨家齐",
+    "category": "graph_theory",
+    "complexity": "O(n^ω) 判定存在性，O(n^3) 构造匹配（其中 ω < 2.373 是矩阵乘法指数）",
+    "summary": "该算法基于线性代数方法解决一般图的最大匹配问题。通过构造图的Tutte矩阵并利用其行列式是否为零来判定完美匹配的存在性（Tutte定理），结合随机赋值和Schwartz-Zippel引理进行高效判定。进一步，通过矩阵求逆（Rabin-Vazirani算法）或高斯消元维护逆矩阵，构造完美匹配方案，并推广至最大匹配大小计算与构造。算法还可拓展到判断点/边是否属于某个最大匹配、结点接龙游戏、最大权匹配等问题。"
+}

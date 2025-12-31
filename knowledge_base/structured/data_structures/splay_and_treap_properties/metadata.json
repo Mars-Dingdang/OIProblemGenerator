@@ -1,0 +1,8 @@
+{
+    "name": "splay_and_treap_properties",
+    "chinese_name": "浅谈Splay与Treap的性质及其应用",
+    "author": "董炜隽",
+    "category": "data_structures",
+    "complexity": "Time: O(log n) amortized/expected per operation; Finger search: O(log(d(x,y)+1)); Weighted case: O(log(W/w_x)); Merging: O(m log(n/m)) per merge, total O(n log n); Space: O(n)",
+    "summary": "The paper discusses advanced properties and applications of Splay trees and Treaps, two popular balanced binary search trees. It covers foundational operations, finger search (dynamic finger property for Splay and path-length analysis in Treap), efficient merging via finger search achieving O(n log n) total complexity, fast join/split in Treaps with O(log min(n, m)) expected time, and extensions to weighted variants where node access frequency influences structure. Applications include heuristic merging, sequence maintenance, and multi-layered tree nesting problems like Link-Cut Tree and expression evaluation."
+}

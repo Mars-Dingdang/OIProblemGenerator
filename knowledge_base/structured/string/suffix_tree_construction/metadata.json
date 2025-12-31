@@ -1,0 +1,8 @@
+{
+    "name": "suffix_tree_construction",
+    "chinese_name": "后缀树的构建",
+    "author": "代晨昕",
+    "category": "string",
+    "complexity": "O(n) time and space complexity, where n is the length of the string. The complexity holds under constant alphabet size.",
+    "summary": "The paper discusses two online algorithms for constructing suffix trees: one that supports front-end insertion (based on reverse string suffix automaton) and another that supports end insertion (Ukkonen's algorithm). It also presents applications in dynamic string problems, including sliding window and bidirectional insertion scenarios."
+}

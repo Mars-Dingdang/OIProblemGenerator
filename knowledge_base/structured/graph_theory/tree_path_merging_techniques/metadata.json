@@ -1,0 +1,8 @@
+{
+    "name": "tree_path_merging_techniques",
+    "chinese_name": "浅谈一类树上路径相关问题",
+    "author": "周欣",
+    "category": "graph_theory",
+    "complexity": "O(n log^k n) for k typically between 1 and 3, depending on the number of nested applications of tree decomposition and merging techniques.",
+    "summary": "The paper discusses a class of problems involving paths on trees, where the goal is to compute extremal values or sums over path-related information. It emphasizes three key techniques: tree divide and conquer (especially edge/vertex splitting), virtual trees for sparse point sets, and segment tree merging to maintain and combine subtree information efficiently. These methods are applied to various contest problems from NOI, WC, and CTSC."
+}

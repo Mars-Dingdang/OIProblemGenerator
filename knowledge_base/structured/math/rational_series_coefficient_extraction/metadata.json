@@ -1,0 +1,8 @@
+{
+    "name": "rational_series_coefficient_extraction",
+    "chinese_name": "浅谈一类提取有理分式系数的方法",
+    "author": "黄建恒",
+    "category": "math",
+    "complexity": "Varies: O(log n) for linear recurrence evaluation using matrix exponentiation; O(V + b^2 + nb) in specific applications; O(n) in combinatorial enumeration via generating function algebra.",
+    "summary": "The paper discusses a method for extracting coefficients from rational generating functions by leveraging partial fraction decomposition based on the roots of the denominator. It applies this technique to analyze linear recurrences, compute asymptotic behavior, extract diagonals of bivariate rational series, and combine with Lagrange inversion for combinatorial problems. The core idea is transforming rational functions into sum-of-poles forms to derive closed-form expressions or efficient computations."
+}

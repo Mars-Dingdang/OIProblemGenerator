@@ -1,0 +1,4 @@
+diverse_substring_sum: Really Good problem, SAM, 扫描线，线段树
+
+dynamic_tree_random_walk_with_threshold: 
+

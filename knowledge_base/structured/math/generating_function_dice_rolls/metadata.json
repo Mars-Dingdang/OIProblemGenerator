@@ -1,0 +1,8 @@
+{
+    "name": "generating_function_dice_rolls",
+    "chinese_name": "浅谈生成函数在掷骰子问题上的应用",
+    "author": "杨懋龙",
+    "category": "math",
+    "complexity": "O(L) for single-sequence problems using KMP or hashing; O(n^2 L + 2^n n^3) for multi-sequence Min-Max inclusion cases.",
+    "summary": "The paper discusses the application of generating functions to solve dice-rolling problems in algorithmic competitions, particularly focusing on expected stopping times when certain sequences or patterns appear. It demonstrates how probability generating functions and auxiliary ordinary generating functions can model stochastic processes, enabling efficient computation of expectations and variances without complex dynamic programming or Gaussian elimination."
+}

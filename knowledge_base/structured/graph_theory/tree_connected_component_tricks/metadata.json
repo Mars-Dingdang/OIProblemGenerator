@@ -1,0 +1,8 @@
+{
+    "name": "tree_connected_component_tricks",
+    "chinese_name": "解决树上连通块问题的一些技巧和工具",
+    "author": "任轩笛",
+    "category": "graph_theory",
+    "complexity": "O(n log^2 n) 或 O(nm log n) 等，视具体问题而定",
+    "summary": "该论文系统总结了解决树上连通块问题的多种技巧和工具，主要分为两大类：树上连通块DP问题（包括计数与最优化）和树上同色连通块信息维护问题。针对DP问题，介绍了按DFS序转移、点分治、“点数-边数”技巧、线段树合并整体DP、链分治动态DP等方法；对于同色连通块维护，提出了一种基于LCT的通用数据结构Link Cut Memphis (LCM)，支持链修改颜色并维护DFS序上的任意信息。"
+}

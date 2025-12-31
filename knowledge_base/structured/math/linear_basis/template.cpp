@@ -1,81 +1,56 @@
-#include <bits/stdc++.h>
-using namespace std;
-using ull = unsigned long long;
-
 struct LinearBasis {
-    static const int MAXL = 60; // 最大位数
-    ull p[MAXL];
-    LinearBasis() { memset(p, 0, sizeof(p)); }
-    
-    // 插入一个数 x
-    bool insert(ull x) {
-        for (int i = MAXL-1; i >= 0; --i) {
-            if (!(x >> i)) continue;
-            if (!p[i]) {
-                p[i] = x;
+    static const int M = 30; // 位数上限
+    long long w[M];
+    int p[M]; // 优先级，用于前缀线性基
+    int c;   // 后导零个数（可选）
+
+    LinearBasis() {
+        for (int i = 0; i < M; ++i) w[i] = 0, p[i] = -1;
+        c = 0;
+    }
+
+    // 普通插入
+    bool insert(long long x) {
+        for (int i = M - 1; i >= 0; --i) {
+            if (!(x >> i & 1)) continue;
+            if (!w[i]) {
+                w[i] = x;
                 return true;
             }
-            x ^= p[i];
+            x ^= w[i];
         }
-        return false; // x 被异或成 0，说明能被表示
+        return false;
     }
-    
-    // 查询最大异或和
-    ull query_max() {
-        ull res = 0;
-        for (int i = MAXL-1; i >= 0; --i) {
-            if ((res ^ p[i]) > res) res ^= p[i];
-        }
-        return res;
-    }
-    
-    // 查询最小异或和（非空子集）
-    ull query_min() {
-        for (int i = 0; i < MAXL; ++i) {
-            if (p[i]) return p[i];
-        }
-        return 0;
-    }
-    
-    // 重构为简化阶梯形（高斯消元法）
-    void rebuild() {
-        for (int i = MAXL-1; i >= 0; --i) {
-            for (int j = i-1; j >= 0; --j) {
-                if ((p[i] >> j) & 1) p[i] ^= p[j];
+
+    // 前缀线性基插入（带优先级）
+    void insert_with_priority(long long x, int priority) {
+        for (int i = M - 1; i >= 0; --i) {
+            if (!(x >> i & 1)) continue;
+            if (!w[i] || p[i] < priority) {
+                swap(w[i], x);
+                swap(p[i], priority);
             }
+            x ^= w[i];
         }
+        if (x) c++;
     }
-    
-    // 查询第 k 小异或和（需要先 rebuild）
-    ull kth(ull k) {
-        vector<ull> v;
-        for (int i = 0; i < MAXL; ++i) {
-            if (p[i]) v.push_back(p[i]);
-        }
-        ull res = 0;
-        for (int i = 0; i < (int)v.size(); ++i) {
-            if ((k >> i) & 1) res ^= v[i];
+
+    // 查询最大异或和
+    long long max_xor() {
+        long long res = 0;
+        for (int i = M - 1; i >= 0; --i) {
+            if ((res ^ w[i]) > res) res ^= w[i];
         }
         return res;
     }
-    
-    // 合并另一个线性基
-    void merge(const LinearBasis &other) {
-        for (int i = MAXL-1; i >= 0; --i) {
-            if (other.p[i]) insert(other.p[i]);
+
+    // 进一步消元（对角化）
+    void eliminate_further() {
+        for (int i = 0; i < M; ++i) {
+            if (!w[i]) continue;
+            for (int j = i + 1; j < M; ++j) {
+                if (w[j] >> i & 1) w[j] ^= w[i];
+            }
         }
     }
 };
-
-int main() {
-    int n;
-    cin >> n;
-    LinearBasis lb;
-    for (int i = 0; i < n; ++i) {
-        ull x;
-        cin >> x;
-        lb.insert(x);
-    }
-    cout << lb.query_max() << endl;
-    return 0;
-}

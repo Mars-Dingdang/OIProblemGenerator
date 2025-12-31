@@ -1,0 +1,8 @@
+{
+    "name": "nimber_polynomial_algorithms",
+    "chinese_name": "浅谈Nimber 和多项式算法",
+    "author": "罗煜翔",
+    "category": "math",
+    "complexity": "O(n log n log log n) 到 O(n log² n)，具体取决于操作（如乘法、卷积、求逆等）",
+    "summary": "该论文系统探讨了Nimber（即公平组合游戏中SG函数的代数结构）及其上的多项式算法。内容涵盖Nimber的基本运算（如Nim和、Nim积）、Nimber多项式的乘法、除法、复合、牛顿迭代、多点求值、插值、欧几里得算法、中国剩余定理，以及Nimber指数生成函数中的二项卷积、子集卷积、exp/ln、三角函数等。重点在于将经典多项式算法推广到Nimber域（特征为2的有限域），并给出高效实现方法。"
+}

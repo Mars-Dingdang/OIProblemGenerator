@@ -1,14 +1,8 @@
 {
-    "name": "支配树",
-    "category": "图论",
-    "complexity": "O(n \\log n)",
-    "scenarios": [
-        "求解每个点的支配点",
-        "ZJOI2012 灾难问题",
-        "控制流分析"
-    ],
-    "extensions": [
-        "可用于DAG上构建",
-        "结合LCA和拓扑排序"
-    ]
+    "name": "dominator_tree",
+    "chinese_name": "浅谈支配树及其应用",
+    "author": "陈孙立",
+    "category": "graph_theory",
+    "complexity": "O((n + m) log n) time with O(n + m) space using union-find with path compression; can be improved to O((n + m) α(n)) or even linear with advanced union-find structures.",
+    "summary": "The paper discusses the dominator tree of a directed graph, which represents the dominance relationships from a source node s: a node x dominates y if every path from s to y passes through x. The immediate dominator (idom) of a node is the last dominator on the path from s, and connecting each node to its idom forms a tree called the dominator tree. This structure allows efficient computation of dominance relations and has applications in areas such as control flow analysis, strong articulation points, and bridge detection in directed graphs."
 }

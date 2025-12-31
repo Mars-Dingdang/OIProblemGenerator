@@ -1,0 +1,8 @@
+{
+    "name": "transposition_principle_dp",
+    "chinese_name": "转置原理在一类动态规划问题中的应用",
+    "author": "徐骁扬",
+    "category": "dynamic_programming",
+    "complexity": "O(n log n)",
+    "summary": "The paper introduces the Transposition Principle to optimize dynamic programming problems, particularly those involving segment tree merging. By transforming a linear transformation algorithm into its transpose, complex DP optimizations (e.g., on trees with MAX convolution) can be simplified by solving the transposed problem and reversing the process. Two examples demonstrate how this method achieves O(n log n) complexity via segment tree operations and their reversals (splitting)."
+}

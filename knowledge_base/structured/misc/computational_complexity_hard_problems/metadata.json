@@ -1,0 +1,8 @@
+{
+    "name": "computational_complexity_hard_problems",
+    "chinese_name": "浅谈计算理论与 OI 中的难解问题",
+    "author": "闫陈效",
+    "category": "misc",
+    "complexity": "Varies; often NP-hard or exponential time for the discussed problems",
+    "summary": "This paper discusses the application of computational complexity theory to hard problems in OI (Olympiad in Informatics). It explores how theoretical concepts such as NP-hardness, reductions, and undecidability can be used to analyze and understand difficult algorithmic challenges commonly encountered in competitive programming. The author presents techniques for identifying problem hardness, leveraging reductions between problems, and applying theoretical insights to guide practical solution strategies."
+}

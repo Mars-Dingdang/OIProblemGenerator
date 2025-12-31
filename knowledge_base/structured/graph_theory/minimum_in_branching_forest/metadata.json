@@ -1,0 +1,8 @@
+{
+    "name": "minimum_in_branching_forest",
+    "chinese_name": "最小内向森林问题",
+    "author": "张哲宇",
+    "category": "graph_theory",
+    "complexity": "O(E log E)",
+    "summary": "The Minimum In-Branching Forest problem involves finding a subgraph with exactly k edges in a weighted directed graph such that every weakly connected component is an in-branching (an arborescence where all edges point toward the root), and the total edge weight is minimized. The paper presents an efficient O(E log E) algorithm based on priority-based expansion of in-trees, leveraging properties from matroid theory and convex optimization insights."
+}

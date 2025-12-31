@@ -1,0 +1,8 @@
+{
+    "name": "subshape_automaton",
+    "chinese_name": "《太阳神的宴会》命题报告",
+    "author": "陈雨昕",
+    "category": "data_structures",
+    "complexity": "O(kL) time and space, where L is the total length of input strings and k is the alphabet size.",
+    "summary": "The problem asks to count the number of 'good' strings formed by concatenating one string from each set Ci, where Ci consists of all strings similar to at least one substring of a given string Si. Two strings are similar if one can be transformed into the other via a character permutation. The solution introduces the concept of 'shape sequences' to represent equivalence classes under similarity and uses a novel data structure called the 'subshape automaton'—an extension of suffix automata—to efficiently handle substring equivalence under such relations."
+}

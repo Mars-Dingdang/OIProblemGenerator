@@ -1,0 +1,8 @@
+{
+    "name": "convexity_optimization",
+    "chinese_name": "浅谈函数的凸性在OI 中的应用",
+    "author": "郭羽冲",
+    "category": "dynamic_programming",
+    "complexity": "Varies: O(n) for simple slope optimization, O(n log n) or O(n log V) for WQS binary search, up to O(n log²n) for advanced tree-based methods.",
+    "summary": "The paper discusses the application of function convexity in optimizing algorithms in competitive programming, focusing on techniques such as slope optimization, WQS binary search (Alien's trick), and maintenance of convex functions. It demonstrates how convexity can be leveraged to reduce time complexity in dynamic programming and other problems by exploiting properties like decision monotonicity, (min,+)/(max,+) convolution on convex functions, and geometric interpretations via convex hulls."
+}

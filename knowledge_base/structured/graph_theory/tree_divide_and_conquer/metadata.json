@@ -1,0 +1,8 @@
+{
+    "name": "tree_divide_and_conquer",
+    "chinese_name": "浅谈树上分治算法",
+    "author": "张哲宇",
+    "category": "graph_theory",
+    "complexity": "O(n log n) for edge and point divide in typical cases; O(n log^2 n) for some applications with global balancing; space complexity is generally O(n).",
+    "summary": "The paper discusses three tree-based divide-and-conquer techniques: edge centroid decomposition (edge divide), vertex centroid decomposition (point divide), and globally balanced binary trees. These methods are used to solve path or connectivity-related problems on trees by recursively decomposing the tree structure and solving subproblems efficiently."
+}

@@ -1,0 +1,8 @@
+{
+    "name": "graph_vertex_coloring",
+    "chinese_name": "浅谈图的点着色问题",
+    "author": "高嘉煊",
+    "category": "graph_theory",
+    "complexity": "O(2^n * n) for set power series method; O(1.62^(n+m)) for basic deletion-contraction; optimized versions perform better on sparse/dense graphs.",
+    "summary": "The paper discusses the graph vertex coloring problem, focusing on two central aspects: chromatic number and chromatic polynomial. It presents theoretical bounds on the chromatic number (e.g., Brooks' Theorem), algorithms for determining k-colorability (including greedy coloring, BFS-based methods for planar graphs, and chordal graph properties), and efficient computation of the chromatic polynomial using deletion-contraction with optimizations for sparse and dense graphs. Special attention is given to set power series techniques and their use in dynamic programming approaches for exact computation."
+}

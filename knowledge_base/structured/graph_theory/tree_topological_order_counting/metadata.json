@@ -1,0 +1,8 @@
+{
+    "name": "tree_topological_order_counting",
+    "chinese_name": "浅谈树拓扑序计数相关问题的一些方法",
+    "author": "陈昕阳",
+    "category": "graph_theory",
+    "complexity": "O(n^{2/3}) or O(√n poly log n) depending on the method used",
+    "summary": "This paper discusses methods for counting tree topological orders, which involve combinatorial problems related to enumerating valid orderings of nodes in a tree under specific constraints. The focus is on leveraging algebraic and number-theoretic techniques, including Dirichlet convolutions, generating functions, and advanced data structures, to efficiently compute these counts."
+}

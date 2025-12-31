@@ -1,0 +1,8 @@
+{
+    "name": "palindrome_tree",
+    "chinese_name": "回文树及其应用",
+    "author": "翁文涛",
+    "category": "string",
+    "complexity": "时间复杂度: O(|s| log Σ)，空间复杂度: O(|s|)",
+    "summary": "Palindrome Tree（回文树）是一种用于高效处理回文子串问题的数据结构。它通过增量构造的方式，为字符串中每个不同的回文子串建立节点，并利用fail指针维护最长回文后缀关系。该结构支持统计不同回文子串数量、计算出现次数、扩展至前端插入、删除操作、TRIE上构建以及可持久化等高级应用。"
+}

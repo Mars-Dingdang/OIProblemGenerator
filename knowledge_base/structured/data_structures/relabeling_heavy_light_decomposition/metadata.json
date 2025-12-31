@@ -1,0 +1,8 @@
+{
+    "name": "relabeling_heavy_light_decomposition",
+    "chinese_name": "《数据结构》解题报告",
+    "author": "朱屹帆",
+    "category": "data_structures",
+    "complexity": "O(a^2 × n log² n) time, O(n) space (with fine tuning down to O(a × n log² n)); where a = 3 is the maximum neighborhood depth considered.",
+    "summary": "The paper presents an optimized tree data structure technique based on heavy-light decomposition with a novel relabeling strategy to efficiently handle queries and updates over k-degree neighborhoods of paths and subtrees in trees. It supports range add, sum, and max queries for nodes within distance k of a given path or in a subtree, achieving efficient performance through enhanced labeling continuity and auxiliary segment tracking."
+}

@@ -1,0 +1,8 @@
+{
+    "name": "inclusion_exclusion_mobius",
+    "chinese_name": "浅谈一类容斥和反演方法的应用",
+    "author": "董亦骐",
+    "category": "math",
+    "complexity": "O(n^{2/3}) for basic summation, O(√n polylog n) with optimizations",
+    "summary": "This paper discusses advanced applications of inclusion-exclusion principles and Möbius inversion in number theory problems, particularly focusing on efficiently computing sums of multiplicative functions over large ranges. It introduces optimized algorithms using Dirichlet convolution, power series manipulation (exp and log), and segmented computation to achieve sub-linear time complexity."
+}

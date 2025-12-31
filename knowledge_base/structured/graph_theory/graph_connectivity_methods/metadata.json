@@ -1,0 +1,8 @@
+{
+    "name": "graph_connectivity_methods",
+    "chinese_name": "综述图论中连通性及相关问题的一些处理方法",
+    "author": "万成章",
+    "category": "graph_theory",
+    "complexity": "O(n + m) for most core algorithms (e.g., Tarjan for biconnected components, strong connected components); O(n^3) or O(nm/w) for transitive closure; exponential time for some DP-based ear decomposition problems.",
+    "summary": "This paper systematically discusses various algorithms and techniques related to connectivity in undirected and directed graphs, including DFS trees, biconnectivity (edge/vertex), bridge and cut-vertex detection, block-cut trees (round-square tree), ear decomposition, cycle space and cut space over F2, strong connectivity, Tarjan's algorithm, tournament graphs, and applications in problems involving reachability, orientation, and cyclic structures. It emphasizes practical methods used in competitive programming."
+}

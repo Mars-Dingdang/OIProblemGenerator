@@ -1,0 +1,8 @@
+{
+    "name": "spherical_composite_area",
+    "chinese_name": "计算球面复合区域面积的高效算法",
+    "author": "周任飞",
+    "category": "geometry",
+    "complexity": "O(nm log m) time, O(m) space",
+    "summary": "The paper presents an efficient algorithm to compute the exact area of a composite region on a sphere formed by Boolean operations (union, intersection, difference) over n spherical caps. The input is given as a Boolean expression of length m, and the algorithm computes the area in O(nm log m) worst-case time complexity using Green's theorem and a data structure based on heavy-light decomposition to maintain dynamic evaluations of the expression during a sweep-line process."
+}

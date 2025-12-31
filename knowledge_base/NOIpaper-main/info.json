@@ -1,0 +1,16 @@
+{
+    "国家集训队2025论文集": {
+        "浅谈连续段及相关问题" : {
+            "author": "Liu Hengxi", 
+            "topic": "intrinsic intervals, merge_split_tree, data_structures"
+        } ,
+        "OI题目中凸性的证明方法" : {
+            "author": "Gou Jingyu", 
+            "topic": "convexity, min_cost_max_flow, quadrangle_inequality"
+        }, 
+        "浅谈树上邻域问题的一种基于长链剖分的解法": {
+            "author": "Liu Haifeng", 
+            "topic": "长链剖分"
+        }
+    }
+}

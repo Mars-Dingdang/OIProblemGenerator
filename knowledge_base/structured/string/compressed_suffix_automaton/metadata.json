@@ -1,0 +1,8 @@
+{
+    "name": "compressed_suffix_automaton",
+    "chinese_name": "浅谈压缩后缀自动机",
+    "author": "徐翊轩",
+    "category": "string",
+    "complexity": "O(|S|) time and space for construction; query operations can be O(1) or O(Q) depending on use case.",
+    "summary": "压缩后缀自动机（Compressed Suffix Automaton）是通过对后缀字典树同时进行最小化（如后缀自动机）和收缩（如后缀树）操作得到的一种新型后缀数据结构。它结合了后缀自动机的线性空间优势和后缀树的路径压缩特性，能够在O(|S|)时间和空间内构造，并支持高效处理子串相关问题。其变体对称压缩后缀自动机进一步支持在字符串两端动态添加字符的操作，适用于双向扩展的在线查询问题。"
+}

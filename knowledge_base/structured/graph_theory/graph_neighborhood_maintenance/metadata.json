@@ -1,0 +1,8 @@
+{
+    "name": "graph_neighborhood_maintenance",
+    "chinese_name": "浅谈一类图上邻域相关问题",
+    "author": "焦思源",
+    "category": "graph_theory",
+    "complexity": "O(n + m + q * ρ_max(G)) time, O(m √m) space for block method (in specific extensions)",
+    "summary": "The paper discusses efficient methods for maintaining and querying neighborhood-related information in graphs. It introduces a technique based on graph density and vertex deletion order to direct edges, enabling each node to maintain only incoming edge contributions. This leads to an O(n + m + qρ_max(G)) online solution, where ρ_max(G) is the maximum density of any subgraph. The method outperforms traditional sqrt-decomposition on sparse graphs and extends to more complex queries like range neighborhood updates and path counting via sequence transformation and block-based or Mo's algorithm techniques."
+}

@@ -1,0 +1,8 @@
+{
+    "name": "basic_substring_structure",
+    "chinese_name": "一类基础子串数据结构",
+    "author": "许庭强",
+    "category": "string",
+    "complexity": "O(n) for construction, O(1) to O(q log n) for queries depending on application",
+    "summary": "The paper introduces a novel string data structure called the Basic Substring Structure, which unifies information from both forward and reverse suffix automata (SAM) via equivalence classes of substrings based on their maximal extension with the same occurrence count. It represents all distinct substrings geometrically as 'staircase-shaped' grids in a 2D plane of start and end positions, enabling efficient handling of problems involving both prefix and suffix relationships. The structure supports linear-time construction and enables unified solutions to various complex substring queries."
+}

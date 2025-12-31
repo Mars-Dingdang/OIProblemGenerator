@@ -1,0 +1,8 @@
+{
+    "name": "piecewise_integral_polynomials",
+    "chinese_name": "浅谈连续型随机变量的相关问题",
+    "author": "周桓毅",
+    "category": "math",
+    "complexity": "O(n^3 log n) to O(4^n n^2), depending on the problem; often independent of value range",
+    "summary": "The paper discusses problems involving continuous random variables, focusing on integer difference constraints. It introduces a novel method called 'piecewise integral polynomials' to efficiently compute probabilities under such constraints by transforming measure functions into algebraic operations via integral polynomial operators and their generalization to piecewise forms. This approach enables efficient solutions for specific structured problems where traditional methods fail due to high complexity or large value ranges."
+}

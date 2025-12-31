@@ -1,0 +1,8 @@
+{
+    "name": "dirichlet_convolution_sum",
+    "chinese_name": "浅谈一类树上范围相关问题",
+    "author": "朱屹帆",
+    "category": "math",
+    "complexity": "O(n^{2/3}) 或 O(√n poly log n)",
+    "summary": "该论文探讨了积性函数前缀和的高效计算方法，重点介绍了一种基于Dirichlet卷积和整除分块的算法。该算法能够在亚线性时间内（如O(n^{2/3})）计算出积性函数S_f(n) = Σ_{i=1}^n f(i)的值，并通过优化技术将复杂度进一步降低至O(√n poly log n)。"
+}

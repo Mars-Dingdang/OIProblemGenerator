@@ -1,0 +1,8 @@
+{
+    "name": "polynomial_summation",
+    "chinese_name": "多项式求和",
+    "author": "袁宇韬",
+    "category": "math",
+    "complexity": "O(n log n)",
+    "summary": "Given integers n, m, a, b, c, define a sequence of polynomials f_k(x) where f_0(x) = 1 and for k > 0, f_k(x) = sum_{i=0}^{x} (a*i^2 + b*i + c)*f_{k-1}(i). The task is to compute f_i(m) mod 1004535809 for all 0 <= i < n. The problem involves recursive polynomial summation with quadratic coefficients and requires advanced techniques in generating functions, polynomial algebra, and number theory."
+}

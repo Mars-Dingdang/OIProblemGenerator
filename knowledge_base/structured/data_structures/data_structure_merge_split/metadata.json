@@ -1,0 +1,8 @@
+{
+    "name": "data_structure_merge_split",
+    "chinese_name": "浅谈数据结构的合并与分裂",
+    "author": "黄洛天",
+    "category": "data_structures",
+    "complexity": "O(n log n) time, O(n) space",
+    "summary": "This paper discusses techniques for merging and splitting data structures, focusing on efficient algorithms that support dynamic modifications. It covers advanced topics such as lazy propagation, potential method analysis, and applications in problems involving segment trees, treaps, and top trees. The methods enable efficient handling of operations like range updates, queries, and structural changes while maintaining logarithmic time complexity."
+}

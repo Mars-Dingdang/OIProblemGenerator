@@ -1,0 +1,8 @@
+{
+    "name": "fractional_cascading_block_optimization",
+    "chinese_name": "浅谈利用分散层叠算法对经典分块问题的优化",
+    "author": "蒋明润",
+    "category": "data_structures",
+    "complexity": "Time: O(n√n), Space: O(n)",
+    "summary": "The paper discusses applying the fractional cascading technique to optimize classical blocking problems in competitive programming. The core problem involves range add updates and queries asking for the number of elements ≤ x in a range. By building a hierarchical structure (e.g., segment tree) over blocks and using fractional cascading, multiple binary searches across blocks are accelerated from O((n/B) log B) to O(n/B + log n), achieving O(n√n) total time complexity, which matches the best offline methods but works online and for general values."
+}

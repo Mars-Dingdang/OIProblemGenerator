@@ -1,0 +1,8 @@
+{
+    "name": "gaussian_integer_gcd",
+    "chinese_name": "算法竞赛中一些数论问题的推广与高斯整数初探",
+    "author": "李佳衡",
+    "category": "math",
+    "complexity": "O(log N(α)) for GCD; O(n) for linear sieve; O(n^{2/3}) for Dirichlet convolution-based summation",
+    "summary": "该论文研究了整数整除理论在高斯整数环 Z[i] 上的推广，重点讨论了高斯整数中的最大公约数、唯一分解性质、Euclid 算法、标准分解以及数论函数求和等问题。通过抽象代数结构分析，将经典数论算法如扩展欧几里得、试除法、线性筛、杜教筛和 Min_25 筛等推广到高斯整数域中，并给出了相关复杂度分析与应用例题。"
+}

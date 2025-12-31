@@ -1,0 +1,8 @@
+{
+    "name": "sleep_when_stuck",
+    "chinese_name": "《遇到困难睡大觉》命题报告",
+    "author": "魏衍芃",
+    "category": "data_structures",
+    "complexity": "O(n log n log A), where A is the range of possible answers (up to 10^9)",
+    "summary": "Given n levels in a game, each with initial ease value ai and boredom value bi, the player can choose an order to complete them. If level i is completed at position j, its ease becomes ai + j*k and boredom becomes bi + j*k. The overall ease is the minimum of all adjusted ease values, and overall boredom is the maximum of all adjusted boredom values. The goal is to maximize (ease - boredom). The solution involves binary search on the answer, using properties of monotonic constraints and Hall's theorem to check feasibility via data structures."
+}

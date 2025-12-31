@@ -1,0 +1,8 @@
+{
+    "name": "multiplicative_function_summation",
+    "chinese_name": "关于积性函数求和问题的一些进展",
+    "author": "周康阳",
+    "category": "math",
+    "complexity": "O(n^{2/3}) or O(√n polylog n)",
+    "summary": "This paper discusses efficient algorithms for computing the summatory function S_f(n) = ∑_{i=1}^n f(i) of a multiplicative arithmetic function f. It presents advanced techniques based on Dirichlet convolution, power series manipulation (exp and log), and number-theoretic optimizations to achieve sub-linear time complexities such as O(n^{2/3}) and improved bounds like O(√n polylog n). The methods involve decomposing functions into simpler components, leveraging properties of powerful numbers, and using recursive or iterative schemes with memoization over distinct values of ⌊n/k⌋."
+}

@@ -1,0 +1,8 @@
+{
+    "name": "bipartite_matching_with_greedy_and_matroid",
+    "chinese_name": "浅谈一些二分图匹配相关问题",
+    "author": "柯绎思",
+    "category": "graph_theory",
+    "complexity": "O(|V||E|) for standard Hungarian algorithm; O(T(|V1|, |V2|) log |V1|) for lexicographically smallest maximum matching where T is the time to compute minimum vertex cover; O(n log n) or O(q log T) in specific cases with data structures like segment trees.",
+    "summary": "The paper discusses several classical problems related to bipartite graph matching, especially those involving intervals and points. It presents greedy algorithms for interval-point and interval-interval matching, applies Hall's theorem for feasibility checks, explores the matroid structure of matchable sets enabling efficient greedy optimization, and proposes a divide-and-conquer algorithm to compute the lexicographically smallest maximum matching using minimum vertex covers."
+}

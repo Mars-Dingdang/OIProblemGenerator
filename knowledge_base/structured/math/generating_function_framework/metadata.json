@@ -1,0 +1,8 @@
+{
+    "name": "generating_function_framework",
+    "chinese_name": "信息学竞赛中的生成函数计算理论框架",
+    "author": "李白天",
+    "category": "math",
+    "complexity": "Varies: O(n log n) for convolution, O(k log k log n) for linear recurrence, O(n^2 2^n) for subset convolution, O(k M(n)) for multidimensional convolution.",
+    "summary": "该论文系统性地构建了信息学竞赛中生成函数的计算理论框架，涵盖普通生成函数、指数生成函数、集合幂级数和多元幂级数等模型。重点讨论了生成函数在组合计数问题中的应用，包括卷积、复合、方程求解（如牛顿迭代法与在线算法）、Lagrange反演及其扩展形式，并针对不同代数结构（如NTT模数域、有限域、交换环）设计高效算法。同时提出了远处系数求值、线性递推、半在线/全在线卷积等关键技术，适用于复杂组合结构的快速计算。"
+}

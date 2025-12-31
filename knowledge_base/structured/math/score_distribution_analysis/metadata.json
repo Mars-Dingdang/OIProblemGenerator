@@ -1,0 +1,8 @@
+{
+    "name": "score_distribution_analysis",
+    "chinese_name": "对信息学比赛中选手分数数据的分析",
+    "author": "邱天异",
+    "category": "math",
+    "complexity": "O(N) for data processing, O(1) for model inference (after fitting)",
+    "summary": "该论文通过建立信息学竞赛的数学模型，分析选手分数数据。基于历史比赛数据，研究了选手得分波动的分布形式（正态分布），并利用联赛初赛和复赛的分数推算出全国选手整体水平的分布情况（对数分布）。核心思想是将选手真实水平与考场发挥分离，通过统计方法还原期望能力分布。"
+}

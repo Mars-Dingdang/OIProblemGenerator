@@ -1,0 +1,8 @@
+{
+    "name": "special_union_find_applications",
+    "chinese_name": "浅谈并查集在OI 中的特殊应用",
+    "author": "王相文",
+    "category": "data_structures",
+    "complexity": "Varies by model: O(q α(n)) for standard optimized DSU; O(n + q) for linear tree-based DSU; O(log n) per operation for rollback DSU; O(q log q log n) for segment-tree-based dynamic graph connectivity.",
+    "summary": "This paper explores advanced applications of the Union-Find (Disjoint Set Union, DSU) data structure in competitive programming, focusing on three specialized models: linear tree-based Union-Find for path queries, weighted Union-Find for maintaining relative values within sets, and rollback (undoable) Union-Find using heuristic merging. These models are demonstrated through various problems involving offline query processing, sequence partitioning, LCA computation, dynamic connectivity, and more."
+}

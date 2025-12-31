@@ -1,0 +1,8 @@
+{
+    "name": "lattice_path_counting",
+    "chinese_name": "再谈格路计数",
+    "author": "吴畅",
+    "category": "math",
+    "complexity": "O(n^{2/3}) or O(\\sqrt{n} \\cdot \\mathrm{polylog}(n))",
+    "summary": "The paper discusses advanced techniques for counting lattice paths and related number-theoretic summations, focusing on efficient computation of multiplicative function prefix sums using Dirichlet convolutions, power series (Exp/Log), and optimized sieve methods. It presents algorithms achieving sub-linear time complexities such as O(n^{2/3}) and improved bounds like O(√n poly log n) by leveraging structural properties of powerful numbers and segmented sieves."
+}

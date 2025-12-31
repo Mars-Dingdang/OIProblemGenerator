@@ -1,0 +1,8 @@
+{
+    "name": "determinant_and_adjugate_in_modular_arithmetic",
+    "chinese_name": "信息学竞赛中行列式的相关问题",
+    "author": "王展鹏",
+    "category": "math",
+    "complexity": "O(n^3 log n) for adjugate matrix under arbitrary modulus; O(n^5) naive, optimized to O(n^{ω+1} \\log n \\log \\log n) using fast matrix multiplication and polynomial arithmetic.",
+    "summary": "该论文系统探讨了信息学竞赛中矩阵行列式与伴随矩阵的计算问题，重点研究在不同模数（包括质数与合数）下求解任意矩阵的伴随矩阵、元素为多项式的矩阵行列式的一次项系数，以及定义在任意交换环上的行列式计算。提出了基于分治、递推、高斯消元、中国剩余定理和多项式插值等多种算法，并结合代数结构优化复杂度。"
+}

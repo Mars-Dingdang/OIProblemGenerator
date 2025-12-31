@@ -1,21 +1,29 @@
-## Key Observations
-- **Lyndon 串定义**: 字符串 s 的字典序严格小于其所有后缀的字典序。等价于 s 的字典序严格小于其所有非平凡循环同构串。
-- **Lyndon 分解**: 任何字符串 s 可以唯一分解为 s = w₁w₂…wₖ，其中每个 wᵢ 是 Lyndon 串，且 w₁ ≥ w₂ ≥ … ≥ wₖ（非严格递减字典序）。
-- **Duval 算法核心**: 贪心地将字符串分为三部分：已分解的 Lyndon 串 s₁、近似 Lyndon 串 s₂、未处理部分 s₃。通过比较字符 s[j] 和 s[k] 决定扩展或截断 s₂。
+# 浅谈Lyndon 分解
 
-## Optimizations
-- **线性时间**: Duval 算法时间复杂度 O(n)，循环总次数不超过 4n - 3。
-- **最小表示法**: 通过构建 ss 的 Lyndon 分解，找到起点 < n 且终点 ≥ n 的 Lyndon 串 t，其首字符即为最小表示法的首字符。
+**Author:** 胡昊
 
-## Common Problem Transformations
-- **最小循环表示**: 使用 `min_cyclic_string` 函数，将字符串复制一次（s + s），应用 Duval 算法变体，记录起始位置 ans，返回长度为 n 的子串。
-- **字符串排序**: Lyndon 分解可用于字符串的规范表示，例如在 Burrows-Wheeler 变换相关算法中。
-- **循环同构检测**: 比较两个字符串的循环同构可通过比较它们的最小表示是否相等。
+### Key Ideas and Observations
 
-## Implementation Notes
-- **指针含义**: i 指向当前分解起点，j 和 k 用于比较，其中 k 指向 s₂ 中当前比较的字符（j 在上一个循环节中的对应位置）。
-- **三种情况处理**:
-  1. s[j] == s[k]: 继续扩展，j++, k++。
-  2. s[j] > s[k]: s₂ 变为 Lyndon 串，重置 k = i，j++。
-  3. s[j] < s[k]: 截断 s₂，输出长度为 j - k 的 Lyndon 子串，移动 i 并保持 j, k 不变。
-- **边界处理**: 在最小表示法中，循环条件 `i < n / 2` 确保只考虑原字符串长度的起始位置。
+- **Lyndon Word Definition**: A string $ S $ is a Lyndon word (or simple string) if it is strictly smaller in lexicographical order than all of its nontrivial cyclic rotations (equivalently, all of its proper suffixes).
+
+- **Uniqueness of Decomposition**: Every string has a unique Lyndon decomposition $ S = w_1 w_2 \ldots w_m $ such that each $ w_i $ is a Lyndon word and $ w_1 \geq w_2 \geq \cdots \geq w_m $. This can be proven by contradiction: assuming two different decompositions leads to an inequality contradiction based on the ordering.
+
+- **Duval’s Algorithm Insight**:
+  - The algorithm processes the string in linear time using three pointers: `i` (start of current approximate Lyndon prefix), `j` (current character being compared), and `k` (reference pointer within the base Lyndon block).
+  - It maintains an *approximately simple* string $ s_2 = w^a w' $, where $ w $ is a Lyndon word and $ w' $ is a prefix of $ w $.
+  - When $ S[j] = S[k] $: extend the repetition; increment both `j` and `k`.
+  - When $ S[j] > S[k] $: the current extended string remains lexicographically minimal under rotation — continue extending with reset reference (`k ← i`).
+  - When $ S[j] < S[k] $: the structure breaks; we finalize as many full copies of $ w $ as possible (from position `i` up to `k`) into the decomposition, then restart from after those segments.
+
+- **Key Lemma**: During decomposition, once a segment fails to maintain the Lyndon property upon extension, all complete repetitions of the base Lyndon word so far can be safely output because they satisfy the decreasing condition.
+
+- **Applications**:
+  - **Minimum String Representation**: Concatenate $ S + S $, compute its Lyndon decomposition, and find the last Lyndon factor starting in the first half. Its start index gives the minimal rotation.
+  - **Optimal Partitioning**: To minimize the maximum part when splitting into at most $ k $ substrings, use the Lyndon decomposition $ w_1^{m_1} w_2^{m_2} \ldots $. The answer depends on how $ k $ compares to total number of factors.
+  - **Queries on Suffixes**: Using the $ O(n \log n) $ method via suffix arrays allows precomputing Lyndon heads for every suffix, enabling efficient query responses.
+  - **Prefix Minimum Suffix**: While processing with Duval's algorithm, one can track the smallest suffix of each prefix — it often corresponds to the last complete or partial Lyndon block.
+
+- **Proof Techniques**:
+  - Use of contradiction in uniqueness proof.
+  - Structural analysis of cyclic shifts to prove Lyndon properties.
+  - Amortized analysis for Duval’s algorithm: each character is involved in comparisons at most twice, leading to $ O(n) $ total time.

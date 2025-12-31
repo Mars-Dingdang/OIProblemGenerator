@@ -1,0 +1,8 @@
+{
+    "name": "manipulated_segment_tree",
+    "chinese_name": "《被操纵的线段树》命题报告",
+    "author": "沈睿",
+    "category": "data_structures",
+    "complexity": "O((Q + N) log N)",
+    "summary": "Given a custom segment tree where the split point (mid) of each node is arbitrarily given, support two operations: rotating a node with its parent (similar to splay rotations), and querying the number of nodes in the tree required to exactly cover a given interval [l, r] — known as the 'interval localization count'. The challenge lies in efficiently maintaining the dynamic structure under rotation and answering queries quickly despite potentially linear depth."
+}

@@ -1,0 +1,8 @@
+{
+    "name": "dynamic_heavy_path_decomposition",
+    "chinese_name": "浅谈一类实现简易的动态树型结构信息维护方法",
+    "author": "肖岱恩",
+    "category": "data_structures",
+    "complexity": "O(log n) amortized (splay-based), O(log n) worst-case (WBLT-based)",
+    "summary": "The paper discusses two efficient and easy-to-implement methods for maintaining information on dynamically changing tree structures (forests), supporting operations such as linking, cutting, path/connected-component updates, and queries. The first method uses splay trees with auxiliary leafy trees (SLT) to maintain real-path decomposition with amortized O(log n) complexity. The second method replaces splays with weight-balanced leafy trees (WBLT) and employs dynamic absolute heavy-path decomposition to achieve strict O(log n) time per operation. Both approaches leverage potential analysis and structural invariants (like heavy-light decomposition) to ensure efficiency."
+}

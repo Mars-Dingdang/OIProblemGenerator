@@ -1,0 +1,8 @@
+{
+    "name": "palindrome_suffix_arithmetic_sequence",
+    "chinese_name": "浅谈回文串问题的相关算法及其应用",
+    "author": "徐安矣",
+    "category": "string",
+    "complexity": "O(n log n + Q(log^2 n + √n)) for the full dynamic solution; O(n) for Manacher; O(n) amortized for palindromic tree construction.",
+    "summary": "The paper discusses algorithms for solving palindrome-related problems, with a focus on maintaining all palindromic suffixes of a string using arithmetic sequences. This approach allows efficient merging of information in dynamic string problems, such as substring modification and querying the number of palindromic suffixes. It combines techniques like Manacher's algorithm, palindromic trees (PAM), hashing, and segment trees to handle various static and dynamic scenarios."
+}

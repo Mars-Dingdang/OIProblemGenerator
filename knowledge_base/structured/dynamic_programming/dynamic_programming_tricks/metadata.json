@@ -1,0 +1,8 @@
+{
+    "name": "dynamic_programming_tricks",
+    "chinese_name": "浅谈 OI 中动态规划问题的一些解题方法",
+    "author": "曹立",
+    "category": "dynamic_programming",
+    "complexity": "Varies by problem; often O(N^2) or O(N log N) with optimizations.",
+    "summary": "This paper explores various advanced techniques and optimizations for solving dynamic programming problems in competitive programming, focusing on mathematical insights, state compression, and efficient transitions."
+}

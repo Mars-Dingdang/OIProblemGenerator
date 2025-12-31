@@ -1,0 +1,8 @@
+{
+    "name": "cut_join_tree",
+    "chinese_name": "浅谈连续段及相关问题",
+    "author": "刘恒熙",
+    "category": "data_structures",
+    "complexity": "O(n) for constructing the cut-join tree from a pseudo-minimal interval sequence; O(n) for querying left-endpoint information sums when operations form a group.",
+    "summary": "The paper studies the concept of 'continuous intervals' (segments where elements form a contiguous range) in permutations and generalizes it to intersections of connectivity structures (e.g., chains, trees, graphs). It introduces the notion of interval sets with closure properties (I, II, III), characterizes them using minimal or pseudo-minimal interval sequences, and proposes the cut-join tree (a.k.a. '析合树') as a unique hierarchical representation for I, II, III-closed interval sets. The structure enables efficient algorithms for problems involving common continuous segments across multiple structures, such as two permutations or multiple trees."
+}

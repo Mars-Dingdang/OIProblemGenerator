@@ -1,0 +1,8 @@
+{
+    "name": "eulerian_graph_generation_and_counting",
+    "chinese_name": "欧拉图相关的生成与计数问题探究",
+    "author": "陈通",
+    "category": "graph_theory",
+    "complexity": "O(m) for Hierholzer algorithm; O(n^3) for BEST theorem via matrix-tree; O(n + m) for subgraph counting; O(n^2) or optimized to O(n log n) for connected Eulerian graph counting.",
+    "summary": "This paper explores problems related to the generation and counting of Eulerian graphs. It covers fundamental concepts, criteria for determining Eulerian and semi-Eulerian graphs (both directed and undirected), algorithms for constructing Eulerian circuits (Fleury and Hierholzer), and applications in classic problems such as De Bruijn sequences, mixed graph orientation, and the Chinese Postman Problem. The paper also investigates counting problems including the number of even-degree graphs, Eulerian subgraphs, and enumeration of Eulerian circuits using the BEST theorem."
+}

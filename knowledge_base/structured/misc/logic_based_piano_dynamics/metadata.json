@@ -1,0 +1,8 @@
+{
+    "name": "logic_based_piano_dynamics",
+    "chinese_name": "计算机逻辑与艺术初探——基于逻辑的钢琴演奏音符力度模型",
+    "author": "赵晟宇",
+    "category": "misc",
+    "complexity": "O(N^3) time and O(N^2) space for the full compound segment and melody decomposition, where N is the number of notes.",
+    "summary": "The paper proposes a logic-based algorithm to model expressive piano note dynamics (velocities) by analyzing musical structure. It introduces a hierarchical tree decomposition of music into compound phrases (segments) and compound melodies, using concepts like binding degree, harmony, melodic smoothness, and pitch deviation to determine dynamic gain for each note. The method avoids statistical learning and instead relies on musically motivated heuristics derived from artistic cognition."
+}

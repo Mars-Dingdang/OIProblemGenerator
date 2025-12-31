@@ -1,18 +1,8 @@
 {
-    "name": "弦图",
-    "category": "图论",
-    "complexity": {
-        "time": "O(n + m)",
-        "space": "O(n + m)"
-    },
-    "scenarios": [
-        "弦图判定",
-        "完美消除序列构造",
-        "最大团、色数、最小团覆盖等NP-Hard问题在弦图上的线性解法"
-    ],
-    "extensions": [
-        "最大势搜索（MCS）",
-        "团数与色数相等",
-        "极大团枚举"
-    ]
+    "name": "chordal_graph",
+    "chinese_name": "浅谈信息学竞赛中的弦图问题",
+    "author": "郭城志",
+    "category": "graph_theory",
+    "complexity": "Time: O(n + m) for recognition, coloring, max independent set, and clique tree construction; Space: O(n + m)",
+    "summary": "A chordal graph is an undirected graph in which every cycle of length greater than 3 has a chord. Many NP-hard problems on general graphs, such as graph coloring, maximum independent set, and minimum clique cover, can be solved efficiently on chordal graphs using properties like perfect elimination ordering and clique trees. The paper discusses structural properties, recognition algorithms (via maximum cardinality search), and applications in competitive programming."
 }

@@ -1,0 +1,8 @@
+{
+    "name": "string_equivalence_under_special_relations",
+    "chinese_name": "特殊等价关系下的字符串问题",
+    "author": "章弥炫",
+    "category": "string",
+    "complexity": "O(n log^2 n + G(S) log n) for suffix sorting; O(G(S) log n) for suffix automaton construction; O(nΣ log Σ + (n+q) log n) for AC automaton with palindrome queries; O(n log n) for online suffix tree updates.",
+    "summary": "The paper discusses string problems under non-standard equivalence relations, where two strings are considered equivalent if certain derived sequences (Fl or Fr) are identical. These sequences are built using functions fl and fr that depend on prefix/suffix context and the current character. The work generalizes classical string algorithms—such as Hashing, KMP, AC automaton, suffix trees, and suffix automata—to handle such equivalences. It introduces techniques for efficient computation under these relations, including compressed trie construction, border analysis, and dynamic maintenance of suffix structures. Example problems include palindrome matching and counting distinct concatenated strings under character permutations."
+}

@@ -1,0 +1,8 @@
+{
+    "name": "lagrange_multiplier_duality",
+    "chinese_name": "浅谈拉格朗日乘数及对偶在 OI 中的应用",
+    "author": "施开成",
+    "category": "math",
+    "complexity": "Varies by problem; often transforms exponential or difficult problems into polynomial-time solvable duals, e.g., O(2^n n^3) for brute-force over constraints with Lagrange relaxation.",
+    "summary": "This paper explores the application of Lagrange multipliers and duality theory in competitive programming (OI). It introduces how to transform constrained optimization problems into dual forms using Lagrange functions, enabling the use of min-max theorems and convex analysis. The method is applied to various OI problems involving linear programming duality, resource allocation, and combinatorial constraints, demonstrating its utility in simplifying complex optimization tasks."
+}

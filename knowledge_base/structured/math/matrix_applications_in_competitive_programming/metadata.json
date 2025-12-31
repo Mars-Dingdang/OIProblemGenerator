@@ -1,0 +1,8 @@
+{
+    "name": "matrix_applications_in_competitive_programming",
+    "chinese_name": "浅谈矩阵在信息学竞赛中的应用",
+    "author": "杨宁远",
+    "category": "math",
+    "complexity": "Varies by method: O(n^3) for determinant and matrix inversion, O(n^2 log k) to O(n^3) for matrix power using polynomial methods, O(n^3) for characteristic polynomial via Hessenberg reduction, O(n log n) to O(n^3) for specific applications depending on context.",
+    "summary": "This paper discusses the application of matrices in competitive programming, covering fundamental concepts such as determinants, cofactors, characteristic polynomials, eigenvalues, and eigenvectors. It introduces advanced techniques including the LGV lemma for counting non-intersecting paths, matrix-tree theorem for spanning trees, efficient computation of matrix powers via Cayley-Hamilton theorem and Berlekamp–Massey algorithm, and numerical methods for eigenvalue computation like Jacobi and QR iteration. The paper also presents several contest problems where these tools are applied to optimize dynamic programming or solve combinatorial counting tasks."
+}

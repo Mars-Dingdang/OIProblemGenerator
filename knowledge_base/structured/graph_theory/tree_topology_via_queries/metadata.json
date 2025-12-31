@@ -1,0 +1,8 @@
+{
+    "name": "tree_topology_via_queries",
+    "chinese_name": "《最小连通块》命题报告",
+    "author": "潘骏跃",
+    "category": "graph_theory",
+    "complexity": "O(n log n)",
+    "summary": "Given a hidden tree of n nodes, the task is to reconstruct its structure using an interactive query: for a given point set S and node x, determine whether x lies in the minimal connected subtree (i.e., the smallest subtree) containing all nodes in S. The solution involves transforming the problem into determining a topological order of the rooted tree by leveraging tree properties such as ancestor-descendant relationships, leaf pruning, or divide-and-conquer strategies."
+}

@@ -1,0 +1,8 @@
+{
+    "name": "bounded_treewidth",
+    "chinese_name": "浅谈一类有界树宽问题",
+    "author": "吴畅",
+    "category": "graph_theory",
+    "complexity": "O(2^w w^2 n) for maximum independent set; O(n) for Bodlaender's tree decomposition algorithm when w is bounded, where w is the tree width and n is the number of vertices.",
+    "summary": "The paper discusses the concept of tree width and its applications in solving classical graph problems efficiently on graphs with bounded tree width. It introduces tree decomposition, properties of k-trees and partial k-trees, and demonstrates how dynamic programming can be applied on tree decompositions—especially perfect or smooth ones—to solve problems like maximum independent set and shortest path in linear or near-linear time when tree width is bounded by a constant."
+}

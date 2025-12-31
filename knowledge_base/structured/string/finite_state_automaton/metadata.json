@@ -1,0 +1,8 @@
+{
+    "name": "finite_state_automaton",
+    "chinese_name": "浅谈有限状态自动机及其应用",
+    "author": "徐哲安",
+    "category": "string",
+    "complexity": "O(ns) for NFA simulation, O(n|Σ| log n) for Hopcroft minimization, O(ns / log n) for Four Russians-based regex matching",
+    "summary": "本文系统介绍了有限状态自动机（DFA与NFA）的基础理论，正则语言及其与正则表达式的等价性，DFA最小化算法（如Hopcroft算法），并探讨了其在信息学竞赛中的应用，包括DP套DP、字符串匹配、后缀结构理解以及高效正则表达式匹配算法。"
+}

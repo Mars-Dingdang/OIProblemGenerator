@@ -1,0 +1,8 @@
+{
+    "name": "expectation_with_polynomial_and_stirling",
+    "chinese_name": "《小H爱染色》命题报告",
+    "author": "陈嘉乐",
+    "category": "math",
+    "complexity": "O(m log m)",
+    "summary": "Given n balls initially white, two rounds of random coloring (each time m balls are chosen), we compute the expected value of a polynomial F(A), where A is the smallest index of a black ball. The answer is E[F(A)] × C(n,m)^2 mod 998244353. The solution involves combinatorics, Stirling numbers, binomial inversion, generating functions, and polynomial techniques to handle large n and m efficiently."
+}

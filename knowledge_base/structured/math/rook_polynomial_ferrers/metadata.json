@@ -1,0 +1,8 @@
+{
+    "name": "rook_polynomial_ferrers",
+    "chinese_name": "浅谈棋盘模型在计数问题中的应用",
+    "author": "彭思进",
+    "category": "math",
+    "complexity": "O(n log^2 n) or O(n log n) depending on implementation, using FFT-based polynomial multiplication and evaluation",
+    "summary": "The paper discusses the application of rook models on Ferrers boards in combinatorial counting problems. It introduces fundamental concepts such as rook numbers, hit numbers, and rook polynomials, and presents key theorems including the decomposition theorem for falling power rook polynomials on Ferrers boards. The model is applied to various problems like derangements, permutation descent and exceedance statistics, inversion counting via q-analogue methods, and cycle counting in directed graphs derived from Ferrers boards. The framework allows transformation of complex counting problems into algebraic manipulations of polynomials."
+}

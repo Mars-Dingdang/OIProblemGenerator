@@ -1,0 +1,8 @@
+{
+    "name": "hypercube",
+    "chinese_name": "超立方体（Hypercube）及其相关算法初探",
+    "author": "管晏如",
+    "category": "graph_theory",
+    "complexity": "Varies by problem: O(m) for isomorphism checking, O(2^n) for labeling constructions, O(n!) for chain cover bounds.",
+    "summary": "The paper explores the hypercube graph Qn, a highly symmetric structure with 2^n vertices and edges between nodes differing in exactly one bit. It covers definitions, structural views (Cartesian product, spherical layers), graph properties (bipartiteness, diameter, independent sets, perfect matchings), applications in algorithmic problems (isomorphism testing, coloring, Hamiltonian cycles), and advanced topics like Dilworth's theorem, Sperner's theorem, Möbius inversion, and magic labelings. The hypercube model connects combinatorics, order theory, and competitive programming."
+}
